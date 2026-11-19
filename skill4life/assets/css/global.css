@@ -1,0 +1,138 @@
+/* ========================================================
+   Skill4Life - Aturan Global (global.css)
+   Penerapan aturan anti-slop, tipografi tenang, dan tabular-nums.
+======================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--latar);
+  color: var(--teks);
+  font-family: var(--font-ui);
+  font-size: var(--teks-16);
+  font-weight: 400;
+  line-height: var(--jarak-baris-baca);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografi Berjenjang */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--teks);
+  font-weight: 500;
+  line-height: var(--jarak-baris-rapat);
+  text-transform: none; /* Tegas melarang ALL CAPS */
+}
+
+/* Judul besar memakai Source Serif 4 dengan letter-spacing sedikit rapat */
+.judul-utama,
+.hero-judul,
+.sertifikat-penerima {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.angka-mono,
+.meta-angka,
+.nomor-sertifikat,
+.tabel-angka {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* Tautan */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transisi-cepat);
+}
+
+a:hover {
+  color: var(--aksen);
+}
+
+/* Tombol dan Input */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Aksesibilitas: Cincin Fokus Nyata */
+:focus-visible {
+  outline: 2px solid var(--aksen);
+  outline-offset: 2px;
+}
+
+/* Kontainer Standar */
+.wadah {
+  width: 100%;
+  max-width: var(--lebar-maks-halaman);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spasi-24);
+  padding-right: var(--spasi-24);
+}
+
+.wadah-baca {
+  width: 100%;
+  max-width: var(--lebar-maks-baca);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pembatas Garis Dokumen */
+.garis-batas {
+  border: 0;
+  border-top: 1px solid var(--garis);
+  margin: var(--spasi-32) 0;
+}
+
+/* Ikon Lucide Seragam: 16px atau 18px, Stroke 1.5 */
+.ikon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5px;
+  color: currentColor;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.ikon-16 {
+  width: 16px;
+  height: 16px;
+}
+
+/* Segel Khas Skill4Life (Hanya untuk Sertifikat, Selesai, dan Verifikasi) */
+.segel-s4l {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Hormati Preferensi Gerak Berkurang */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

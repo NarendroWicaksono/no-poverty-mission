@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 1,
+    "pertanyaan": "Setiap penulisan rumus atau formula di dalam Microsoft Excel wajib diawali dengan karakter...",
+    "pilihan": {
+      "A": "Tanda tambah (+)",
+      "B": "Tanda sama dengan (=)",
+      "C": "Tanda bintang (*)",
+      "D": "Tanda seru (!)"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Semua rumus atau fungsi di Excel wajib diawali tanda sama dengan (=) agar Excel mengeksekusinya sebagai perhitungan matematika."
+  },
+  {
+    "id": 2,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 2,
+    "pertanyaan": "Pertemuan antara kolom C dan baris nomor 8 di lembar kerja Excel dinamakan...",
+    "pilihan": {
+      "A": "Range C8",
+      "B": "Baris C8",
+      "C": "Sel C8",
+      "D": "Header C8"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Pertemuan antara sebuah kolom dan baris disebut Sel (Cell), ditulis dengan huruf kolom diikuti nomor baris, contohnya Sel C8."
+  },
+  {
+    "id": 3,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 3,
+    "pertanyaan": "Fungsi yang digunakan untuk menjumlahkan seluruh angka dalam rentang sel tertentu adalah...",
+    "pilihan": {
+      "A": "AVERAGE",
+      "B": "SUM",
+      "C": "COUNT",
+      "D": "MAX"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Fungsi SUM digunakan untuk menghitung total penjumlahan dari sekumpulan sel angka."
+  },
+  {
+    "id": 4,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 4,
+    "pertanyaan": "Untuk menghitung nilai rata-rata dari sekumpulan data angka, fungsi yang tepat adalah...",
+    "pilihan": {
+      "A": "AVERAGE",
+      "B": "MEDIAN",
+      "C": "SUM",
+      "D": "COUNT"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Fungsi AVERAGE digunakan untuk mencari nilai rata-rata aritmatika dari rentang data yang dipilih."
+  },
+  {
+    "id": 5,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 5,
+    "pertanyaan": "Apa perbedaan mendasar antara fungsi COUNT dan COUNTA?",
+    "pilihan": {
+      "A": "COUNT menghitung sel teks, COUNTA menghitung sel angka",
+      "B": "COUNT hanya menghitung sel yang berisi angka, sedangkan COUNTA menghitung sel yang terisi data apa saja (teks maupun angka)",
+      "C": "COUNT digunakan untuk pengurangan, COUNTA untuk penambahan",
+      "D": "Tidak ada perbedaan, keduanya menghasilkan nilai yang sama persis"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "COUNT khusus menghitung sel berisi nilai numerik/angka, sedangkan COUNTA menghitung semua sel yang tidak kosong (non-empty)."
+  },
+  {
+    "id": 6,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 6,
+    "pertanyaan": "Kombinasi tombol keyboard (shortcut) untuk menyimpan dokumen Excel dengan cepat adalah...",
+    "pilihan": {
+      "A": "Ctrl + C",
+      "B": "Ctrl + P",
+      "C": "Ctrl + S",
+      "D": "Ctrl + Z"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Ctrl + S adalah shortcut standar di Windows untuk menyimpan file (Save)."
+  },
+  {
+    "id": 7,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 7,
+    "pertanyaan": "Bagaimana cara yang benar untuk memformat angka 50000 agar memiliki lambang mata uang Rp di Excel?",
+    "pilihan": {
+      "A": "Ketik manual 'Rp 50.000' pada sel",
+      "B": "Ketik angka 50000 lalu ubah format sel melalui menu Number Format menjadi Currency/Accounting",
+      "C": "Menggunakan rumus =RP(50000)",
+      "D": "Menambahkan spasi di depan angka 50000"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Ketik angka murni tanpa teks, kemudian terapkan format sel Currency/Accounting agar nilai tetap dapat dihitung dengan rumus."
+  },
+  {
+    "id": 8,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 8,
+    "pertanyaan": "Fitur yang digunakan untuk mengunci baris judul paling atas agar tetap terlihat saat lembar kerja di-scroll ke bawah adalah...",
+    "pilihan": {
+      "A": "Merge Cells",
+      "B": "Wrap Text",
+      "C": "Freeze Panes (Freeze Top Row)",
+      "D": "Split Cells"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Freeze Panes (khususnya Freeze Top Row) berguna mengunci baris judul agar tetap tampil saat navigasi data yang panjang."
+  },
+  {
+    "id": 9,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 9,
+    "pertanyaan": "Fungsi yang digunakan untuk mencari nilai tertinggi dalam suatu rentang data adalah...",
+    "pilihan": {
+      "A": "MIN",
+      "B": "MAX",
+      "C": "TOP",
+      "D": "HIGH"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Fungsi MAX (Maximum) mengembalikan nilai numerik terbesar dari sekumpulan sel."
+  },
+  {
+    "id": 10,
+    "kursus_id": 1,
+    "kursus_slug": "microsoft-excel-dasar",
+    "urutan": 10,
+    "pertanyaan": "Jenis grafik yang paling tepat digunakan untuk melihat tren kenaikan atau penurunan data dari bulan ke bulan adalah...",
+    "pilihan": {
+      "A": "Pie Chart (Diagram Lingkaran)",
+      "B": "Line Chart (Grafik Garis)",
+      "C": "Scatter Plot",
+      "D": "Doughnut Chart"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Line Chart (grafik garis) sangat efektif memperlihatkan pergerakan tren data dari waktu ke waktu (time series)."
+  },
+  {
+    "id": 11,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 1,
+    "pertanyaan": "Pada penulisan rumus =IF(A1>=70, 'LULUS', 'REMIDIAL'), apa hasil yang keluar jika sel A1 bernilai 82?",
+    "pilihan": {
+      "A": "REMIDIAL",
+      "B": "LULUS",
+      "C": "#VALUE!",
+      "D": "FALSE"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Karena nilai A1 (82) lebih besar atau sama dengan 70, maka kondisi bernilai TRUE dan menghasilkan teks 'LULUS'."
+  },
+  {
+    "id": 12,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 2,
+    "pertanyaan": "Apa arti huruf 'V' pada nama fungsi VLOOKUP di Microsoft Excel?",
+    "pilihan": {
+      "A": "Value",
+      "B": "Virtual",
+      "C": "Vertical",
+      "D": "Variable"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "VLOOKUP singkatan dari Vertical Lookup, yaitu mencari data secara vertikal dari atas ke bawah pada kolom referensi."
+  },
+  {
+    "id": 13,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 3,
+    "pertanyaan": "Argumen terakhir pada rumus VLOOKUP biasanya diisi dengan angka 0 atau FALSE. Apa fungsi parameter tersebut?",
+    "pilihan": {
+      "A": "Mencari kecocokan nilai yang mendekati (Approximate match)",
+      "B": "Mencari kecocokan nilai yang tepat sama persis (Exact match)",
+      "C": "Menyembunyikan pesan kesalahan",
+      "D": "Mengurutkan data dari Z ke A"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Nilai FALSE atau 0 menginstruksikan VLOOKUP untuk hanya mengambil data yang benar-benar cocok sama persis (Exact Match)."
+  },
+  {
+    "id": 14,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 4,
+    "pertanyaan": "Simbol apa yang digunakan untuk mengunci alamat sel menjadi referensi absolut (agar tidak bergeser saat dicopy)?",
+    "pilihan": {
+      "A": "Tanda pagar (#)",
+      "B": "Tanda seru (!)",
+      "C": "Tanda dollar ($)",
+      "D": "Tanda persen (%)"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Tanda dollar ($), misalnya $A$1, mengunci koordinat kolom dan baris sehingga alamat sel bersifat absolut."
+  },
+  {
+    "id": 15,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 5,
+    "pertanyaan": "Fitur Excel yang sangat andal untuk meringkas, mengelompokkan, dan menganalisis puluhan ribu baris data tanpa rumus adalah...",
+    "pilihan": {
+      "A": "Goal Seek",
+      "B": "Solver",
+      "C": "Pivot Table",
+      "D": "Data Validation"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Pivot Table adalah alat analitik serbaguna untuk membuat rangkuman dan agregasi data secara dinamis tanpa mengetik rumus."
+  },
+  {
+    "id": 16,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 6,
+    "pertanyaan": "Manakah keunggulan utama fungsi modern XLOOKUP dibanding VLOOKUP tradisional?",
+    "pilihan": {
+      "A": "XLOOKUP hanya bisa bekerja pada teks pendek",
+      "B": "XLOOKUP bisa mencari data ke arah kiri maupun kanan, dan tidak terganggu oleh penambahan kolom baru",
+      "C": "XLOOKUP membutuhkan koneksi internet",
+      "D": "XLOOKUP tidak memerlukan argumen"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "XLOOKUP mengatasi keterbatasan VLOOKUP dengan fleksibilitas pencarian dua arah (kiri/kanan) serta penanganan error bawaan."
+  },
+  {
+    "id": 17,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 7,
+    "pertanyaan": "Fungsi teks yang digunakan untuk membuang spasi berlebih yang tidak sengaja terketik di awal atau akhir kata adalah...",
+    "pilihan": {
+      "A": "CLEAN",
+      "B": "TRIM",
+      "C": "DELETE",
+      "D": "ERASE"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Fungsi TRIM membersihkan spasi ganda dan spasi di ujung awal/akhir string teks."
+  },
+  {
+    "id": 18,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 8,
+    "pertanyaan": "Untuk membatasi input pengguna agar hanya bisa memilih dari daftar pilihan dropdown, fitur yang digunakan adalah...",
+    "pilihan": {
+      "A": "Data Validation dengan tipe List",
+      "B": "Conditional Formatting",
+      "C": "AutoFilter",
+      "D": "Consolidate"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Data Validation dengan kriteria List membuat dropdown menu yang membatasi input hanya pada item yang disetujui."
+  },
+  {
+    "id": 19,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 9,
+    "pertanyaan": "Fungsi teks untuk mengubah huruf pertama di setiap kata menjadi huruf kapital (contoh: 'budi santoso' menjadi 'Budi Santoso') adalah...",
+    "pilihan": {
+      "A": "UPPER",
+      "B": "LOWER",
+      "C": "PROPER",
+      "D": "CAPITALIZE"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Fungsi PROPER mengubah huruf awal setiap kata menjadi huruf besar (Title Case)."
+  },
+  {
+    "id": 20,
+    "kursus_id": 2,
+    "kursus_slug": "microsoft-excel-lanjutan",
+    "urutan": 10,
+    "pertanyaan": "Komponen visual interaktif yang berfungsi sebagai tombol penyaring cepat pada Pivot Table disebut...",
+    "pilihan": {
+      "A": "Filter Bar",
+      "B": "Slicer",
+      "C": "Macro Button",
+      "D": "Sparkline"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Slicer menyediakan tombol antarmuka grafis yang ramah pengguna untuk memfilter data Pivot Table dalam satu klik."
+  },
+  {
+    "id": 21,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 1,
+    "pertanyaan": "Ukuran kertas standar internasional yang paling umum digunakan untuk surat dinas dan dokumen perkantoran di Indonesia adalah...",
+    "pilihan": {
+      "A": "Letter",
+      "B": "Legal",
+      "C": "A4",
+      "D": "A3"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Kertas A4 (210 x 297 mm) adalah ukuran baku untuk surat dinas dan dokumen perkantoran di Indonesia."
+  },
+  {
+    "id": 22,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 2,
+    "pertanyaan": "Kombinasi tombol keyboard untuk mengatur perataan paragraf menjadi Rata Kiri-Kanan (Justify) adalah...",
+    "pilihan": {
+      "A": "Ctrl + L",
+      "B": "Ctrl + R",
+      "C": "Ctrl + E",
+      "D": "Ctrl + J"
+    },
+    "jawaban_benar": "D",
+    "pembahasan": "Ctrl + J adalah pintasan untuk perataan teks Justify (rata tepi kiri dan kanan)."
+  },
+  {
+    "id": 23,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 3,
+    "pertanyaan": "Fitur di Microsoft Word yang digunakan untuk membuat ratusan surat atau sertifikat dengan nama berbeda secara otomatis dari data Excel adalah...",
+    "pilihan": {
+      "A": "AutoText",
+      "B": "Mail Merge",
+      "C": "Macro Recorder",
+      "D": "Track Changes"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Mail Merge menggabungkan dokumen master Word dengan sumber data (misal Excel) untuk surat massal beridentitas unik."
+  },
+  {
+    "id": 24,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 4,
+    "pertanyaan": "Cara terbaik untuk meluruskan tanda titik dua (:) pada biodata surat tanpa membuat teks bergeser adalah...",
+    "pilihan": {
+      "A": "Menekan tombol Spasi berulang kali sampai lurus",
+      "B": "Mengatur Tab Stop pada mistar (Ruler) dan menekan tombol Tab",
+      "C": "Mengetik titik dua di baris paling bawah lalu dicopy",
+      "D": "Menggunakan font khusus titik dua"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Tab Stop menetapkan koordinat horizontal tetap pada Ruler sehingga penekanan tombol Tab menghasilkan posisi yang selalu sejajar rapi."
+  },
+  {
+    "id": 25,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 5,
+    "pertanyaan": "Fitur yang wajib digunakan untuk membedakan format nomor halaman (misal Romawi i, ii pada cover dan angka 1, 2 pada bab isi) adalah...",
+    "pilihan": {
+      "A": "Page Break",
+      "B": "Line Break",
+      "C": "Section Break (Next Page)",
+      "D": "Column Break"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Section Break memisahkan aturan tata letak dan penomoran header/footer antar bagian dokumen."
+  },
+  {
+    "id": 26,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 6,
+    "pertanyaan": "Format file dokumen yang paling disarankan saat mengirim surat atau CV via email agar formatnya tidak bergeser di perangkat penerima adalah...",
+    "pilihan": {
+      "A": ".TXT",
+      "B": ".PDF",
+      "C": ".DOC",
+      "D": ".RTF"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "PDF (Portable Document Format) mengunci tata letak, jenis font, dan format visual di semua perangkat dan sistem operasi."
+  },
+  {
+    "id": 27,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 7,
+    "pertanyaan": "Bagian atas dokumen yang biasanya memuat logo instansi, nama perusahaan, dan alamat resmi disebut...",
+    "pilihan": {
+      "A": "Footer",
+      "B": "Header (Kop Surat)",
+      "C": "Watermark",
+      "D": "Footnote"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Header terletak di margin atas dokumen dan lazim dipakai menempatkan kop surat resmi."
+  },
+  {
+    "id": 28,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 8,
+    "pertanyaan": "Untuk membuat daftar isi otomatis yang dapat diperbarui saat nomor halaman berubah, teks judul bab harus diformat menggunakan...",
+    "pilihan": {
+      "A": "Bold dan garis bawah",
+      "B": "Heading Styles (Heading 1, Heading 2)",
+      "C": "Font ukuran 20 pt",
+      "D": "Warna teks merah"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Word membaca struktur Heading Styles (Heading 1, Heading 2, dst) untuk merakit Daftar Isi Otomatis (Table of Contents)."
+  },
+  {
+    "id": 29,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 9,
+    "pertanyaan": "Jarak antar baris kalimat dalam sebuah paragraf dokumen perkantoran umumnya diatur menggunakan fitur...",
+    "pilihan": {
+      "A": "Character Spacing",
+      "B": "Line Spacing (Spasi Baris)",
+      "C": "Letter Width",
+      "D": "Margin Top"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Line Spacing mengatur kerapatan vertikal antar baris teks dalam satu paragraf (misal 1.15 atau 1.5 spasi)."
+  },
+  {
+    "id": 30,
+    "kursus_id": 3,
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "urutan": 10,
+    "pertanyaan": "Kombinasi tombol keyboard untuk membatalkan kesalahan tindakan pengetikan terakhir (Undo) adalah...",
+    "pilihan": {
+      "A": "Ctrl + Y",
+      "B": "Ctrl + U",
+      "C": "Ctrl + Z",
+      "D": "Ctrl + X"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Ctrl + Z adalah perintah Undo universal untuk membatalkan perubahan atau kesalahan ketik sebelumnya."
+  },
+  {
+    "id": 31,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 1,
+    "pertanyaan": "Apa fungsi utama dari slide presentasi dalam sebuah pemaparan profesional?",
+    "pilihan": {
+      "A": "Sebagai naskah lengkap yang dibacakan kata demi kata oleh pembicara",
+      "B": "Sebagai alat bantu visual ringkas untuk memperkuat dan memperjelas pesan pembicara",
+      "C": "Untuk memamerkan sebanyak mungkin efek suara dan animasi bergerak",
+      "D": "Untuk menggantikan kehadiran pembicara sepenuhnya"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Slide adalah alat bantu visual (visual aid) untuk mendukung pesan pembicara, bukan naskah membaca yang membosankan."
+  },
+  {
+    "id": 32,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 2,
+    "pertanyaan": "Apa yang dimaksud dengan prinsip 'Whitespace' dalam desain slide presentasi?",
+    "pilihan": {
+      "A": "Slide harus selalu menggunakan latar belakang warna putih polos",
+      "B": "Area kosong di sekitar elemen desain yang memberi kenyamanan mata dan memfokuskan perhatian audiens",
+      "C": "Menghapus semua gambar dari slide",
+      "D": "Mengubah warna teks menjadi putih"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Whitespace (ruang negatif/kosong) memberi ruang bernapas visual sehingga pesan penting tidak tertelan elemen yang berdesakan."
+  },
+  {
+    "id": 33,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 3,
+    "pertanyaan": "Fitur di PowerPoint yang dapat mengubah daftar poin teks biasa menjadi diagram visual yang terstruktur secara instan adalah...",
+    "pilihan": {
+      "A": "WordArt",
+      "B": "SmartArt",
+      "C": "ClipArt",
+      "D": "AutoShape"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "SmartArt mengonversi poin teks menjadi bagan alur proses, hierarki organisasi, atau matriks visual secara otomatis."
+  },
+  {
+    "id": 34,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 4,
+    "pertanyaan": "Berapa jumlah maksimal warna aksen yang disarankan untuk menjaga konsistensi tema slide profesional?",
+    "pilihan": {
+      "A": "10 warna pelangi",
+      "B": "1 sampai 2 warna aksen kontras yang harmonis",
+      "C": "Semua warna harus berbeda di tiap slide",
+      "D": "Tidak boleh memakai warna"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Desain profesional membatasi palet warna pada 1-2 warna aksen kontras untuk menjaga konsistensi dan fokus perhatian."
+  },
+  {
+    "id": 35,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 5,
+    "pertanyaan": "Efek transisi modern di PowerPoint yang memindahkan objek secara mulus dan cair antar dua slide berturut-turut disebut...",
+    "pilihan": {
+      "A": "Push",
+      "B": "Morph",
+      "C": "Dissolve",
+      "D": "Wipe"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Transisi Morph melacak perubahan posisi, ukuran, dan rotasi objek antar dua slide dan membuat animasi perpindahan yang mulus."
+  },
+  {
+    "id": 36,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 6,
+    "pertanyaan": "Fitur tampilan khusus yang memungkinkan presenter melihat contekan catatan dan slide berikutnya di laptop saat layar proyektor menampilkan slide utama adalah...",
+    "pilihan": {
+      "A": "Slide Sorter View",
+      "B": "Outline View",
+      "C": "Presenter View",
+      "D": "Reading View"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Presenter View menampilkan slide aktif, catatan pembicara, pewaktu (timer), dan preview slide berikutnya di monitor presenter."
+  },
+  {
+    "id": 37,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 7,
+    "pertanyaan": "Berapa ukuran font minimum yang disarankan untuk teks isi penjelasan di slide agar terbaca oleh audiens di baris belakang?",
+    "pilihan": {
+      "A": "8 pt",
+      "B": "10 pt",
+      "C": "Sekitar 16 - 18 pt",
+      "D": "36 pt"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Ukuran font minimal 16-18 pt untuk body text memastikan keterbacaan yang layak di ruang pertemuan berukuran standar."
+  },
+  {
+    "id": 38,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 8,
+    "pertanyaan": "Kombinasi tombol keyboard untuk memulai penayangan slide presentasi (Slide Show) dari slide paling awal adalah...",
+    "pilihan": {
+      "A": "F1",
+      "B": "F5",
+      "C": "F7",
+      "D": "F12"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Tombol F5 memulai Slide Show dari slide pertama (atau Shift + F5 dari slide yang sedang aktif)."
+  },
+  {
+    "id": 39,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 9,
+    "pertanyaan": "Kapan sebaiknya animasi objek (Entrance Animation) digunakan dalam presentasi bisnis?",
+    "pilihan": {
+      "A": "Setiap detik agar audiens tidak mengantuk",
+      "B": "Secara selektif untuk memunculkan poin bertahap sesuai alur penjelasan lisan pembicara",
+      "C": "Hanya dengan efek suara ledakan atau tepuk tangan",
+      "D": "Tidak boleh digunakan sama sekali dalam kondisi apa pun"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Animasi selektif membantu mengendalikan fokus audiens sehingga mereka tidak membaca poin akhir sebelum waktunya dijelaskan."
+  },
+  {
+    "id": 40,
+    "kursus_id": 4,
+    "kursus_slug": "microsoft-powerpoint-presentasi",
+    "urutan": 10,
+    "pertanyaan": "Sikap terbaik presenter saat menghadapi pertanyaan peserta yang belum diketahui jawabannya secara pasti adalah...",
+    "pilihan": {
+      "A": "Mengarang jawaban meyakinkan agar tidak terlihat tidak tahu",
+      "B": "Menyalahkan penanya karena pertanyaannya keluar topik",
+      "C": "Mengakui secara jujur dan profesional bahwa data tersebut akan dicek kembali dan dikabari setelah sesi presentasi",
+      "D": "Mengabaikan pertanyaan dan menutup presentasi"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Integritas profesional dihargai dengan mengakui batas data saat ini dan menawarkan tindak lanjut (follow-up) konfirmasi."
+  },
+  {
+    "id": 41,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 1,
+    "pertanyaan": "Apa kepanjangan dari sistem ATS yang banyak digunakan perusahaan untuk menyaring berkas pelamar kerja?",
+    "pilihan": {
+      "A": "Automatic Text Sorter",
+      "B": "Applicant Tracking System",
+      "C": "Application Technical Support",
+      "D": "Advanced Talents System"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "ATS adalah singkatan dari Applicant Tracking System, perangkat lunak untuk mengelola proses seleksi dan penyaringan pelamar kerja."
+  },
+  {
+    "id": 42,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 2,
+    "pertanyaan": "Mengapa penggunaan format tabel ganda (multi-column) atau grafik kompleks pada CV sering kali berisiko gagal di ATS?",
+    "pilihan": {
+      "A": "Karena ukuran file menjadi terlalu kecil",
+      "B": "Karena sistem parser ATS sering kali membaca kolom secara bercampur aduk dari kiri ke kanan melintasi batas kolom",
+      "C": "Karena ATS hanya bisa membaca gambar PNG",
+      "D": "Karena HRD tidak suka melihat warna"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Parser teks ATS memindai secara horizontal; tata letak tabel kompleks dapat mencampuradukkan kata dari kolom berbeda sehingga teks menjadi tidak bermakna."
+  },
+  {
+    "id": 43,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 3,
+    "pertanyaan": "Manakah cara penulisan pengalaman kerja yang paling mencerminkan pencapaian nyata (berorientasi dampak)?",
+    "pilihan": {
+      "A": "'Bertanggung jawab atas administrasi toko.'",
+      "B": "'Membantu bos membuat laporan setiap hari.'",
+      "C": "'Mengelola inventaris 300 jenis barang dan memangkas tingkat selisih stok sebesar 35% melalui sistem kontrol berkala.'",
+      "D": "'Bekerja keras dan datang tepat waktu ke kantor.'"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Formula berbasis dampak memuat tindakan konkret, lingkup kerja terukur, dan hasil persentase keberhasilan nyata."
+  },
+  {
+    "id": 44,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 4,
+    "pertanyaan": "Informasi pribadi manakah yang TIDAK PERLU dicantumkan di CV profesional standar modern?",
+    "pilihan": {
+      "A": "Nama lengkap dan nomor WhatsApp aktif",
+      "B": "Alamat email profesional",
+      "C": "Status pernikahan, suku bangsa, agama, dan makanan favorit",
+      "D": "Tautan profil LinkedIn atau portofolio relevan"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Data diskriminatif atau terlalu privat seperti agama, status pernikahan, atau hobi umum tidak relevan bagi kualifikasi profesional."
+  },
+  {
+    "id": 45,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 5,
+    "pertanyaan": "Berapa panjang halaman yang paling ideal untuk CV lulusan baru (fresh graduate) atau pemula karir?",
+    "pilihan": {
+      "A": "1 halaman (maksimal 2 halaman jika memiliki proyek substansial)",
+      "B": "Minimal 5 halaman lengkap dengan sertifikat sekolah dasar",
+      "C": "10 halaman",
+      "D": "Cukup setengah paragraf saja"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Satu halaman padat dan terkurasi sangat ideal bagi rekruter yang rata-rata hanya meluangkan 6-10 detik saat seleksi cepat pertama."
+  },
+  {
+    "id": 46,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 6,
+    "pertanyaan": "Apa nama formula terkenal dari Google untuk menuliskan pencapaian pengalaman kerja di resume?",
+    "pilihan": {
+      "A": "Formula ABC",
+      "B": "Formula X-Y-Z ('Accomplished [X], as measured by [Y], by doing [Z]')",
+      "C": "Formula SWOT",
+      "D": "Formula 5W1H"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Formula X-Y-Z Google: Capaian [X], diukur dengan metrik [Y], melalui aksi konkret yang Anda lakukan [Z]."
+  },
+  {
+    "id": 47,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 7,
+    "pertanyaan": "Apa kesalahan fatal dalam penulisan surat lamaran kerja (Cover Letter)?",
+    "pilihan": {
+      "A": "Menyebutkan nama perusahaan yang dilamar",
+      "B": "Menjelaskan kecocokan kualifikasi dengan kriteria lowongan",
+      "C": "Mengirim surat lamaran hasil 'copy-paste' massal tanpa menyesuaikan dengan nama dan posisi perusahaan yang dituju",
+      "D": "Menyertakan nomor kontak aktif"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Surat lamaran generik tanpa personalisasi memperlihatkan kurangnya minat serius pelamar terhadap perusahaan tersebut."
+  },
+  {
+    "id": 48,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 8,
+    "pertanyaan": "Nama file dokumen lamaran yang paling tepat dan profesional saat diunggah adalah...",
+    "pilihan": {
+      "A": "cv_baru_fix_banget.pdf",
+      "B": "Dokumen1.docx",
+      "C": "CV_Budi_Santoso_Staff_Administrasi.pdf",
+      "D": "Untitled.pdf"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Nama file yang memuat jenis dokumen, nama lengkap pelamar, dan jabatan lowongan memudahkan arsip rekruter."
+  },
+  {
+    "id": 49,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 9,
+    "pertanyaan": "Manakah alamat email yang paling pantas digunakan untuk melamar pekerjaan formal?",
+    "pilihan": {
+      "A": "si_ganteng_juara@yahoo.com",
+      "B": "budi.santoso.work@gmail.com",
+      "C": "naruto_gamer99@hotmail.com",
+      "D": "anak.bunda.lucu@gmail.com"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Email kerja harus menggunakan variasi nama asli yang bersih dan formal tanpa embel-embel nama panggilan santai."
+  },
+  {
+    "id": 50,
+    "kursus_id": 5,
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "urutan": 10,
+    "pertanyaan": "Kata kerja pembuka (Action Verb) yang kuat untuk mengawali deskripsi tugas di resume adalah...",
+    "pilihan": {
+      "A": "Mengembangkan",
+      "B": "Mungkin",
+      "C": "Biasanya",
+      "D": "Mencoba-coba"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Kata kerja aktif seperti 'Mengembangkan', 'Memimpin', 'Mengoptimalkan' menunjukkan inisiatif dan kepemilikan tanggung jawab."
+  },
+  {
+    "id": 51,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 1,
+    "pertanyaan": "Metode terstruktur yang paling populer untuk menjawab pertanyaan wawancara berbasis perilaku adalah...",
+    "pilihan": {
+      "A": "Metode ABCDE",
+      "B": "Metode STAR (Situation, Task, Action, Result)",
+      "C": "Metode SMART",
+      "D": "Metode 5S"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "STAR (Situation, Task, Action, Result) adalah kerangka jawaban paling efektif untuk mendemonstrasikan kompetensi masa lalu."
+  },
+  {
+    "id": 52,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 2,
+    "pertanyaan": "Bagian manakah dalam metode STAR yang harus mendapatkan porsi penjelasan tindakan pribadi paling dominan?",
+    "pilihan": {
+      "A": "Situation (Latar belakang situasi)",
+      "B": "Action (Tindakan konkret yang Anda ambil)",
+      "C": "Task (Tugas yang diberikan)",
+      "D": "Semua porsinya 1 detik"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Action adalah inti penilaian HRD karena memperlihatkan peran dan keputusan spesifik yang Anda ambil untuk mengatasi kendala."
+  },
+  {
+    "id": 53,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 3,
+    "pertanyaan": "Ketika pewawancara menanyakan: 'Apa kekurangan terbesar Anda?', strategi jawaban yang paling bijak adalah...",
+    "pilihan": {
+      "A": "Mengatakan bahwa Anda orang yang sempurna tanpa kekurangan",
+      "B": "Menyebutkan kelemahan fatal yang membuat Anda tidak mampu bekerja sama sekali",
+      "C": "Menyebutkan area yang sedang Anda kembangkan secara jujur disertai langkah nyata yang telah Anda ambil untuk memperbaikinya",
+      "D": "Menolak menjawab pertanyaan tersebut"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Sebutkan area perbaikan diri secara otentik serta tunjukkan ikhtiar nyata yang sedang dijalankan untuk mengatasinya."
+  },
+  {
+    "id": 54,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 4,
+    "pertanyaan": "Berapa lama sebelum jadwal wawancara tatap muka seorang kandidat disarankan sudah tiba di lokasi?",
+    "pilihan": {
+      "A": "Persis pada menit yang dijadwalkan",
+      "B": "15 hingga 20 menit sebelumnya",
+      "C": "3 jam sebelumnya sampai mengganggu kantor",
+      "D": "10 menit setelah jadwal berlalu"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Tiba 15-20 menit lebih awal memberi waktu beradaptasi dengan lingkungan, merapikan diri, dan menghindari kepanikan lalu lintas."
+  },
+  {
+    "id": 55,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 5,
+    "pertanyaan": "Trik terbaik untuk menjaga kontak mata yang tepat saat melakukan wawancara kerja daring (Zoom/Meet) adalah...",
+    "pilihan": {
+      "A": "Menatap layar kaca laptop terus menerus",
+      "B": "Menatap langsung ke lubang lensa kamera (webcam) saat Anda sedang berbicara",
+      "C": "Melihat ke arah papan ketik (keyboard)",
+      "D": "Mematikan kamera sepanjang sesi"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Menatap lensa webcam menciptakan persepsi bagi lawan bicara di seberang bahwa Anda sedang menatap mata mereka secara langsung."
+  },
+  {
+    "id": 56,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 6,
+    "pertanyaan": "Ketika di akhir wawancara pewawancara bertanya: 'Apakah ada yang ingin ditanyakan?', respons terbaik Anda adalah...",
+    "pilihan": {
+      "A": "'Tidak ada, saya ingin cepat pulang.'",
+      "B": "Mengajukan pertanyaan terarah mengenai tantangan utama tim kerja atau tolok ukur keberhasilan posisi tersebut",
+      "C": "Langsung menanyakan kapan bonus liburan tahunan dibagikan",
+      "D": "Diam membisu tersenyum"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Mengajukan pertanyaan berkualitas membuktikan bahwa Anda telah meriset perusahaan dan memiliki komitmen tinggi terhadap peran yang dilamar."
+  },
+  {
+    "id": 57,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 7,
+    "pertanyaan": "Apa tujuan utama pewawancara menanyakan: 'Mengapa Anda tertarik bekerja di perusahaan kami?'",
+    "pilihan": {
+      "A": "Untuk mengecek apakah pelamar hafal alamat kantor",
+      "B": "Untuk melihat apakah pelamar meriset nilai perusahaan dan memiliki motivasi kerja yang sejalan dengan visi bisnis",
+      "C": "Hanya sekadar formalitas basa-basi pengisi waktu luang",
+      "D": "Ingin meminta pujian berlebihan dari pelamar"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Rekruter ingin mengetahui motivasi otentik dan keselarasan nilai budaya kandidat dengan tujuan organisasi."
+  },
+  {
+    "id": 58,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 8,
+    "pertanyaan": "Pesan ucapan terima kasih (Thank You Email) setelah wawancara sebaiknya dikirimkan dalam rentang waktu...",
+    "pilihan": {
+      "A": "Maksimal 24 jam setelah sesi wawancara selesai",
+      "B": "Satu bulan setelah wawancara",
+      "C": "Setahun kemudian",
+      "D": "Tidak perlu mengirim email apa pun"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Thank-you note dalam waktu 24 jam memperkuat kesan positif, profesionalisme, dan keseriusan Anda di mata panitia seleksi."
+  },
+  {
+    "id": 59,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 9,
+    "pertanyaan": "Bahasa tubuh manakah yang mencerminkan sikap terbuka dan percaya diri dalam wawancara kerja?",
+    "pilihan": {
+      "A": "Menyilangkan kedua tangan di depan dada",
+      "B": "Duduk tegak rileks, menjaga kontak mata berkala, dan mengangguk saat menyimak",
+      "C": "Menggoyangkan kaki terus-menerus karena cemas",
+      "D": "Menundukkan kepala ke arah lantai"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Postur tegak, kontak mata natural, dan anggukan aktif mencerminkan antusiasme serta kepercayaan diri yang sehat."
+  },
+  {
+    "id": 60,
+    "kursus_id": 6,
+    "kursus_slug": "persiapan-wawancara-kerja",
+    "urutan": 10,
+    "pertanyaan": "Ketika ditanya mengenai ekspektasi gaji di tahap wawancara awal, langkah bijak kandidat adalah...",
+    "pilihan": {
+      "A": "Menyebutkan angka sembarangan tanpa riset",
+      "B": "Menyampaikan rentang gaji realistis berdasarkan riset standar upah industri dan biaya hidup setempat",
+      "C": "Menolak dibayar karena bersedia kerja bakti",
+      "D": "Meminta gaji tertinggi tanpa dasar kualifikasi"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Riset kisaran upah pasar untuk posisi dan kota tersebut menunjukkan kedewasaan kandidat dalam menegosiasikan nilai dirinya."
+  },
+  {
+    "id": 61,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 1,
+    "pertanyaan": "Menurut formula pembagian anggaran sederhana 50/30/20, persentase 50% dialokasikan untuk...",
+    "pilihan": {
+      "A": "Liburan dan hiburan",
+      "B": "Kebutuhan pokok hidup (makanan, sewa, listrik)",
+      "C": "Investasi saham berisiko tinggi",
+      "D": "Membeli pakaian pesta"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "50% pendapatan diperuntukkan bagi kebutuhan hidup mutlak (Needs) yang tidak dapat ditunda pemenuhannya."
+  },
+  {
+    "id": 62,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 2,
+    "pertanyaan": "Apa definisi utama dari Dana Darurat dalam perencanaan keuangan keluarga?",
+    "pilihan": {
+      "A": "Uang yang disiapkan khusus untuk berbelanja diskon akhir tahun",
+      "B": "Simpanan likuid yang hanya boleh digunakan pada peristiwa mendesak dan tak terduga (seperti sakit atau kehilangan pekerjaan)",
+      "C": "Uang yang dipinjamkan kepada tetangga",
+      "D": "Uang tunai yang disimpan di bawah kasur untuk pamer"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Dana darurat adalah bantalan finansial untuk menjaga kelangsungan hidup saat musibah atau krisis mendadak terjadi."
+  },
+  {
+    "id": 63,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 3,
+    "pertanyaan": "Manakah ciri utama dari layanan pinjaman online (pinjol) ilegal yang berbahaya?",
+    "pilihan": {
+      "A": "Memiliki izin terdaftar resmi dari Otoritas Jasa Keuangan (OJK)",
+      "B": "Meminta akses izin ke seluruh buku kontak telepon dan galeri pribadi ponsel peminjam",
+      "C": "Memiliki kantor fisik yang jelas dan layanan bantuan pelanggan resmi",
+      "D": "Membatasi suku bunga harian sesuai regulasi AFPI"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Pinjol ilegal menyalahgunakan akses kontak dan galeri untuk menyebarkan ancaman serta mempermalukan korban penagihan."
+  },
+  {
+    "id": 64,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 4,
+    "pertanyaan": "Strategi menabung yang paling efektif dan terbukti berhasil adalah...",
+    "pilihan": {
+      "A": "Menunggu sisa uang di akhir bulan baru ditabung jika ada",
+      "B": "Langsung menyisihkan persentase tabungan di awal begitu menerima gaji/penghasilan",
+      "C": "Tidak perlu menabung karena uang pasti akan habis juga",
+      "D": "Meminjam uang ke bank untuk ditabung"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Prinsip 'Pay Yourself First': sisihkan tabungan di awal periode penerimaan gaji sebelum dipakai berbelanja keperluan lain."
+  },
+  {
+    "id": 65,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 5,
+    "pertanyaan": "Contoh pengeluaran yang tergolong sebagai 'Keinginan' (Wants) dan bukan kebutuhan mutlak adalah...",
+    "pilihan": {
+      "A": "Beras untuk makan sehari-hari",
+      "B": "Air minum galon keluarga",
+      "C": "Membeli minuman kopi kekinian di mall setiap sore",
+      "D": "Obat resep dokter saat sakit"
+    },
+    "jawaban_benar": "C",
+    "pembahasan": "Kopi kafe kekinian adalah pengeluaran rekreasi/gaya hidup yang dapat dipangkas sewaktu-waktu tanpa mengancam keselamatan hidup."
+  },
+  {
+    "id": 66,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 6,
+    "pertanyaan": "Berapa cadangan dana darurat minimal yang disarankan untuk seseorang yang masih lajang?",
+    "pilihan": {
+      "A": "1 hari pengeluaran",
+      "B": "3 kali rata-rata pengeluaran bulanan",
+      "C": "100 kali gaji",
+      "D": "Tidak perlu ada"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Bagi individu lajang, tabungan setara 3 bulan pengeluaran rutin cukup memberikan ruang bernapas jika terjadi pemutusan kerja sementara."
+  },
+  {
+    "id": 67,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 7,
+    "pertanyaan": "Lembaga resmi pemerintah Indonesia yang bertugas mengawasi dan mengatur sektor jasa keuangan adalah...",
+    "pilihan": {
+      "A": "OJK (Otoritas Jasa Keuangan)",
+      "B": "KONI",
+      "C": "BMKG",
+      "D": "BNPB"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "OJK bertugas menyelenggarakan sistem pengaturan dan pengawasan terintegrasi terhadap keseluruhan kegiatan di sektor jasa keuangan."
+  },
+  {
+    "id": 68,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 8,
+    "pertanyaan": "Apa bahaya dari fenomena 'bocor halus' dalam keuangan pribadi?",
+    "pilihan": {
+      "A": "Pengeluaran besar yang langsung dicatat rapi",
+      "B": "Pengeluaran nominal kecil yang sering dilakukan berulang tanpa terasa hingga menghabiskan sebagian besar penghasilan",
+      "C": "Kebocoran pipa air di rumah",
+      "D": "Menyimpan uang koin di celengan"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Bocor halus (seperti parkir, rokok eceran, jajan kecil) yang tidak dicatat kerap menjadi penyebab utama lenyapnya gaji tanpa sisa."
+  },
+  {
+    "id": 69,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 9,
+    "pertanyaan": "Perilaku yang paling tepat sebelum memutuskan mengambil fasilitas cicilan Paylater atau pinjaman adalah...",
+    "pilihan": {
+      "A": "Langsung klik setuju tanpa membaca suku bunga dan denda keterlambatan",
+      "B": "Memastikan cicilan ditujukan untuk keperluan produktif dan total seluruh cicilan tidak melebihi 30% dari penghasilan bulanan",
+      "C": "Mengajukan pinjaman di 10 aplikasi sekaligus untuk jalan-jalan",
+      "D": "Menggunakan data KTP orang lain"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Rasio total cicilan utang yang sehat adalah di bawah 30% dari total pendapatan bulanan agar arus kas rumah tangga tidak kolaps."
+  },
+  {
+    "id": 70,
+    "kursus_id": 7,
+    "kursus_slug": "literasi-keuangan-dasar",
+    "urutan": 10,
+    "pertanyaan": "Langkah pertama yang harus dilakukan seseorang saat ingin memperbaiki kondisi keuangannya adalah...",
+    "pilihan": {
+      "A": "Membeli buku mahal",
+      "B": "Mencatat seluruh arus uang masuk dan uang keluar harian secara disiplin",
+      "C": "Berhenti makan nasi sama sekali",
+      "D": "Mengundurkan diri dari pekerjaan"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Pencatatan kas harian memberikan visibilitas nyata ke mana uang mengalir sehingga langkah efisiensi dapat ditargetkan dengan tepat."
+  },
+  {
+    "id": 71,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 1,
+    "pertanyaan": "Metode penjualan terbaik bagi wirausaha pemula bermodal minim agar tidak menanggung risiko barang sisa atau modal mati adalah...",
+    "pilihan": {
+      "A": "Menyewa ruko mahal di pusat perbelanjaan",
+      "B": "Sistem Pre-Order (PO) dengan meminta uang muka (DP) terlebih dahulu kepada pemesan",
+      "C": "Memproduksi 500 unit barang sekaligus lalu berharap ada pembeli",
+      "D": "Membeli mesin pabrik skala industri"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Sistem Pre-Order (PO) menjamin adanya pembeli pasti sebelum modal dibelanjakan untuk bahan baku, meminimalkan risiko kerugian."
+  },
+  {
+    "id": 72,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 2,
+    "pertanyaan": "Apa kepanjangan dari HPP dalam kalkulasi keuangan usaha dagang atau produksi makanan?",
+    "pilihan": {
+      "A": "Harga Pembelian Pasar",
+      "B": "Harga Pokok Penjualan",
+      "C": "Hasil Penjualan Produk",
+      "D": "Hak Paten Produk"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "HPP adalah Harga Pokok Penjualan, yaitu total seluruh pengeluaran langsung yang dikeluarkan untuk menghasilkan suatu produk."
+  },
+  {
+    "id": 73,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 3,
+    "pertanyaan": "Biaya manakah di bawah ini yang tergolong sebagai biaya operasional langsung dalam produksi kue rumahan?",
+    "pilihan": {
+      "A": "Biaya gas elpiji dan plastik kemasan",
+      "B": "Biaya liburan keluarga pemilik usaha",
+      "C": "Pajak mobil pribadi",
+      "D": "Uang jajan anak"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Gas dan kemasan plastik langsung habis terpakai dalam proses pembuatan dan pengemasan produk kue yang dijual."
+  },
+  {
+    "id": 74,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 4,
+    "pertanyaan": "Aplikasi pesan instan gratis yang memiliki fitur katalog produk, profil bisnis, dan pesan sapaan otomatis untuk UMKM adalah...",
+    "pilihan": {
+      "A": "WhatsApp Messenger biasa",
+      "B": "WhatsApp Business",
+      "C": "SMS konvensional",
+      "D": "Twitter Web"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "WhatsApp Business dirancang khusus dengan fitur etalase katalog, jam buka toko, dan label chat untuk menunjang transaksi UMKM."
+  },
+  {
+    "id": 75,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 5,
+    "pertanyaan": "Sumber pencahayaan terbaik dan paling hemat biaya untuk memotret produk makanan menggunakan kamera HP adalah...",
+    "pilihan": {
+      "A": "Lampu flash langsung dari kamera ponsel",
+      "B": "Cahaya alami matahari di dekat jendela pada pagi atau sore hari (Window Light)",
+      "C": "Lampu neon redup di kamar tidur",
+      "D": "Senter dari HP lain"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Cahaya alami dekat jendela menghasilkan pencahayaan merata yang lembut tanpa bayangan tajam yang merusak tampilan foto produk."
+  },
+  {
+    "id": 76,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 6,
+    "pertanyaan": "Mengapa pengusaha pemula wajib menganggarkan upah untuk tenaga kerjanya sendiri dalam perhitungan harga produk?",
+    "pilihan": {
+      "A": "Hanya sekadar formalitas agar harga terlihat mahal",
+      "B": "Agar usaha dapat berkembang secara mandiri dan pemilik mengetahui profit usaha sesungguhnya yang terpisah dari gaji kerja",
+      "C": "Supaya tidak perlu membayar pajak",
+      "D": "Agar uang usaha bisa dipakai foya-foya pribadi"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Jika tenaga pemilik tidak dihargai, usaha tampak menguntungkan padahal kenyataannya pemilik hanya bekerja tanpa upah layak."
+  },
+  {
+    "id": 77,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 7,
+    "pertanyaan": "Tindakan pertama yang paling krusial sebelum memotret produk dengan kamera ponsel pintar adalah...",
+    "pilihan": {
+      "A": "Memasang tripod termahal",
+      "B": "Membersihkan kaca lensa kamera dengan kain lembut agar foto tidak buram terkena minyak",
+      "C": "Menambahkan stiker animasi lucu di atas produk",
+      "D": "Memperbesar zoom kamera hingga 10x"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Lensa ponsel yang kotor oleh sidik jari adalah penyebab utama foto terlihat berkabut dan tidak tajam."
+  },
+  {
+    "id": 78,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 8,
+    "pertanyaan": "Bagaimana cara menentukan ide bisnis yang paling berpeluang diterima pasar lokal?",
+    "pilihan": {
+      "A": "Memilih produk yang sedang viral di luar negeri meskipun tidak dibutuhkan warga sekitar",
+      "B": "Mengamati masalah atau kesulitan yang sering dikeluhkan masyarakat sekitar dan menawarkan solusi praktis atas masalah itu",
+      "C": "Menjual barang yang paling mahal agar cepat kaya",
+      "D": "Meniru usaha tetangga persis tanpa ada nilai tambah apa pun"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Bisnis yang berkelanjutan dibangun di atas pemecahan masalah riil yang dihadapi oleh konsumen di sekitarnya."
+  },
+  {
+    "id": 79,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 9,
+    "pertanyaan": "Apa fungsi fitur 'Label Chat' pada WhatsApp Business?",
+    "pilihan": {
+      "A": "Untuk menghapus pesan secara permanen",
+      "B": "Untuk menandai dan mengelompokkan pesan pelanggan (misal: 'Belum Bayar', 'Sudah Lunas', 'Pesanan Siap Kirim')",
+      "C": "Untuk memblokir semua kontak pelanggan",
+      "D": "Untuk mengirim pesan spam ke orang asing"
+    },
+    "jawaban_benar": "B",
+    "pembahasan": "Label Chat memudahkan pemilahan status pesanan sehingga penjual tidak melewatkan pelanggan yang belum dilayani."
+  },
+  {
+    "id": 80,
+    "kursus_id": 8,
+    "kursus_slug": "memulai-usaha-kecil-modal-minim",
+    "urutan": 10,
+    "pertanyaan": "Prinsip utama dalam menetapkan harga jual suatu produk adalah...",
+    "pilihan": {
+      "A": "Harga jual harus berada di atas HPP agar menghasilkan margin keuntungan bersih yang sehat",
+      "B": "Harga jual harus selalu lebih murah dari kompetitor meski menanggung kerugian",
+      "C": "Harga ditentukan secara acak tanpa perlu menghitung biaya modal",
+      "D": "Harga jual selalu disamakan dengan biaya bahan baku saja"
+    },
+    "jawaban_benar": "A",
+    "pembahasan": "Harga jual wajib menutup seluruh modal pokok (HPP) dan menyisakan margin laba agar bisnis dapat terus beroperasi dan berkembang."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nama": "Budi Santoso",
+    "peran": "Admin Operasional di Logistik Nasional",
+    "foto": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "asal": "Surabaya, Jawa Timur",
+    "kursus": "Microsoft Excel Lanjutan & Menulis CV ATS",
+    "isi": "Setelah 7 bulan menganggur dan puluhan lamaran ditolak, saya belajar cara membuat CV ATS di Skill4Life dan menguasai VLOOKUP serta Pivot Table. Dalam 3 minggu setelah update CV, saya dipanggil 4 interview dan diterima kerja sebagai staf admin. Platform ini mengubah hidup saya tanpa bayar sepeser pun!",
+    "bintang": 5
+  },
+  {
+    "id": 2,
+    "nama": "Siti Rahmawati",
+    "peran": "Pemilik Usaha Sambal Rumahan 'Dapur Rahma'",
+    "foto": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+    "asal": "Yogyakarta",
+    "kursus": "Memulai Usaha Kecil Modal Minim & WhatsApp Business",
+    "isi": "Dulu saya jualan asal-asalan tanpa tahu HPP sebenarnya, sering merasa ramai pembeli tapi uang modal malah berkurang. Lewat materi UMKM di Skill4Life, saya belajar menghitung biaya gas, kemasan, dan upah diri sendiri. Katalog WhatsApp Business juga membuat pembeli repeat order terus. Alhamdulillah omset naik 3 kali lipat!",
+    "bintang": 5
+  },
+  {
+    "id": 3,
+    "nama": "Ahmad Fauzi",
+    "peran": "Fresh Graduate SMK & Asisten Administrasi",
+    "foto": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80",
+    "asal": "Bandung, Jawa Barat",
+    "kursus": "Microsoft Word untuk Surat & Dokumen Resmi",
+    "isi": "Keluarga saya tidak mampu membiayai kursus komputer berbayar yang harganya ratusan ribu. Skill4Life memberi materi yang sangat terstruktur dari dasar. Sertifikatnya juga resmi dan ada QR verifikasi publik yang bisa saya cantumkan di portofolio magang saya.",
+    "bintang": 5
+  },
+  {
+    "id": 4,
+    "nama": "Dewi Lestari",
+    "peran": "Ibu Rumah Tangga & Pekerja Lepas",
+    "foto": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    "asal": "Semarang, Jawa Tengah",
+    "kursus": "Literasi Keuangan Dasar & Perencanaan Anggaran",
+    "isi": "Modul perencanaan keuangan 50/30/20 membuka mata saya. Kami sekeluarga sempat terlilit utang karena bocor halus belanja harian. Sekarang kami punya dana darurat kecil dan tenang tanpa teror pinjol. Terima kasih Skill4Life untuk ilmu yang sangat berdampak ini!",
+    "bintang": 5
+  }
+]

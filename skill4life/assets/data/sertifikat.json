@@ -1,0 +1,41 @@
+[
+  {
+    "nomor_sertifikat": "S4L-2026-000123",
+    "nama_peserta": "Budi Santoso",
+    "email": "budi@gmail.com",
+    "nama_kursus": "Menulis CV dan surat lamaran kerja",
+    "kursus_slug": "menulis-cv-surat-lamaran-ats",
+    "tanggal_terbit": "2026-11-15",
+    "nilai_kuis": 90,
+    "penyelenggara_nama": "Dr. Ir. Hendra Gunawan, M.T.",
+    "penyelenggara_jabatan": "Direktur Pembina Skill4Life",
+    "kode_verifikasi": "a1b2c3d4e5f67890abcdef1234567890abcdef12",
+    "status": "Terdaftar sah"
+  },
+  {
+    "nomor_sertifikat": "S4L-2026-000124",
+    "nama_peserta": "Siti Rahmawati",
+    "email": "siti@gmail.com",
+    "nama_kursus": "Microsoft Excel dasar",
+    "kursus_slug": "microsoft-excel-dasar",
+    "tanggal_terbit": "2026-11-12",
+    "nilai_kuis": 100,
+    "penyelenggara_nama": "Dr. Ir. Hendra Gunawan, M.T.",
+    "penyelenggara_jabatan": "Direktur Pembina Skill4Life",
+    "kode_verifikasi": "b2c3d4e5f6a17890abcdef1234567890abcdef13",
+    "status": "Terdaftar sah"
+  },
+  {
+    "nomor_sertifikat": "S4L-2026-000125",
+    "nama_peserta": "Ahmad Fauzi",
+    "email": "ahmad.fauzi@gmail.com",
+    "nama_kursus": "Microsoft Word untuk surat dan dokumen resmi",
+    "kursus_slug": "microsoft-word-surat-dokumen",
+    "tanggal_terbit": "2026-11-08",
+    "nilai_kuis": 80,
+    "penyelenggara_nama": "Dr. Ir. Hendra Gunawan, M.T.",
+    "penyelenggara_jabatan": "Direktur Pembina Skill4Life",
+    "kode_verifikasi": "c3d4e5f6a1b27890abcdef1234567890abcdef14",
+    "status": "Terdaftar sah"
+  }
+]

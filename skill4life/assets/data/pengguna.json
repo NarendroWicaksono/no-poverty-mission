@@ -1,0 +1,62 @@
+{
+  "peserta_aktif": {
+    "id": 2,
+    "nama_lengkap": "Budi Santoso",
+    "email": "budi@gmail.com",
+    "nomor_telepon": "085712345678",
+    "pekerjaan": "Pencari kerja",
+    "kursus_diikuti": [
+      {
+        "id_kursus": 5,
+        "judul": "Menulis CV dan surat lamaran kerja",
+        "slug": "menulis-cv-surat-lamaran-ats",
+        "kategori": "Kesiapan karir dan kerja",
+        "level": "Pemula",
+        "progress_persen": 100,
+        "modul_selesai": 4,
+        "total_modul": 4,
+        "lulus_kuis": true,
+        "nilai_kuis": 90,
+        "nomor_sertifikat": "S4L-2026-000123"
+      },
+      {
+        "id_kursus": 1,
+        "judul": "Microsoft Excel dasar",
+        "slug": "microsoft-excel-dasar",
+        "kategori": "Aplikasi perkantoran",
+        "level": "Pemula",
+        "progress_persen": 50,
+        "modul_selesai": 2,
+        "total_modul": 4,
+        "lulus_kuis": false,
+        "nilai_kuis": null,
+        "nomor_sertifikat": null
+      },
+      {
+        "id_kursus": 6,
+        "judul": "Persiapan wawancara kerja dan komunikasi profesional",
+        "slug": "persiapan-wawancara-kerja",
+        "kategori": "Kesiapan karir dan kerja",
+        "level": "Menengah",
+        "progress_persen": 25,
+        "modul_selesai": 1,
+        "total_modul": 4,
+        "lulus_kuis": false,
+        "nilai_kuis": null,
+        "nomor_sertifikat": null
+      }
+    ]
+  },
+  "daftar_peserta": [
+    { "id": 2, "nama": "Budi Santoso", "email": "budi@gmail.com", "pekerjaan": "Pencari kerja", "kota": "Surabaya", "kursus_selesai": 1, "sertifikat": 1, "status": "Aktif", "tgl_daftar": "2026-10-12" },
+    { "id": 3, "nama": "Siti Rahmawati", "email": "siti@gmail.com", "pekerjaan": "Pengelola usaha makanan", "kota": "Yogyakarta", "kursus_selesai": 1, "sertifikat": 1, "status": "Aktif", "tgl_daftar": "2026-10-15" },
+    { "id": 4, "nama": "Ahmad Fauzi", "email": "ahmad.fauzi@gmail.com", "pekerjaan": "Lulusan SMK", "kota": "Bandung", "kursus_selesai": 1, "sertifikat": 1, "status": "Aktif", "tgl_daftar": "2026-10-18" },
+    { "id": 5, "nama": "Dewi Lestari", "email": "dewi.lestari@gmail.com", "pekerjaan": "Pekerja lepas administrasi", "kota": "Semarang", "kursus_selesai": 0, "sertifikat": 0, "status": "Aktif", "tgl_daftar": "2026-10-20" },
+    { "id": 6, "nama": "Rizky Pratama", "email": "rizky.p@gmail.com", "pekerjaan": "Mahasiswa", "kota": "Jakarta", "kursus_selesai": 1, "sertifikat": 1, "status": "Aktif", "tgl_daftar": "2026-10-25" }
+  ],
+  "admin_demo": {
+    "nama": "Administrator Skill4Life",
+    "email": "admin@skill4life.id",
+    "peran": "Pengelola"
+  }
+}
