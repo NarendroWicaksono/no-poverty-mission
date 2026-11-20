@@ -1,0 +1,146 @@
+[
+  {
+    "id_kursus": 1,
+    "judul": "Microsoft Excel dasar",
+    "slug": "microsoft-excel-dasar",
+    "kategori": "Aplikasi perkantoran",
+    "kategori_slug": "aplikasi-perkantoran",
+    "level": "Pemula",
+    "estimasi_waktu": "2.5 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Navigasi lembar sebar, input data, format sel angka dan tanggal, rumus aritmatika, serta pembuatan grafik kerja.",
+    "deskripsi": "Kursus ini ditujukan bagi siapa saja yang ingin memulai pekerjaan administratif kantor atau mengelola pembukuan usaha mandiri. Materi dipelajari langkah demi langkah dari antarmuka dasar, pemformatan rupiah yang benar, fungsi penjumlahan dan rata-rata, hingga pembuatan grafik ringkas.",
+    "tujuan_belajar": [
+      "Menguasai navigasi lembar kerja dan pintasan keyboard utama",
+      "Memformat angka, teks, tanggal, dan mata uang rupiah tanpa merusak perhitungan rumus",
+      "Menggunakan fungsi matematika dasar seperti SUM, AVERAGE, COUNT, MIN, dan MAX",
+      "Membuat tabel kerja rapi dan menyajikannya dalam grafik kolom atau garis"
+    ]
+  },
+  {
+    "id_kursus": 2,
+    "judul": "Microsoft Excel lanjutan",
+    "slug": "microsoft-excel-lanjutan",
+    "kategori": "Aplikasi perkantoran",
+    "kategori_slug": "aplikasi-perkantoran",
+    "level": "Menengah",
+    "estimasi_waktu": "3 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Relasi data VLOOKUP dan XLOOKUP, logika kondisional IF bertingkat, peringkasan laporan dengan Pivot Table, dan validasi sel.",
+    "deskripsi": "Keahlian pengolahan data tingkat menengah yang menjadi syarat utama banyak lowongan kerja staf administrasi, keuangan, dan operasional. Membahas penarikan data lintas tabel, otomatisasi status kelulusan/stok, pembuatan ringkasan Pivot Table dalam hitungan detik, serta teknik pembersihan spasi kotor.",
+    "tujuan_belajar": [
+      "Menguasai pencarian data vertikal dengan VLOOKUP dan fungsi fleksibel XLOOKUP",
+      "Menyusun logika evaluasi bersyarat dengan fungsi IF tunggal dan bertingkat",
+      "Meringkas puluhan ribu baris transaksi tanpa rumus menggunakan Pivot Table dan Slicer",
+      "Mencegah kesalahan ketik data dengan fitur Data Validation"
+    ]
+  },
+  {
+    "id_kursus": 3,
+    "judul": "Microsoft Word untuk surat dan dokumen resmi",
+    "slug": "microsoft-word-surat-dokumen",
+    "kategori": "Aplikasi perkantoran",
+    "kategori_slug": "aplikasi-perkantoran",
+    "level": "Pemula",
+    "estimasi_waktu": "2 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Format baku surat dinas dan niaga, perataan tab stop, penomoran halaman berbeda cover-isi, serta cetak massal Mail Merge.",
+    "deskripsi": "Panduan menghasilkan dokumen tata persuratan yang rapi dan sesuai standar administrasi perkantoran Indonesia. Peserta mempelajari penataan margin kertas A4, penomoran berjenjang, pembuatan kop surat profesional, dan pembuatan ratusan surat undangan otomatis dari lembar Excel.",
+    "tujuan_belajar": [
+      "Menerapkan aturan margin, spasi baris, dan jenis huruf resmi perkantoran",
+      "Meluruskan tanda titik dua biodata dengan tab stop tanpa spasi berulang",
+      "Memisahkan format nomor halaman romawi dan latin dengan Section Break",
+      "Menghubungkan data penerima di Excel ke naskah Word dengan Mail Merge"
+    ]
+  },
+  {
+    "id_kursus": 4,
+    "judul": "Microsoft PowerPoint untuk presentasi efektif",
+    "slug": "microsoft-powerpoint-presentasi",
+    "kategori": "Aplikasi perkantoran",
+    "kategori_slug": "aplikasi-perkantoran",
+    "level": "Pemula",
+    "estimasi_waktu": "2 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Hierarki teks, pengubahan paragraf menjadi diagram alur, pemilihan warna baca, transisi halus, dan etika penyampaian ide.",
+    "deskripsi": "Mengubah kebiasaan memindahkan paragraf panjang ke layar proyektor menjadi tayangan slide yang ringkas, bersih, dan memikat pendengar. Pembahasan mencakup prinsip ruang kosong, SmartArt, mode Presenter View, dan persiapan mental menjawab pertanyaan audiens.",
+    "tujuan_belajar": [
+      "Menerapkan kaidah visual ruang kosong dan batas maksimal kata per slide",
+      "Mengubah daftar poin teks panjang menjadi diagram proses dengan SmartArt",
+      "Menggunakan animasi transisi terukur tanpa mengalihkan fokus pendengar",
+      "Menggunakan fitur Presenter View saat memaparkan materi di depan umum"
+    ]
+  },
+  {
+    "id_kursus": 5,
+    "judul": "Menulis CV dan surat lamaran kerja",
+    "slug": "menulis-cv-surat-lamaran-ats",
+    "kategori": "Kesiapan karir dan kerja",
+    "kategori_slug": "kesiapan-karir-kerja",
+    "level": "Pemula",
+    "estimasi_waktu": "2.5 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Format resume terbaca sistem seleksi ATS, perumusan pengalaman berbasis hasil nyata, serta surat lamaran yang fokus pada kebutuhan posisi.",
+    "deskripsi": "Panduan praktis agar berkas lamaran kerja tidak gugur di tahap penyaringan awal. Menjelaskan cara mesin ATS membaca resume satu kolom, kata kerja aksi untuk menuliskan pencapaian kerja, struktur surat lamaran tiga paragraf, dan portofolio pendukung kompetensi.",
+    "tujuan_belajar": [
+      "Menyusun tata letak resume satu kolom yang mudah dipindai software ATS",
+      "Merumuskan tanggung jawab kerja menjadi kalimat capaian terukur",
+      "Menulis surat lamaran yang secara spesifik menjawab syarat lowongan",
+      "Menghindari kekeliruan umum penamaan berkas dan pencantuman data pribadi yang tidak relevan"
+    ]
+  },
+  {
+    "id_kursus": 6,
+    "judul": "Persiapan wawancara kerja dan komunikasi profesional",
+    "slug": "persiapan-wawancara-kerja",
+    "kategori": "Kesiapan karir dan kerja",
+    "kategori_slug": "kesiapan-karir-kerja",
+    "level": "Menengah",
+    "estimasi_waktu": "2.5 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Struktur perkenalan diri, teknik menjawab studi kasus perilaku metode STAR, kontak mata pada wawancara daring, dan tindak lanjut pascawawancara.",
+    "deskripsi": "Mempersiapkan calon pekerja menghadapi tahap seleksi tatap muka maupun daring dengan percaya diri. Mempelajari rumus perkenalan 90 detik, metode STAR untuk membuktikan kompetensi masa lalu, bahasa tubuh yang tenang, serta etika mengirimkan catatan terima kasih.",
+    "tujuan_belajar": [
+      "Menjawab pertanyaan perkenalan diri dengan urutan sekarang, masa lalu, dan rencana kontribusi",
+      "Menyusun cerita pengalaman kerja menggunakan pola Situation, Task, Action, dan Result",
+      "Menjaga kontak mata dan intonasi suara baik pada interview luring maupun Zoom",
+      "Mengajukan pertanyaan berkualitas kepada pewawancara di akhir sesi"
+    ]
+  },
+  {
+    "id_kursus": 7,
+    "judul": "Literasi keuangan dasar dan pengelolaan gaji",
+    "slug": "literasi-keuangan-dasar",
+    "kategori": "Kewirausahaan dan literasi keuangan",
+    "kategori_slug": "kewirausahaan-literasi-keuangan",
+    "level": "Pemula",
+    "estimasi_waktu": "1.5 jam",
+    "jumlah_modul": 3,
+    "ringkasan": "Pencatatan arus kas harian, metode alokasi gaji 50/30/20, dana darurat, serta perlindungan diri dari jebakan pinjaman daring ilegal.",
+    "deskripsi": "Keterampilan mengelola pendapatan agar tidak habis sebelum akhir bulan dan terhindar dari jeratan utang konsumtif. Peserta mempelajari cara membedakan kebutuhan pokok dan keinginan, menyisihkan dana darurat dari penghasilan minimal, serta mengenali ciri-ciri penawaran pinjaman dan investasi ilegal.",
+    "tujuan_belajar": [
+      "Mencatat pemasukan dan pengeluaran harian secara disiplin",
+      "Menerapkan alokasi anggaran 50% kebutuhan, 30% keinginan, dan 20% tabungan",
+      "Membangun dana darurat secara bertahap sesuai kemampuan penghasilan",
+      "Mengidentifikasi risiko pinjaman berbunga tinggi dan investasi bodong"
+    ]
+  },
+  {
+    "id_kursus": 8,
+    "judul": "Memulai usaha kecil modal minim dan pemasaran gratis",
+    "slug": "memulai-usaha-kecil-modal-minim",
+    "kategori": "Kewirausahaan dan literasi keuangan",
+    "kategori_slug": "kewirausahaan-literasi-keuangan",
+    "level": "Pemula",
+    "estimasi_waktu": "2.5 jam",
+    "jumlah_modul": 4,
+    "ringkasan": "Riset kebutuhan lingkungan sekitar, perhitungan HPP dan harga jual, pemanfaatan WhatsApp Bisnis, serta teknik foto produk modal ponsel.",
+    "deskripsi": "Panduan praktis membuka usaha rumahan atau mikro dari keterampilan yang sudah dimiliki dengan modal terbatas. Membahas cara mencari peluang pasar di lingkungan sekitar, menghitung Harga Pokok Penjualan (HPP) secara cermat agar tidak merugi, dan memasarkan produk secara gratis melalui WhatsApp Bisnis serta media sosial.",
+    "tujuan_belajar": [
+      "Menemukan peluang usaha mikro dari permasalahan di lingkungan sekitar",
+      "Menghitung biaya bahan baku, operasional, dan menentukan harga jual menguntungkan",
+      "Membuat katalog produk rapi menggunakan WhatsApp Bisnis",
+      "Mengambil foto produk yang layak jual hanya bermodal kamera ponsel"
+    ]
+  }
+]
