@@ -1,5 +1,4 @@
 <?php
-// Sidebar panel pengelola Skill4Life
 $currentAdminPage = basename($_SERVER['PHP_SELF']);
 ?>
 <aside class="sidebar-aplikasi">
@@ -47,9 +46,10 @@ $currentAdminPage = basename($_SERVER['PHP_SELF']);
   </div>
 </aside>
 
-<script>
-  document.getElementById('btn-logout-sidebar')?.addEventListener('click', () => {
-    localStorage.removeItem('s4l_user');
+<script type="module">
+  import { keluarAkun } from '../assets/js/api.js';
+  document.getElementById('btn-logout-sidebar')?.addEventListener('click', async () => {
+    await keluarAkun();
     window.location.href = 'login.php';
   });
 </script>

@@ -280,7 +280,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-success">
   <strong>Latihan Mandiri 1:</strong> Buka program Microsoft Excel atau Google Spreadsheet. Cobalah ketik nama Anda di sel A1, alamat di A2, dan nomor telepon di A3. Gunakan tombol Tab untuk bergeser ke kolom kanan dan Enter untuk bergeser ke baris bawah.
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/rwbho0CgEAE'),
 (2, 1, 'Input Data, Tipe Data & Format Sel (Number, Currency, Date)', 2, 25, '<h3>Tipe Data dalam Excel & Pemformatan yang Tepat</h3>
 <p>Salah satu kesalahan paling umum pemula adalah memperlakukan angka seperti teks. Di dalam Excel, setiap jenis data memiliki perlakuan yang berbeda. Memahami tipe data akan mencegah rumus Anda menghasilkan nilai error seperti <code>#VALUE!</code>.</p>
 
@@ -298,7 +298,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </div>
 
 <h4>Mengatur Format Tanggal (Date Format)</h4>
-<p>Pastikan pengaturan regional di komputer Anda sesuai. Format tanggal Indonesia umumnya adalah <code>DD/MM/YYYY</code> (Hari/Bulan/Tahun). Jika ingin menampilkan tanggal lengkap seperti <em>17 Agustus 2026</em>, klik kanan sel &gt; <strong>Format Cells &gt; Date &gt; Pilih format tanggal panjang</strong>.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Pastikan pengaturan regional di komputer Anda sesuai. Format tanggal Indonesia umumnya adalah <code>DD/MM/YYYY</code> (Hari/Bulan/Tahun). Jika ingin menampilkan tanggal lengkap seperti <em>17 Agustus 2026</em>, klik kanan sel &gt; <strong>Format Cells &gt; Date &gt; Pilih format tanggal panjang</strong>.</p>', 'https://www.youtube.com/embed/k1VUZEVuDJ8'),
 (3, 1, 'Rumus Aritmatika & Fungsi Statistik Esensial (SUM, AVERAGE, MIN, MAX, COUNT)', 3, 30, '<h3>Menguasai Rumus Matematika dan Fungsi Dasar Excel</h3>
 <p>Semua penulisan rumus (formula) atau fungsi di Excel <strong>WAJIB diawali dengan tanda sama dengan (=)</strong>. Jika tidak diawali tanda sama dengan, Excel hanya akan menampilkannya sebagai teks biasa.</p>
 
@@ -356,7 +356,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-info">
   <strong>Fitur AutoSum:</strong> Anda bisa menggunakan tombol cepat <code>Alt + =</code> di keyboard pada sel tepat di bawah deretan angka untuk menjumlahkan secara instan!
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/8L1OVkw2ZQ8'),
 (4, 1, 'Membuat Tabel Rapi, Freeze Panes & Grafik Visual', 4, 25, '<h3>Menata Data Profesional dengan Tabel dan Grafik</h3>
 <p>Setelah Anda berhasil menginput dan menghitung data, langkah penting berikutnya adalah menyajikan data tersebut agar enak dilihat dan mudah dipahami oleh rekan kerja, pimpinan, atau klien.</p>
 
@@ -408,7 +408,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-success">
   <strong>Tips Praktis:</strong> Teks hasil di dalam rumus Excel selalu harus diapit tanda petik ganda <code>"Teks"</code>. Namun jika hasilnya berupa angka, tidak perlu menggunakan tanda petik (misalnya: <code>=IF(A1="Member", 0.1, 0)</code>).
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/iX6b58OlsGU'),
 (6, 2, 'Relasi Data Cepat dengan VLOOKUP & XLOOKUP', 2, 35, '<h3>Mencari Data Antar Tabel dengan VLOOKUP dan XLOOKUP</h3>
 <p>Di tempat kerja, data sering tersebar di beberapa tabel terpisah, misalnya: Tabel Transaksi Kasir hanya berisi Kode Barang, sedangkan Nama Barang dan Harga Satuan tersimpan di Tabel Master Barang. Di sinilah fungsi pencarian (Lookup) bekerja.</p>
 
@@ -429,7 +429,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 <h4>2. Revolusi XLOOKUP (Excel Modern)</h4>
 <p>Jika Anda memakai Microsoft 365 atau Excel versi terbaru, <code>XLOOKUP</code> menggantikan fungsi VLOOKUP dengan jauh lebih fleksibel:</p>
 <code>=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found])</code>
-<p>Kelebihan XLOOKUP: bisa mencari ke kiri maupun ke kanan, tidak memerlukan penghitungan nomor kolom manual, dan menyediakan opsi pesan bawaan jika data tidak ditemukan (misal: <code>"Barang Tidak Terdaftar"</code>).</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Kelebihan XLOOKUP: bisa mencari ke kiri maupun ke kanan, tidak memerlukan penghitungan nomor kolom manual, dan menyediakan opsi pesan bawaan jika data tidak ditemukan (misal: <code>"Barang Tidak Terdaftar"</code>).</p>', 'https://www.youtube.com/embed/xIynD1gFOLo'),
 (7, 2, 'Meringkas Ribuan Data Seketika dengan Pivot Table', 3, 30, '<h3>Analisis Data Tanpa Rumus Menggunakan Pivot Table</h3>
 <p>Pivot Table adalah salah satu fitur paling disukai oleh analis data dan manajer di seluruh dunia. Tanpa perlu mengetik satu rumus pun, Anda dapat mengubah puluhan ribu baris transaksi menjadi ringkasan laporan keuangan atau kinerja penjualan dalam beberapa detik.</p>
 
@@ -451,7 +451,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 <div class="alert-box alert-info">
   <strong>Tips: Slicer Interaktif</strong><br>
   Tambahkan <strong>Slicer</strong> pada Pivot Table Anda melalui menu <em>PivotTable Analyze &gt; Insert Slicer</em>. Slicer berfungsi sebagai tombol filter visual berdesain modern yang sangat menarik saat dipresentasikan ke pimpinan.
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/m0wI61ahfLc'),
 (8, 2, 'Pembersihan Data (Data Cleansing) & Validasi Input', 4, 25, '<h3>Menjaga Akurasi Data Perusahaan</h3>
 <p>Prinsip utama data adalah <em>"Garbage In, Garbage Out"</em> (jika data yang diinput berantakan, maka laporan yang dihasilkan juga akan salah). Di modul ini, Anda akan mempelajari teknik membersihkan data yang kotor dari sumber eksternal.</p>
 
@@ -470,7 +470,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li>Pada opsi <em>Allow</em>, pilih <strong>List</strong>.</li>
   <li>Pada kolom <em>Source</em>, ketik opsi yang diperbolehkan dipisahkan tanda koma: <code>Keuangan, Pemasaran, Operasional, HRD</code>.</li>
   <li>Hasilnya: Pengguna hanya bisa memilih opsi dari menu dropdown yang muncul di sel tersebut!</li>
-</ol>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ol>', 'https://www.youtube.com/embed/ka09v8z_BN0'),
 (9, 3, 'Standar Dokumen Formal, Margin, Kop Surat & Font Resmi', 1, 20, '<h3>Mengenal Format Standar Dokumen Administrasi Perkantoran</h3>
 <p>Surat dan dokumen resmi mencerminkan kredibilitas institusi, perusahaan, maupun diri Anda sebagai profesional. Modul ini mengajarkan aturan tata letak yang berlaku umum di dunia kerja Indonesia.</p>
 
@@ -496,7 +496,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ul>
 
 <h4>3. Merancang Kop Surat (Header) yang Rapi</h4>
-<p>Gunakan fitur <em>Insert &gt; Header</em>. Trik profesional: masukkan tabel 2 kolom tanpa garis (No Border) di dalam Header. Kolom kiri untuk logo organisasi, dan kolom kanan untuk nama instansi, alamat lengkap, kontak telepon, dan email resmi. Tambahkan garis batas bawah kop surat dengan fitur <em>Borders and Shading</em>.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Gunakan fitur <em>Insert &gt; Header</em>. Trik profesional: masukkan tabel 2 kolom tanpa garis (No Border) di dalam Header. Kolom kiri untuk logo organisasi, dan kolom kanan untuk nama instansi, alamat lengkap, kontak telepon, dan email resmi. Tambahkan garis batas bawah kop surat dengan fitur <em>Borders and Shading</em>.</p>', 'https://www.youtube.com/embed/S-nHYzK-BVg'),
 (10, 3, 'Tata Letak Paragraf, Tab Stop & Penomoran Otomatis', 2, 25, '<h3>Membuat Dokumen Rapi Tanpa Menekan Tombol Spasi Berkali-kali</h3>
 <p>Kebiasaan buruk pemula adalah meratakan teks titik dua (:) atau tanda tangan dengan menekan tombol spasi berkali-kali. Cara tersebut akan membuat dokumen berantakan saat dibuka di komputer lain atau dicetak!</p>
 
@@ -510,7 +510,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ol>
 
 <h4>Penomoran Berjenjang (Multilevel List)</h4>
-<p>Untuk menyusun laporan atau proposal yang memiliki bab dan sub-bab (contoh: 1.1, 1.2, 1.2.1), gunakan fitur <strong>Multilevel List</strong> di tab Home. Jangan pernah mengetik nomor bab secara manual agar urutan nomor tidak rusak saat ada pasal atau bab baru yang ditambahkan di tengah.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Untuk menyusun laporan atau proposal yang memiliki bab dan sub-bab (contoh: 1.1, 1.2, 1.2.1), gunakan fitur <strong>Multilevel List</strong> di tab Home. Jangan pernah mengetik nomor bab secara manual agar urutan nomor tidak rusak saat ada pasal atau bab baru yang ditambahkan di tengah.</p>', 'https://www.youtube.com/embed/O7K3K1qK0Uo'),
 (11, 3, 'Penomoran Halaman Berbeda (Page Numbering & Section Breaks)', 3, 30, '<h3>Kunci Menulis Laporan Resmi & Skripsi: Section Breaks</h3>
 <p>Sering kali dalam dokumen formal, halaman Cover tidak boleh memiliki nomor halaman, halaman Kata Pengantar dan Daftar Isi memakai angka romawi kecil (i, ii, iii), sedangkan Bab Isi memakai angka latin (1, 2, 3). Kuncinya adalah menggunakan <strong>Section Break</strong>.</p>
 
@@ -523,7 +523,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-success">
   Dengan trik ini, Anda bisa mengontrol nomor halaman pada dokumen setebal apa pun secara profesional tanpa perlu memecah file Word menjadi beberapa dokumen terpisah.
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/n4_wO0BqCqo'),
 (12, 3, 'Mail Merge Otomatis & Ekspor PDF Berkualitas Tinggi', 4, 25, '<h3>Mengirim Ratusan Surat Sekali Klik dengan Mail Merge</h3>
 <p>Bayangkan Anda harus membuat 200 surat undangan atau sertifikat kegiatan dengan nama dan alamat penerima yang berbeda-beda. Mengetik satu per satu memakan waktu berjam-jam. Fitur <strong>Mail Merge</strong> menghubungkan dokumen Word Anda dengan data nama di file Excel!</p>
 
@@ -538,7 +538,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ol>
 
 <h4>Menyimpan ke Format PDF</h4>
-<p>Sebelum mengirim dokumen ke atasan atau klien via WhatsApp/Email, selalu konversi ke format PDF agar tata letak tidak bergeser di perangkat penerima. Caranya: <strong>File &gt; Save As &gt; PDF (*.pdf)</strong> atau gunakan menu <strong>Export &gt; Create PDF/XPS</strong>.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Sebelum mengirim dokumen ke atasan atau klien via WhatsApp/Email, selalu konversi ke format PDF agar tata letak tidak bergeser di perangkat penerima. Caranya: <strong>File &gt; Save As &gt; PDF (*.pdf)</strong> atau gunakan menu <strong>Export &gt; Create PDF/XPS</strong>.</p>', 'https://www.youtube.com/embed/rGG-In7PAEk'),
 (13, 4, 'Prinsip Desain Slide Modern: Less is More & Hierarki Visual', 1, 20, '<h3>Prinsip Desain Slide yang Disukai Audiens dan Profesional</h3>
 <p>Banyak presentasi gagal bukan karena pembicara tidak menguasai materi, melainkan karena slide yang ditampilkan seperti buku teks yang dipindahkan ke layar proyektor. Slide presentasi adalah alat bantu visual (visual aid), bukan naskah membaca untuk pembicara!</p>
 
@@ -552,7 +552,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-info">
   <strong>Gunakan Palet Warna Terbatas:</strong> Pilih maksimal 3 warna konsisten: 1 warna latar belakang (dominan putih atau abu-abu terang), 1 warna teks utama (hitam atau abu gelap), dan 1 warna aksen tegas (misal hijau teal atau kuning keemasan) untuk menyorot kata kunci penting.
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/lwpeqflhyEE'),
 (14, 4, 'Mengubah Paragraf Membosankan Menjadi Visual & SmartArt', 2, 25, '<h3>Visual Storytelling: Ganti Teks dengan Infografis</h3>
 <p>Otak manusia memproses gambar 60.000 kali lebih cepat daripada teks tertulis. Jika Anda memiliki langkah-langkah kerja atau alur proses, jangan tuliskan dalam bentuk paragraf panjang.</p>
 
@@ -566,7 +566,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ol>
 
 <h4>2. Menggunakan Ikon Vektor daripada Gambar Berat</h4>
-<p>Ikon mempercepat pemahaman audiens. Buka menu <strong>Insert &gt; Icons</strong>. Cari kata kunci seperti "target", "waktu", "uang", "pertumbuhan". Ikon di PowerPoint berbasis vektor, sehingga warnanya bisa diganti sesuai tema dan ukurannya tidak akan pecah saat diperbesar.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Ikon mempercepat pemahaman audiens. Buka menu <strong>Insert &gt; Icons</strong>. Cari kata kunci seperti "target", "waktu", "uang", "pertumbuhan". Ikon di PowerPoint berbasis vektor, sehingga warnanya bisa diganti sesuai tema dan ukurannya tidak akan pecah saat diperbesar.</p>', 'https://www.youtube.com/embed/Q43eJg3iXis'),
 (15, 4, 'Animasi Halus & Transisi Efektif (Morph Transition)', 3, 25, '<h3>Kapan dan Bagaimana Menggunakan Efek Animasi</h3>
 <p>Efek animasi yang berlebihan (tulisan berputar-putar, suara tepuk tangan otomatis) akan menurunkan derajat profesionalisme presentasi Anda dan mengalihkan perhatian audiens. Gunakan animasi hanya untuk mengendalikan alur perhatian.</p>
 
@@ -577,7 +577,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ul>
 
 <h4>Keajaiban Efek Transisi MORPH</h4>
-<p>Di PowerPoint versi terbaru, fitur transisi <strong>Morph</strong> memungkinkan objek bergerak secara mulus dari satu posisi ke posisi lain antar dua slide berturut-turut. Ini memberi kesan presentasi Anda tampak seperti video animasi profesional buatan desainer grafis handal.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Di PowerPoint versi terbaru, fitur transisi <strong>Morph</strong> memungkinkan objek bergerak secara mulus dari satu posisi ke posisi lain antar dua slide berturut-turut. Ini memberi kesan presentasi Anda tampak seperti video animasi profesional buatan desainer grafis handal.</p>', 'https://www.youtube.com/embed/7u5mQ6rfows'),
 (16, 4, 'Persiapan Teknis & Menghadapi Sesi Tanya Jawab (Q&A)', 4, 20, '<h3>Etika & Kesiapan Mental Presenter Profesional</h3>
 <p>Bahkan slide terindah sekalipun tidak akan berdampak tanpa persiapan eksekusi yang matang di hari H.</p>
 
@@ -589,7 +589,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li>Dengarkan pertanyaan sampai selesai tanpa memotong kalimat penanya.</li>
   <li>Ulangi inti pertanyaan secara ringkas untuk memastikan Anda dan seluruh hadirin memahami konteksnya sama.</li>
   <li>Jika Anda belum mengetahui data persisnya, jangan berbohong atau mengarang! Katakan dengan jujur dan tawarkan tindak lanjut: <em>"Pertanyaan yang sangat tajam. Saya tidak memegang angka rincian untuk kuartal tersebut saat ini, namun saya akan mencatat kontak Bapak/Ibu dan mengirimkan laporannya sore ini."</em></li>
-</ul>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ul>', 'https://www.youtube.com/embed/D8JV3w4TOVw'),
 (17, 5, 'Mengenal Sistem ATS (Applicant Tracking System) & Format Resume Standar', 1, 25, '<h3>Bagaimana Robot ATS Menyaring Lamaran Anda</h3>
 <p>Perusahaan berskala menengah dan besar menerima ratusan hingga ribuan pelamar untuk satu posisi lowongan kerja. Mustahil bagi tim HRD membaca satu per satu resume secara manual di tahap awal. Mereka menggunakan software bernama <strong>Applicant Tracking System (ATS)</strong> untuk membaca teks CV dan memberi peringkat skor relevansi.</p>
 
@@ -603,7 +603,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li><strong>Font Standar yang Terbaca Mesin:</strong> Gunakan Arial, Calibri, Garamond, Georgia, atau Helvetica. Hindari font dekoratif atau kaligrafi.</li>
   <li><strong>Judul Bagian yang Baku:</strong> Gunakan istilah standar seperti <em>Ringkasan Profil (Professional Summary)</em>, <em>Pengalaman Kerja (Work Experience)</em>, <em>Pendidikan (Education)</em>, dan <em>Keterampilan (Skills)</em>. Jangan gunakan istilah puitis seperti "Jejak Langkahku".</li>
   <li><strong>Format File:</strong> Simpan dalam format <code>.PDF</code> berbasis teks (bisa di-blok/copy teksnya) atau <code>.DOCX</code>.</li>
-</ol>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ol>', 'https://www.youtube.com/embed/ujPEb8f8huQ'),
 (18, 5, 'Merumuskan Pengalaman Kerja Berbasis Dampak (Formula XYZ Google)', 2, 30, '<h3>Tinggalkan Deskripsi Tugas Membosankan, Tampilkan Prestasi Nyata!</h3>
 <p>Banyak pencari kerja hanya menuliskan daftar tugas harian di CV, contohnya: <em>"Bertanggung jawab menginput data penjualan dan melayani pelanggan."</em> Kalimat ini pasif dan tidak membedakan Anda dari ratusan pelamar lainnya.</p>
 
@@ -637,7 +637,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </table>
 
 <h4>Gunakan Kata Kerja Aksi (Action Verbs):</h4>
-<p>Awali setiap poin pengalaman dengan kata kerja aktif: <em>Mengembangkan, Mengoptimalkan, Menginisiasi, Mengkoordinasikan, Memangkas biaya, Memimpin, Merancang.</em></p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Awali setiap poin pengalaman dengan kata kerja aktif: <em>Mengembangkan, Mengoptimalkan, Menginisiasi, Mengkoordinasikan, Memangkas biaya, Memimpin, Merancang.</em></p>', 'https://www.youtube.com/embed/Tt08KmFfIYQ'),
 (19, 5, 'Menulis Surat Lamaran (Cover Letter) yang Menggugah HRD', 3, 25, '<h3>Surat Lamaran Bukan Salinan CV, Tapi Cerita Motivasi Anda</h3>
 <p>Surat lamaran kerja (Cover Letter) adalah kesempatan Anda menunjukkan kepribadian, antusiasme terhadap perusahaan yang dilamar, dan alasan mengapa latar belakang Anda adalah solusi untuk kebutuhan posisi tersebut.</p>
 
@@ -650,7 +650,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-warning">
   <strong>Peringatan Penting:</strong> Jangan pernah mengirim satu surat lamaran yang sama untuk 10 perusahaan berbeda tanpa mengubah nama perusahaan dan kebutuhan posisi. HRD yang berpengalaman dapat mencium surat lamaran ''copy-paste'' dalam 5 detik pertama!
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/Q7Vq1158bTQ'),
 (20, 5, 'Optimasi Portofolio Digital & Checklist Final Sebelum Mengirim', 4, 20, '<h3>Bukti Nyata Karya: Bangun Portofolio Sederhana tapi Meyakinkan</h3>
 <p>Di era digital, rekruter ingin melihat bukti kompetensi Anda (Proof of Work). Walaupun Anda belum memiliki pengalaman kerja formal kantor, Anda tetap bisa membuat portofolio dari tugas kursus atau proyek sukarela!</p>
 
@@ -667,7 +667,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li>[ ] Bebas dari salah ketik (typo) dan tanda baca berantakan.</li>
   <li>[ ] Nomor telepon WhatsApp dan alamat email aktif dan bisa dihubungi kapan saja.</li>
   <li>[ ] Alamat email formal (misal: <code>budi.santoso@email.com</code>, bukan nama akun permainan atau alay).</li>
-</ul>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ul>', 'https://www.youtube.com/embed/-Q1aIA1qMzs'),
 (21, 6, 'Bedah Pertanyaan Pembuka: ''Ceritakan Tentang Diri Anda''', 1, 25, '<h3>Mengawali Wawancara dengan Percaya Diri dan Memikat</h3>
 <p>Hampir 95% sesi wawancara kerja selalu diawali dengan pertanyaan: <em>"Silakan perkenalkan diri Anda"</em> atau <em>"Ceritakan tentang diri Anda"</em>. Ini bukan berarti pewawancara ingin mendengar riwayat masa kecil atau hobi pribadi Anda yang tidak ada hubungannya dengan pekerjaan.</p>
 
@@ -680,7 +680,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-info">
   <strong>Durasi Ideal:</strong> Jaga jawaban perkenalan Anda antara <strong>1.5 hingga 2 menit</strong>. Jangan terlalu singkat (di bawah 30 detik) dan jangan terlalu bertele-tele hingga membosankan pewawancara.
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/l_kJgyhbYio'),
 (22, 6, 'Menjawab Pertanyaan Behavioral dengan Metode STAR', 2, 30, '<h3>Rahasia Menjawab Pertanyaan Studi Kasus Perilaku HRD</h3>
 <p>Pewawancara sering mengajukan pertanyaan berbasis pengalaman masa lalu untuk memprediksi perilaku kerja Anda di masa mendatang, contoh: <em>"Ceritakan saat Anda menghadapi tenggat waktu (deadline) yang sangat sempit dan apa yang Anda lakukan?"</em></p>
 
@@ -695,7 +695,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 <div class="alert-box alert-success">
   <strong>Contoh Nyata Jawaban STAR:</strong><br>
   <em>"Pada proyek kegiatan sebelumnya (S), sistem pembukuan kas masih dicatat manual di buku tulis sehingga sering terjadi selisih pencatatan (T). Saya berinisiatif merancang template spreadsheet Excel otomatis lengkap dengan rumus validasi dan melatih rekan tim selama 2 hari (A). Hasilnya, selisih laporan kas berkurang hingga 100% dan waktu tutup buku bulanan menjadi 3 hari lebih cepat (R)."</em>
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/gZ2354BH0a0'),
 (23, 6, 'Bahasa Tubuh, Etika Interview Daring/Luring & Kontak Mata', 3, 20, '<h3>Kesan Pertama (First Impression) Terbentuk dalam 7 Detik Pertama</h3>
 <p>Komunikasi bukan hanya tentang kata-kata yang diucapkan, melainkan juga sinyal non-verbal yang Anda pancarkan ke ruangan wawancara.</p>
 
@@ -711,7 +711,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li>Uji mikrofon, kamera, dan kestabilan koneksi internet 30 menit sebelum jadwal.</li>
   <li>Pastikan pencahayaan datang dari depan wajah Anda (bukan membelakangi lampu/jendela yang membuat wajah gelap).</li>
   <li><strong>Trik Kontak Mata Daring:</strong> Saat berbicara, tatap langsung lubang lensa kamera web (webcam) Anda, bukan layar monitor, agar pewawancara merasa sedang ditatap matanya secara langsung!</li>
-</ul>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ul>', 'https://www.youtube.com/embed/wX-yU1L5N-8'),
 (24, 6, 'Pertanyaan Balik untuk HRD, Negosiasi Gaji & Email Ucapan Terima Kasih', 4, 25, '<h3>Menutup Sesi Wawancara dengan Kesan Luar Biasa</h3>
 <p>Di akhir wawancara, pewawancara hampir selalu bertanya: <em>"Apakah ada pertanyaan yang ingin Anda tanyakan kepada kami?"</em>. Jika Anda menjawab <em>"Tidak ada, sudah cukup jelas"</em>, Anda melewatkan kesempatan emas untuk menunjukkan bahwa Anda orang yang bersemangat dan kritis!</p>
 
@@ -723,7 +723,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ol>
 
 <h4>Kirim Email Ucapan Terima Kasih (Thank You Note)</h4>
-<p>Kirimkan email singkat dalam kurun waktu maksimal 24 jam setelah sesi interview. Ucapkan terima kasih atas waktu mereka, sebutkan secara singkat satu poin menarik yang sempat dibahas saat wawancara, dan tegaskan kembali antusiasme Anda untuk bergabung. Tindakan sederhana ini membedakan Anda dari 90% pelamar lainnya.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Kirimkan email singkat dalam kurun waktu maksimal 24 jam setelah sesi interview. Ucapkan terima kasih atas waktu mereka, sebutkan secara singkat satu poin menarik yang sempat dibahas saat wawancara, dan tegaskan kembali antusiasme Anda untuk bergabung. Tindakan sederhana ini membedakan Anda dari 90% pelamar lainnya.</p>', 'https://www.youtube.com/embed/qrLlE7AtrI8'),
 (25, 7, 'Pola Pikir Keuangan & Alokasi Anggaran Sederhana (Formula 50/30/20)', 1, 20, '<h3>Mengubah Hubungan Anda dengan Uang</h3>
 <p>Kemiskinan dan kesulitan finansial sering kali diperparah bukan hanya karena pendapatan yang terbatas, melainkan karena ketiadaan sistem pengelolaan arus kas (cash flow) yang terencana. Uang masuk langsung habis tanpa jejak.</p>
 
@@ -737,7 +737,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 <div class="alert-box alert-success">
   <strong>Prinsip Utama: Menabung di Awal, Bukan di Akhir!</strong><br>
   Begitu Anda menerima gaji atau penghasilan hasil penjualan hari ini, langsung sisihkan persentase tabungan ke rekening atau amplop terpisah. Jangan menunggu sisa uang di akhir bulan, karena uang tidak pernah bersisa jika tidak dialokasikan di awal!
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/n4YoZDQs6VA'),
 (26, 7, 'Membangun Dana Darurat dari Nol & Catatan Kas Harian', 2, 25, '<h3>Penyelamat dari Badai Kehidupan: Dana Darurat</h3>
 <p>Banyak keluarga yang tadinya berkecukupan tiba-tiba jatuh miskin hanya karena satu musibah: anggota keluarga sakit keras, motor satu-satunya untuk ngojek mogok, atau pemutusan hubungan kerja (PHK) mendadak. Tanpa dana darurat, satu-satunya jalan keluar yang diambil sering kali adalah berhutang dengan bunga tinggi.</p>
 
@@ -749,7 +749,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ul>
 
 <h4>Cara Mulai Mencatat Kas Tanpa Ribet:</h4>
-<p>Gunakan aplikasi gratis di HP atau buku tulis saku. Catat setiap pengeluaran sekecil apa pun (termasuk uang parkir Rp 2.000 atau air mineral). Di akhir minggu, evaluasi: Anda akan terkejut melihat betapa banyak uang yang bocor halus pada pengeluaran-pengeluaran kecil yang sebenarnya tidak penting!</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Gunakan aplikasi gratis di HP atau buku tulis saku. Catat setiap pengeluaran sekecil apa pun (termasuk uang parkir Rp 2.000 atau air mineral). Di akhir minggu, evaluasi: Anda akan terkejut melihat betapa banyak uang yang bocor halus pada pengeluaran-pengeluaran kecil yang sebenarnya tidak penting!</p>', 'https://www.youtube.com/embed/n4YoZDQs6VA'),
 (27, 7, 'Mengenali Jebakan Pinjol Ilegal & Menghindari Jerat Hutang Konsumtif', 3, 25, '<h3>Waspada Predator Finansial yang Menghancurkan Masa Depan</h3>
 <p>Kemudahan teknologi membuat pinjaman online (pinjol) ilegal dan paylater merajalela menyasar masyarakat berpenghasilan rendah dengan iming-iming <em>"Cair 5 Menit Tanpa Jaminan"</em>. Dampaknya adalah teror penagihan kasar, bunga harian berlipat ganda, dan kepanikan keluarga.</p>
 
@@ -788,7 +788,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-danger">
   <strong>Aturan Emas:</strong> Jangan pernah meminjam uang untuk kebutuhan konsumtif (membeli gadget baru, gaya hidup, atau gengsi). Hutang hanya boleh dipertimbangkan untuk aset produktif yang menghasilkan keuntungan lebih besar dari bunga pinjaman!
-</div>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</div>', 'https://www.youtube.com/embed/n4YoZDQs6VA'),
 (28, 8, 'Validasi Ide Bisnis dari Masalah Nyata di Sekitar', 1, 25, '<h3>Bisnis yang Sukses Berawal dari Solusi Masalah Nyata</h3>
 <p>Banyak pemula gagal karena membuat produk yang mereka sukai sendiri, tanpa pernah mengecek apakah ada orang yang mau membayar produk tersebut. Bisnis adalah pertukaran nilai: Anda menyelesaikan masalah orang lain, dan orang lain dengan senang hati membayar Anda.</p>
 
@@ -797,7 +797,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li><strong>Amati Keluhan di Lingkungan Anda:</strong> Apakah tetangga Anda kesulitan mencari sarapan bergizi yang bersih dan cepat di pagi hari? Apakah banyak kantor sekitar yang butuh jasa laundry kilat atau snack sore?</li>
   <li><strong>Kombinasikan dengan Keterampilan yang Anda Miliki:</strong> Jika Anda pandai memasak, merapikan dokumen, mencuci motor, atau merawat tanaman, jadikan itu sebagai modal awal jasa atau produk Anda.</li>
   <li><strong>Mulai dengan Model Pre-Order (PO):</strong> Jangan menyewa toko mahal atau memproduksi barang dalam jumlah ratusan unit di awal. Tawarkan sistem pesan terlebih dahulu (PO) ke lingkaran teman dan keluarga. Gunakan uang muka (DP) pelanggan untuk membeli bahan baku. Dengan cara ini, Anda tidak menanggung risiko barang sisa atau modal macet!</li>
-</ol>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ol>', 'https://www.youtube.com/embed/PQbnT_ms_x8'),
 (29, 8, 'Menghitung HPP (Harga Pokok Penjualan) & Menentukan Untung', 2, 30, '<h3>Jangan Sampai Terlihat Ramai Tapi Sebenarnya Boncos/Rugi!</h3>
 <p>Kesalahan paling fatal pedagang kecil adalah menentukan harga jual hanya berdasarkan perkiraan atau meniru harga tetangga tanpa menghitung detail biaya produksi sendiri.</p>
 
@@ -814,7 +814,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <code>Harga Jual = HPP per Porsi + Keuntungan yang Diinginkan (Markup Profit)</code>
 </div>
 
-<p>Contoh: Total belanja bahan dan operasional untuk 50 porsi makanan adalah Rp 250.000. Maka HPP per porsi = Rp 5.000. Jika Anda ingin keuntungan bersih 40% (Rp 2.000), maka jual dengan harga Rp 7.000 per porsi.</p>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+<p>Contoh: Total belanja bahan dan operasional untuk 50 porsi makanan adalah Rp 250.000. Maka HPP per porsi = Rp 5.000. Jika Anda ingin keuntungan bersih 40% (Rp 2.000), maka jual dengan harga Rp 7.000 per porsi.</p>', 'https://www.youtube.com/embed/jwOkQr7xkug'),
 (30, 8, 'Promosi Gratis & Efektif dengan WhatsApp Business', 3, 25, '<h3>Maksimalkan WhatsApp di HP Anda Menjadi Toko Otomatis</h3>
 <p>Hampir seluruh masyarakat Indonesia menggunakan aplikasi WhatsApp setiap hari. Daripada sekadar memakai WhatsApp pribadi biasa, beralihlah ke <strong>WhatsApp Business</strong> yang 100% gratis di Google Play Store.</p>
 
@@ -824,7 +824,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li><strong>Fitur Katalog Produk:</strong> Anda bisa mengunggah foto produk lengkap dengan judul, deskripsi bahan/ukuran, dan harga. Pelanggan bisa melihat menu atau produk Anda kapan saja tanpa perlu Anda ketik berulang-ulang!</li>
   <li><strong>Pesan Otomatis (Greeting &amp; Away Message):</strong> Balas sapaan pelanggan baru secara instan dalam hitungan detik meski Anda sedang sibuk di dapur.</li>
   <li><strong>Label Obrolan (Chat Labels):</strong> Kelompokkan kontak pelanggan dengan warna berbeda: <em>Pesanan Baru, Menunggu Pembayaran, Sudah Lunas, Siap Dikirim</em>. Pengelolaan pesanan Anda menjadi sangat rapi!</li>
-</ol>', 'https://www.youtube.com/embed/2kRF8zyy25U'),
+</ol>', 'https://www.youtube.com/embed/QjrLSSlEZ4k'),
 (31, 8, 'Teknik Foto Produk Menarik dengan Kamera HP & Pencahayaan Alami', 4, 20, '<h3>Foto yang Menggugah Selera Menjual Lebih Cepat</h3>
 <p>Di dunia online, pembeli membeli dengan mata sebelum membeli dengan lidah atau logika. Anda tidak membutuhkan kamera DSLR mahal seharga puluhan juta untuk menghasilkan foto produk yang memikat.</p>
 
@@ -833,7 +833,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
   <li><strong>Manfaatkan Cahaya Alami Matahari (Window Light):</strong> Foto produk di samping jendela rumah pada jam 8-10 pagi atau 3-4 sore. Cahaya matahari pagi memberikan pencahayaan yang lembut, alami, dan tidak menghasilkan bayangan kasar. Hindari menggunakan lampu flash bawaan HP yang membuat foto tampak pucat dan berminyak.</li>
   <li><strong>Gunakan Background Bersih:</strong> Gunakan kertas karton putih polos seharga Rp 3.000 atau papan kayu bersih sebagai alas foto. Latar belakang yang bersih membuat produk Anda menjadi bintang utama.</li>
   <li><strong>Bersihkan Lensa Kamera:</strong> Sebelum memotret, selalu lap lensa kamera ponsel Anda dengan kain kaos lembut atau tisu kacamata. Sidik jari atau minyak di lensa adalah penyebab nomor satu foto terlihat buram dan berkabut!</li>
-</ul>', 'https://www.youtube.com/embed/2kRF8zyy25U');
+</ul>', 'https://www.youtube.com/embed/38yDSebWQEc');
 
 -- 5. Soal Kuis Akhir Kursus (10 Soal per Kursus)
 INSERT INTO `soal_kuis` (`id`, `kursus_id`, `pertanyaan`, `pilihan_a`, `pilihan_b`, `pilihan_c`, `pilihan_d`, `jawaban_benar`, `pembahasan`, `urutan`) VALUES

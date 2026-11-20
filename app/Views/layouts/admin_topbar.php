@@ -1,6 +1,3 @@
-<?php
-// Bilah Atas Khusus Panel Pengelola Skill4Life
-?>
 <header style="background-color: var(--permukaan); border-bottom: 1px solid var(--garis); padding: 0 var(--spasi-32); display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 90;">
   <div style="display: flex; align-items: center; gap: var(--spasi-12);">
     <a href="index.php" style="display: flex; align-items: center; gap: var(--spasi-8); font-weight: 600; color: var(--teks); font-size: var(--teks-14);">
@@ -20,7 +17,7 @@
     </a>
     <div style="display: flex; align-items: center; gap: var(--spasi-8); color: var(--teks-2); padding-left: var(--spasi-12); border-left: 1px solid var(--garis);">
       <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--aksen);"></span>
-      <span style="font-family: var(--font-angka);">admin@skill4life.id</span>
+      <span style="font-family: var(--font-angka);"><?= htmlspecialchars($_SESSION['user']['email'] ?? 'admin@skill4life.id') ?></span>
       <button type="button" id="btn-logout-topbar" class="tombol tombol-sekunder tombol-kecil" style="height: 30px; padding: 0 8px; color: var(--galat);" title="Keluar dari sesi pengelola">
         <i data-lucide="log-out" style="width: 13px; height: 13px;"></i>
       </button>

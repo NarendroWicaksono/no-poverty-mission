@@ -1,10 +1,8 @@
 </main>
 
-<!-- Kaki Halaman Bersama -->
 <footer class="kaki-halaman">
   <div class="wadah">
     <div class="kaki-grid">
-      <!-- Kolom 1: Misi Latar Belakang -->
       <div>
         <div style="font-weight: 600; color: var(--teks); margin-bottom: var(--spasi-12); font-size: var(--teks-16);">
           Skill4Life
@@ -17,7 +15,6 @@
         </div>
       </div>
 
-      <!-- Kolom 2: Tautan Halaman -->
       <div>
         <div style="font-weight: 500; color: var(--teks); margin-bottom: var(--spasi-12);">
           Navigasi
@@ -31,7 +28,6 @@
         </ul>
       </div>
 
-      <!-- Kolom 3: Komitmen Akses -->
       <div>
         <div style="font-weight: 500; color: var(--teks); margin-bottom: var(--spasi-12);">
           Komitmen akses
@@ -42,7 +38,6 @@
       </div>
     </div>
 
-    <!-- Garis Hak Cipta -->
     <div style="border-top: 1px solid var(--garis); padding-top: var(--spasi-20); display: flex; justify-content: space-between; align-items: center; font-size: var(--teks-12); color: var(--teks-3); flex-wrap: wrap; gap: var(--spasi-12);">
       <div>&copy; 2026 Skill4Life. Dibangun untuk gerakan keterampilan kerja mandiri.</div>
       <div class="angka-mono">SDG 1 · No Poverty</div>
@@ -50,7 +45,6 @@
   </div>
 </footer>
 
-<!-- Inisialisasi Ikon, Toast Global, & Sinkronisasi Navbar Sesi -->
 <script>
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -100,7 +94,6 @@
     if (btn) btn.addEventListener('click', () => clearTimeout(timer));
   }
 
-  // Sinkronisasi Navbar Berdasarkan Sesi Pengguna Aktif
   (function perbaruiNavbarSesi() {
     const baseUrl = <?= json_encode($baseUrl ?? '.') ?>;
     const navAksi = document.getElementById('nav-aksi-sesi');

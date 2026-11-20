@@ -115,6 +115,21 @@ export async function perbaruiProfilPengguna({ nama_lengkap, nomor_telepon, peke
   }
 }
 
+export async function ubahKataSandiPengguna({ sandi_lama, sandi_baru }) {
+  try {
+    return await requestPOST('ubah_sandi', { sandi_lama, sandi_baru });
+  } catch {
+    return { ok: false, pesan: 'Gagal memperbarui kata sandi ke server.' };
+  }
+}
+
+export function normalisasiUrlYoutube(url) {
+  const bersih = (url || '').trim();
+  if (!bersih) return '';
+  const m = bersih.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : bersih;
+}
+
 /* ========================================================
    2. DATA PUBLIK: STATISTIK, KATEGORI, KURSUS, MODUL
    ======================================================== */

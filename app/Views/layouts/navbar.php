@@ -1,16 +1,13 @@
 <?php
-// Navigasi Atas Bersama Skill4Life (Sadar-Sesi & Responsif Mobile)
 $berkasAktif = basename($_SERVER['PHP_SELF']);
 ?>
 <header class="nav-utama">
   <div class="wadah nav-baris">
-    <!-- Logo Brand -->
     <a href="<?= $baseUrl ?>/index.php" class="logo-s4l" aria-label="Beranda Skill4Life">
       <span class="cap-kecil">S4L</span>
       <span>Skill4Life</span>
     </a>
 
-    <!-- Tautan Menu Utama Desktop -->
     <nav aria-label="Navigasi situs">
       <ul class="nav-tautan-grup">
         <li>
@@ -31,7 +28,6 @@ $berkasAktif = basename($_SERVER['PHP_SELF']);
       </ul>
     </nav>
 
-    <!-- Aksi Masuk/Daftar atau Profil Sesi Aktif + Toggle Mobile -->
     <div style="display: flex; align-items: center; gap: var(--spasi-12);">
       <div class="nav-aksi" id="nav-aksi-sesi">
         <a href="<?= $baseUrl ?>/auth/login.php" class="tautan-masuk">
@@ -48,7 +44,6 @@ $berkasAktif = basename($_SERVER['PHP_SELF']);
     </div>
   </div>
 
-  <!-- Drawer Navigasi Mobile -->
   <div class="nav-mobile-drawer" id="nav-mobile-drawer">
     <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--spasi-12); font-size: var(--teks-14);">
       <li><a href="<?= $baseUrl ?>/index.php">Beranda</a></li>
