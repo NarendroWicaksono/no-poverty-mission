@@ -28,6 +28,7 @@ CREATE TABLE `pengguna` (
   `peran` ENUM('peserta', 'admin') DEFAULT 'peserta',
   `nomor_telepon` VARCHAR(25) NULL,
   `pekerjaan` VARCHAR(100) NULL,
+  `kota` VARCHAR(100) DEFAULT 'Indonesia',
   `foto_profil` VARCHAR(255) NULL,
   `dibuat_pada` DATETIME DEFAULT CURRENT_TIMESTAMP,
   `diperbarui_pada` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -145,6 +146,7 @@ CREATE TABLE `sertifikat` (
   `pengguna_id` INT NOT NULL,
   `kursus_id` INT NOT NULL,
   `tanggal_terbit` DATE NOT NULL,
+  `nilai_kuis` DECIMAL(5,2) DEFAULT 100.00,
   `kode_verifikasi` VARCHAR(64) NOT NULL UNIQUE,
   `penandatangan_nama` VARCHAR(100) DEFAULT 'Dr. Ir. Hendra Gunawan, M.T.',
   `penandatangan_jabatan` VARCHAR(100) DEFAULT 'Direktur Pembina Skill4Life',
@@ -161,20 +163,19 @@ CREATE TABLE `sertifikat` (
 -- --------------------------------------------------------
 
 -- 1. Pengguna
--- Akun Admin: admin@skill4life.id / admin123
--- Akun Peserta: budi@gmail.com / budi123
--- Akun Peserta: siti@gmail.com / siti123
-INSERT INTO `pengguna` (`id`, `nama_lengkap`, `email`, `kata_sandi`, `peran`, `nomor_telepon`, `pekerjaan`) VALUES
-(1, 'Administrator Skill4Life', 'admin@skill4life.id', '$2y$12$9rMOzFttp7dUZb9/P3O6xOc4tdmQr7/6lv0y7TMiMD0QEgfOnSGrG', 'admin', '081234567890', 'Tim Pengelola Skill4Life'),
-(2, 'Budi Santoso', 'budi@gmail.com', '$2y$12$OJcbtffenvPURn1kSRrKmeVivPzfoQgdXTLelkrtHxcVG94Ezh6.e', 'peserta', '085712345678', 'Pencari Kerja'),
-(3, 'Siti Rahmawati', 'siti@gmail.com', '$2y$12$OJcbtffenvPURn1kSRrKmeVivPzfoQgdXTLelkrtHxcVG94Ezh6.e', 'peserta', '089876543210', 'Pelaku UMKM Kuliner');
+-- Akun Admin: admin@skill4life.id / admin1234
+-- Akun Peserta: budi@gmail.com / budi1234
+-- Akun Peserta: siti@gmail.com / budi1234
+INSERT INTO `pengguna` (`id`, `nama_lengkap`, `email`, `kata_sandi`, `peran`, `nomor_telepon`, `pekerjaan`, `kota`) VALUES
+(1, 'Administrator Skill4Life', 'admin@skill4life.id', '$2y$10$2w64FLM.Ls1LJ4EQEwNBHe7wos8Fez6b6ZFWX2cU7lSvbkqsNEdEW', 'admin', '081234567890', 'Tim Pengelola Skill4Life', 'Jakarta'),
+(2, 'Budi Santoso', 'budi@gmail.com', '$2y$10$BBRzSv8pLGHkItXuMQHOw.uiLgnVec6Z7fPtUfIul2bBgc/reLCke', 'peserta', '085712345678', 'Pencari Kerja', 'Bandung'),
+(3, 'Siti Rahmawati', 'siti@gmail.com', '$2y$10$BBRzSv8pLGHkItXuMQHOw.uiLgnVec6Z7fPtUfIul2bBgc/reLCke', 'peserta', '089876543210', 'Pelaku UMKM Kuliner', 'Surabaya');
 
 -- 2. Kategori
 INSERT INTO `kategori` (`id`, `nama_kategori`, `slug`, `ikon`, `deskripsi`) VALUES
-(1, 'Aplikasi Perkantoran', 'aplikasi-perkantoran', 'fa-file-excel', 'Kuasai perangkat lunak administrasi dasar hingga mahir seperti Excel, Word, dan PowerPoint untuk meningkatkan produktivitas kerja kantor.'),
-(2, 'Kesiapan Karir & Kerja', 'kesiapan-karir-kerja', 'fa-user-tie', 'Panduan pembuatan dokumen lamaran kerja modern, optimasi resume ATS, hingga strategi sukses menaklukkan wawancara kerja profesional.'),
-(3, 'Bisnis & UMKM', 'bisnis-umkm', 'fa-store', 'Keterampilan praktis mendirikan, mengelola arus kas, menetapkan harga, dan memasarkan produk usaha mikro dengan modal terbatas.'),
-(4, 'Literasi Keuangan', 'literasi-keuangan', 'fa-wallet', 'Edukasi perencanaan keuangan keluarga dan pekerja mandiri, pencatatan anggaran harian, pembentukan dana darurat, serta proteksi dari jeratan hutang konsumtif.');
+(1, 'Aplikasi perkantoran', 'aplikasi-perkantoran', 'table-2', 'Pengolahan lembar kerja, penyusunan naskah dinas, dan pembuatan materi presentasi kerja.'),
+(2, 'Kesiapan karir dan kerja', 'kesiapan-karir-kerja', 'briefcase', 'Format berkas lamaran kerja terstandar ATS dan persiapan komunikasi menghadapi wawancara seleksi.'),
+(3, 'Kewirausahaan dan literasi keuangan', 'kewirausahaan-literasi-keuangan', 'wallet', 'Pengelolaan arus kas pribadi bebas jeratan utang serta panduan memulai usaha kecil modal minim.');
 
 -- 3. Kursus
 INSERT INTO `kursus` (`id`, `kategori_id`, `judul`, `slug`, `ringkasan`, `deskripsi`, `tujuan_belajar`, `tingkat_kesulitan`, `estimasi_waktu`, `gambar_sampul`, `populer`, `diterbitkan`) VALUES
@@ -214,7 +215,7 @@ INSERT INTO `kursus` (`id`, `kategori_id`, `judul`, `slug`, `ringkasan`, `deskri
  'Menggunakan metode STAR untuk menjawab pertanyaan situasional dan perilaku\nMenjawab pertanyaan kelebihan, kekurangan diri, dan alasan keluar dari pekerjaan lama\nMenguasai etika berpakaian, kontak mata, dan komunikasi non-verbal saat interview\nMengetahui cara menanyakan balik kepada pewawancara dan tindak lanjut (thank-you email)',
  'Menengah', '2.5 Jam', 'assets/img/kursus-interview.svg', 1, 1),
 
-(7, 4, 'Literasi Keuangan Dasar & Perencanaan Anggaran Mandiri', 'literasi-keuangan-dasar',
+(7, 3, 'Literasi Keuangan Dasar & Perencanaan Anggaran Mandiri', 'literasi-keuangan-dasar',
  'Kelola penghasilan keluarga dan pribadi dengan bijak: alokasi 50/30/20, dana darurat, tips menabung konsisten, dan waspada bahaya pinjol ilegal.',
  'Bebas dari kemiskinan dimulai dengan keterampilan mengelola setiap rupiah yang diperoleh. Kursus ini memberikan edukasi keuangan dasar tanpa istilah perbankan yang rumit. Pelajari cara mencatat pengeluaran harian, memisahkan kebutuhan vs keinginan, membangun dana darurat sedikit demi sedikit, dan melindungi keluarga dari tawaran pinjaman online berbunga mencekik.',
  'Memahami prinsip pembagian anggaran sederhana 50% kebutuhan, 30% keinginan, 20% tabungan\nMampu membuat buku kas pencatatan pengeluaran harian yang disiplin\nMembangun dana cadangan darurat untuk mengantisipasi musibah atau masa menganggur\nMengenali ciri-ciri pinjol ilegal dan investasi bodong yang merugikan masyarakat',
@@ -927,5 +928,5 @@ INSERT INTO `progres_modul` (`pengguna_id`, `modul_id`, `kursus_id`, `selesai_pa
 INSERT INTO `hasil_kuis` (`id`, `pengguna_id`, `kursus_id`, `total_soal`, `jawaban_benar`, `nilai`, `status_lulus`, `dikerjakan_pada`) VALUES
 (1, 2, 5, 10, 9, 90.00, 'Lulus', '2026-11-15 12:15:00');
 
-INSERT INTO `sertifikat` (`id`, `nomor_sertifikat`, `pengguna_id`, `kursus_id`, `tanggal_terbit`, `kode_verifikasi`, `penandatangan_nama`, `penandatangan_jabatan`) VALUES
-(1, 'S4L-2026-000123', 2, 5, '2026-11-15', 'a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890', 'Dr. Ir. Hendra Gunawan, M.T.', 'Direktur Pembina Skill4Life');
+INSERT INTO `sertifikat` (`id`, `nomor_sertifikat`, `pengguna_id`, `kursus_id`, `tanggal_terbit`, `nilai_kuis`, `kode_verifikasi`, `penandatangan_nama`, `penandatangan_jabatan`) VALUES
+(1, 'S4L-2026-000123', 2, 5, '2026-11-15', 90.00, 'a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890', 'Dr. Ir. Hendra Gunawan, M.T.', 'Direktur Pembina Skill4Life');

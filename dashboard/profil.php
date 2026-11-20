@@ -158,8 +158,8 @@ include __DIR__ . '/../includes/header.php';
     document.getElementById('profil-kota').value = sesi.kota || '';
     document.getElementById('profil-pekerjaan').value = sesi.pekerjaan || '';
 
-    document.getElementById('btn-keluar-profil').addEventListener('click', () => {
-      keluarAkun();
+    document.getElementById('btn-keluar-profil').addEventListener('click', async () => {
+      await keluarAkun();
       window.location.href = '../auth/login.php';
     });
 

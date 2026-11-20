@@ -142,8 +142,8 @@ include __DIR__ . '/../includes/header.php';
     document.getElementById('sidebar-nama-peserta').textContent = sesi.nama_lengkap;
     document.getElementById('sidebar-pekerjaan-peserta').textContent = sesi.pekerjaan || 'Peserta terdaftar';
 
-    document.getElementById('btn-keluar-dashboard').addEventListener('click', () => {
-      keluarAkun();
+    document.getElementById('btn-keluar-dashboard').addEventListener('click', async () => {
+      await keluarAkun();
       window.location.href = '../auth/login.php';
     });
 

@@ -114,13 +114,13 @@
       });
     }
 
-    let user = null;
-    try {
-      user = JSON.parse(localStorage.getItem('s4l_user') || 'null');
-    } catch (e) {}
+    const user = window.__S4L_USER__ || null;
 
-    window.keluarSesiGlobal = function() {
-      localStorage.removeItem('s4l_user');
+    window.keluarSesiGlobal = async function() {
+      try {
+        await fetch(`${baseUrl}/api/index.php?aksi=logout`, { method: 'POST' });
+      } catch (e) {}
+      window.__S4L_USER__ = null;
       window.location.href = `${baseUrl}/index.php`;
     };
 

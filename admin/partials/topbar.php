@@ -36,20 +36,18 @@
     window.location.href = 'login.php';
   }
 
-  document.getElementById('btn-logout-topbar')?.addEventListener('click', () => {
-    keluarAkun();
+  document.getElementById('btn-logout-topbar')?.addEventListener('click', async () => {
+    await keluarAkun();
     window.location.href = 'login.php';
   });
 
-  document.getElementById('btn-reset-demo-admin')?.addEventListener('click', () => {
-    if (confirm('Kembalikan seluruh data kursus, modul, kuis, peserta, dan sertifikat ke data demo awal?')) {
-      resetDataDemo();
-      localStorage.setItem('s4l_user', JSON.stringify({
-        id: 1,
-        nama_lengkap: 'Administrator Skill4Life',
-        email: 'admin@skill4life.id',
-        peran: 'admin'
-      }));
+  document.getElementById('btn-reset-demo-admin')?.addEventListener('click', async () => {
+    if (confirm('Kembalikan seluruh data kursus, modul, kuis, peserta, dan sertifikat ke data demo awal di database?')) {
+      const res = await resetDataDemo();
+      if (res && res.ok === false) {
+        alert(res.pesan || 'Gagal mereset data.');
+        return;
+      }
       window.location.reload();
     }
   });

@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Deteksi path relatif ke root folder proyek
 if (!isset($baseUrl)) {
     if (file_exists('assets/css/variabel.css')) {
@@ -36,6 +39,9 @@ $judulSitus = isset($judulHalaman) ? htmlspecialchars($judulHalaman) : 'Skill4Li
   <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/variabel.css">
   <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/global.css">
   <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/komponen.css">
+  <script>
+    window.__S4L_USER__ = <?= json_encode($_SESSION['user'] ?? null, JSON_UNESCAPED_UNICODE) ?>;
+  </script>
 </head>
 <body>
 
