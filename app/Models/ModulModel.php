@@ -67,22 +67,24 @@ class ModulModel {
         $kursusId = (int)$stmtK->fetchColumn();
 
         if (!$kursusId || !$idModul) {
-            return ['sukses' => false, 'modul_selesai' => []];
+            return ['ok' => false, 'pesan' => 'Kursus atau modul tidak ditemukan.', 'modul_selesai' => []];
         }
 
         // Pastikan modul tersebut benar milik kursus terkait
         $stmtCekM = $this->pdo->prepare("SELECT id FROM modul WHERE id = ? AND kursus_id = ? LIMIT 1");
         $stmtCekM->execute([$idModul, $kursusId]);
-        if ($stmtCekM->fetchColumn()) {
-            $stmtIns = $this->pdo->prepare("
-                INSERT IGNORE INTO progres_modul (pengguna_id, modul_id, kursus_id)
-                VALUES (?, ?, ?)
-            ");
-            $stmtIns->execute([$penggunaId, $idModul, $kursusId]);
+        if (!$stmtCekM->fetchColumn()) {
+            return ['ok' => false, 'pesan' => 'Modul tidak terdaftar pada kursus ini.', 'modul_selesai' => $this->ambilProgresByKursusId($penggunaId, $kursusId)];
         }
 
+        $stmtIns = $this->pdo->prepare("
+            INSERT IGNORE INTO progres_modul (pengguna_id, modul_id, kursus_id)
+            VALUES (?, ?, ?)
+        ");
+        $stmtIns->execute([$penggunaId, $idModul, $kursusId]);
+
         return [
-            'sukses' => true,
+            'ok' => true,
             'modul_selesai' => $this->ambilProgresByKursusId($penggunaId, $kursusId),
         ];
     }
@@ -93,14 +95,14 @@ class ModulModel {
         $kursusId = (int)$stmtK->fetchColumn();
 
         if (!$kursusId || !$idModul) {
-            return ['sukses' => false, 'modul_selesai' => []];
+            return ['ok' => false, 'pesan' => 'Kursus atau modul tidak ditemukan.', 'modul_selesai' => []];
         }
 
         $stmtDel = $this->pdo->prepare("DELETE FROM progres_modul WHERE pengguna_id = ? AND modul_id = ?");
         $stmtDel->execute([$penggunaId, $idModul]);
 
         return [
-            'sukses' => true,
+            'ok' => true,
             'modul_selesai' => $this->ambilProgresByKursusId($penggunaId, $kursusId),
         ];
     }
@@ -129,12 +131,20 @@ class ModulModel {
     }
 
     public function tambah(array $in): array {
+        $slug = trim($in['kursus_slug'] ?? '');
         $stmtK = $this->pdo->prepare("SELECT id FROM kursus WHERE slug = ? LIMIT 1");
-        $stmtK->execute([$in['kursus_slug'] ?? '']);
-        $kursusId = (int)$stmtK->fetchColumn() ?: 1;
+        $stmtK->execute([$slug]);
+        $kursusId = (int)$stmtK->fetchColumn();
+        if (!$kursusId) {
+            throw new \InvalidArgumentException('Kursus tidak ditemukan untuk slug yang diberikan.');
+        }
+
+        $judul = trim($in['judul_modul'] ?? '');
+        if ($judul === '') {
+            throw new \InvalidArgumentException('Judul modul wajib diisi.');
+        }
 
         $videoUrl = self::normalisasiVideoUrl($in['video_url'] ?? '');
-        $judul = trim($in['judul_modul'] ?? 'Modul Baru');
         $urutan = max(1, (int)($in['urutan'] ?? 1));
         $estimasi = max(1, (int)($in['estimasi_menit'] ?? 20));
         $konten = trim($in['konten'] ?? '') ?: '<p>Materi pembelajaran.</p>';
@@ -148,7 +158,7 @@ class ModulModel {
         return [
             'id' => (int)$this->pdo->lastInsertId(),
             'kursus_id' => $kursusId,
-            'kursus_slug' => $in['kursus_slug'] ?? '',
+            'kursus_slug' => $slug,
             'judul_modul' => $judul,
             'urutan' => $urutan,
             'estimasi_menit' => $estimasi,
@@ -158,6 +168,13 @@ class ModulModel {
     }
 
     public function ubah(int $idModul, array $in): bool {
+        if ($idModul <= 0) {
+            throw new \InvalidArgumentException('ID modul tidak valid.');
+        }
+        $judul = trim($in['judul_modul'] ?? '');
+        if ($judul === '') {
+            throw new \InvalidArgumentException('Judul modul wajib diisi.');
+        }
         $videoUrl = self::normalisasiVideoUrl($in['video_url'] ?? '');
         $stmt = $this->pdo->prepare("
             UPDATE modul
@@ -166,7 +183,7 @@ class ModulModel {
         ");
         return $stmt->execute([
             max(1, (int)($in['urutan'] ?? 1)),
-            trim($in['judul_modul'] ?? ''),
+            $judul,
             max(1, (int)($in['estimasi_menit'] ?? 20)),
             $videoUrl,
             trim($in['konten'] ?? ''),

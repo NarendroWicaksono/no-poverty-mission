@@ -31,7 +31,10 @@ async function requestGET(aksi, params = {}) {
 async function requestPOST(aksi, body = {}) {
   const res = await fetch(`${API_URL}?aksi=${encodeURIComponent(aksi)}`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': window.__S4L_CSRF__ || '',
+    },
     credentials: 'same-origin',
     body: JSON.stringify(body),
   });
@@ -205,7 +208,7 @@ export async function simpanProgres(slugKursus, idModul) {
   try {
     return await requestPOST('simpan_progres', { slug: slugKursus, id_modul: idModul });
   } catch {
-    return { sukses: false, modul_selesai: [] };
+    return { ok: false, modul_selesai: [] };
   }
 }
 
@@ -213,7 +216,7 @@ export async function hapusProgres(slugKursus, idModul) {
   try {
     return await requestPOST('hapus_progres', { slug: slugKursus, id_modul: idModul });
   } catch {
-    return { sukses: false, modul_selesai: [] };
+    return { ok: false, modul_selesai: [] };
   }
 }
 
@@ -234,6 +237,24 @@ export async function ambilSoalKuis(slugKursus) {
   try {
     const res = await requestGET('soal_kuis', { slug: slugKursus });
     return res.ok ? res.data : [];
+  } catch {
+    return [];
+  }
+}
+
+export async function ambilSoalKuisAdmin(slugKursus) {
+  try {
+    const res = await requestGET('soal_kuis_admin', { slug: slugKursus });
+    return res.ok ? res.data : [];
+  } catch {
+    return [];
+  }
+}
+
+export async function ambilContohNomorSertifikat() {
+  try {
+    const res = await requestGET('contoh_nomor_sertifikat');
+    return res.ok && Array.isArray(res.data) ? res.data : [];
   } catch {
     return [];
   }

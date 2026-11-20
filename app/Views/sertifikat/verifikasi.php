@@ -53,7 +53,7 @@
 </div>
 
 <script type="module">
-  import { ambilSertifikat, ambilSemuaSertifikat } from '../assets/js/api.js';
+  import { ambilSertifikat, ambilContohNomorSertifikat } from '../assets/js/api.js';
 
   const inputNomor = document.getElementById('input-cari-nomor');
   const btnCek = document.getElementById('btn-cek-verifikasi');
@@ -61,11 +61,10 @@
   const contohWrap = document.getElementById('daftar-contoh-nomor');
 
   async function muatContohNomor() {
-    const semua = await ambilSemuaSertifikat();
-    const pilihan = semua.slice(0, 4);
-    contohWrap.innerHTML = '<span>Contoh nomor aktif:</span>' + pilihan.map(s => `
-      <button type="button" class="btn-contoh-nomor" data-nomor="${s.nomor_sertifikat}" style="background: none; border: 0; color: var(--aksen); text-decoration: underline; cursor: pointer; font-size: inherit; font-family: var(--font-mono);">
-        ${s.nomor_sertifikat}
+    const pilihan = await ambilContohNomorSertifikat();
+    contohWrap.innerHTML = '<span>Contoh nomor aktif:</span>' + pilihan.map(nomor => `
+      <button type="button" class="btn-contoh-nomor" data-nomor="${nomor}" style="background: none; border: 0; color: var(--aksen); text-decoration: underline; cursor: pointer; font-size: inherit; font-family: var(--font-mono);">
+        ${nomor}
       </button>
     `).join('<span style="color: var(--garis-tegas);">·</span>');
 

@@ -107,24 +107,37 @@
 <script type="module">
   import { ambilStatistik, ambilSemuaPeserta } from '../assets/js/api.js';
 
-  function renderNativeChart() {
+  function renderNativeChart(trenBulanan = []) {
     const wadah = document.getElementById('native-trend-chart');
     if (!wadah) return;
 
-    const labels = ['Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov'];
-    const peserta = [1420, 1850, 2100, 2450, 2900, 3560];
-    const lulus = [980, 1320, 1580, 1820, 2240, 2810];
+    const sumber = Array.isArray(trenBulanan) && trenBulanan.length
+      ? trenBulanan
+      : [
+          { label: 'Jun 2026', peserta: 0, lulus: 0 },
+          { label: 'Jul 2026', peserta: 0, lulus: 0 },
+          { label: 'Agu 2026', peserta: 0, lulus: 0 },
+          { label: 'Sep 2026', peserta: 0, lulus: 0 },
+          { label: 'Okt 2026', peserta: 0, lulus: 0 },
+          { label: 'Nov 2026', peserta: 0, lulus: 0 },
+        ];
+
+    const labels = sumber.map(d => d.label);
+    const peserta = sumber.map(d => Number(d.peserta || 0));
+    const lulus = sumber.map(d => Number(d.lulus || 0));
 
     const W = 600, H = 220;
     const padL = 44, padR = 20, padT = 16, padB = 28;
     const chartW = W - padL - padR;
     const chartH = H - padT - padB;
-    const maxVal = 4000;
+    const maxData = Math.max(4, ...peserta, ...lulus);
+    const maxVal = Math.ceil(maxData / 4) * 4;
 
-    const getX = i => padL + (i / (labels.length - 1)) * chartW;
+    const getX = i => padL + (i / Math.max(1, labels.length - 1)) * chartW;
     const getY = v => padT + chartH - (v / maxVal) * chartH;
 
-    const gridLines = [0, 1000, 2000, 3000, 4000].map(val => {
+    const step = maxVal / 4;
+    const gridLines = [0, step, step * 2, step * 3, maxVal].map(val => {
       const y = getY(val);
       return `
         <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="rgba(28,26,23,0.08)" stroke-width="1" />
@@ -146,7 +159,7 @@
     `).join('');
 
     const xLabels = labels.map((lbl, i) => `
-      <text x="${getX(i)}" y="${H - 6}" text-anchor="middle" fill="#8A847A" font-size="10.5" font-family="Public Sans, sans-serif">${lbl} 2026</text>
+      <text x="${getX(i)}" y="${H - 6}" text-anchor="middle" fill="#8A847A" font-size="10.5" font-family="Public Sans, sans-serif">${lbl}</text>
     `).join('');
 
     wadah.innerHTML = `
@@ -163,12 +176,12 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
-    renderNativeChart();
-
     const [stat, pesertaList] = await Promise.all([
       ambilStatistik(),
       ambilSemuaPeserta()
     ]);
+
+    renderNativeChart(stat.tren_bulanan);
 
     document.getElementById('adm-stat-peserta').textContent = pesertaList.length.toLocaleString('id-ID');
     document.getElementById('adm-stat-kursus').textContent = stat.total_kursus;

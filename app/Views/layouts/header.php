@@ -36,6 +36,7 @@ $judulSitus = isset($judulHalaman) ? htmlspecialchars($judulHalaman) : 'Skill4Li
   <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/komponen.css">
   <script>
     window.__S4L_USER__ = <?= json_encode($_SESSION['user'] ?? null, JSON_UNESCAPED_UNICODE) ?>;
+    window.__S4L_CSRF__ = <?= json_encode($_SESSION['csrf_token'] ?? '', JSON_UNESCAPED_UNICODE) ?>;
   </script>
 </head>
 <body>

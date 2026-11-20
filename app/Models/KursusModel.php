@@ -46,12 +46,40 @@ class KursusModel {
             LIMIT 4
         ")->fetchAll();
 
+        // Hitung tren 6 bulan terakhir secara nyata dari tabel pengguna & sertifikat
+        $trenBulanan = [];
+        $namaBulan = [
+            1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'Mei', 6 => 'Jun',
+            7 => 'Jul', 8 => 'Agu', 9 => 'Sep', 10 => 'Okt', 11 => 'Nov', 12 => 'Des'
+        ];
+        for ($i = 5; $i >= 0; $i--) {
+            $ts = strtotime("-{$i} months");
+            $ym = date('Y-m', $ts);
+            $blnIdx = (int)date('n', $ts);
+
+            $stmtP = $this->pdo->prepare("SELECT COUNT(*) FROM pengguna WHERE peran = 'peserta' AND DATE_FORMAT(dibuat_pada, '%Y-%m') = ?");
+            $stmtP->execute([$ym]);
+            $jmlPeserta = (int)$stmtP->fetchColumn();
+
+            $stmtS = $this->pdo->prepare("SELECT COUNT(*) FROM sertifikat WHERE DATE_FORMAT(tanggal_terbit, '%Y-%m') = ?");
+            $stmtS->execute([$ym]);
+            $jmlLulus = (int)$stmtS->fetchColumn();
+
+            $trenBulanan[] = [
+                'periode' => $ym,
+                'label' => $namaBulan[$blnIdx] . ' ' . date('Y', $ts),
+                'peserta' => $jmlPeserta,
+                'lulus' => $jmlLulus,
+            ];
+        }
+
         return [
             'total_kursus' => $kursus,
             'total_modul' => $modul,
             'total_sertifikat' => $sertifikat,
             'total_peserta' => $peserta,
             'mitra_komunitas' => 32,
+            'tren_bulanan' => $trenBulanan,
             'kursus_populer' => array_map(fn($r) => [
                 'judul' => $r['judul'],
                 'slug' => $r['slug'],
@@ -129,13 +157,22 @@ class KursusModel {
     }
 
     public function tambah(array $in, KategoriModel $kategoriModel): ?array {
-        $judul = trim($in['judul'] ?? 'Kursus Baru');
+        $judul = trim($in['judul'] ?? '');
+        if ($judul === '') {
+            throw new \InvalidArgumentException('Judul kursus wajib diisi.');
+        }
+
+        $katId = $kategoriModel->cariId($in['kategori'] ?? '');
+        if (!$katId) {
+            throw new \InvalidArgumentException('Kategori kursus tidak valid.');
+        }
+
         $slugDasar = trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($judul)), '-') ?: 'kursus-baru';
         $cekSlug = $this->pdo->prepare("SELECT COUNT(*) FROM kursus WHERE slug = ?");
         $cekSlug->execute([$slugDasar]);
         $slug = ((int)$cekSlug->fetchColumn() > 0) ? ($slugDasar . '-' . time()) : $slugDasar;
 
-        $katId = $kategoriModel->cariId($in['kategori'] ?? '');
+        $level = in_array($in['level'] ?? '', ['Pemula', 'Menengah', 'Lanjut'], true) ? $in['level'] : 'Pemula';
         $tujuan = $in['tujuan_belajar'] ?? [
             'Memahami konsep dasar materi secara terstruktur',
             'Menerapkan keterampilan kerja secara mandiri',
@@ -153,7 +190,7 @@ class KursusModel {
             trim($in['ringkasan'] ?? ''),
             trim($in['deskripsi'] ?? '') ?: trim($in['ringkasan'] ?? ''),
             $tujuanText,
-            $in['level'] ?? 'Pemula',
+            $level,
             trim($in['estimasi_waktu'] ?? '2 Jam'),
         ]);
 
@@ -161,21 +198,44 @@ class KursusModel {
     }
 
     public function ubah(int $idKursus, array $in, KategoriModel $kategoriModel): ?array {
+        if ($idKursus <= 0) {
+            throw new \InvalidArgumentException('ID kursus tidak valid.');
+        }
+        $judul = trim($in['judul'] ?? '');
+        if ($judul === '') {
+            throw new \InvalidArgumentException('Judul kursus wajib diisi.');
+        }
+
         $katId = $kategoriModel->cariId($in['kategori'] ?? '');
-        $stmt = $this->pdo->prepare("
-            UPDATE kursus
-            SET kategori_id = ?, judul = ?, ringkasan = ?, deskripsi = ?, tingkat_kesulitan = ?, estimasi_waktu = ?
-            WHERE id = ?
-        ");
-        $stmt->execute([
+        if (!$katId) {
+            throw new \InvalidArgumentException('Kategori kursus tidak valid.');
+        }
+
+        $level = in_array($in['level'] ?? '', ['Pemula', 'Menengah', 'Lanjut'], true) ? $in['level'] : 'Pemula';
+        $setTujuan = '';
+        $params = [
             $katId,
-            trim($in['judul'] ?? ''),
+            $judul,
             trim($in['ringkasan'] ?? ''),
             trim($in['deskripsi'] ?? '') ?: trim($in['ringkasan'] ?? ''),
-            $in['level'] ?? 'Pemula',
+            $level,
             trim($in['estimasi_waktu'] ?? '2 Jam'),
-            $idKursus,
-        ]);
+        ];
+
+        if (isset($in['tujuan_belajar'])) {
+            $tujuan = $in['tujuan_belajar'];
+            $tujuanText = is_array($tujuan) ? implode("\n", $tujuan) : (string)$tujuan;
+            $setTujuan = ', tujuan_belajar = ?';
+            $params[] = $tujuanText;
+        }
+        $params[] = $idKursus;
+
+        $stmt = $this->pdo->prepare("
+            UPDATE kursus
+            SET kategori_id = ?, judul = ?, ringkasan = ?, deskripsi = ?, tingkat_kesulitan = ?, estimasi_waktu = ?{$setTujuan}
+            WHERE id = ?
+        ");
+        $stmt->execute($params);
 
         return $this->ambilDetail((string)$idKursus);
     }

@@ -10,7 +10,7 @@ class KuisModel {
         $this->pdo = $pdo;
     }
 
-    public function ambilBerdasarkanKursus(string $slugKursus): array {
+    public function ambilBerdasarkanKursus(string $slugKursus, bool $sertakanKunci = false): array {
         $stmt = $this->pdo->prepare("
             SELECT q.*, k.slug AS kursus_slug
             FROM soal_kuis q
@@ -21,21 +21,26 @@ class KuisModel {
         $stmt->execute([$slugKursus]);
         $rows = $stmt->fetchAll();
 
-        return array_map(fn($r) => [
-            'id' => (int)$r['id'],
-            'kursus_id' => (int)$r['kursus_id'],
-            'kursus_slug' => $r['kursus_slug'],
-            'urutan' => (int)$r['urutan'],
-            'pertanyaan' => $r['pertanyaan'],
-            'pilihan' => [
-                'A' => $r['pilihan_a'],
-                'B' => $r['pilihan_b'],
-                'C' => $r['pilihan_c'],
-                'D' => $r['pilihan_d'],
-            ],
-            'jawaban_benar' => $r['jawaban_benar'],
-            'pembahasan' => $r['pembahasan'] ?? '',
-        ], $rows);
+        return array_map(function ($r) use ($sertakanKunci) {
+            $item = [
+                'id' => (int)$r['id'],
+                'kursus_id' => (int)$r['kursus_id'],
+                'kursus_slug' => $r['kursus_slug'],
+                'urutan' => (int)$r['urutan'],
+                'pertanyaan' => $r['pertanyaan'],
+                'pilihan' => [
+                    'A' => $r['pilihan_a'],
+                    'B' => $r['pilihan_b'],
+                    'C' => $r['pilihan_c'],
+                    'D' => $r['pilihan_d'],
+                ],
+            ];
+            if ($sertakanKunci) {
+                $item['jawaban_benar'] = $r['jawaban_benar'];
+                $item['pembahasan'] = $r['pembahasan'] ?? '';
+            }
+            return $item;
+        }, $rows);
     }
 
     public function evaluasiDanSimpan(
@@ -127,9 +132,27 @@ class KuisModel {
     }
 
     public function tambah(array $in): int {
+        $slug = trim($in['kursus_slug'] ?? '');
         $stmtK = $this->pdo->prepare("SELECT id FROM kursus WHERE slug = ? LIMIT 1");
-        $stmtK->execute([$in['kursus_slug'] ?? '']);
-        $kursusId = (int)$stmtK->fetchColumn() ?: 1;
+        $stmtK->execute([$slug]);
+        $kursusId = (int)$stmtK->fetchColumn();
+        if (!$kursusId) {
+            throw new \InvalidArgumentException('Kursus tidak ditemukan untuk slug yang diberikan.');
+        }
+
+        $pertanyaan = trim($in['pertanyaan'] ?? '');
+        $opsiA = trim($in['opsi_a'] ?? '');
+        $opsiB = trim($in['opsi_b'] ?? '');
+        $opsiC = trim($in['opsi_c'] ?? '');
+        $opsiD = trim($in['opsi_d'] ?? '');
+        $kunci = strtoupper(trim($in['jawaban_benar'] ?? ''));
+
+        if ($pertanyaan === '' || $opsiA === '' || $opsiB === '' || $opsiC === '' || $opsiD === '') {
+            throw new \InvalidArgumentException('Pertanyaan dan seluruh pilihan jawaban (A-D) wajib diisi.');
+        }
+        if (!in_array($kunci, ['A', 'B', 'C', 'D'], true)) {
+            throw new \InvalidArgumentException('Kunci jawaban harus salah satu dari A, B, C, atau D.');
+        }
 
         $stmtCount = $this->pdo->prepare("SELECT COUNT(*) FROM soal_kuis WHERE kursus_id = ?");
         $stmtCount->execute([$kursusId]);
@@ -141,12 +164,12 @@ class KuisModel {
         ");
         $stmt->execute([
             $kursusId,
-            trim($in['pertanyaan'] ?? ''),
-            trim($in['opsi_a'] ?? ''),
-            trim($in['opsi_b'] ?? ''),
-            trim($in['opsi_c'] ?? ''),
-            trim($in['opsi_d'] ?? ''),
-            $in['jawaban_benar'] ?? 'A',
+            $pertanyaan,
+            $opsiA,
+            $opsiB,
+            $opsiC,
+            $opsiD,
+            $kunci,
             trim($in['pembahasan'] ?? ''),
             $urutan,
         ]);
@@ -155,18 +178,35 @@ class KuisModel {
     }
 
     public function ubah(int $idSoal, array $in): bool {
+        if ($idSoal <= 0) {
+            throw new \InvalidArgumentException('ID soal tidak valid.');
+        }
+        $pertanyaan = trim($in['pertanyaan'] ?? '');
+        $opsiA = trim($in['opsi_a'] ?? '');
+        $opsiB = trim($in['opsi_b'] ?? '');
+        $opsiC = trim($in['opsi_c'] ?? '');
+        $opsiD = trim($in['opsi_d'] ?? '');
+        $kunci = strtoupper(trim($in['jawaban_benar'] ?? ''));
+
+        if ($pertanyaan === '' || $opsiA === '' || $opsiB === '' || $opsiC === '' || $opsiD === '') {
+            throw new \InvalidArgumentException('Pertanyaan dan seluruh pilihan jawaban (A-D) wajib diisi.');
+        }
+        if (!in_array($kunci, ['A', 'B', 'C', 'D'], true)) {
+            throw new \InvalidArgumentException('Kunci jawaban harus salah satu dari A, B, C, atau D.');
+        }
+
         $stmt = $this->pdo->prepare("
             UPDATE soal_kuis
             SET pertanyaan = ?, pilihan_a = ?, pilihan_b = ?, pilihan_c = ?, pilihan_d = ?, jawaban_benar = ?, pembahasan = ?
             WHERE id = ?
         ");
         return $stmt->execute([
-            trim($in['pertanyaan'] ?? ''),
-            trim($in['opsi_a'] ?? ''),
-            trim($in['opsi_b'] ?? ''),
-            trim($in['opsi_c'] ?? ''),
-            trim($in['opsi_d'] ?? ''),
-            $in['jawaban_benar'] ?? 'A',
+            $pertanyaan,
+            $opsiA,
+            $opsiB,
+            $opsiC,
+            $opsiD,
+            $kunci,
             trim($in['pembahasan'] ?? ''),
             $idSoal,
         ]);

@@ -29,14 +29,15 @@ class KategoriModel {
         ], $rows);
     }
 
-    public function cariId(string $kategoriInput): int {
-        $stmt = $this->pdo->prepare("SELECT id FROM kategori WHERE LOWER(nama_kategori) = LOWER(?) OR slug = ? LIMIT 1");
-        $stmt->execute([trim($kategoriInput), trim($kategoriInput)]);
-        $id = $stmt->fetchColumn();
-        if ($id) {
-            return (int)$id;
+    public function cariId(string $kategoriInput): ?int {
+        $bersih = trim($kategoriInput);
+        if ($bersih !== '') {
+            $stmt = $this->pdo->prepare("SELECT id FROM kategori WHERE LOWER(nama_kategori) = LOWER(?) OR slug = ? LIMIT 1");
+            $stmt->execute([$bersih, $bersih]);
+            $id = $stmt->fetchColumn();
+            return $id ? (int)$id : null;
         }
         $fallback = $this->pdo->query("SELECT id FROM kategori ORDER BY id ASC LIMIT 1")->fetchColumn();
-        return $fallback ? (int)$fallback : 1;
+        return $fallback ? (int)$fallback : null;
     }
 }

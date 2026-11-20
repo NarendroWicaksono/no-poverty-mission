@@ -749,7 +749,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 </ul>
 
 <h4>Cara Mulai Mencatat Kas Tanpa Ribet:</h4>
-<p>Gunakan aplikasi gratis di HP atau buku tulis saku. Catat setiap pengeluaran sekecil apa pun (termasuk uang parkir Rp 2.000 atau air mineral). Di akhir minggu, evaluasi: Anda akan terkejut melihat betapa banyak uang yang bocor halus pada pengeluaran-pengeluaran kecil yang sebenarnya tidak penting!</p>', 'https://www.youtube.com/embed/n4YoZDQs6VA'),
+<p>Gunakan aplikasi gratis di HP atau buku tulis saku. Catat setiap pengeluaran sekecil apa pun (termasuk uang parkir Rp 2.000 atau air mineral). Di akhir minggu, evaluasi: Anda akan terkejut melihat betapa banyak uang yang bocor halus pada pengeluaran-pengeluaran kecil yang sebenarnya tidak penting!</p>', 'https://www.youtube.com/embed/HQzoZfc3GwQ'),
 (27, 7, 'Mengenali Jebakan Pinjol Ilegal & Menghindari Jerat Hutang Konsumtif', 3, 25, '<h3>Waspada Predator Finansial yang Menghancurkan Masa Depan</h3>
 <p>Kemudahan teknologi membuat pinjaman online (pinjol) ilegal dan paylater merajalela menyasar masyarakat berpenghasilan rendah dengan iming-iming <em>"Cair 5 Menit Tanpa Jaminan"</em>. Dampaknya adalah teror penagihan kasar, bunga harian berlipat ganda, dan kepanikan keluarga.</p>
 
@@ -788,7 +788,7 @@ INSERT INTO `modul` (`id`, `kursus_id`, `judul_modul`, `urutan`, `estimasi_menit
 
 <div class="alert-box alert-danger">
   <strong>Aturan Emas:</strong> Jangan pernah meminjam uang untuk kebutuhan konsumtif (membeli gadget baru, gaya hidup, atau gengsi). Hutang hanya boleh dipertimbangkan untuk aset produktif yang menghasilkan keuntungan lebih besar dari bunga pinjaman!
-</div>', 'https://www.youtube.com/embed/n4YoZDQs6VA'),
+</div>', 'https://www.youtube.com/embed/fHhJ9J0z9nU'),
 (28, 8, 'Validasi Ide Bisnis dari Masalah Nyata di Sekitar', 1, 25, '<h3>Bisnis yang Sukses Berawal dari Solusi Masalah Nyata</h3>
 <p>Banyak pemula gagal karena membuat produk yang mereka sukai sendiri, tanpa pernah mengecek apakah ada orang yang mau membayar produk tersebut. Bisnis adalah pertukaran nilai: Anda menyelesaikan masalah orang lain, dan orang lain dengan senang hati membayar Anda.</p>
 

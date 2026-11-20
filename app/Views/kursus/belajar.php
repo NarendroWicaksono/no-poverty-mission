@@ -215,13 +215,13 @@
       const isSudah = progresList.includes(modulAktif.id);
       if (isSudah) {
         const res = await hapusProgres(slug, modulAktif.id);
-        if (res.sukses) {
+        if (res.ok || res.sukses) {
           progresList = res.modul_selesai;
           if (typeof tampilkanToast === 'function') tampilkanToast('Penanda selesai dibatalkan', 'info');
         }
       } else {
         const res = await simpanProgres(slug, modulAktif.id);
-        if (res.sukses) {
+        if (res.ok || res.sukses) {
           progresList = res.modul_selesai;
           if (typeof tampilkanToast === 'function') tampilkanToast('Progres modul berhasil disimpan', 'sukses');
         }

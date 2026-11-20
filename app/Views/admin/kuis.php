@@ -116,7 +116,7 @@
 <script type="module">
   import {
     ambilDaftarKursus,
-    ambilSoalKuis,
+    ambilSoalKuisAdmin,
     tambahSoalKuis,
     ubahSoalKuis,
     hapusSoalKuis
@@ -137,7 +137,7 @@
   }
 
   async function muatTabelKuis() {
-    soalListAktif = await ambilSoalKuis(kuisSlugAktif);
+    soalListAktif = await ambilSoalKuisAdmin(kuisSlugAktif);
     const tbody = document.getElementById('tabel-kuis-body');
     document.getElementById('badge-total-soal').textContent = `${soalListAktif.length} butir soal`;
 

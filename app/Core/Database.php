@@ -31,7 +31,7 @@ class Database {
                     $pdoServer = new PDO('mysql:host=' . DB_HOST . ';charset=' . DB_CHARSET, DB_USER, DB_PASS, $opsi);
                     $sqlFile = dirname(__DIR__, 2) . '/database.sql';
                     if (file_exists($sqlFile)) {
-                        $pdoServer->exec(file_get_contents($sqlFile));
+                        self::executeSqlFile($pdoServer, $sqlFile);
                     } else {
                         $pdoServer->exec('CREATE DATABASE IF NOT EXISTS `' . DB_NAME . '` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
                     }
@@ -63,9 +63,10 @@ class Database {
                 $pdo->exec("ALTER TABLE `sertifikat` ADD COLUMN `nilai_kuis` DECIMAL(5,2) DEFAULT 90.00 AFTER `tanggal_terbit`");
             }
 
-            // Cek apakah banyak modul masih memakai satu URL placeholder yang sama (2kRF8zyy25U)
+            // Cek apakah banyak modul masih memakai satu URL placeholder yang sama (2kRF8zyy25U) atau duplikat di Kursus 7
             $jumlahPlaceholder = (int)$pdo->query("SELECT COUNT(*) FROM `modul` WHERE `video_url` LIKE '%2kRF8zyy25U%'")->fetchColumn();
-            if ($jumlahPlaceholder > 2) {
+            $duplikatKursus7 = (int)$pdo->query("SELECT COUNT(*) FROM `modul` WHERE `id` IN (26, 27) AND `video_url` LIKE '%n4YoZDQs6VA%'")->fetchColumn();
+            if ($jumlahPlaceholder > 2 || $duplikatKursus7 > 0) {
                 $videoMap = self::daftarVideoModulRelevan();
                 $stmt = $pdo->prepare("UPDATE `modul` SET `video_url` = ? WHERE `id` = ?");
                 foreach ($videoMap as $idModul => $urlVideo) {
@@ -74,6 +75,61 @@ class Database {
             }
         } catch (PDOException $e) {
             // Abaikan jika tabel belum lengkap
+        }
+    }
+
+    /**
+     * Eksekusi file .sql secara aman per statement (menghindari masalah multi-statement saat EMULATE_PREPARES=false).
+     */
+    public static function executeSqlFile(PDO $pdo, string $sqlFile): void {
+        $sql = file_get_contents($sqlFile);
+        if ($sql === false) {
+            return;
+        }
+
+        $statements = [];
+        $buffer = '';
+        $inSingleQuote = false;
+        $inDoubleQuote = false;
+        $len = strlen($sql);
+
+        for ($i = 0; $i < $len; $i++) {
+            $ch = $sql[$i];
+            $prev = $i > 0 ? $sql[$i - 1] : '';
+
+            // Lewati komentar baris (-- ...) di luar string
+            if (!$inSingleQuote && !$inDoubleQuote && $ch === '-' && ($i + 1 < $len) && $sql[$i + 1] === '-') {
+                while ($i < $len && $sql[$i] !== "\n") {
+                    $i++;
+                }
+                continue;
+            }
+
+            if ($ch === "'" && !$inDoubleQuote && $prev !== '\\') {
+                $inSingleQuote = !$inSingleQuote;
+            } elseif ($ch === '"' && !$inSingleQuote && $prev !== '\\') {
+                $inDoubleQuote = !$inDoubleQuote;
+            }
+
+            if ($ch === ';' && !$inSingleQuote && !$inDoubleQuote) {
+                $trimmed = trim($buffer);
+                if ($trimmed !== '') {
+                    $statements[] = $trimmed;
+                }
+                $buffer = '';
+                continue;
+            }
+
+            $buffer .= $ch;
+        }
+
+        $trimmed = trim($buffer);
+        if ($trimmed !== '') {
+            $statements[] = $trimmed;
+        }
+
+        foreach ($statements as $stmt) {
+            $pdo->exec($stmt);
         }
     }
 
@@ -120,8 +176,8 @@ class Database {
 
             // Kursus 7: Literasi Keuangan Dasar & Perencanaan Anggaran Mandiri
             25 => 'https://www.youtube.com/embed/n4YoZDQs6VA', // Pola Pikir Keuangan & Alokasi Anggaran 50/30/20
-            26 => 'https://www.youtube.com/embed/n4YoZDQs6VA', // Membangun Dana Darurat & Catatan Kas Harian
-            27 => 'https://www.youtube.com/embed/n4YoZDQs6VA', // Mengenali Jebakan Pinjol Ilegal & Hutang Konsumtif
+            26 => 'https://www.youtube.com/embed/HQzoZfc3GwQ', // Membangun Dana Darurat & Catatan Kas Harian
+            27 => 'https://www.youtube.com/embed/fHhJ9J0z9nU', // Mengenali Jebakan Pinjol Ilegal & Hutang Konsumtif
 
             // Kursus 8: Memulai Usaha Kecil Modal Minim & Pemasaran Gratis
             28 => 'https://www.youtube.com/embed/PQbnT_ms_x8', // Validasi Ide Bisnis & Strategi Produk UMKM

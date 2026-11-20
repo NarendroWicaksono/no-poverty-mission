@@ -2,6 +2,12 @@
 
 Platform pembelajaran daring gratis berbasis **PHP Native (Arsitektur MVC), MySQL, HTML5, CSS3, dan JavaScript ES Modules** untuk mendukung misi **SDG 1 (Tanpa Kemiskinan)**.
 
+> 📖 **PENTING UNTUK PENGEMBANG BARU / TIM KONTRIBUTOR:**  
+> Silakan baca panduan lengkap arsitektur, visi proyek, dan standar teknis di:  
+> **👉 [PANDUAN_PROYEK.md](PANDUAN_PROYEK.md)**  
+> Dokumentasi spesifikasi response & request endpoint JSON untuk frontend:  
+> **👉 [docs/API_CONTRACT.md](docs/API_CONTRACT.md)**
+
 ---
 
 ## Arsitektur Proyek (MVC)

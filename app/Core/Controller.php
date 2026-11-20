@@ -80,6 +80,17 @@ abstract class Controller {
     }
 
     /**
+     * Guard server-side untuk endpoint API khusus peserta/pengguna terautentikasi.
+     */
+    protected function requireUserJson(): array {
+        $user = $this->currentUser();
+        if (!$user || !isset($user['id'])) {
+            $this->json(['ok' => false, 'butuh_login' => true, 'pesan' => 'Sesi tidak ditemukan. Silakan masuk terlebih dahulu.'], 401);
+        }
+        return $user;
+    }
+
+    /**
      * Guard server-side untuk endpoint API khusus admin.
      */
     protected function requireAdminJson(): array {
@@ -88,6 +99,20 @@ abstract class Controller {
             $this->json(['ok' => false, 'pesan' => 'Akses ditolak. Khusus pengelola (admin).'], 403);
         }
         return $user;
+    }
+
+    /**
+     * Validasi CSRF token pada request POST API (via header X-CSRF-Token atau payload).
+     */
+    protected function verifyCsrfJson(array $input = []): void {
+        if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
+            return;
+        }
+        $sessionToken = $_SESSION['csrf_token'] ?? '';
+        $headerToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? ($input['csrf_token'] ?? '');
+        if (!$sessionToken || !$headerToken || !hash_equals($sessionToken, (string)$headerToken)) {
+            $this->json(['ok' => false, 'pesan' => 'Token keamanan (CSRF) tidak valid atau kedaluwarsa. Muat ulang halaman dan coba lagi.'], 403);
+        }
     }
 
     /**

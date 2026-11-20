@@ -10,11 +10,10 @@ class SertifikatModel {
         $this->pdo = $pdo;
     }
 
-    public static function formatBaris(array $row): array {
-        return [
+    public static function formatBaris(array $row, bool $sertakanEmail = false): array {
+        $data = [
             'nomor_sertifikat' => $row['nomor_sertifikat'],
             'nama_peserta' => $row['nama_peserta'],
-            'email' => $row['email'],
             'nama_kursus' => $row['nama_kursus'],
             'kursus_slug' => $row['kursus_slug'],
             'tanggal_terbit' => $row['tanggal_terbit'],
@@ -24,6 +23,10 @@ class SertifikatModel {
             'kode_verifikasi' => $row['kode_verifikasi'],
             'status' => 'Terdaftar sah',
         ];
+        if ($sertakanEmail) {
+            $data['email'] = $row['email'] ?? '';
+        }
+        return $data;
     }
 
     public function terbitkanAtauPerbarui(int $penggunaId, int $kursusId, float $nilai): string {
@@ -77,12 +80,19 @@ class SertifikatModel {
             ORDER BY s.id DESC
         ")->fetchAll();
 
-        return array_map([self::class, 'formatBaris'], $rows);
+        return array_map(fn($r) => self::formatBaris($r, true), $rows);
+    }
+
+    public function ambilContohNomor(int $limit = 4): array {
+        $stmt = $this->pdo->prepare("SELECT nomor_sertifikat FROM sertifikat ORDER BY id DESC LIMIT ?");
+        $stmt->bindValue(1, max(1, min(10, $limit)), PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
     public function ambilBerdasarkanNomor(string $nomor): ?array {
         $stmt = $this->pdo->prepare("
-            SELECT s.*, p.nama_lengkap AS nama_peserta, p.email, k.judul AS nama_kursus, k.slug AS kursus_slug
+            SELECT s.*, p.nama_lengkap AS nama_peserta, k.judul AS nama_kursus, k.slug AS kursus_slug
             FROM sertifikat s
             JOIN pengguna p ON s.pengguna_id = p.id
             JOIN kursus k ON s.kursus_id = k.id
@@ -91,7 +101,7 @@ class SertifikatModel {
         ");
         $stmt->execute([trim($nomor)]);
         $row = $stmt->fetch();
-        return $row ? self::formatBaris($row) : null;
+        return $row ? self::formatBaris($row, false) : null;
     }
 
     public function ambilBerdasarkanPengguna(int $penggunaId): array {
@@ -106,6 +116,6 @@ class SertifikatModel {
         $stmt->execute([$penggunaId]);
         $rows = $stmt->fetchAll();
 
-        return array_map([self::class, 'formatBaris'], $rows);
+        return array_map(fn($r) => self::formatBaris($r, true), $rows);
     }
 }
