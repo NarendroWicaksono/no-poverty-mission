@@ -1,140 +1,679 @@
-<div class="tata-aplikasi">
-  <!-- Sidebar Navigasi Peserta (Lebar 260px) -->
-  <aside class="sidebar-aplikasi">
-    <div style="padding-bottom: var(--spasi-16); border-bottom: 1px solid var(--garis); margin-bottom: var(--spasi-16);">
-      <div style="font-size: var(--teks-14); font-weight: 500; color: var(--teks);" id="sidebar-nama-peserta">
-        Memuat...
-      </div>
-      <div style="font-size: var(--teks-12); color: var(--teks-3);" id="sidebar-pekerjaan-peserta">
-        Peserta terdaftar
+<style>
+  header,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .cp-layout {
+    display: grid;
+    grid-template-columns: 248px 1fr;
+    min-height: 100vh;
+    background-color: #F7F5F0;
+    font-family: var(--font-ui);
+    color: #1C1A17;
+  }
+
+  /* Sidebar Kiri */
+  .cp-sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E6E2D8;
+    padding: 22px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .cp-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px 6px 18px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #EFECE4;
+    text-decoration: none;
+    color: #1C1A17;
+    font-family: var(--font-judul);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .cp-brand:hover {
+    color: #1F6F4A;
+  }
+
+  .cp-brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background-color: #1F6F4A;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cp-user-bar {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 2px 6px 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #EFECE4;
+  }
+
+  .cp-user-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background-color: #1F6F4A;
+    color: #FFFFFF;
+    font-family: var(--font-judul);
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cp-user-nama {
+    font-family: var(--font-judul);
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1A17;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cp-user-sub {
+    font-size: 12px;
+    color: #7A746B;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  .cp-nav-grup {
+    margin-bottom: 20px;
+  }
+
+  .cp-nav-judul {
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9A948A;
+    padding: 0 12px;
+    margin-bottom: 6px;
+  }
+
+  .cp-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cp-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #5C5750;
+    text-decoration: none;
+    transition: background-color 140ms ease, color 140ms ease;
+  }
+
+  .cp-nav-link:hover {
+    background-color: #F7F5F0;
+    color: #1C1A17;
+  }
+
+  .cp-nav-link.aktif {
+    background-color: #F2EFE9;
+    color: #1F6F4A;
+    font-weight: 600;
+  }
+
+  .cp-nav-link.aktif svg,
+  .cp-nav-link.aktif i {
+    color: #1F6F4A;
+  }
+
+  .cp-sidebar-bawah {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #EFECE4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cp-btn-katalog-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: #1F6F4A;
+    color: #FFFFFF;
+    font-family: var(--font-judul);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+  }
+
+  .cp-btn-katalog-sidebar:hover {
+    background-color: #18583B;
+    color: #FFFFFF !important;
+  }
+
+  .cp-btn-keluar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #E6E2D8;
+    background-color: #FFFFFF;
+    color: #5C5750;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+
+  .cp-btn-keluar:hover {
+    border-color: #D9A7A2;
+    color: #9E3B33;
+    background-color: #FDF8F7;
+  }
+
+  /* Area Kerja Utama */
+  .cp-main {
+    padding: 32px 40px 72px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cp-header-atas {
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E6E2D8;
+  }
+
+  .cp-page-title {
+    font-family: var(--font-judul);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1C1A17;
+    margin: 0 0 6px;
+  }
+
+  .cp-page-sub {
+    font-size: 13.5px;
+    color: #7A746B;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* Status Alert */
+  #profil-pesan-status {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  /* Grid 2 Kolom Pengaturan Profil */
+  .cp-profil-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .cp-panel {
+    background-color: #FFFFFF;
+    border: 1px solid #E6E2D8;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cp-panel-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid #EFECE4;
+  }
+
+  .cp-panel-title {
+    font-family: var(--font-judul);
+    font-size: 16px;
+    font-weight: 600;
+    color: #1C1A17;
+    margin: 0 0 3px;
+  }
+
+  .cp-panel-desc {
+    font-size: 12.5px;
+    color: #7A746B;
+    margin: 0;
+  }
+
+  .cp-panel-body {
+    padding: 22px 24px 24px;
+  }
+
+  .cp-field-group {
+    margin-bottom: 18px;
+  }
+
+  .cp-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .cp-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1C1A17;
+    margin-bottom: 6px;
+  }
+
+  .cp-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 13px;
+    border-radius: 8px;
+    border: 1px solid #D8D3C8;
+    background-color: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    color: #1C1A17;
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  .cp-input:focus {
+    outline: none;
+    border-color: #1F6F4A;
+    box-shadow: 0 0 0 3px rgba(31, 111, 74, 0.1);
+  }
+
+  .cp-input:disabled {
+    background-color: #F7F5F0;
+    color: #7A746B;
+    border-color: #E6E2D8;
+    cursor: not-allowed;
+  }
+
+  .cp-help {
+    font-size: 12px;
+    color: #8C857B;
+    margin-top: 5px;
+    line-height: 1.45;
+  }
+
+  /* Input Kata Sandi dengan Toggle Intip */
+  .cp-pass-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .cp-pass-wrap .cp-input {
+    padding-right: 40px;
+  }
+
+  .cp-pass-toggle {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #8C857B;
+    cursor: pointer;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 140ms ease;
+  }
+
+  .cp-pass-toggle:hover {
+    color: #1C1A17;
+  }
+
+  .cp-panel-footer {
+    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .cp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 8px;
+    border: 1px solid #1F6F4A;
+    background-color: #1F6F4A;
+    color: #FFFFFF;
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 140ms ease;
+  }
+
+  .cp-btn-primary:hover {
+    background-color: #18583B;
+    color: #FFFFFF !important;
+  }
+
+  .cp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 8px;
+    border: 1px solid #D8D3C8;
+    background-color: #FFFFFF;
+    color: #1C1A17;
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+  }
+
+  .cp-btn-secondary:hover {
+    border-color: #1F6F4A;
+    color: #1F6F4A;
+    background-color: #FAF9F6;
+  }
+
+  @media (max-width: 1040px) {
+    .cp-profil-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .cp-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cp-sidebar {
+      position: static;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #E6E2D8;
+      padding: 18px 20px;
+    }
+
+    .cp-nav-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cp-sidebar-bawah {
+      flex-direction: row;
+      margin-top: 12px;
+    }
+
+    .cp-main {
+      padding: 24px 20px 56px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cp-field-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .cp-panel-header,
+    .cp-panel-body {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+</style>
+
+<div class="cp-layout">
+  <!-- Sidebar Kiri -->
+  <aside class="cp-sidebar">
+    <a href="../index.php" class="cp-brand">
+      <span class="cp-brand-mark">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3.5 8.2L6.5 11.2L12.5 5.2" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>Skill4Life</span>
+    </a>
+
+    <div class="cp-user-bar">
+      <div class="cp-user-avatar" id="sidebar-avatar-inisial">S4</div>
+      <div style="min-width: 0;">
+        <div class="cp-user-nama" id="sidebar-nama-peserta">Memuat...</div>
+        <div class="cp-user-sub" id="sidebar-pekerjaan-peserta">Peserta terdaftar</div>
       </div>
     </div>
 
-    <div class="sidebar-label">Menu utama</div>
-    <ul class="sidebar-menu">
-      <li>
-        <a href="index.php" class="sidebar-item">
-          <i data-lucide="book-open" class="ikon-16"></i>
-          <span>Kursus saya</span>
-        </a>
-      </li>
-      <li>
-        <a href="profil.php" class="sidebar-item aktif">
-          <i data-lucide="user" class="ikon-16"></i>
-          <span>Pengaturan profil</span>
-        </a>
-      </li>
-      <li>
-        <a href="../kursus/katalog.php" class="sidebar-item">
-          <i data-lucide="search" class="ikon-16"></i>
-          <span>Katalog kursus</span>
-        </a>
-      </li>
-      <li>
-        <a href="../sertifikat/verifikasi.php" class="sidebar-item">
-          <i data-lucide="check-circle" class="ikon-16"></i>
-          <span>Verifikasi sertifikat</span>
-        </a>
-      </li>
-    </ul>
+    <div class="cp-nav-grup">
+      <div class="cp-nav-judul">Aktivitas Saya</div>
+      <ul class="cp-nav-list">
+        <li>
+          <a href="index.php" class="cp-nav-link">
+            <i data-lucide="book-open" class="ikon-16"></i>
+            <span>Kursus Saya</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.php#seksi-sertifikat" class="cp-nav-link">
+            <i data-lucide="award" class="ikon-16"></i>
+            <span>Sertifikat Saya</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-    <div style="margin-top: auto; padding-top: var(--spasi-20); border-top: 1px solid var(--garis);">
-      <button type="button" id="btn-keluar-profil" class="sidebar-item" style="width: 100%; border: none; background: none; cursor: pointer; text-align: left; color: var(--galat);">
-        <i data-lucide="log-out" class="ikon-16"></i>
+    <div class="cp-nav-grup">
+      <div class="cp-nav-judul">Belajar &amp; Eksplorasi</div>
+      <ul class="cp-nav-list">
+        <li>
+          <a href="../kursus/katalog.php" class="cp-nav-link">
+            <i data-lucide="layout-grid" class="ikon-16"></i>
+            <span>Katalog Kursus</span>
+          </a>
+        </li>
+        <li>
+          <a href="../sertifikat/verifikasi.php" class="cp-nav-link">
+            <i data-lucide="shield-check" class="ikon-16"></i>
+            <span>Verifikasi Sertifikat</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cp-nav-grup">
+      <div class="cp-nav-judul">Akun</div>
+      <ul class="cp-nav-list">
+        <li>
+          <a href="profil.php" class="cp-nav-link aktif">
+            <i data-lucide="user" class="ikon-16"></i>
+            <span>Pengaturan Profil</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cp-sidebar-bawah">
+      <a href="../kursus/katalog.php" class="cp-btn-katalog-sidebar">
+        <span>Jelajahi Kursus</span>
+      </a>
+      <button type="button" id="btn-keluar-profil" class="cp-btn-keluar">
         <span>Keluar akun</span>
       </button>
     </div>
   </aside>
 
   <!-- Konten Pengaturan Profil -->
-  <main class="konten-aplikasi">
-    <div class="wadah-baca">
-      <div style="margin-bottom: var(--spasi-32);">
-        <div style="font-size: var(--teks-12); color: var(--teks-3); margin-bottom: var(--spasi-4);">Akun peserta</div>
-        <h1 style="font-size: var(--teks-28); font-family: var(--font-serif); color: var(--teks); margin-bottom: var(--spasi-8);">
-          Pengaturan profil
-        </h1>
-        <p style="font-size: var(--teks-14); color: var(--teks-2);">
-          Perbarui nama lengkap untuk pencantuman pada sertifikat dan lengkapi identitas diri Anda.
-        </p>
-      </div>
+  <main class="cp-main">
+    <div class="cp-header-atas">
+      <h1 class="cp-page-title">Pengaturan Profil</h1>
+      <p class="cp-page-sub">
+        Perbarui nama lengkap untuk pencantuman pada sertifikat dan kelola keamanan kata sandi akun Anda.
+      </p>
+    </div>
 
-      <div id="profil-pesan-status" style="display: none;"></div>
+    <div id="profil-pesan-status" style="display: none;"></div>
 
-      <!-- Formulir 1: Data Identitas -->
-      <div class="kartu" style="margin-bottom: var(--spasi-24);">
-        <h2 style="font-size: var(--teks-16); font-weight: 500; margin-bottom: var(--spasi-16);">
-          Data identitas
-        </h2>
+    <div class="cp-profil-grid">
+      <!-- Panel 1: Data Identitas -->
+      <section class="cp-panel">
+        <div class="cp-panel-header">
+          <h2 class="cp-panel-title">Data Identitas</h2>
+          <p class="cp-panel-desc">Informasi dasar peserta yang terhubung dengan riwayat belajar dan sertifikat.</p>
+        </div>
 
-        <form id="form-edit-identitas">
-          <div class="bidang-grup">
-            <label class="bidang-label" for="profil-nama">Nama lengkap</label>
-            <input type="text" id="profil-nama" class="bidang-input" required>
-            <div class="bidang-bantuan">Nama ini yang akan tercetak pada lembar sertifikat kelulusan resmi Anda.</div>
-          </div>
-
-          <div class="bidang-grup">
-            <label class="bidang-label" for="profil-email">Alamat email</label>
-            <input type="email" id="profil-email" class="bidang-input" disabled style="background-color: var(--permukaan-2); cursor: not-allowed;">
-            <div class="bidang-bantuan">Alamat email digunakan sebagai tanda pengenal akun utama.</div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spasi-12);">
-            <div class="bidang-grup">
-              <label class="bidang-label" for="profil-telepon">Nomor telepon / WhatsApp</label>
-              <input type="text" id="profil-telepon" class="bidang-input">
+        <div class="cp-panel-body">
+          <form id="form-edit-identitas">
+            <div class="cp-field-group">
+              <label class="cp-label" for="profil-nama">Nama lengkap</label>
+              <input type="text" id="profil-nama" class="cp-input" placeholder="Masukkan nama lengkap sesuai identitas" required>
+              <div class="cp-help">Nama ini akan tercetak langsung pada lembar sertifikat kelulusan resmi Anda.</div>
             </div>
-            <div class="bidang-grup">
-              <label class="bidang-label" for="profil-kota">Kota domisili</label>
-              <input type="text" id="profil-kota" class="bidang-input">
+
+            <div class="cp-field-group">
+              <label class="cp-label" for="profil-email">Alamat email</label>
+              <input type="email" id="profil-email" class="cp-input" disabled>
+              <div class="cp-help">Alamat email digunakan sebagai identitas login utama dan tidak dapat diubah.</div>
             </div>
-          </div>
 
-          <div class="bidang-grup">
-            <label class="bidang-label" for="profil-pekerjaan">Status pekerjaan saat ini</label>
-            <input type="text" id="profil-pekerjaan" class="bidang-input">
-          </div>
+            <div class="cp-field-row">
+              <div class="cp-field-group">
+                <label class="cp-label" for="profil-telepon">Nomor telepon / WhatsApp</label>
+                <input type="text" id="profil-telepon" class="cp-input" placeholder="Contoh: 081234567890">
+              </div>
 
-          <button type="submit" class="tombol tombol-utama tombol-kecil">
-            Simpan data identitas
-          </button>
-        </form>
-      </div>
+              <div class="cp-field-group">
+                <label class="cp-label" for="profil-kota">Kota domisili</label>
+                <input type="text" id="profil-kota" class="cp-input" placeholder="Contoh: Bandung">
+              </div>
+            </div>
 
-      <!-- Formulir 2: Ubah Kata Sandi -->
-      <div class="kartu">
-        <h2 style="font-size: var(--teks-16); font-weight: 500; margin-bottom: var(--spasi-16);">
-          Ubah kata sandi
-        </h2>
+            <div class="cp-field-group">
+              <label class="cp-label" for="profil-pekerjaan">Status pekerjaan saat ini</label>
+              <input type="text" id="profil-pekerjaan" class="cp-input" placeholder="Contoh: Pencari Kerja, Mahasiswa, Pelaku UMKM">
+            </div>
 
-        <form id="form-ubah-sandi">
-          <div class="bidang-grup">
-            <label class="bidang-label" for="sandi-lama">Kata sandi saat ini</label>
-            <input type="password" id="sandi-lama" class="bidang-input" placeholder="Masukkan kata sandi lama" required>
-          </div>
+            <div class="cp-panel-footer">
+              <button type="submit" class="cp-btn-primary">
+                Simpan perubahan
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-          <div class="bidang-grup">
-            <label class="bidang-label" for="sandi-baru">Kata sandi baru</label>
-            <input type="password" id="sandi-baru" class="bidang-input" placeholder="Minimal 8 karakter" minlength="8" required>
-          </div>
+      <!-- Panel 2: Keamanan & Kata Sandi -->
+      <section class="cp-panel">
+        <div class="cp-panel-header">
+          <h2 class="cp-panel-title">Ubah Kata Sandi</h2>
+          <p class="cp-panel-desc">Gunakan kombinasi minimal 8 karakter untuk menjaga keamanan akun.</p>
+        </div>
 
-          <div class="bidang-grup">
-            <label class="bidang-label" for="sandi-konfirmasi">Ulangi kata sandi baru</label>
-            <input type="password" id="sandi-konfirmasi" class="bidang-input" placeholder="Ketik ulang kata sandi baru" minlength="8" required>
-          </div>
+        <div class="cp-panel-body">
+          <form id="form-ubah-sandi">
+            <div class="cp-field-group">
+              <label class="cp-label" for="sandi-lama">Kata sandi saat ini</label>
+              <div class="cp-pass-wrap">
+                <input type="password" id="sandi-lama" class="cp-input" placeholder="Masukkan kata sandi lama" required>
+                <button type="button" class="cp-pass-toggle" data-target="sandi-lama" aria-label="Tampilkan kata sandi">
+                  <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                </button>
+              </div>
+            </div>
 
-          <button type="submit" class="tombol tombol-sekunder tombol-kecil">
-            Perbarui kata sandi
-          </button>
-        </form>
-      </div>
+            <div class="cp-field-group">
+              <label class="cp-label" for="sandi-baru">Kata sandi baru</label>
+              <div class="cp-pass-wrap">
+                <input type="password" id="sandi-baru" class="cp-input" placeholder="Minimal 8 karakter" minlength="8" required>
+                <button type="button" class="cp-pass-toggle" data-target="sandi-baru" aria-label="Tampilkan kata sandi">
+                  <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="cp-field-group">
+              <label class="cp-label" for="sandi-konfirmasi">Ulangi kata sandi baru</label>
+              <div class="cp-pass-wrap">
+                <input type="password" id="sandi-konfirmasi" class="cp-input" placeholder="Ketik ulang kata sandi baru" minlength="8" required>
+                <button type="button" class="cp-pass-toggle" data-target="sandi-konfirmasi" aria-label="Tampilkan kata sandi">
+                  <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="cp-panel-footer">
+              <button type="submit" class="cp-btn-secondary">
+                Perbarui kata sandi
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   </main>
 </div>
 
 <script type="module">
   import { ambilSesiPengguna, keluarAkun, perbaruiProfilPengguna, ubahKataSandiPengguna } from '../assets/js/api.js';
+
+  function perbaruiHeaderSidebar(namaLengkap, pekerjaan) {
+    const nama = namaLengkap || 'Peserta';
+    document.getElementById('sidebar-nama-peserta').textContent = nama;
+    document.getElementById('sidebar-pekerjaan-peserta').textContent = pekerjaan || 'Peserta terdaftar';
+
+    const inisial = nama
+      .split(' ')
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(k => k[0].toUpperCase())
+      .join('');
+    document.getElementById('sidebar-avatar-inisial').textContent = inisial || 'S4';
+  }
 
   document.addEventListener('DOMContentLoaded', () => {
     const sesi = ambilSesiPengguna();
@@ -143,14 +682,29 @@
       return;
     }
 
-    document.getElementById('sidebar-nama-peserta').textContent = sesi.nama_lengkap;
-    document.getElementById('sidebar-pekerjaan-peserta').textContent = sesi.pekerjaan || 'Peserta terdaftar';
+    perbaruiHeaderSidebar(sesi.nama_lengkap, sesi.pekerjaan);
 
     document.getElementById('profil-nama').value = sesi.nama_lengkap || '';
     document.getElementById('profil-email').value = sesi.email || '';
     document.getElementById('profil-telepon').value = sesi.nomor_telepon || '';
     document.getElementById('profil-kota').value = sesi.kota || '';
     document.getElementById('profil-pekerjaan').value = sesi.pekerjaan || '';
+
+    // Toggle lihat/sembunyikan kata sandi
+    document.querySelectorAll('.cp-pass-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+
+        const tersembunyi = input.type === 'password';
+        input.type = tersembunyi ? 'text' : 'password';
+        btn.innerHTML = `<i data-lucide="${tersembunyi ? 'eye-off' : 'eye'}" style="width: 16px; height: 16px;"></i>`;
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons({ nodes: [btn] });
+        }
+      });
+    });
 
     document.getElementById('btn-keluar-profil').addEventListener('click', async () => {
       await keluarAkun();
@@ -169,8 +723,7 @@
       });
 
       if (res.ok) {
-        document.getElementById('sidebar-nama-peserta').textContent = res.user.nama_lengkap;
-        document.getElementById('sidebar-pekerjaan-peserta').textContent = res.user.pekerjaan || 'Peserta terdaftar';
+        perbaruiHeaderSidebar(res.user.nama_lengkap, res.user.pekerjaan);
         pesanBox.className = 'pesan-status pesan-status-sukses';
         pesanBox.textContent = 'Perubahan data identitas profil berhasil disimpan dan disinkronkan ke sertifikat.';
         pesanBox.style.display = 'flex';
@@ -220,5 +773,9 @@
       if (typeof tampilkanToast === 'function') tampilkanToast('Kata sandi diperbarui', 'sukses');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
   });
 </script>
