@@ -1,25 +1,91 @@
 </main>
 
+<style>
+  .kaki-halaman {
+    background-color: var(--permukaan);
+    border-top: 1px solid var(--garis);
+    padding: var(--spasi-64) 0 var(--spasi-32);
+    font-family: var(--font-ui);
+  }
+
+  .kaki-brand-judul {
+    font-family: var(--font-judul);
+    font-size: var(--teks-20);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--teks);
+    margin-bottom: var(--spasi-12);
+  }
+
+  .kaki-kolom-judul {
+    font-family: var(--font-judul);
+    font-size: var(--teks-14);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--teks);
+    margin-bottom: var(--spasi-16);
+  }
+
+  .kaki-deskripsi {
+    font-family: var(--font-ui);
+    font-size: var(--teks-14);
+    font-weight: 400;
+    line-height: var(--jarak-baris-baca);
+    color: var(--teks-2);
+    margin: 0;
+  }
+
+  .kaki-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spasi-12);
+    font-size: var(--teks-14);
+  }
+
+  .kaki-nav-list a {
+    color: var(--teks-2);
+    text-decoration: none;
+    transition: var(--transisi-cepat);
+  }
+
+  .kaki-nav-list a:hover {
+    color: var(--aksen);
+  }
+
+  .kaki-email-link {
+    color: var(--aksen);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .kaki-email-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <footer class="kaki-halaman">
   <div class="wadah">
     <div class="kaki-grid">
       <div>
-        <div style="font-weight: 600; color: var(--teks); margin-bottom: var(--spasi-12); font-size: var(--teks-16);">
+        <div class="kaki-brand-judul">
           Skill4Life
         </div>
-        <p style="line-height: var(--jarak-baris-baca); margin-bottom: var(--spasi-16); max-width: 440px;">
-          Prakarsa pembelajaran keterampilan kerja gratis untuk mendukung Tujuan Pembangunan Berkelanjutan (SDG) 1: Tanpa Kemiskinan. Seluruh modul dan sertifikat dapat diakses masyarakat tanpa biaya pendaftaran maupun langganan.
+        <p class="kaki-deskripsi" style="margin-bottom: var(--spasi-16); max-width: 440px;">
+          Website pembelajaran keterampilan kerja gratis untuk mendukung Tujuan Pembangunan Berkelanjutan (SDG) 1: Tanpa Kemiskinan. Seluruh modul dan sertifikat dapat diakses masyarakat tanpa biaya pendaftaran maupun langganan.
         </p>
         <div style="font-size: var(--teks-12); color: var(--teks-3);">
-          Surat elektronik: <a href="mailto:kontak@skill4life.id" style="text-decoration: underline;">kontak@skill4life.id</a>
+          Email: <a href="mailto:kontak@skill4life.id" class="kaki-email-link">kontak@skill4life.id</a>
         </div>
       </div>
 
       <div>
-        <div style="font-weight: 500; color: var(--teks); margin-bottom: var(--spasi-12);">
+        <div class="kaki-kolom-judul">
           Navigasi
         </div>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--spasi-8); font-size: var(--teks-14);">
+        <ul class="kaki-nav-list">
           <li><a href="<?= $baseUrl ?>/index.php">Beranda</a></li>
           <li><a href="<?= $baseUrl ?>/kursus/katalog.php">Katalog kursus</a></li>
           <li><a href="<?= $baseUrl ?>/sertifikat/verifikasi.php">Verifikasi sertifikat</a></li>
@@ -29,18 +95,17 @@
       </div>
 
       <div>
-        <div style="font-weight: 500; color: var(--teks); margin-bottom: var(--spasi-12);">
+        <div class="kaki-kolom-judul">
           Komitmen akses
         </div>
-        <p style="font-size: var(--teks-14); line-height: var(--jarak-baris-baca); color: var(--teks-2);">
+        <p class="kaki-deskripsi">
           Semua kursus terbuka penuh. Tidak ada materi yang dikunci, uji coba berbatas waktu, maupun jalur berbayar.
         </p>
       </div>
     </div>
 
-    <div style="border-top: 1px solid var(--garis); padding-top: var(--spasi-20); display: flex; justify-content: space-between; align-items: center; font-size: var(--teks-12); color: var(--teks-3); flex-wrap: wrap; gap: var(--spasi-12);">
-      <div>&copy; 2026 Skill4Life. Dibangun untuk gerakan keterampilan kerja mandiri.</div>
-      <div class="angka-mono">SDG 1 · No Poverty</div>
+    <div style="border-top: 1px solid var(--garis); padding-top: var(--spasi-20); margin-top: var(--spasi-40); display: flex; justify-content: space-between; align-items: center; font-size: var(--teks-12); color: var(--teks-3); flex-wrap: wrap; gap: var(--spasi-12);">
+      <div>&copy; 2026 Skill4Life. Dibangun untuk menciptakan masyarakat terampil berdaya saing tinggi.</div>
     </div>
   </div>
 </footer>
@@ -108,14 +173,7 @@
     }
 
     const user = window.__S4L_USER__ || null;
-
-    window.keluarSesiGlobal = async function() {
-      try {
-        await fetch(`${baseUrl}/api/index.php?aksi=logout`, { method: 'POST' });
-      } catch (e) {}
-      window.__S4L_USER__ = null;
-      window.location.href = `${baseUrl}/index.php`;
-    };
+    const urlLogout = `${baseUrl}/auth/logout.php`;
 
     if (user && user.nama_lengkap) {
       const targetDash = user.peran === 'admin' ? `${baseUrl}/admin/index.php` : `${baseUrl}/dashboard/index.php`;
@@ -123,19 +181,19 @@
 
       if (navAksi) {
         navAksi.innerHTML = `
-          <a href="${targetDash}" class="tombol tombol-tipis tombol-kecil" title="${user.nama_lengkap}">
+          <a href="${targetDash}" class="tombol tombol-tipis tombol-kecil" style="border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;" title="${user.nama_lengkap}">
             <i data-lucide="user" style="width: 14px; height: 14px;"></i>
             <span>${labelDash}</span>
           </a>
-          <button type="button" onclick="keluarSesiGlobal()" class="tombol tombol-sekunder tombol-kecil" title="Keluar akun">
+          <a href="${urlLogout}" class="tombol tombol-sekunder tombol-kecil" style="border-radius: 999px;" title="Keluar akun">
             Keluar
-          </button>
+          </a>
         `;
       }
       if (navMobileAuth) {
         navMobileAuth.innerHTML = `
-          <a href="${targetDash}" class="tombol tombol-utama tombol-kecil">${labelDash}</a>
-          <button type="button" onclick="keluarSesiGlobal()" class="tombol tombol-sekunder tombol-kecil">Keluar</button>
+          <a href="${targetDash}" class="tombol tombol-utama tombol-kecil" style="border-radius: 999px;">${labelDash}</a>
+          <a href="${urlLogout}" class="tombol tombol-sekunder tombol-kecil" style="border-radius: 999px;">Keluar</a>
         `;
       }
       if (typeof lucide !== 'undefined') {

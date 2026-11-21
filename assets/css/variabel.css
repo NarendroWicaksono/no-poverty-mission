@@ -1,58 +1,56 @@
 /* ========================================================
    Skill4Life - Design Tokens (variabel.css)
-   Dunia Visual: Meja Kerja, Kertas, Formulir Kantor, Cap Resmi
-   Aturan Ketat: Satu ramp netral hangat + satu aksen hijau tua.
-   Kelipatan 4px. Tanpa gradasi hue, tanpa glow, tanpa efek semu.
+   Aturan Visual: Kontras Editorial Hangat, Tanpa Serif, Tanpa Glow
 ======================================================== */
 
 :root {
   /* Warna: Satu Ramp Netral Hangat */
-  --latar: #F7F5F0;          /* Kertas alas meja kerja */
-  --permukaan: #FFFFFF;      /* Kertas kartu dokumen */
-  --permukaan-2: #EFEDE7;    /* Area sekunder, baris tabel selang-seling */
+  --latar: #F7F5F0;          /* Kertas alas hangat */
+  --permukaan: #FFFFFF;      /* Kartu bersih */
+  --permukaan-2: #EFEDE7;    /* Area sekunder, latar ilustratif */
   --permukaan-3: #E6E3DC;    /* Penekan kontras ringan */
 
   /* Garis Batas Hairline 1px */
   --garis: rgba(28, 26, 23, 0.10);
-  --garis-tegas: rgba(28, 26, 23, 0.20);
+  --garis-tegas: rgba(28, 26, 23, 0.22);
 
-  /* Tiga Peran Teks Sahaja */
-  --teks: #1C1A17;           /* Utama: kontras tinggi untuk kenyamanan baca */
-  --teks-2: #5C5750;         /* Sekunder: deskripsi, metadata, panduan */
-  --teks-3: #8A847A;         /* Redup: nomor urut, penanda tanggal, placeholder */
+  /* Tiga Peran Teks */
+  --teks: #1C1A17;           /* Utama: kontras tinggi dan blok gelap */
+  --teks-2: #5C5750;         /* Sekunder: deskripsi, paragraf */
+  --teks-3: #8A847A;         /* Redup: metadata, label kecil */
 
-  /* Aksen Tunggal: Hijau Tua Kertas Dokumen */
-  --aksen: #1F6F4A;          /* Lolos uji kontras WCAG AAA ≥ 4.5:1 terhadap putih */
-  --aksen-tekan: #175438;    /* Status aktif / hover mantap */
-  --aksen-tipis: #E6F0EA;    /* Alas tombol aksen kedua, badge tuntas */
+  /* Aksen Tunggal: Hijau Tua */
+  --aksen: #1F6F4A;
+  --aksen-tekan: #175438;
+  --aksen-tipis: #E6F0EA;
 
-  /* Warna Makna Fungsional (Saturasi Terkendali) */
+  /* Warna Makna Fungsional */
   --sukses: #1F6F4A;
   --sukses-tipis: #E6F0EA;
-  --galat: #8B2C24;          /* Merah bata arsip tua */
+  --galat: #8B2C24;
   --galat-tipis: #F8EBEA;
-  --peringatan: #8A5B18;     /* Kuning oker matang */
+  --peringatan: #8A5B18;
   --peringatan-tipis: #F8F2E6;
 
-  /* Tipografi Terbatas (Maksimal 3 Keluarga Font) */
-  --font-ui: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Source Serif 4", Georgia, serif;
-  --font-mono: "JetBrains Mono", Menlo, Consolas, monospace;
-  --font-judul: var(--font-serif);
-  --font-angka: var(--font-mono);
+  /* Tipografi: Murni Sans-Serif (Tanpa Serif Sama Sekali) */
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-judul: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-angka: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Skala Ukuran Tipografi Tetap */
+  /* Skala Ukuran Tipografi */
   --teks-12: 12px;
   --teks-14: 14px;
   --teks-16: 16px;
   --teks-20: 20px;
-  --teks-28: 28px;
-  --teks-40: 40px;
+  --teks-28: 32px;
+  --teks-40: 42px;
   --teks-56: 56px;
 
   /* Tinggi Baris */
-  --jarak-baris-rapat: 1.25;
-  --jarak-baris-baca: 1.6;
+  --jarak-baris-rapat: 1.15;
+  --jarak-baris-baca: 1.65;
 
   /* Skala Spasi Kelipatan 4px */
   --spasi-4: 4px;
@@ -68,21 +66,21 @@
   --spasi-80: 80px;
   --spasi-96: 96px;
 
-  /* Radius Sudut Terukur */
-  --radius-kontrol: 8px;
-  --radius-kartu: 12px;
-  --radius-panel: 16px;
-  --radius-dalam: 4px;
+  /* Radius Sudut */
+  --radius-kontrol: 999px;
+  --radius-kartu: 16px;
+  --radius-panel: 20px;
+  --radius-dalam: 8px;
 
-  /* Satu Kurva Transisi Tunggal */
-  --transisi-cepat: color 120ms cubic-bezier(0.2, 0, 0, 1),
-                    background-color 120ms cubic-bezier(0.2, 0, 0, 1),
-                    border-color 120ms cubic-bezier(0.2, 0, 0, 1);
+  /* Transisi */
+  --transisi-cepat: color 140ms cubic-bezier(0.2, 0, 0, 1),
+                    background-color 140ms cubic-bezier(0.2, 0, 0, 1),
+                    border-color 140ms cubic-bezier(0.2, 0, 0, 1);
   --transisi-muncul: opacity 200ms cubic-bezier(0.2, 0, 0, 1),
                      transform 200ms cubic-bezier(0.2, 0, 0, 1);
 
   /* Lebar Kontainer */
-  --lebar-maks-halaman: 1200px;
+  --lebar-maks-halaman: 1160px;
   --lebar-maks-baca: 720px;
   --lebar-sidebar: 260px;
 }
