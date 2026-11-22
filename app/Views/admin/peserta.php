@@ -1,85 +1,648 @@
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--spasi-24); flex-wrap: wrap; gap: var(--spasi-16);">
+<style>
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  footer,
+  .kaki-halaman {
+    display: none !important;
+  }
+
+  .adm-topbar-break {
+    display: none;
+  }
+
+  /* Penyesuaian Topbar Khusus Layar HP (Desktop Tetap Bawaan) */
+  @media (max-width: 768px) {
+    .adm-topbar-fixed {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 12px 16px !important;
+      box-sizing: border-box !important;
+    }
+
+    .adm-topbar-brand {
+      order: 1 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      min-width: 0 !important;
+      flex: 0 1 auto !important;
+    }
+
+    .adm-topbar-sub-hide {
+      display: none !important;
+    }
+
+    .adm-topbar-right-wrap {
+      display: contents !important;
+    }
+
+    .adm-topbar-user-box {
+      order: 2 !important;
+      margin-left: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 8px !important;
+      min-width: 0 !important;
+      max-width: 64% !important;
+      font-size: 12px !important;
+    }
+
+    .adm-topbar-email-text {
+      display: inline-block !important;
+      min-width: 0 !important;
+      max-width: 155px !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      font-size: 12px !important;
+    }
+
+    .adm-topbar-divider {
+      display: none !important;
+    }
+
+    .adm-topbar-break {
+      display: block !important;
+      order: 3 !important;
+      flex-basis: 100% !important;
+      height: 1px !important;
+      background-color: #EFECE4 !important;
+      margin: 2px 0 !important;
+    }
+
+    .adm-topbar-action-btn {
+      order: 4 !important;
+      flex: 1 1 calc(50% - 6px) !important;
+      min-width: 0 !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      font-size: 12px !important;
+      height: 36px !important;
+    }
+  }
+
+  .adm-peserta-page,
+  .adm-peserta-page * {
+    box-sizing: border-box;
+  }
+
+  .adm-peserta-page {
+    font-family: var(--font-ui);
+    color: #1C1A17;
+    padding-bottom: 48px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Header Halaman */
+  .adm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  .adm-header-info {
+    min-width: 0;
+    flex: 1 1 320px;
+  }
+
+  .adm-kicker {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1F6F4A;
+    margin-bottom: 6px;
+  }
+
+  .adm-title {
+    font-family: var(--font-judul, var(--font-ui));
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: #1C1A17;
+    margin: 0 0 6px;
+  }
+
+  .adm-subtitle {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #5C5750;
+    margin: 0;
+  }
+
+  /* Tombol Sekunder */
+  .adm-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 10px;
+    border: 1px solid #DCD6C8;
+    background-color: #FFFFFF;
+    color: #1C1A17 !important;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+  }
+
+  .adm-btn-secondary:hover {
+    border-color: #1F6F4A;
+    color: #1F6F4A !important;
+    background-color: #FAF9F6;
+  }
+
+  /* Kartu Bagian Tabel */
+  .adm-section-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E6E2D8;
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
+    margin-bottom: 24px;
+  }
+
+  .adm-section-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .adm-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .adm-toolbar-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 3px;
+  }
+
+  .adm-toolbar-title {
+    font-family: var(--font-judul, var(--font-ui));
+    font-size: 16px;
+    font-weight: 600;
+    color: #1C1A17;
+    margin: 0;
+  }
+
+  .adm-toolbar-sub {
+    font-size: 12.5px;
+    color: #7A746B;
+    margin: 0;
+  }
+
+  .adm-count-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 27px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background-color: #F5F3EE;
+    border: 1px solid #E6E2D8;
+    font-family: var(--font-mono, monospace);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #3E3A34;
+    white-space: nowrap;
+  }
+
+  /* Kolom Pencarian */
+  .adm-search-box {
+    position: relative;
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .adm-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7A746B;
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .adm-search-input {
+    width: 100%;
+    height: 38px;
+    padding: 0 13px 0 36px;
+    border-radius: 10px;
+    border: 1px solid #DCD6C8;
+    background-color: #FAF9F6;
+    color: #1C1A17;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    transition: border-color 140ms ease, background-color 140ms ease;
+  }
+
+  .adm-search-input::placeholder {
+    color: #8A847A;
+  }
+
+  .adm-search-input:focus {
+    outline: none;
+    border-color: #1F6F4A;
+    background-color: #FFFFFF;
+  }
+
+  /* Tabel Data */
+  .adm-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #EFECE4;
+    border-radius: 12px;
+  }
+
+  .adm-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+  }
+
+  .adm-table thead {
+    background-color: #FAF9F6;
+    border-bottom: 1px solid #E6E2D8;
+  }
+
+  .adm-table th {
+    padding: 12px 16px;
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #7A746B;
+    white-space: nowrap;
+  }
+
+  .adm-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #EFECE4;
+    color: #1C1A17;
+    vertical-align: middle;
+  }
+
+  .adm-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .adm-table tbody tr:hover {
+    background-color: #FAF9F6;
+  }
+
+  /* Sel Identitas Peserta */
+  .adm-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .adm-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background-color: #F2EFE9;
+    border: 1px solid #DFD9CC;
+    color: #1C1A17;
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .adm-user-name {
+    font-weight: 600;
+    color: #1C1A17;
+    word-break: break-word;
+  }
+
+  .adm-mono-cell {
+    font-family: var(--font-mono, monospace);
+    font-size: 12.5px;
+    color: #5C5750;
+  }
+
+  /* Lencana Status & Kode Sertifikat */
+  .adm-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background-color: #F2EFE9;
+    border: 1px solid #DFD9CC;
+    color: #1F6F4A;
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .adm-cert-code {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 8px;
+    background-color: #F5F3EE;
+    border: 1px solid #E6E2D8;
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F6F4A;
+    white-space: nowrap;
+  }
+
+  .adm-score-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 8px;
+    background-color: #FAF9F6;
+    border: 1px solid #E6E2D8;
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    color: #3E3A34;
+    white-space: nowrap;
+  }
+
+  .adm-doc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 32px;
+    padding: 0 11px;
+    border-radius: 9px;
+    border: 1px solid #DCD6C8;
+    background-color: #FFFFFF;
+    color: #1C1A17 !important;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+  }
+
+  .adm-doc-btn:hover {
+    border-color: #1F6F4A;
+    color: #1F6F4A !important;
+    background-color: #FAF9F6;
+  }
+
+  .adm-empty-cell {
+    text-align: center !important;
+    padding: 36px 20px !important;
+    color: #7A746B;
+    font-size: 13.5px;
+  }
+
+  /* Responsif Layar HP */
+  @media (max-width: 720px) {
+    .adm-header {
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .adm-header .adm-btn-secondary {
+      width: 100%;
+    }
+
+    .adm-section-card {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .adm-toolbar {
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .adm-search-box {
+      max-width: 100%;
+    }
+
+    /* Ubah Tabel Menjadi Kartu Baris Rapi di Layar HP */
+    .adm-table-wrap {
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+    }
+
+    .adm-table,
+    .adm-table tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .adm-table thead {
+      display: none;
+    }
+
+    .adm-table tbody tr {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      padding: 14px;
+      border: 1px solid #E6E2D8;
+      border-radius: 12px;
+      background-color: #FAF9F6;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .adm-table tbody tr:last-child {
+      margin-bottom: 0;
+    }
+
+    .adm-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 0;
+      border-bottom: none;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    /* Kartu Peserta di Layar HP */
+    .adm-table td[data-col="peserta"] {
+      padding-bottom: 10px;
+      padding-right: 76px;
+      border-bottom: 1px solid #E6E2D8;
+      text-align: left;
+    }
+
+    .adm-table td[data-col="status"] {
+      position: absolute;
+      top: 16px;
+      right: 14px;
+    }
+
+    .adm-table td[data-col="email"] {
+      word-break: break-all;
+    }
+
+    /* Kartu Sertifikat di Layar HP */
+    .adm-table td[data-col="nomor"] {
+      padding-bottom: 10px;
+      padding-right: 84px;
+      border-bottom: 1px solid #E6E2D8;
+      text-align: left;
+    }
+
+    .adm-table td[data-col="dokumen"] {
+      position: absolute;
+      top: 13px;
+      right: 14px;
+    }
+
+    .adm-table td[data-col="kursus"] {
+      align-items: flex-start;
+    }
+
+    .adm-table td[data-label]::before {
+      content: attr(data-label);
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      color: #7A746B;
+      text-align: left;
+      flex-shrink: 0;
+    }
+  }
+</style>
+
+<div class="adm-peserta-page">
+  <!-- Header Halaman -->
+  <div class="adm-header">
+    <div class="adm-header-info">
+      <div class="adm-kicker">Panel Administrator &middot; Penerima Manfaat</div>
+      <h1 class="adm-title">Data peserta &amp; sertifikat</h1>
+      <p class="adm-subtitle">
+        Daftar penerima manfaat program keterampilan dan riwayat penerbitan sertifikat kelulusan resmi.
+      </p>
+    </div>
+
+    <button type="button" id="btn-ekspor-csv" class="adm-btn-secondary">
+      <i data-lucide="download" style="width: 15px; height: 15px;"></i>
+      <span>Ekspor lembar kerja (CSV)</span>
+    </button>
+  </div>
+
+  <!-- Bagian 1: Tabel Peserta Terdaftar -->
+  <section class="adm-section-card">
+    <div class="adm-toolbar">
       <div>
-        <h1 style="font-family: var(--font-judul); font-size: 26px; font-weight: 600; color: var(--teks); margin-bottom: var(--spasi-4);">
-          Data peserta &amp; sertifikat
-        </h1>
-        <p style="font-size: var(--teks-14); color: var(--teks-2); margin: 0;">
-          Daftar penerima manfaat program keterampilan dan riwayat penerbitan sertifikat kelulusan.
-        </p>
+        <div class="adm-toolbar-title-row">
+          <h2 class="adm-toolbar-title">Peserta belajar terdaftar</h2>
+          <span class="adm-count-badge"><span id="total-peserta-badge">0</span> peserta</span>
+        </div>
+        <p class="adm-toolbar-sub">Masyarakat umum, pelajar, dan pencari kerja</p>
       </div>
 
-      <div style="display: flex; gap: var(--spasi-8);">
-        <button type="button" id="btn-ekspor-csv" class="tombol tombol-sekunder tombol-kecil">
-          <i data-lucide="download" style="width: 14px; height: 14px;"></i> Ekspor lembar kerja (CSV)
-        </button>
+      <div class="adm-search-box">
+        <span class="adm-search-icon">
+          <i data-lucide="search" style="width: 15px; height: 15px;"></i>
+        </span>
+        <input type="search" id="cari-peserta" class="adm-search-input" placeholder="Cari nama, email, atau kota...">
       </div>
     </div>
 
-    <!-- Bagian 1: Tabel Peserta Terdaftar -->
-    <div class="kartu" style="padding: 0; margin-bottom: var(--spasi-32);">
-      <div style="padding: var(--spasi-16) var(--spasi-20); border-bottom: 1px solid var(--garis); display: flex; justify-content: space-between; align-items: center; gap: var(--spasi-16); flex-wrap: wrap;">
-        <div>
-          <div style="font-size: var(--teks-14); font-weight: 500; color: var(--teks);">
-            Peserta belajar terdaftar (<span id="total-peserta-badge" style="font-family: var(--font-angka);">0</span>)
-          </div>
-          <div style="font-size: var(--teks-12); color: var(--teks-3);">Masyarakat umum, pelajar, dan pencari kerja</div>
-        </div>
-        <div style="max-width: 280px; width: 100%;">
-          <input type="search" id="cari-peserta" class="bidang-input" placeholder="Cari nama atau email..." style="height: 36px; font-size: var(--teks-12);">
-        </div>
-      </div>
+    <div class="adm-table-wrap">
+      <table class="adm-table">
+        <thead>
+          <tr>
+            <th>Nama lengkap</th>
+            <th>Alamat email</th>
+            <th>Pekerjaan &amp; domisili</th>
+            <th>Tanggal gabung</th>
+            <th>Status akun</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-peserta-body">
+          <tr>
+            <td colspan="5" class="adm-empty-cell">Memuat data peserta...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-      <div class="wadah-tabel" style="border: none; border-radius: 0;">
-        <table class="tabel-data">
-          <thead>
-            <tr>
-              <th>Nama lengkap</th>
-              <th>Alamat email</th>
-              <th>Pekerjaan &amp; domisili</th>
-              <th>Tanggal gabung</th>
-              <th>Status akun</th>
-            </tr>
-          </thead>
-          <tbody id="tabel-peserta-body">
-            <tr>
-              <td colspan="5" style="text-align: center; color: var(--teks-3); padding: var(--spasi-32);">Memuat data peserta...</td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- Bagian 2: Tabel Sertifikat Resmi Terbit -->
+  <section class="adm-section-card">
+    <div class="adm-toolbar">
+      <div>
+        <div class="adm-toolbar-title-row">
+          <h2 class="adm-toolbar-title">Sertifikat kelulusan sah</h2>
+          <span class="adm-count-badge"><span id="total-sertifikat-badge">0</span> sertifikat</span>
+        </div>
+        <p class="adm-toolbar-sub">Terdaftar resmi dengan nomor kode unik verifikasi</p>
       </div>
     </div>
 
-    <!-- Bagian 2: Tabel Sertifikat Resmi Terbit -->
-    <div class="kartu" style="padding: 0;">
-      <div style="padding: var(--spasi-16) var(--spasi-20); border-bottom: 1px solid var(--garis); display: flex; justify-content: space-between; align-items: center; gap: var(--spasi-16); flex-wrap: wrap;">
-        <div>
-          <div style="font-size: var(--teks-14); font-weight: 500; color: var(--teks);">
-            Sertifikat kelulusan sah (<span id="total-sertifikat-badge" style="font-family: var(--font-angka);">0</span>)
-          </div>
-          <div style="font-size: var(--teks-12); color: var(--teks-3);">Terdaftar resmi dengan nomor kode unik verifikasi</div>
-        </div>
-      </div>
-
-      <div class="wadah-tabel" style="border: none; border-radius: 0;">
-        <table class="tabel-data">
-          <thead>
-            <tr>
-              <th>Nomor sertifikat</th>
-              <th>Penerima</th>
-              <th>Kursus kelulusan</th>
-              <th>Nilai kuis</th>
-              <th>Tanggal terbit</th>
-              <th style="width: 110px; text-align: right;">Dokumen</th>
-            </tr>
-          </thead>
-          <tbody id="tabel-sertifikat-body">
-            <tr>
-              <td colspan="6" style="text-align: center; color: var(--teks-3); padding: var(--spasi-32);">Memuat data sertifikat...</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="adm-table-wrap">
+      <table class="adm-table">
+        <thead>
+          <tr>
+            <th>Nomor sertifikat</th>
+            <th>Penerima</th>
+            <th>Kursus kelulusan</th>
+            <th>Nilai kuis</th>
+            <th>Tanggal terbit</th>
+            <th style="width: 110px; text-align: right;">Dokumen</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-sertifikat-body">
+          <tr>
+            <td colspan="6" class="adm-empty-cell">Memuat data sertifikat...</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </section>
+</div>
 
 <script type="module">
   import { ambilSemuaPeserta, ambilSemuaSertifikat } from '../assets/js/api.js';
@@ -87,22 +650,86 @@
   let daftarPesertaGlobal = [];
   let daftarSertifikatGlobal = [];
 
+  function tandaiTopbarResponsif() {
+    const topbar = document.querySelector('header, nav, .admin-topbar, .topbar');
+    if (!topbar || !topbar.textContent.includes('@')) return;
+
+    topbar.classList.add('adm-topbar-fixed');
+
+    const anakLangsung = Array.from(topbar.children);
+    if (anakLangsung.length < 2) return;
+
+    anakLangsung[0].classList.add('adm-topbar-brand');
+    anakLangsung[0].querySelectorAll('span, div').forEach(el => {
+      const txt = el.textContent.trim();
+      if (txt === '/' || txt === 'Panel pengelola') {
+        el.classList.add('adm-topbar-sub-hide');
+      }
+    });
+
+    const grupKanan = anakLangsung[anakLangsung.length - 1];
+    grupKanan.classList.add('adm-topbar-right-wrap');
+
+    const subKanan = Array.from(grupKanan.children);
+    const idxEmail = subKanan.findIndex(el => el.textContent.includes('@'));
+    if (idxEmail === -1) return;
+
+    subKanan.forEach((el, idx) => {
+      const txt = el.textContent.trim();
+      if (idx < idxEmail) {
+        if (txt === '' || txt === '|') {
+          el.classList.add('adm-topbar-divider');
+        } else {
+          el.classList.add('adm-topbar-action-btn');
+        }
+      } else {
+        el.classList.add('adm-topbar-user-box');
+        el.querySelectorAll('span, div').forEach(sub => {
+          if (sub.children.length === 0 && sub.textContent.includes('@')) {
+            sub.classList.add('adm-topbar-email-text');
+          }
+        });
+      }
+    });
+
+    if (!grupKanan.querySelector('.adm-topbar-break')) {
+      const pemisahBaris = document.createElement('span');
+      pemisahBaris.className = 'adm-topbar-break';
+      grupKanan.insertBefore(pemisahBaris, subKanan[idxEmail]);
+    }
+  }
+
+  function ambilInisial(nama) {
+    if (!nama) return 'P';
+    return nama
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map(s => s[0].toUpperCase())
+      .join('');
+  }
+
   function tampilkanPeserta(data) {
     const tbody = document.getElementById('tabel-peserta-body');
     document.getElementById('total-peserta-badge').textContent = data.length;
 
     if (!data.length) {
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--teks-3); padding: var(--spasi-32);">Tidak ada peserta yang cocok.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="5" class="adm-empty-cell">Tidak ada peserta yang cocok.</td></tr>`;
       return;
     }
 
     tbody.innerHTML = data.map(p => `
       <tr>
-        <td style="font-weight: 500; color: var(--teks);">${p.nama}</td>
-        <td style="font-family: var(--font-angka); color: var(--teks-2);">${p.email}</td>
-        <td style="color: var(--teks-2);">${p.pekerjaan} · ${p.kota}</td>
-        <td style="font-family: var(--font-angka); color: var(--teks-3); font-size: var(--teks-12);">${p.tgl_daftar}</td>
-        <td><span class="lencana-status lencana-sukses">${p.status}</span></td>
+        <td data-col="peserta">
+          <div class="adm-user-cell">
+            <span class="adm-avatar">${ambilInisial(p.nama)}</span>
+            <span class="adm-user-name">${p.nama}</span>
+          </div>
+        </td>
+        <td data-col="email" data-label="Email" class="adm-mono-cell">${p.email}</td>
+        <td data-label="Domisili" style="color: #5C5750;">${p.pekerjaan} &middot; ${p.kota}</td>
+        <td data-label="Terdaftar" class="adm-mono-cell" style="color: #7A746B;">${p.tgl_daftar}</td>
+        <td data-col="status"><span class="adm-status-badge">${p.status}</span></td>
       </tr>
     `).join('');
   }
@@ -112,26 +739,25 @@
     document.getElementById('total-sertifikat-badge').textContent = data.length;
 
     if (!data.length) {
-      tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--teks-3); padding: var(--spasi-32);">Belum ada sertifikat terbit.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="6" class="adm-empty-cell">Belum ada sertifikat terbit.</td></tr>`;
       return;
     }
 
     tbody.innerHTML = data.map(c => `
       <tr>
-        <td>
-          <code style="font-family: var(--font-angka); font-size: var(--teks-12); color: var(--aksen); font-weight: 500;">
-            ${c.nomor_sertifikat}
-          </code>
+        <td data-col="nomor">
+          <code class="adm-cert-code">${c.nomor_sertifikat}</code>
         </td>
-        <td style="font-weight: 500; color: var(--teks);">${c.nama_peserta}</td>
-        <td style="color: var(--teks-2);">${c.nama_kursus}</td>
-        <td>
-          <span class="lencana-status lencana-netral" style="font-family: var(--font-angka);">${c.nilai_kuis || 90} / 100</span>
+        <td data-label="Penerima" class="adm-user-name">${c.nama_peserta}</td>
+        <td data-col="kursus" data-label="Kursus" style="color: #5C5750;">${c.nama_kursus}</td>
+        <td data-label="Nilai kuis">
+          <span class="adm-score-badge">${c.nilai_kuis || 90} / 100</span>
         </td>
-        <td style="font-family: var(--font-angka); font-size: var(--teks-12); color: var(--teks-3);">${c.tanggal_terbit}</td>
-        <td style="text-align: right;">
-          <a href="../sertifikat/lihat.php?nomor=${c.nomor_sertifikat}" target="_blank" class="tombol tombol-sekunder tombol-kecil" style="height: 28px; padding: 0 10px; font-size: var(--teks-12);">
-            Buka <i data-lucide="arrow-up-right" style="width: 12px; height: 12px;"></i>
+        <td data-label="Terbit" class="adm-mono-cell" style="color: #7A746B;">${c.tanggal_terbit}</td>
+        <td data-col="dokumen" style="text-align: right;">
+          <a href="../sertifikat/lihat.php?nomor=${encodeURIComponent(c.nomor_sertifikat)}" target="_blank" class="adm-doc-btn">
+            <span>Buka</span>
+            <i data-lucide="arrow-up-right" style="width: 13px; height: 13px;"></i>
           </a>
         </td>
       </tr>
@@ -183,6 +809,9 @@
   document.getElementById('btn-ekspor-csv').addEventListener('click', eksporCSV);
 
   document.addEventListener('DOMContentLoaded', async () => {
+    tandaiTopbarResponsif();
+    document.querySelectorAll('footer, .kaki-halaman').forEach(el => el.remove());
+
     const [peserta, sertifikat] = await Promise.all([
       ambilSemuaPeserta(),
       ambilSemuaSertifikat()
@@ -191,5 +820,7 @@
     daftarSertifikatGlobal = sertifikat;
     tampilkanPeserta(daftarPesertaGlobal);
     tampilkanSertifikat(daftarSertifikatGlobal);
+
+    if (window.lucide) lucide.createIcons();
   });
 </script>

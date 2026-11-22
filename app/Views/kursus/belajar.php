@@ -1,80 +1,601 @@
-<div class="tata-aplikasi">
-  <!-- Sidebar Navigasi Modul (Lebar 260px) -->
-  <aside class="sidebar-aplikasi">
-    <div style="margin-bottom: var(--spasi-16);">
-      <a href="katalog.php" style="font-size: var(--teks-12); color: var(--teks-3); display: inline-flex; align-items: center; gap: var(--spasi-4);">
-        &larr; Katalog kursus
-      </a>
-      <h2 style="font-size: var(--teks-16); font-weight: 500; color: var(--teks); margin-top: var(--spasi-8); line-height: 1.3;" id="judul-kursus-sidebar">
+<style>
+  header,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    background-color: #F7F5F0;
+  }
+
+  .blj-layout {
+    display: grid;
+    grid-template-columns: 288px 1fr;
+    min-height: 100vh;
+    background-color: #F7F5F0;
+    font-family: var(--font-ui);
+    color: #1C1A17;
+  }
+
+  /* Sidebar Kurikulum Kiri */
+  .blj-sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E6E2D8;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .blj-sidebar-top {
+    padding: 20px 20px 18px;
+    border-bottom: 1px solid #EFECE4;
+  }
+
+  .blj-nav-back-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .blj-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #5C5750;
+    text-decoration: none;
+    transition: color 140ms ease;
+  }
+
+  .blj-back-link:hover {
+    color: #1C1A17 !important;
+  }
+
+  .blj-course-title {
+    font-family: var(--font-judul);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.38;
+    color: #1C1A17;
+    margin: 0 0 14px;
+  }
+
+  /* Kotak Progres Solid */
+  .blj-progress-box {
+    background-color: #FAF9F6;
+    border: 1px solid #E6E2D8;
+    border-radius: 8px;
+    padding: 11px 13px;
+  }
+
+  .blj-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .blj-progress-label {
+    color: #5C5750;
+    font-weight: 500;
+  }
+
+  .blj-progress-num {
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F6F4A;
+  }
+
+  .blj-progress-track {
+    width: 100%;
+    height: 5px;
+    background-color: #E6E2D8;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .blj-progress-fill {
+    height: 100%;
+    background-color: #1F6F4A;
+    border-radius: 999px;
+    transition: width 240ms ease;
+  }
+
+  /* Daftar Modul Scrollable */
+  .blj-module-section {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 12px;
+  }
+
+  .blj-module-heading {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8C857B;
+    padding: 0 10px;
+    margin-bottom: 8px;
+  }
+
+  .blj-module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .blj-module-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: #5C5750;
+    font-size: 13px;
+    line-height: 1.35;
+    transition: background-color 140ms ease, color 140ms ease;
+  }
+
+  .blj-module-link:hover {
+    background-color: #F7F5F0;
+    color: #1C1A17 !important;
+  }
+
+  .blj-module-link.aktif {
+    background-color: #F2EFE9;
+    border-color: #E2DDD0;
+    color: #1C1A17 !important;
+    font-weight: 600;
+  }
+
+  .blj-mod-num {
+    font-family: var(--font-mono, monospace);
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #8C857B;
+    min-width: 20px;
+    flex-shrink: 0;
+  }
+
+  .blj-module-link.aktif .blj-mod-num {
+    color: #1F6F4A;
+    font-weight: 600;
+  }
+
+  .blj-mod-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .blj-mod-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background-color: #1F6F4A;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .blj-mod-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    border: 1px solid #D8D3C8;
+    background-color: #FFFFFF;
+    flex-shrink: 0;
+  }
+
+  .blj-sidebar-foot {
+    padding: 16px 20px 20px;
+    border-top: 1px solid #EFECE4;
+    background-color: #FFFFFF;
+  }
+
+  /* Tombol Utama & Sekunder (Kebal Override a:hover) */
+  .blj-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid #1F6F4A;
+    background-color: #1F6F4A;
+    color: #FFFFFF !important;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 140ms ease;
+  }
+
+  .blj-btn-primary:hover {
+    background-color: #18583B;
+    color: #FFFFFF !important;
+  }
+
+  .blj-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid #D8D3C8;
+    background-color: #FFFFFF;
+    color: #1C1A17 !important;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+  }
+
+  .blj-btn-secondary:hover {
+    border-color: #1F6F4A;
+    color: #1F6F4A !important;
+    background-color: #FAF9F6;
+  }
+
+  .blj-btn-done {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid #1F6F4A;
+    background-color: #F2EFE9;
+    color: #1F6F4A !important;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 140ms ease;
+  }
+
+  .blj-btn-done:hover {
+    background-color: #E8E3D7;
+    color: #18583B !important;
+  }
+
+  .blj-btn-full {
+    width: 100%;
+  }
+
+  /* Area Konten Utama */
+  .blj-main {
+    padding: 36px 40px 80px;
+    min-width: 0;
+  }
+
+  .blj-reader-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .blj-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E6E2D8;
+  }
+
+  .blj-module-kicker {
+    font-family: var(--font-mono, monospace);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1F6F4A;
+    margin-bottom: 6px;
+  }
+
+  .blj-module-title {
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: #1C1A17;
+    margin: 0;
+  }
+
+  /* Banner Kesiapan Kuis (Solid Editorial Card, Tanpa Transparan Neon) */
+  .blj-quiz-banner {
+    background-color: #FFFFFF;
+    border: 1px solid #D8D3C8;
+    border-left: 4px solid #1F6F4A;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .blj-quiz-banner-text {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #5C5750;
+  }
+
+  .blj-quiz-banner-text strong {
+    color: #1C1A17;
+    font-weight: 600;
+  }
+
+  /* Pemutar Video */
+  .blj-video-box {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    background-color: #141311;
+    border: 1px solid #D8D3C8;
+  }
+
+  /* Lembar Baca Materi */
+  .blj-article-sheet {
+    background-color: #FFFFFF;
+    border: 1px solid #E6E2D8;
+    border-radius: 10px;
+    padding: 32px 36px;
+  }
+
+  .blj-article-content {
+    font-family: var(--font-ui);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #26231F;
+  }
+
+  .blj-article-content h2 {
+    font-family: var(--font-judul);
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C1A17;
+    margin: 28px 0 12px;
+    line-height: 1.35;
+  }
+
+  .blj-article-content h2:first-child,
+  .blj-article-content h3:first-child,
+  .blj-article-content p:first-child {
+    margin-top: 0;
+  }
+
+  .blj-article-content h3 {
+    font-family: var(--font-judul);
+    font-size: 16.5px;
+    font-weight: 600;
+    color: #1C1A17;
+    margin: 22px 0 8px;
+    line-height: 1.4;
+  }
+
+  .blj-article-content p {
+    margin: 0 0 16px;
+  }
+
+  .blj-article-content ul,
+  .blj-article-content ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+
+  .blj-article-content li {
+    margin-bottom: 8px;
+  }
+
+  .blj-article-content blockquote {
+    margin: 20px 0;
+    padding: 14px 18px;
+    background-color: #FAF9F6;
+    border-left: 3px solid #1F6F4A;
+    color: #3E3A34;
+    font-size: 14.5px;
+  }
+
+  .blj-article-content code {
+    font-family: var(--font-mono, monospace);
+    font-size: 13.5px;
+    background-color: #F2EFE9;
+    border: 1px solid #E6E2D8;
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #1C1A17;
+  }
+
+  .blj-article-content pre {
+    background-color: #1C1A17;
+    color: #F7F5F0;
+    padding: 16px 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: var(--font-mono, monospace);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 18px 0;
+  }
+
+  .blj-article-content pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+
+  /* Bar Navigasi Bawah */
+  .blj-footer-nav {
+    margin-top: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #E6E2D8;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .blj-footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 920px) {
+    .blj-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .blj-sidebar {
+      position: static;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #E6E2D8;
+    }
+
+    .blj-module-section {
+      max-height: 240px;
+    }
+
+    .blj-main {
+      padding: 24px 18px 56px;
+    }
+
+    .blj-article-sheet {
+      padding: 24px 20px;
+    }
+  }
+</style>
+
+<div class="blj-layout">
+  <!-- Sidebar Kurikulum -->
+  <aside class="blj-sidebar">
+    <div class="blj-sidebar-top">
+      <div class="blj-nav-back-row">
+        <a href="../dashboard/index.php" class="blj-back-link">
+          <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="katalog.php" class="blj-back-link">
+          <span>Katalog kursus</span>
+        </a>
+      </div>
+
+      <h2 class="blj-course-title" id="judul-kursus-sidebar">
         Memuat judul kursus...
       </h2>
+
+      <!-- Bilah Progres Modul -->
+      <div class="blj-progress-box">
+        <div class="blj-progress-meta">
+          <span class="blj-progress-label" id="label-jumlah-selesai">Progres belajar</span>
+          <span class="blj-progress-num" id="label-persen-progres">0%</span>
+        </div>
+        <div class="blj-progress-track">
+          <div class="blj-progress-fill" id="bilah-progres-bar" style="width: 0%;"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Bilah Progres Modul -->
-    <div style="background-color: var(--permukaan-2); border-radius: var(--radius-kontrol); padding: var(--spasi-12); margin-bottom: var(--spasi-20);">
-      <div style="display: flex; justify-content: space-between; align-items: center; font-size: var(--teks-12); margin-bottom: var(--spasi-8);">
-        <span style="color: var(--teks-2);">Progres belajar</span>
-        <span class="angka-mono" style="font-weight: 500; color: var(--aksen);" id="label-persen-progres">0%</span>
-      </div>
-      <div class="bilah-progres">
-        <div class="bilah-progres-isi" id="bilah-progres-bar" style="width: 0%;"></div>
-      </div>
+    <div class="blj-module-section">
+      <div class="blj-module-heading">Daftar Modul</div>
+      <ul class="blj-module-list" id="nav-modul-list">
+        <!-- Dimuat dinamis via JS -->
+      </ul>
     </div>
-
-    <div class="sidebar-label">Daftar modul</div>
-    <ul class="sidebar-menu" id="nav-modul-list">
-      <!-- Dimuat dinamis via JS -->
-    </ul>
 
     <!-- Menu Kuis Akhir di Bawah Sidebar -->
-    <div style="margin-top: auto; padding-top: var(--spasi-20); border-top: 1px solid var(--garis);">
-      <a href="#" id="tautan-ke-kuis" class="tombol tombol-sekunder tombol-kecil tombol-lebar">
-        Kuis akhir kelulusan &rarr;
+    <div class="blj-sidebar-foot">
+      <a href="#" id="tautan-ke-kuis" class="blj-btn-secondary blj-btn-full">
+        <span>Kuis akhir kelulusan &rarr;</span>
       </a>
     </div>
   </aside>
 
-  <!-- Area Konten Materi (Lebar Baca Nyaman 720px) -->
-  <main class="konten-aplikasi">
-    <div class="wadah-baca">
-      <div style="margin-bottom: var(--spasi-24); border-bottom: 1px solid var(--garis); padding-bottom: var(--spasi-16);">
-        <div style="font-size: var(--teks-12); color: var(--teks-3); margin-bottom: var(--spasi-4);" id="label-urutan-modul">
+  <!-- Area Konten Materi -->
+  <main class="blj-main">
+    <div class="blj-reader-wrap">
+      <header class="blj-header">
+        <div class="blj-module-kicker" id="label-urutan-modul">
           Modul 1
         </div>
-        <h1 style="font-size: var(--teks-28); font-family: var(--font-serif); color: var(--teks);" id="judul-materi-aktif">
+        <h1 class="blj-module-title" id="judul-materi-aktif">
           Memuat modul...
         </h1>
-      </div>
+      </header>
 
       <!-- Banner Kesiapan Kuis (Muncul saat semua modul selesai) -->
-      <div id="banner-siap-kuis" class="pesan-status pesan-status-sukses" style="display: none; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-        <div>
+      <div id="banner-siap-kuis" class="blj-quiz-banner" style="display: none;">
+        <div class="blj-quiz-banner-text">
           <strong>Seluruh modul telah diselesaikan.</strong> Anda siap mengerjakan kuis evaluasi akhir untuk memperoleh sertifikat.
         </div>
-        <a href="#" id="btn-banner-kuis" class="tombol tombol-utama tombol-kecil">Mulai kuis akhir &rarr;</a>
+        <a href="#" id="btn-banner-kuis" class="blj-btn-primary">Mulai kuis akhir &rarr;</a>
       </div>
 
       <!-- Pemutar Video YouTube Embed -->
-      <div id="wadah-video-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-kontrol); margin-bottom: var(--spasi-24); background-color: #000; border: 1px solid var(--garis);">
+      <div id="wadah-video-embed" class="blj-video-box">
         <!-- Iframe dimuat dinamis -->
       </div>
 
       <!-- Teks Materi Nyata -->
-      <article style="font-size: var(--teks-16); line-height: var(--jarak-baris-baca); color: var(--teks);" id="isi-teks-materi">
-        <!-- Dimuat dinamis -->
-      </article>
+      <div class="blj-article-sheet">
+        <article class="blj-article-content" id="isi-teks-materi">
+          <!-- Dimuat dinamis -->
+        </article>
+      </div>
 
       <!-- Navigasi Bawah dan Tombol Tandai Selesai -->
-      <div style="margin-top: var(--spasi-48); padding-top: var(--spasi-20); border-top: 1px solid var(--garis); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spasi-16);">
-        <a href="#" id="btn-modul-sebelumnya" class="tombol tombol-sekunder tombol-kecil" style="display: none;">
+      <div class="blj-footer-nav">
+        <a href="#" id="btn-modul-sebelumnya" class="blj-btn-secondary" style="display: none;">
           &larr; Modul sebelumnya
         </a>
 
-        <div style="display: flex; gap: var(--spasi-12); align-items: center; margin-left: auto;">
-          <button type="button" id="btn-tandai-selesai" class="tombol tombol-utama tombol-kecil">
+        <div class="blj-footer-right">
+          <button type="button" id="btn-tandai-selesai" class="blj-btn-primary">
             Tandai selesai
           </button>
-          <a href="#" id="btn-modul-selanjutnya" class="tombol tombol-sekunder tombol-kecil">
+          <a href="#" id="btn-modul-selanjutnya" class="blj-btn-secondary">
             Modul selanjutnya &rarr;
           </a>
         </div>
@@ -145,7 +666,7 @@
     tautanKuis.href = `kuis.php?slug=${slug}`;
     btnBannerKuis.href = `kuis.php?slug=${slug}`;
 
-    // Navigasi berdasarkan indeks aktual di modulList (mencegah bug jika nomor urutan loncat)
+    // Navigasi berdasarkan indeks aktual di modulList
     if (idxAktif > 0) {
       btnPrev.style.display = 'inline-flex';
       btnPrev.href = `belajar.php?slug=${slug}&modul=${modulList[idxAktif - 1].urutan}`;
@@ -158,21 +679,22 @@
     } else {
       btnNext.textContent = 'Lanjut ke kuis akhir \u2192';
       btnNext.href = `kuis.php?slug=${slug}`;
-      btnNext.className = 'tombol tombol-utama tombol-kecil';
+      btnNext.className = 'blj-btn-primary';
     }
 
     function perbaruiTampilanProgres() {
       const jumlahSelesai = modulList.filter(m => progresList.includes(m.id)).length;
       const persen = Math.round((jumlahSelesai / modulList.length) * 100);
+      document.getElementById('label-jumlah-selesai').textContent = `${jumlahSelesai} dari ${modulList.length} modul`;
       document.getElementById('label-persen-progres').textContent = `${persen}%`;
       document.getElementById('bilah-progres-bar').style.width = `${persen}%`;
 
       if (jumlahSelesai >= modulList.length) {
         bannerKuis.style.display = 'flex';
-        tautanKuis.className = 'tombol tombol-utama tombol-kecil tombol-lebar';
+        tautanKuis.className = 'blj-btn-primary blj-btn-full';
       } else {
         bannerKuis.style.display = 'none';
-        tautanKuis.className = 'tombol tombol-sekunder tombol-kecil tombol-lebar';
+        tautanKuis.className = 'blj-btn-secondary blj-btn-full';
       }
 
       const navList = document.getElementById('nav-modul-list');
@@ -181,10 +703,16 @@
         const isAktif = m.id === modulAktif.id;
         return `
           <li>
-            <a href="belajar.php?slug=${slug}&modul=${m.urutan}" class="sidebar-item ${isAktif ? 'aktif' : ''}">
-              <span class="angka-mono" style="font-size: var(--teks-12);">${String(i + 1).padStart(2, '0')}</span>
-              <span style="flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${m.judul_modul}</span>
-              ${isSelesai ? '<span style="color: var(--aksen); font-size: 12px; font-weight: 600;">&check;</span>' : ''}
+            <a href="belajar.php?slug=${slug}&modul=${m.urutan}" class="blj-module-link ${isAktif ? 'aktif' : ''}">
+              <span class="blj-mod-num">${String(i + 1).padStart(2, '0')}</span>
+              <span class="blj-mod-name">${m.judul_modul}</span>
+              ${isSelesai
+                ? `<span class="blj-mod-check" title="Selesai">
+                     <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                       <path d="M2.5 6.2L5 8.7L9.5 3.8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                     </svg>
+                   </span>`
+                : '<span class="blj-mod-dot"></span>'}
             </a>
           </li>
         `;
@@ -192,11 +720,11 @@
 
       const isSudahSelesai = progresList.includes(modulAktif.id);
       if (isSudahSelesai) {
-        btnSelesai.innerHTML = '&check; Sudah selesai';
-        btnSelesai.className = 'tombol tombol-tipis tombol-kecil';
+        btnSelesai.innerHTML = '&check; Modul selesai';
+        btnSelesai.className = 'blj-btn-done';
       } else {
         btnSelesai.textContent = 'Tandai selesai';
-        btnSelesai.className = 'tombol tombol-utama tombol-kecil';
+        btnSelesai.className = 'blj-btn-primary';
       }
     }
 
@@ -230,5 +758,9 @@
     });
 
     perbaruiTampilanProgres();
+
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
   });
 </script>
