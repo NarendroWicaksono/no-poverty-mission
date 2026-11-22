@@ -2,7 +2,8 @@
 $berkasAktif = basename($_SERVER['PHP_SELF']);
 $sedangDiKursus = strpos($_SERVER['PHP_SELF'], 'katalog') !== false || strpos($_SERVER['PHP_SELF'], 'detail') !== false;
 $sedangDiVerifikasi = strpos($_SERVER['PHP_SELF'], 'verifikasi') !== false;
-$sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false;
+$sedangDiProfil = strpos($_SERVER['PHP_SELF'], 'profil') !== false;
+$sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$sedangDiProfil;
 ?>
 
 <style>
@@ -324,6 +325,38 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false;
     gap: var(--spasi-12);
   }
 
+  /* Sembunyikan tombol keluar bila disisipkan skrip sesi eksternal */
+  #nav-aksi-sesi button,
+  #nav-mobile-auth button {
+    display: none !important;
+  }
+
+  /* Pill Profil Peserta (Langsung ke Pengaturan Profil) */
+  .nav-profil-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 38px;
+    padding: 0 15px;
+    border-radius: 999px;
+    background-color: #E6F0EA;
+    border: 1px solid #C8DDD0;
+    color: #1F6F4A !important;
+    font-family: var(--font-judul);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 140ms ease, border-color 140ms ease;
+  }
+
+  .nav-profil-pill:hover,
+  .nav-profil-pill.aktif {
+    background-color: #D6E7DD;
+    border-color: #1F6F4A;
+    color: #18583B !important;
+  }
+
   .tautan-masuk {
     font-family: var(--font-judul);
     font-size: var(--teks-14);
@@ -638,6 +671,46 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false;
 <script type="module">
   import { ambilKategori, ambilDaftarKursus } from '<?= $baseUrl ?>/assets/js/api.js';
 
+  const baseUrl = <?= json_encode($baseUrl ?? '.') ?>;
+  const sedangDiProfil = <?= json_encode($sedangDiProfil) ?>;
+
+  function pasangTautanProfilNavbar(wadah) {
+    if (!wadah) return;
+    if (wadah.querySelector('[data-profil-terpasang="1"]')) return;
+    if (wadah.querySelector('a[href*="login.php"]')) return;
+
+    const namaKandidat = Array.from(wadah.querySelectorAll('span, a, div'))
+      .map(el => el.textContent.trim())
+      .find(txt => txt && txt.toLowerCase() !== 'keluar' && txt.toLowerCase() !== 'masuk' && txt.toLowerCase() !== 'daftar');
+
+    if (!namaKandidat) return;
+
+    wadah.innerHTML = `
+      <a href="${baseUrl}/dashboard/profil.php" class="nav-profil-pill ${sedangDiProfil ? 'aktif' : ''}" data-profil-terpasang="1" title="Pengaturan profil">
+        <i data-lucide="user" style="width: 15px; height: 15px;"></i>
+        <span>${namaKandidat}</span>
+      </a>
+    `;
+
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  }
+
+  function pantauSesiNavbar() {
+    ['nav-aksi-sesi', 'nav-mobile-auth'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      pasangTautanProfilNavbar(el);
+
+      const observer = new MutationObserver(() => {
+        pasangTautanProfilNavbar(el);
+      });
+      observer.observe(el, { childList: true, subtree: true });
+    });
+  }
+
   const badgeSvgKategori = [
     `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="6" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.6"/><rect x="3" y="3" width="22" height="7" rx="5" fill="#1F6F4A"/><line x1="11" y1="10" x2="11" y2="25" stroke="#1C1A17" stroke-width="1.4"/><line x1="3" y1="17" x2="25" y2="17" stroke="#1C1A17" stroke-width="1.4"/></svg>`,
     `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="5" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.6"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#1C1A17" stroke-width="1.6"/><circle cx="14" cy="16" r="2.5" fill="#1F6F4A"/></svg>`,
@@ -680,8 +753,6 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false;
   ];
 
   async function isiMegaMenuNavbar() {
-    const baseUrl = <?= json_encode($baseUrl ?? '.') ?>;
-
     try {
       const [katList, kursusList] = await Promise.all([
         ambilKategori(),
@@ -737,5 +808,9 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false;
     } catch (e) {}
   }
 
-  document.addEventListener('DOMContentLoaded', isiMegaMenuNavbar);
+  pantauSesiNavbar();
+  document.addEventListener('DOMContentLoaded', () => {
+    pantauSesiNavbar();
+    isiMegaMenuNavbar();
+  });
 </script>
