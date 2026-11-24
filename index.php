@@ -1,5 +1,9 @@
 <?php
-require_once __DIR__ . '/app/Core/Bootstrap.php';
+if (file_exists(__DIR__ . '/app/Core/Bootstrap.php')) {
+    require_once __DIR__ . '/app/Core/Bootstrap.php';
+} elseif (file_exists(__DIR__ . '/../app/Core/Bootstrap.php')) {
+    require_once __DIR__ . '/../app/Core/Bootstrap.php';
+}
 
 $route = $_GET['r'] ?? 'home/index';
 \App\Core\Router::dispatch($route, '.');
