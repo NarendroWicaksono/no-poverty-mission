@@ -17,6 +17,7 @@ class Router {
             'dashboard' => \App\Controllers\DashboardController::class,
             'sertifikat' => \App\Controllers\SertifikatController::class,
             'admin' => \App\Controllers\AdminController::class,
+            'pengelola' => \App\Controllers\AdminController::class,
             'api' => \App\Controllers\ApiController::class,
         ];
 

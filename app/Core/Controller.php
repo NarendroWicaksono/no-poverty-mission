@@ -13,6 +13,23 @@ abstract class Controller {
         $layoutAdmin = $data['layoutAdmin'] ?? false;
 
         $viewsRoot = dirname(__DIR__) . '/Views';
+        $viewFile = $viewsRoot . '/' . $viewPath . '.php';
+
+        // Dukung fleksibilitas jika folder view dinamai admin atau pengelola
+        if (!file_exists($viewFile)) {
+            if (strpos($viewPath, 'admin/') === 0) {
+                $altPath = $viewsRoot . '/pengelola/' . substr($viewPath, 6) . '.php';
+                if (file_exists($altPath)) {
+                    $viewFile = $altPath;
+                }
+            } elseif (strpos($viewPath, 'pengelola/') === 0) {
+                $altPath = $viewsRoot . '/admin/' . substr($viewPath, 10) . '.php';
+                if (file_exists($altPath)) {
+                    $viewFile = $altPath;
+                }
+            }
+        }
+
         include $viewsRoot . '/layouts/header.php';
 
         if ($layoutAdmin) {
@@ -20,10 +37,10 @@ abstract class Controller {
             echo '<div class="tata-aplikasi">';
             include $viewsRoot . '/layouts/admin_sidebar.php';
             echo '<main class="konten-aplikasi">';
-            include $viewsRoot . '/' . $viewPath . '.php';
+            include $viewFile;
             echo '</main></div>';
         } else {
-            include $viewsRoot . '/' . $viewPath . '.php';
+            include $viewFile;
         }
 
         include $viewsRoot . '/layouts/footer.php';
