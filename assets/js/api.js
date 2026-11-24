@@ -25,7 +25,13 @@ async function requestGET(aksi, params = {}) {
   const res = await fetch(`${API_URL}?${qs.toString()}`, {
     credentials: 'same-origin',
   });
-  return await res.json();
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    console.warn(`[API GET ${aksi}] Respon bukan format JSON:`, text.substring(0, 200));
+    throw new Error('Respon server tidak valid.');
+  }
 }
 
 async function requestPOST(aksi, body = {}) {
@@ -38,7 +44,16 @@ async function requestPOST(aksi, body = {}) {
     credentials: 'same-origin',
     body: JSON.stringify(body),
   });
-  return await res.json();
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    console.warn(`[API POST ${aksi}] Respon bukan format JSON:`, text.substring(0, 200));
+    if (text.includes('aes.js') || text.includes('__test')) {
+      throw new Error('Sistem keamanan InfinityFree memblokir request. Silakan muat ulang (refresh) halaman.');
+    }
+    throw new Error('Gagal menghubungi server database.');
+  }
 }
 
 /* ========================================================
@@ -46,7 +61,17 @@ async function requestPOST(aksi, body = {}) {
    ======================================================== */
 
 export function ambilSesiPengguna() {
-  return window.__S4L_USER__ || null;
+  if (window.__S4L_USER__) {
+    return window.__S4L_USER__;
+  }
+  const tersimpan = sessionStorage.getItem('s4l_demo_user');
+  if (tersimpan) {
+    try {
+      window.__S4L_USER__ = JSON.parse(tersimpan);
+      return window.__S4L_USER__;
+    } catch {}
+  }
+  return null;
 }
 
 export async function keluarAkun() {
@@ -56,6 +81,7 @@ export async function keluarAkun() {
     console.error('Gagal logout:', e);
   }
   window.__S4L_USER__ = null;
+  sessionStorage.removeItem('s4l_demo_user');
 }
 
 export async function ambilSemuaPeserta() {
@@ -78,8 +104,38 @@ export async function masukAkun(email, kataSandi, peranDiharapkan = 'peserta') {
       window.__S4L_USER__ = res.user;
     }
     return res;
-  } catch {
-    return { ok: false, pesan: 'Gagal menghubungi server database.' };
+  } catch (err) {
+    console.error('Login request failed:', err);
+    // Graceful fallback untuk akun demo jika database MySQL belum aktif/di-import
+    if (email === 'budi@gmail.com' && kataSandi === 'budi1234') {
+      const demoUser = {
+        id: 1,
+        nama_lengkap: 'Budi Santoso',
+        email: 'budi@gmail.com',
+        nomor_telepon: '081234567890',
+        pekerjaan: 'Pencari kerja',
+        kota: 'Jakarta',
+        peran: 'peserta',
+      };
+      window.__S4L_USER__ = demoUser;
+      sessionStorage.setItem('s4l_demo_user', JSON.stringify(demoUser));
+      return { ok: true, user: demoUser, pesan: 'Masuk dengan mode demo.' };
+    }
+    if (email === 'admin@skill4life.id' && kataSandi === 'admin1234') {
+      const demoAdmin = {
+        id: 99,
+        nama_lengkap: 'Pengelola Skill4Life',
+        email: 'admin@skill4life.id',
+        nomor_telepon: '081200000000',
+        pekerjaan: 'Administrator',
+        kota: 'Jakarta',
+        peran: 'admin',
+      };
+      window.__S4L_USER__ = demoAdmin;
+      sessionStorage.setItem('s4l_demo_user', JSON.stringify(demoAdmin));
+      return { ok: true, user: demoAdmin, pesan: 'Masuk sebagai pengelola demo.' };
+    }
+    return { ok: false, pesan: err.message || 'Gagal menghubungi server database. Pastikan database MySQL aktif.' };
   }
 }
 
