@@ -179,7 +179,6 @@
   }
 
   .bento-kartu-utama {
-    grid-column: 1 / -1;
     background-color: #FFFFFF;
     color: #181818;
     border-radius: var(--radius-panel);
@@ -188,6 +187,8 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--spasi-24);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .bento-kartu-item {
@@ -265,7 +266,6 @@
     }
 
     .bento-kartu-utama {
-      grid-column: 1 / -1;
       flex-direction: column;
       align-items: flex-start;
       gap: var(--spasi-20);
@@ -335,7 +335,6 @@
     }
 
     .bento-kartu-utama {
-      grid-column: span 1;
       padding: var(--spasi-24);
     }
 
@@ -491,21 +490,23 @@
 <!-- 4. Bento Grid Kategori & Keunggulan -->
 <section class="s4l-seksi" style="background-color: var(--permukaan);">
   <div class="wadah">
-    <div class="bento-kategori" id="kategori-bento-grid">
-      <div class="bento-kartu-utama">
-        <div>
-          <h2 class="s4l-judul-seksi" style="color: #181818; margin-bottom: var(--spasi-12); max-width: 640px;">
-            Bidang <span class="sorotan-garis" style="border-color: #1DB954; color: #1DB954;">Keahlian</span> Siap Pakai
-          </h2>
-          <p style="font-size: var(--teks-14); color: #5C5750; line-height: var(--jarak-baris-baca); max-width: 680px; margin-bottom: 0;">
-            Pilih jalur belajar praktis yang disusun langsung untuk kebutuhan administrasi perkantoran dan seleksi kerja.
-          </p>
-        </div>
-        <a href="<?= $baseUrl ?>/kursus/katalog.php" style="background-color: #1DB954; color: #FFFFFF; padding: 12px 24px; border-radius: 999px; font-size: var(--teks-14); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0;">
-          <span>Lihat Semua Kategori</span>
-          <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
-        </a>
+    <!-- Kartu utama full width -->
+    <div class="bento-kartu-utama" style="margin-bottom: var(--spasi-24);">
+      <div>
+        <h2 class="s4l-judul-seksi" style="color: #181818; margin-bottom: var(--spasi-12); max-width: 640px;">
+          Bidang <span class="sorotan-garis" style="border-color: #1DB954; color: #1DB954;">Keahlian</span> Siap Pakai
+        </h2>
+        <p style="font-size: var(--teks-14); color: #5C5750; line-height: var(--jarak-baris-baca); max-width: 680px; margin-bottom: 0;">
+          Pilih jalur belajar praktis yang disusun langsung untuk kebutuhan administrasi perkantoran dan seleksi kerja.
+        </p>
       </div>
+      <a href="<?= $baseUrl ?>/kursus/katalog.php" style="background-color: #1DB954; color: #FFFFFF; padding: 12px 24px; border-radius: 999px; font-size: var(--teks-14); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0;">
+        <span>Lihat Semua Kategori</span>
+        <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+      </a>
+    </div>
+    <!-- 3 kartu kategori sejajar di bawah kartu utama -->
+    <div class="bento-kategori" id="kategori-bento-grid">
     </div>
   </div>
 </section>
