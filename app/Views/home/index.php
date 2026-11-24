@@ -210,7 +210,7 @@
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background-color: var(--aksen-tipis);
+    background-color: #FFFFFF;
     color: var(--aksen);
     display: inline-flex;
     align-items: center;
