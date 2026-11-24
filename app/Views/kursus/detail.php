@@ -1,15 +1,15 @@
 <style>
   .dtl-page {
-    background-color: #F7F5F0;
+    background-color: #121212;
     min-height: calc(100vh - 72px);
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Header Kursus */
   .dtl-hero {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 36px 20px 36px;
   }
 
@@ -24,14 +24,14 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     margin-bottom: 20px;
     transition: color 140ms ease;
   }
 
   .dtl-back-link:hover {
-    color: #1C1A17 !important;
+    color: #FFFFFF !important;
   }
 
   .dtl-kicker {
@@ -40,7 +40,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 8px;
   }
 
@@ -50,7 +50,7 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: #1C1A17;
+    color: #FFFFFF;
     max-width: 820px;
     margin: 0 0 12px;
   }
@@ -58,7 +58,7 @@
   .dtl-summary {
     font-size: 15.5px;
     line-height: 1.65;
-    color: #5C5750;
+    color: #B3B3B3;
     max-width: 720px;
     margin: 0 0 24px;
   }
@@ -68,8 +68,8 @@
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #FAF9F6;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     overflow: hidden;
   }
@@ -80,8 +80,8 @@
     gap: 7px;
     padding: 9px 15px;
     font-size: 13px;
-    color: #3E3A34;
-    border-right: 1px solid #E6E2D8;
+    color: #E0E0E0;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .dtl-meta-item:last-child {
@@ -89,7 +89,7 @@
   }
 
   .dtl-meta-item i {
-    color: #1F6F4A;
+    color: #1DB954;
     flex-shrink: 0;
   }
 
@@ -114,8 +114,8 @@
 
   /* Kartu Bagian Konten Solid */
   .dtl-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 28px 30px;
   }
@@ -128,27 +128,27 @@
     flex-wrap: wrap;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .dtl-section-title {
     font-family: var(--font-judul);
     font-size: 17.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
   .dtl-section-sub {
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .dtl-description {
     font-size: 15px;
     line-height: 1.75;
-    color: #3E3A34;
+    color: #E0E0E0;
     margin: 0;
   }
 
@@ -168,16 +168,16 @@
     gap: 10px;
     font-size: 14px;
     line-height: 1.55;
-    color: #26231F;
+    color: #E0E0E0;
   }
 
   .dtl-goal-check {
     width: 19px;
     height: 19px;
     border-radius: 5px;
-    background-color: #F2EFE9;
-    border: 1px solid #D8D3C8;
-    color: #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #1DB954;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -199,23 +199,23 @@
     gap: 14px;
     padding: 13px 16px;
     border-radius: 8px;
-    border: 1px solid #E6E2D8;
-    background-color: #FAF9F6;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
     text-decoration: none;
-    color: #1C1A17;
+    color: #FFFFFF;
     transition: border-color 140ms ease, background-color 140ms ease;
   }
 
   .dtl-module-row:hover {
-    border-color: #1F6F4A;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border-color: #1DB954;
+    background-color: #181818;
+    color: #FFFFFF !important;
   }
 
   .dtl-module-row.is-done {
-    background-color: #FFFFFF;
-    border-color: #CFC9B8;
-    border-left: 3px solid #1F6F4A;
+    background-color: #181818;
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left: 3px solid #1DB954;
   }
 
   .dtl-module-left {
@@ -229,9 +229,9 @@
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #7A746B;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    color: #B3B3B3;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     width: 30px;
     height: 28px;
@@ -242,15 +242,15 @@
   }
 
   .dtl-module-row.is-done .dtl-module-num {
-    background-color: #1F6F4A;
-    border-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    border-color: #1DB954;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
   }
 
   .dtl-module-name {
     font-size: 14px;
     font-weight: 500;
-    color: #1C1A17;
+    color: #FFFFFF;
     line-height: 1.4;
   }
 
@@ -265,23 +265,23 @@
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
     letter-spacing: 0.02em;
   }
 
   .dtl-module-time {
     font-family: var(--font-mono, monospace);
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .dtl-module-arrow {
-    color: #8C857B;
+    color: #727272;
     transition: transform 140ms ease, color 140ms ease;
   }
 
   .dtl-module-row:hover .dtl-module-arrow {
-    color: #1F6F4A;
+    color: #1DB954;
     transform: translateX(2px);
   }
 
@@ -289,35 +289,35 @@
   .dtl-sidebar-card {
     position: sticky;
     top: 88px;
-    background-color: #FFFFFF;
-    border: 1px solid #CFC9B8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
     padding: 24px;
   }
 
   .dtl-sidebar-card.is-certified {
-    border-top: 4px solid #1F6F4A;
+    border-top: 4px solid #1DB954;
   }
 
   .dtl-panel-title {
     font-family: var(--font-judul);
     font-size: 16.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 8px;
   }
 
   .dtl-panel-desc {
     font-size: 13.5px;
     line-height: 1.6;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0 0 20px;
   }
 
   /* Kotak Progres Solid */
   .dtl-progress-box {
-    background-color: #FAF9F6;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 12px 14px;
     margin-bottom: 18px;
@@ -332,27 +332,27 @@
   }
 
   .dtl-progress-text {
-    color: #5C5750;
+    color: #B3B3B3;
     font-weight: 500;
   }
 
   .dtl-progress-pct {
     font-family: var(--font-mono, monospace);
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .dtl-progress-track {
     width: 100%;
     height: 6px;
-    background-color: #E6E2D8;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
     overflow: hidden;
   }
 
   .dtl-progress-bar {
     height: 100%;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     border-radius: 999px;
     transition: width 240ms ease;
   }
@@ -367,9 +367,9 @@
     height: 42px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF !important;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF !important; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 600;
@@ -380,7 +380,7 @@
   }
 
   .dtl-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -393,9 +393,9 @@
     height: 40px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -406,14 +406,14 @@
   }
 
   .dtl-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   /* Daftar Kelengkapan Program */
   .dtl-inclusions {
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     padding-top: 16px;
     margin-top: 6px;
     display: flex;
@@ -427,19 +427,19 @@
     gap: 9px;
     font-size: 12.5px;
     line-height: 1.45;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   .dtl-inclusion-item i {
-    color: #1F6F4A;
+    color: #1DB954;
     flex-shrink: 0;
     margin-top: 2px;
   }
 
   /* State Kursus Tidak Ditemukan */
   .dtl-empty-state {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 40px 28px;
     text-align: center;
@@ -474,7 +474,7 @@
 
     .dtl-meta-item {
       border-right: none;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .dtl-meta-item:last-child {
@@ -679,7 +679,7 @@
         <li class="dtl-goal-item">
           <span class="dtl-goal-check" aria-hidden="true">
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-              <path d="M2.5 6.2L5 8.7L9.5 3.8" stroke="#1F6F4A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.5 6.2L5 8.7L9.5 3.8" stroke="#1DB954" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
           <span>${t}</span>

@@ -14,15 +14,15 @@
     display: grid;
     grid-template-columns: 248px 1fr;
     min-height: 100vh;
-    background-color: #F7F5F0;
+    background-color: #121212;
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Sidebar Kiri */
   .cp-sidebar {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     padding: 22px 16px 24px;
     display: flex;
     flex-direction: column;
@@ -38,9 +38,9 @@
     gap: 10px;
     padding: 2px 6px 18px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
     text-decoration: none;
-    color: #1C1A17;
+    color: #FFFFFF;
     font-family: var(--font-judul);
     font-size: 17px;
     font-weight: 700;
@@ -48,15 +48,15 @@
   }
 
   .cp-brand:hover {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-brand-mark {
     width: 28px;
     height: 28px;
     border-radius: 7px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -69,15 +69,15 @@
     gap: 11px;
     padding: 2px 6px 18px;
     margin-bottom: 18px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .cp-user-avatar {
     width: 38px;
     height: 38px;
     border-radius: 999px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -91,7 +91,7 @@
     font-family: var(--font-judul);
     font-size: 14px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -99,7 +99,7 @@
 
   .cp-user-sub {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -116,7 +116,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #9A948A;
+    color: #727272;
     padding: 0 12px;
     margin-bottom: 6px;
   }
@@ -138,31 +138,31 @@
     border-radius: 8px;
     font-size: 13.5px;
     font-weight: 400;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: background-color 140ms ease, color 140ms ease;
   }
 
   .cp-nav-link:hover {
-    background-color: #F7F5F0;
-    color: #1C1A17;
+    background-color: #121212;
+    color: #FFFFFF;
   }
 
   .cp-nav-link.aktif {
-    background-color: #F2EFE9;
-    color: #1F6F4A;
+    background-color: #181818;
+    color: #1DB954;
     font-weight: 600;
   }
 
   .cp-nav-link.aktif svg,
   .cp-nav-link.aktif i {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-sidebar-bawah {
     margin-top: auto;
     padding-top: 16px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -176,8 +176,8 @@
     width: 100%;
     padding: 10px 14px;
     border-radius: 8px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -186,7 +186,7 @@
   }
 
   .cp-btn-katalog-sidebar:hover {
-    background-color: #18583B;
+    background-color: #1ED760;
     color: #FFFFFF !important;
   }
 
@@ -198,9 +198,9 @@
     width: 100%;
     padding: 8px 12px;
     border-radius: 8px;
-    border: 1px solid #E6E2D8;
-    background-color: #FFFFFF;
-    color: #5C5750;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #B3B3B3;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -210,8 +210,8 @@
 
   .cp-btn-keluar:hover {
     border-color: #D9A7A2;
-    color: #9E3B33;
-    background-color: #FDF8F7;
+    color: #F15E6C;
+    background-color: rgba(241, 94, 108, 0.15);
   }
 
   /* Konten Utama */
@@ -231,7 +231,7 @@
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
@@ -240,7 +240,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    border-bottom: 1px solid #E6E2D8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 28px;
     overflow-x: auto;
   }
@@ -254,7 +254,7 @@
     font-family: var(--font-ui);
     font-size: 14px;
     font-weight: 500;
-    color: #7A746B;
+    color: #B3B3B3;
     cursor: pointer;
     white-space: nowrap;
     display: inline-flex;
@@ -264,12 +264,12 @@
   }
 
   .cp-tab-btn:hover {
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .cp-tab-btn.aktif {
-    color: #1F6F4A;
-    border-bottom-color: #1F6F4A;
+    color: #1DB954;
+    border-bottom-color: #1DB954;
     font-weight: 600;
   }
 
@@ -277,25 +277,25 @@
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 500;
-    color: #8C857B;
+    color: #727272;
   }
 
   .cp-tab-btn.aktif .cp-tab-count {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-section-title {
     font-family: var(--font-judul);
     font-size: 16px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 14px;
   }
 
   /* Kartu Horizontal: Terakhir Dipelajari */
   .cp-last-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 16px 20px;
     margin-bottom: 32px;
@@ -310,8 +310,8 @@
     height: 100px;
     border-radius: 7px;
     overflow: hidden;
-    background-color: #EAE6DD;
-    border: 1px solid #E6E2D8;
+    background-color: #242424;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     flex-shrink: 0;
   }
 
@@ -324,7 +324,7 @@
 
   .cp-last-meta {
     font-size: 12.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin-bottom: 4px;
   }
 
@@ -332,7 +332,7 @@
     font-family: var(--font-judul);
     font-size: 16.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 14px;
     line-height: 1.35;
   }
@@ -343,7 +343,7 @@
   }
 
   .cp-last-judul a:hover {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-progres-baris {
@@ -355,14 +355,14 @@
   .cp-progres-track {
     flex: 1;
     height: 5px;
-    background-color: #EAE6DD;
+    background-color: #242424;
     border-radius: 999px;
     overflow: hidden;
   }
 
   .cp-progres-fill {
     height: 100%;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     border-radius: 999px;
     transition: width 260ms ease;
   }
@@ -371,7 +371,7 @@
     font-family: var(--font-mono, monospace);
     font-size: 12.5px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     white-space: nowrap;
   }
 
@@ -381,8 +381,8 @@
     justify-content: center;
     padding: 10px 20px;
     border-radius: 8px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 500;
@@ -392,7 +392,7 @@
   }
 
   .cp-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #1ED760;
     color: #FFFFFF !important;
   }
 
@@ -405,8 +405,8 @@
   }
 
   .cp-course-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -416,15 +416,15 @@
   }
 
   .cp-course-card:hover {
-    border-color: #C7C1B5;
+    border-color: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
   }
 
   .cp-card-cover {
     position: relative;
     height: 152px;
-    background-color: #EAE6DD;
-    border-bottom: 1px solid #EFECE4;
+    background-color: #242424;
+    border-bottom: 1px solid #242424;
     overflow: hidden;
   }
 
@@ -445,8 +445,8 @@
     top: 10px;
     right: 10px;
     z-index: 2;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-ui);
     font-size: 11px;
     font-weight: 600;
@@ -470,7 +470,7 @@
     font-size: 14.5px;
     font-weight: 600;
     line-height: 1.4;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 8px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -484,12 +484,12 @@
   }
 
   .cp-card-title a:hover {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-card-info {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin-bottom: 16px;
   }
 
@@ -501,13 +501,13 @@
     text-align: right;
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin-top: 6px;
   }
 
   .cp-card-footer {
     padding: 12px 18px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -517,12 +517,12 @@
   .cp-link-sekunder {
     font-size: 12.5px;
     font-weight: 500;
-    color: #7A746B;
+    color: #B3B3B3;
     text-decoration: none;
   }
 
   .cp-link-sekunder:hover {
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .cp-link-lanjut {
@@ -533,7 +533,7 @@
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
     text-decoration: none;
   }
 
@@ -543,8 +543,8 @@
 
   /* Tabel Sertifikat Kelulusan */
   .cp-table-box {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -557,21 +557,21 @@
   }
 
   .cp-table th {
-    background-color: #FAF9F6;
+    background-color: #181818;
     font-size: 12px;
     font-weight: 600;
-    color: #7A746B;
+    color: #B3B3B3;
     padding: 13px 18px;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 1px solid #E6E2D8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .cp-table td {
     padding: 14px 18px;
     font-size: 13.5px;
-    color: #1C1A17;
-    border-bottom: 1px solid #EFECE4;
+    color: #FFFFFF;
+    border-bottom: 1px solid #242424;
     vertical-align: middle;
   }
 
@@ -589,9 +589,9 @@
     gap: 5px;
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-size: 12.5px;
     font-weight: 500;
     text-decoration: none;
@@ -600,8 +600,8 @@
   }
 
   .cp-btn-berkas:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
+    border-color: #1DB954;
+    color: #1DB954;
   }
 
   @media (max-width: 1040px) {
@@ -628,7 +628,7 @@
       position: static;
       height: auto;
       border-right: none;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding: 18px 20px;
     }
 
@@ -765,7 +765,7 @@
     <section>
       <h2 class="cp-section-title" id="judul-grid-kursus">Kursus Aktif</h2>
       <div class="cp-course-grid" id="daftar-kursus-peserta">
-        <div style="grid-column: 1 / -1; background: #FFFFFF; border: 1px solid #E6E2D8; border-radius: 10px; padding: 32px; text-align: center; color: #7A746B; font-size: 14px;">
+        <div style="grid-column: 1 / -1; background: #181818; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 32px; text-align: center; color: #B3B3B3; font-size: 14px;">
           Memuat daftar kursus...
         </div>
       </div>
@@ -787,7 +787,7 @@
           </thead>
           <tbody id="tabel-sertifikat-peserta">
             <tr>
-              <td colspan="5" style="text-align: center; color: #7A746B; padding: 28px;">Memuat arsip sertifikat...</td>
+              <td colspan="5" style="text-align: center; color: #B3B3B3; padding: 28px;">Memuat arsip sertifikat...</td>
             </tr>
           </tbody>
         </table>
@@ -927,11 +927,11 @@
 
       if (daftarTampil.length === 0) {
         container.innerHTML = `
-          <div style="grid-column: 1 / -1; background-color: #FFFFFF; border: 1px solid #E6E2D8; border-radius: 10px; text-align: center; padding: 44px 24px;">
-            <div style="font-family: var(--font-judul); font-size: 16px; font-weight: 600; color: #1C1A17; margin-bottom: 6px;">
+          <div style="grid-column: 1 / -1; background-color: #181818; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; text-align: center; padding: 44px 24px;">
+            <div style="font-family: var(--font-judul); font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 6px;">
               Tidak ada kursus pada kategori ini
             </div>
-            <p style="font-size: 13.5px; color: #7A746B; max-width: 400px; margin: 0 auto 18px; line-height: 1.55;">
+            <p style="font-size: 13.5px; color: #B3B3B3; max-width: 400px; margin: 0 auto 18px; line-height: 1.55;">
               Jelajahi katalog kursus keterampilan kerja gratis untuk menambah daftar belajar Anda.
             </p>
             <a href="../kursus/katalog.php" class="cp-btn-primary">Buka Katalog Kursus</a>
@@ -1015,7 +1015,7 @@
     if (sertifikatList.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="5" style="text-align: center; color: #7A746B; padding: 28px;">
+          <td colspan="5" style="text-align: center; color: #B3B3B3; padding: 28px;">
             Belum ada sertifikat diterbitkan. Selesaikan seluruh modul dan lulus kuis akhir (&ge; 70) untuk memperoleh sertifikat.
           </td>
         </tr>
@@ -1023,9 +1023,9 @@
     } else {
       tbody.innerHTML = sertifikatList.map(sert => `
         <tr>
-          <td class="angka-mono cp-nowrap" style="font-weight: 600; color: #1F6F4A;">${sert.nomor_sertifikat}</td>
+          <td class="angka-mono cp-nowrap" style="font-weight: 600; color: #1DB954;">${sert.nomor_sertifikat}</td>
           <td style="font-weight: 500;">${sert.nama_kursus}</td>
-          <td class="angka-mono cp-nowrap" style="color: #5C5750;">${sert.tanggal_terbit}</td>
+          <td class="angka-mono cp-nowrap" style="color: #B3B3B3;">${sert.tanggal_terbit}</td>
           <td class="angka-mono cp-nowrap" style="font-weight: 600;">${sert.nilai_kuis || 90} / 100</td>
           <td class="cp-nowrap">
             <a href="../sertifikat/lihat.php?nomor=${sert.nomor_sertifikat}" class="cp-btn-berkas">

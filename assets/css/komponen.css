@@ -108,13 +108,16 @@
 }
 
 .tombol-utama {
-  background-color: var(--aksen);
-  color: #FFFFFF;
+  background-color: var(--aksen-gelap, #0D3820);
+  color: #FFFFFF !important;
+  border: 1px solid var(--aksen-terang, #1DB954);
+  font-weight: 700;
 }
 
 .tombol-utama:hover {
-  background-color: var(--aksen-tekan);
-  color: #FFFFFF;
+  background-color: var(--aksen-gelap-tekan, #154D2E);
+  border-color: var(--aksen-terang-hover, #1ED760);
+  color: #FFFFFF !important;
 }
 
 .tombol-sekunder {
@@ -134,7 +137,8 @@
 }
 
 .tombol-tipis:hover {
-  background-color: #DCEAE1;
+  background-color: rgba(29, 185, 84, 0.25);
+  color: var(--aksen-tekan);
 }
 
 /* 3. Kartu Kertas */
@@ -205,7 +209,7 @@
 .bidang-teks:focus {
   outline: none;
   border-color: var(--aksen);
-  background-color: #FFFFFF;
+  background-color: var(--permukaan-2);
 }
 
 .bidang-bantuan {
@@ -233,13 +237,13 @@
 
 .pesan-status-sukses {
   background-color: var(--sukses-tipis);
-  border-color: rgba(31, 111, 74, 0.2);
+  border-color: rgba(29, 185, 84, 0.3);
   color: var(--sukses);
 }
 
 .pesan-status-galat {
   background-color: var(--galat-tipis);
-  border-color: rgba(139, 44, 36, 0.2);
+  border-color: rgba(241, 94, 108, 0.3);
   color: var(--galat);
 }
 
@@ -253,7 +257,7 @@
 .dialog-latar {
   position: fixed;
   inset: 0;
-  background-color: rgba(28, 26, 23, 0.4);
+  background-color: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,11 +407,11 @@
 
 /* 10. Sertifikat Fisik Kertas (Momen Paling Kaya) */
 .lembar-sertifikat {
-  background-color: #FCFBF9;
-  border: 1px solid #D6D2C4;
-  box-shadow: inset 0 0 0 8px #FCFBF9, inset 0 0 0 9px #C7C2B2;
+  background-color: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 8px #161616, inset 0 0 0 9px rgba(29, 185, 84, 0.35);
   padding: var(--spasi-48) var(--spasi-64);
-  border-radius: 4px;
+  border-radius: 6px;
   position: relative;
   max-width: 900px;
   margin: 0 auto;
@@ -415,9 +419,21 @@
 }
 
 .sertifikat-garis-dalam {
-  border: 1px solid rgba(28, 26, 23, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   padding: var(--spasi-32) var(--spasi-40);
   text-align: center;
+}
+
+@media print {
+  .lembar-sertifikat {
+    background-color: #FFFFFF !important;
+    color: #1C1A17 !important;
+    border: 1px solid #D6D2C4 !important;
+    box-shadow: none !important;
+  }
+  .sertifikat-garis-dalam {
+    border: 1px solid rgba(28, 26, 23, 0.15) !important;
+  }
 }
 
 /* Footer Bersama Tenang */
@@ -526,9 +542,10 @@
   padding: var(--spasi-12) var(--spasi-16);
   min-width: 280px;
   max-width: 380px;
-  box-shadow: 0 4px 16px rgba(28, 26, 23, 0.10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   opacity: 0;
   transform: translateY(8px);
+  color: var(--teks);
   transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1), transform 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 
@@ -577,14 +594,15 @@
 
 .kuis-nav-btn.terjawab {
   background-color: var(--aksen-tipis);
-  border-color: rgba(31, 111, 74, 0.3);
+  border-color: rgba(29, 185, 84, 0.35);
   color: var(--aksen);
 }
 
 .kuis-nav-btn.aktif {
   background-color: var(--aksen);
   border-color: var(--aksen);
-  color: #FFFFFF;
+  color: #000000;
+  font-weight: 700;
 }
 
 .nav-mobile-toggle {

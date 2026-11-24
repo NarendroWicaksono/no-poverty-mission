@@ -1,15 +1,15 @@
 <style>
   .vf-page {
-    background-color: #F7F5F0;
+    background-color: #121212;
     min-height: calc(100vh - 72px);
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Header Halaman */
   .vf-hero {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 40px 20px 36px;
   }
 
@@ -24,7 +24,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 8px;
   }
 
@@ -34,14 +34,14 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.2;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 10px;
   }
 
   .vf-subtitle {
     font-size: 15px;
     line-height: 1.6;
-    color: #5C5750;
+    color: #B3B3B3;
     max-width: 620px;
     margin: 0;
   }
@@ -53,8 +53,8 @@
 
   /* Panel Pencarian */
   .vf-search-panel {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 24px;
     margin-bottom: 24px;
@@ -64,7 +64,7 @@
     display: block;
     font-size: 13px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin-bottom: 8px;
   }
 
@@ -86,24 +86,24 @@
     height: 44px;
     padding: 0 38px 0 14px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
     font-family: var(--font-mono, monospace);
     font-size: 14.5px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: #1C1A17;
+    color: #FFFFFF;
     transition: border-color 140ms ease, box-shadow 140ms ease;
   }
 
   .vf-input::placeholder {
-    color: #9A948A;
+    color: #727272;
     font-weight: 400;
   }
 
   .vf-input:focus {
     outline: none;
-    border-color: #1F6F4A;
+    border-color: #1DB954;
     box-shadow: 0 0 0 3px rgba(31, 111, 74, 0.1);
   }
 
@@ -112,7 +112,7 @@
     right: 10px;
     background: none;
     border: none;
-    color: #8C857B;
+    color: #727272;
     cursor: pointer;
     padding: 4px;
     display: none;
@@ -122,7 +122,7 @@
   }
 
   .vf-clear-btn:hover {
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .vf-btn-primary {
@@ -133,9 +133,9 @@
     height: 44px;
     padding: 0 20px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 600;
@@ -146,7 +146,7 @@
   }
 
   .vf-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -158,9 +158,9 @@
     height: 36px;
     padding: 0 14px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -171,14 +171,14 @@
   }
 
   .vf-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   .vf-help {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin-top: 8px;
     line-height: 1.5;
   }
@@ -187,13 +187,13 @@
   .vf-samples {
     margin-top: 16px;
     padding-top: 14px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     display: flex;
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .btn-contoh-nomor {
@@ -201,9 +201,9 @@
     align-items: center;
     padding: 3px 9px;
     border-radius: 5px;
-    border: 1px solid #D8D3C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 500;
@@ -212,15 +212,15 @@
   }
 
   .btn-contoh-nomor:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FFFFFF;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   /* Panduan Awal (Empty State Terstruktur) */
   .vf-guide-panel {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 24px;
   }
@@ -229,13 +229,13 @@
     font-family: var(--font-judul);
     font-size: 14.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .vf-guide-desc {
     font-size: 13px;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0 0 18px;
     line-height: 1.55;
   }
@@ -243,14 +243,14 @@
   .vf-anatomy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: 1px solid #E6E2D8;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   .vf-anatomy-item {
     padding: 12px 16px;
-    border-right: 1px solid #E6E2D8;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .vf-anatomy-item:last-child {
@@ -261,27 +261,27 @@
     font-family: var(--font-mono, monospace);
     font-size: 13.5px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 3px;
   }
 
   .vf-anatomy-label {
     font-size: 11.5px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   /* Kartu Hasil Verifikasi Sah (Arsip Resmi) */
   .vf-result-valid {
-    background-color: #FFFFFF;
-    border: 1px solid #CFC9B8;
-    border-left: 4px solid #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 4px solid #1DB954;
     border-radius: 10px;
     overflow: hidden;
   }
 
   .vf-result-head {
     padding: 20px 24px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -294,8 +294,8 @@
     gap: 6px;
     padding: 3px 9px;
     border-radius: 4px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-mono, monospace);
     font-size: 10.5px;
     font-weight: 600;
@@ -308,7 +308,7 @@
     font-family: var(--font-judul);
     font-size: 18px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
@@ -321,7 +321,7 @@
     grid-template-columns: 185px 1fr;
     gap: 16px;
     padding: 13px 0;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
     align-items: baseline;
   }
 
@@ -331,13 +331,13 @@
 
   .vf-ledger-key {
     font-size: 13px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .vf-ledger-val {
     font-size: 14px;
     font-weight: 500;
-    color: #1C1A17;
+    color: #FFFFFF;
     text-align: right;
   }
 
@@ -345,7 +345,7 @@
     font-family: var(--font-serif);
     font-size: 21px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .vf-hash-wrap {
@@ -359,7 +359,7 @@
   .vf-hash-code {
     font-family: var(--font-mono, monospace);
     font-size: 12px;
-    color: #5C5750;
+    color: #B3B3B3;
     word-break: break-all;
     text-align: right;
   }
@@ -370,9 +370,9 @@
     gap: 4px;
     padding: 3px 8px;
     border-radius: 5px;
-    border: 1px solid #D8D3C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 11px;
     font-weight: 500;
@@ -382,14 +382,14 @@
   }
 
   .vf-copy-mini:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
+    border-color: #1DB954;
+    color: #1DB954;
   }
 
   .vf-result-foot {
     padding: 16px 24px;
-    background-color: #FAF9F6;
-    border-top: 1px solid #EFECE4;
+    background-color: #181818;
+    border-top: 1px solid #242424;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -399,7 +399,7 @@
 
   .vf-foot-note {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .vf-foot-actions {
@@ -411,9 +411,9 @@
 
   /* Kartu Hasil Tidak Ditemukan */
   .vf-result-invalid {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
-    border-left: 4px solid #9E3B33;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #F15E6C;
     border-radius: 10px;
     padding: 24px;
   }
@@ -423,7 +423,7 @@
     align-items: center;
     padding: 3px 9px;
     border-radius: 4px;
-    background-color: #9E3B33;
+    background-color: #F15E6C;
     color: #FFFFFF;
     font-family: var(--font-mono, monospace);
     font-size: 10.5px;
@@ -435,7 +435,7 @@
 
   .vf-invalid-desc {
     font-size: 13.5px;
-    color: #5C5750;
+    color: #B3B3B3;
     line-height: 1.6;
     margin: 8px 0 16px;
   }
@@ -444,7 +444,7 @@
     margin: 0 0 18px;
     padding-left: 18px;
     font-size: 13px;
-    color: #5C5750;
+    color: #B3B3B3;
     line-height: 1.6;
   }
 
@@ -459,7 +459,7 @@
 
     .vf-anatomy-item {
       border-right: none;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .vf-anatomy-item:last-child {
@@ -616,8 +616,8 @@
     window.history.replaceState({}, '', urlBaru);
 
     hasilArea.innerHTML = `
-      <div class="vf-guide-panel" style="text-align: center; color: #7A746B; font-size: 13.5px;">
-        Memeriksa nomor <span class="angka-mono" style="color: #1C1A17; font-weight: 600;">${bersih}</span> pada pangkalan data...
+      <div class="vf-guide-panel" style="text-align: center; color: #B3B3B3; font-size: 13.5px;">
+        Memeriksa nomor <span class="angka-mono" style="color: #FFFFFF; font-weight: 600;">${bersih}</span> pada pangkalan data...
       </div>
     `;
 
@@ -634,14 +634,14 @@
 
             <!-- Segel Resmi Inline SVG -->
             <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Segel resmi kelulusan">
-              <circle cx="32" cy="32" r="29" stroke="#1F6F4A" stroke-width="1.6"/>
+              <circle cx="32" cy="32" r="29" stroke="#1DB954" stroke-width="1.6"/>
               <circle cx="32" cy="32" r="24.5" stroke="#8C7343" stroke-width="0.9" stroke-dasharray="2.5 2"/>
-              <circle cx="32" cy="32" r="18" fill="#1F6F4A"/>
-              <path d="M24.5 32.5L29.5 37.5L40 26.5" stroke="#FCFBF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="32" cy="8.5" r="1.3" fill="#1F6F4A"/>
-              <circle cx="32" cy="55.5" r="1.3" fill="#1F6F4A"/>
-              <circle cx="8.5" cy="32" r="1.3" fill="#1F6F4A"/>
-              <circle cx="55.5" cy="32" r="1.3" fill="#1F6F4A"/>
+              <circle cx="32" cy="32" r="18" fill="#1DB954"/>
+              <path d="M24.5 32.5L29.5 37.5L40 26.5" stroke="#181818" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="8.5" r="1.3" fill="#1DB954"/>
+              <circle cx="32" cy="55.5" r="1.3" fill="#1DB954"/>
+              <circle cx="8.5" cy="32" r="1.3" fill="#1DB954"/>
+              <circle cx="55.5" cy="32" r="1.3" fill="#1DB954"/>
             </svg>
           </div>
 
@@ -668,7 +668,7 @@
 
             <div class="vf-ledger-row">
               <span class="vf-ledger-key">Nilai kelulusan</span>
-              <span class="vf-ledger-val angka-mono" style="color: #1F6F4A; font-weight: 600;">${data.nilai_kuis || 90} / 100</span>
+              <span class="vf-ledger-val angka-mono" style="color: #1DB954; font-weight: 600;">${data.nilai_kuis || 90} / 100</span>
             </div>
 
             <div class="vf-ledger-row">

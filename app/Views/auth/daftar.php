@@ -236,38 +236,38 @@
         <svg class="daftar-ilustrasi-svg" viewBox="0 0 440 225" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 410px; height: auto; display: block;">
           <!-- Jendela Profil Utama -->
           <rect x="116" y="28" width="234" height="172" rx="12" fill="#FFFFFF" stroke="#1C1A17" stroke-width="2"/>
-          <path d="M117 40C117 33.9249 121.925 29 128 29H338C344.075 29 349 33.9249 349 40V54H117V40Z" fill="#EFEDE7"/>
+          <path d="M117 40C117 33.9249 121.925 29 128 29H338C344.075 29 349 33.9249 349 40V54H117V40Z" fill="#242424"/>
           <line x1="116" y1="54" x2="350" y2="54" stroke="#1C1A17" stroke-width="1.5"/>
-          <circle cx="132" cy="41.5" r="3.5" fill="#1F6F4A"/>
-          <circle cx="144" cy="41.5" r="3.5" fill="#8A847A"/>
-          <circle cx="156" cy="41.5" r="3.5" fill="#D6D2C4"/>
+          <circle cx="132" cy="41.5" r="3.5" fill="#1DB954"/>
+          <circle cx="144" cy="41.5" r="3.5" fill="#727272"/>
+          <circle cx="156" cy="41.5" r="3.5" fill="rgba(255, 255, 255, 0.08)"/>
 
           <!-- Konten Abstrak Dalam Kartu Utama -->
-          <circle cx="164" cy="96" r="20" fill="#E6F0EA"/>
-          <circle cx="164" cy="91" r="6.5" fill="#1F6F4A"/>
-          <path d="M153 107C153 101.5 157.8 98.5 164 98.5C170.2 98.5 175 101.5 175 107" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="164" cy="96" r="20" fill="rgba(29, 185, 84, 0.15)"/>
+          <circle cx="164" cy="91" r="6.5" fill="#1DB954"/>
+          <path d="M153 107C153 101.5 157.8 98.5 164 98.5C170.2 98.5 175 101.5 175 107" stroke="#1DB954" stroke-width="2" stroke-linecap="round"/>
 
           <rect x="200" y="82" width="118" height="10" rx="5" fill="#1C1A17"/>
-          <rect x="200" y="100" width="86" height="8" rx="4" fill="#B8B2A6"/>
-          <rect x="200" y="114" width="64" height="8" rx="4" fill="#D6D2C4"/>
+          <rect x="200" y="100" width="86" height="8" rx="4" fill="rgba(255, 255, 255, 0.15)"/>
+          <rect x="200" y="114" width="64" height="8" rx="4" fill="rgba(255, 255, 255, 0.08)"/>
 
           <!-- Tombol Aksen Hijau Abstrak -->
-          <rect x="144" y="144" width="178" height="32" rx="16" fill="#1F6F4A"/>
+          <rect x="144" y="144" width="178" height="32" rx="16" fill="#1DB954"/>
           <rect x="196" y="157" width="74" height="6" rx="3" fill="#FFFFFF"/>
 
           <!-- Kartu Kecil Melayang di Kiri (Lencana Verifikasi) -->
           <rect x="46" y="94" width="124" height="82" rx="10" fill="#FFFFFF" stroke="#1C1A17" stroke-width="2"/>
-          <circle cx="72" cy="120" r="11" fill="#E6F0EA"/>
-          <path d="M67.5 120L70.5 123L76.5 117" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="72" cy="120" r="11" fill="rgba(29, 185, 84, 0.15)"/>
+          <path d="M67.5 120L70.5 123L76.5 117" stroke="#1DB954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <rect x="92" y="113" width="56" height="6" rx="3" fill="#1C1A17"/>
-          <rect x="92" y="124" width="40" height="5" rx="2.5" fill="#B8B2A6"/>
-          <rect x="61" y="146" width="94" height="14" rx="7" fill="#E6F0EA"/>
-          <rect x="75" y="151" width="66" height="4" rx="2" fill="#1F6F4A"/>
+          <rect x="92" y="124" width="40" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.15)"/>
+          <rect x="61" y="146" width="94" height="14" rx="7" fill="rgba(29, 185, 84, 0.15)"/>
+          <rect x="75" y="151" width="66" height="4" rx="2" fill="#1DB954"/>
 
           <!-- Tanaman Meja Minimalis di Kanan -->
-          <path d="M386 168C386 152 375 144 375 144C375 144 373 157 386 168Z" fill="#1F6F4A" stroke="#1C1A17" stroke-width="1.5"/>
-          <path d="M386 168C386 149 398 140 398 140C398 140 399 155 386 168Z" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.5"/>
-          <path d="M376 168H396L393 198H379L376 168Z" fill="#1F6F4A" stroke="#1C1A17" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M386 168C386 152 375 144 375 144C375 144 373 157 386 168Z" fill="#1DB954" stroke="#1C1A17" stroke-width="1.5"/>
+          <path d="M386 168C386 149 398 140 398 140C398 140 399 155 386 168Z" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.5"/>
+          <path d="M376 168H396L393 198H379L376 168Z" fill="#1DB954" stroke="#1C1A17" stroke-width="1.8" stroke-linejoin="round"/>
 
           <!-- Garis Meja & Kaki Meja -->
           <rect x="24" y="198" width="392" height="7" rx="3.5" fill="#1C1A17"/>

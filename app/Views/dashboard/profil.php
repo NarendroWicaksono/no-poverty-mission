@@ -14,15 +14,15 @@
     display: grid;
     grid-template-columns: 248px 1fr;
     min-height: 100vh;
-    background-color: #F7F5F0;
+    background-color: #121212;
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Sidebar Kiri */
   .cp-sidebar {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     padding: 22px 16px 24px;
     display: flex;
     flex-direction: column;
@@ -38,9 +38,9 @@
     gap: 10px;
     padding: 2px 6px 18px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
     text-decoration: none;
-    color: #1C1A17;
+    color: #FFFFFF;
     font-family: var(--font-judul);
     font-size: 17px;
     font-weight: 700;
@@ -48,15 +48,15 @@
   }
 
   .cp-brand:hover {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-brand-mark {
     width: 28px;
     height: 28px;
     border-radius: 7px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -69,15 +69,15 @@
     gap: 11px;
     padding: 2px 6px 18px;
     margin-bottom: 18px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .cp-user-avatar {
     width: 38px;
     height: 38px;
     border-radius: 999px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -91,7 +91,7 @@
     font-family: var(--font-judul);
     font-size: 14px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -99,7 +99,7 @@
 
   .cp-user-sub {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -116,7 +116,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #9A948A;
+    color: #727272;
     padding: 0 12px;
     margin-bottom: 6px;
   }
@@ -138,31 +138,31 @@
     border-radius: 8px;
     font-size: 13.5px;
     font-weight: 400;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: background-color 140ms ease, color 140ms ease;
   }
 
   .cp-nav-link:hover {
-    background-color: #F7F5F0;
-    color: #1C1A17;
+    background-color: #121212;
+    color: #FFFFFF;
   }
 
   .cp-nav-link.aktif {
-    background-color: #F2EFE9;
-    color: #1F6F4A;
+    background-color: #181818;
+    color: #1DB954;
     font-weight: 600;
   }
 
   .cp-nav-link.aktif svg,
   .cp-nav-link.aktif i {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .cp-sidebar-bawah {
     margin-top: auto;
     padding-top: 16px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -176,8 +176,8 @@
     width: 100%;
     padding: 10px 14px;
     border-radius: 8px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -186,7 +186,7 @@
   }
 
   .cp-btn-katalog-sidebar:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -198,9 +198,9 @@
     width: 100%;
     padding: 8px 12px;
     border-radius: 8px;
-    border: 1px solid #E6E2D8;
-    background-color: #FFFFFF;
-    color: #5C5750;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #B3B3B3;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -210,8 +210,8 @@
 
   .cp-btn-keluar:hover {
     border-color: #D9A7A2;
-    color: #9E3B33;
-    background-color: #FDF8F7;
+    color: #F15E6C;
+    background-color: rgba(241, 94, 108, 0.15);
   }
 
   /* Area Kerja Utama */
@@ -225,7 +225,7 @@
   .cp-header-atas {
     padding-bottom: 18px;
     margin-bottom: 24px;
-    border-bottom: 1px solid #E6E2D8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .cp-page-title {
@@ -233,13 +233,13 @@
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .cp-page-sub {
     font-size: 13.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin: 0;
     line-height: 1.55;
   }
@@ -259,28 +259,28 @@
   }
 
   .cp-panel {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;
   }
 
   .cp-panel-header {
     padding: 18px 24px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .cp-panel-title {
     font-family: var(--font-judul);
     font-size: 16px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 3px;
   }
 
   .cp-panel-desc {
     font-size: 12.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -302,7 +302,7 @@
     display: block;
     font-size: 13px;
     font-weight: 500;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin-bottom: 6px;
   }
 
@@ -311,30 +311,30 @@
     height: 40px;
     padding: 0 13px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
     font-family: var(--font-ui);
     font-size: 13.5px;
-    color: #1C1A17;
+    color: #FFFFFF;
     transition: border-color 140ms ease, box-shadow 140ms ease;
   }
 
   .cp-input:focus {
     outline: none;
-    border-color: #1F6F4A;
+    border-color: #1DB954;
     box-shadow: 0 0 0 3px rgba(31, 111, 74, 0.1);
   }
 
   .cp-input:disabled {
-    background-color: #F7F5F0;
-    color: #7A746B;
-    border-color: #E6E2D8;
+    background-color: #121212;
+    color: #B3B3B3;
+    border-color: rgba(255, 255, 255, 0.08);
     cursor: not-allowed;
   }
 
   .cp-help {
     font-size: 12px;
-    color: #8C857B;
+    color: #727272;
     margin-top: 5px;
     line-height: 1.45;
   }
@@ -355,7 +355,7 @@
     right: 10px;
     background: none;
     border: none;
-    color: #8C857B;
+    color: #727272;
     cursor: pointer;
     padding: 4px;
     display: inline-flex;
@@ -365,7 +365,7 @@
   }
 
   .cp-pass-toggle:hover {
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .cp-panel-footer {
@@ -383,9 +383,9 @@
     height: 38px;
     padding: 0 18px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 500;
@@ -394,7 +394,7 @@
   }
 
   .cp-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -405,9 +405,9 @@
     height: 38px;
     padding: 0 18px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 500;
@@ -416,9 +416,9 @@
   }
 
   .cp-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   @media (max-width: 1040px) {
@@ -436,7 +436,7 @@
       position: static;
       height: auto;
       border-right: none;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding: 18px 20px;
     }
 

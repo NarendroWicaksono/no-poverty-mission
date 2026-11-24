@@ -78,7 +78,7 @@
       order: 3 !important;
       flex-basis: 100% !important;
       height: 1px !important;
-      background-color: #EFECE4 !important;
+      background-color: #242424 !important;
       margin: 2px 0 !important;
     }
 
@@ -102,7 +102,7 @@
 
   .adm-peserta-page {
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
     padding-bottom: 48px;
     width: 100%;
     max-width: 100%;
@@ -129,7 +129,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 6px;
   }
 
@@ -139,14 +139,14 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.25;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .adm-subtitle {
     font-size: 14px;
     line-height: 1.55;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -159,9 +159,9 @@
     height: 40px;
     padding: 0 16px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
@@ -172,15 +172,15 @@
   }
 
   .adm-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   /* Kartu Bagian Tabel */
   .adm-section-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 20px 22px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -212,13 +212,13 @@
     font-family: var(--font-judul, var(--font-ui));
     font-size: 16px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
   .adm-toolbar-sub {
     font-size: 12.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -229,12 +229,12 @@
     height: 27px;
     padding: 0 10px;
     border-radius: 8px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
     white-space: nowrap;
   }
 
@@ -250,7 +250,7 @@
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #7A746B;
+    color: #B3B3B3;
     pointer-events: none;
     display: inline-flex;
     align-items: center;
@@ -261,29 +261,29 @@
     height: 38px;
     padding: 0 13px 0 36px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13px;
     transition: border-color 140ms ease, background-color 140ms ease;
   }
 
   .adm-search-input::placeholder {
-    color: #8A847A;
+    color: #727272;
   }
 
   .adm-search-input:focus {
     outline: none;
-    border-color: #1F6F4A;
-    background-color: #FFFFFF;
+    border-color: #1DB954;
+    background-color: #181818;
   }
 
   /* Tabel Data */
   .adm-table-wrap {
     width: 100%;
     overflow-x: auto;
-    border: 1px solid #EFECE4;
+    border: 1px solid #242424;
     border-radius: 12px;
   }
 
@@ -295,8 +295,8 @@
   }
 
   .adm-table thead {
-    background-color: #FAF9F6;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .adm-table th {
@@ -306,14 +306,14 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #7A746B;
+    color: #B3B3B3;
     white-space: nowrap;
   }
 
   .adm-table td {
     padding: 14px 16px;
-    border-bottom: 1px solid #EFECE4;
-    color: #1C1A17;
+    border-bottom: 1px solid #242424;
+    color: #FFFFFF;
     vertical-align: middle;
   }
 
@@ -322,7 +322,7 @@
   }
 
   .adm-table tbody tr:hover {
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   /* Sel Identitas Peserta */
@@ -337,9 +337,9 @@
     width: 32px;
     height: 32px;
     border-radius: 9px;
-    background-color: #F2EFE9;
-    border: 1px solid #DFD9CC;
-    color: #1C1A17;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
@@ -351,14 +351,14 @@
 
   .adm-user-name {
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     word-break: break-word;
   }
 
   .adm-mono-cell {
     font-family: var(--font-mono, monospace);
     font-size: 12.5px;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   /* Lencana Status & Kode Sertifikat */
@@ -368,9 +368,9 @@
     gap: 5px;
     padding: 4px 10px;
     border-radius: 8px;
-    background-color: #F2EFE9;
-    border: 1px solid #DFD9CC;
-    color: #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #1DB954;
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 600;
@@ -382,12 +382,12 @@
     align-items: center;
     padding: 4px 9px;
     border-radius: 8px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
     white-space: nowrap;
   }
 
@@ -396,12 +396,12 @@
     align-items: center;
     padding: 4px 9px;
     border-radius: 8px;
-    background-color: #FAF9F6;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
     white-space: nowrap;
   }
 
@@ -413,9 +413,9 @@
     height: 32px;
     padding: 0 11px;
     border-radius: 9px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 12.5px;
     font-weight: 500;
@@ -425,15 +425,15 @@
   }
 
   .adm-doc-btn:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   .adm-empty-cell {
     text-align: center !important;
     padding: 36px 20px !important;
-    color: #7A746B;
+    color: #B3B3B3;
     font-size: 13.5px;
   }
 
@@ -485,9 +485,9 @@
       flex-direction: column;
       gap: 9px;
       padding: 14px;
-      border: 1px solid #E6E2D8;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      background-color: #FAF9F6;
+      background-color: #181818;
       margin-bottom: 12px;
       position: relative;
     }
@@ -511,7 +511,7 @@
     .adm-table td[data-col="peserta"] {
       padding-bottom: 10px;
       padding-right: 76px;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
 
@@ -529,7 +529,7 @@
     .adm-table td[data-col="nomor"] {
       padding-bottom: 10px;
       padding-right: 84px;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
 
@@ -547,7 +547,7 @@
       content: attr(data-label);
       font-family: var(--font-mono, monospace);
       font-size: 11px;
-      color: #7A746B;
+      color: #B3B3B3;
       text-align: left;
       flex-shrink: 0;
     }
@@ -727,8 +727,8 @@
           </div>
         </td>
         <td data-col="email" data-label="Email" class="adm-mono-cell">${p.email}</td>
-        <td data-label="Domisili" style="color: #5C5750;">${p.pekerjaan} &middot; ${p.kota}</td>
-        <td data-label="Terdaftar" class="adm-mono-cell" style="color: #7A746B;">${p.tgl_daftar}</td>
+        <td data-label="Domisili" style="color: #B3B3B3;">${p.pekerjaan} &middot; ${p.kota}</td>
+        <td data-label="Terdaftar" class="adm-mono-cell" style="color: #B3B3B3;">${p.tgl_daftar}</td>
         <td data-col="status"><span class="adm-status-badge">${p.status}</span></td>
       </tr>
     `).join('');
@@ -749,11 +749,11 @@
           <code class="adm-cert-code">${c.nomor_sertifikat}</code>
         </td>
         <td data-label="Penerima" class="adm-user-name">${c.nama_peserta}</td>
-        <td data-col="kursus" data-label="Kursus" style="color: #5C5750;">${c.nama_kursus}</td>
+        <td data-col="kursus" data-label="Kursus" style="color: #B3B3B3;">${c.nama_kursus}</td>
         <td data-label="Nilai kuis">
           <span class="adm-score-badge">${c.nilai_kuis || 90} / 100</span>
         </td>
-        <td data-label="Terbit" class="adm-mono-cell" style="color: #7A746B;">${c.tanggal_terbit}</td>
+        <td data-label="Terbit" class="adm-mono-cell" style="color: #B3B3B3;">${c.tanggal_terbit}</td>
         <td data-col="dokumen" style="text-align: right;">
           <a href="../sertifikat/lihat.php?nomor=${encodeURIComponent(c.nomor_sertifikat)}" target="_blank" class="adm-doc-btn">
             <span>Buka</span>

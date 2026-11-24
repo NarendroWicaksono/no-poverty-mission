@@ -1,10 +1,10 @@
 <style>
   .cert-viewer-wrap {
-    background-color: #F7F5F0;
+    background-color: #121212;
     padding: 32px 20px 72px;
     min-height: calc(100vh - 72px);
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .cert-container {
@@ -28,13 +28,13 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: color 140ms ease;
   }
 
   .cert-back-link:hover {
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .cert-actions {
@@ -52,9 +52,9 @@
     height: 36px;
     padding: 0 14px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -64,9 +64,9 @@
   }
 
   .cert-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   .cert-btn-primary {
@@ -77,9 +77,9 @@
     height: 36px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -89,17 +89,17 @@
   }
 
   .cert-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
   /* Lembar Fisik Sertifikat (Proporsi A4 Landscape) */
   .lembar-sertifikat {
     position: relative;
-    background-color: #FCFBF8;
-    border: 1.5px solid #2A2723;
+    background-color: #181818;
+    border: 1.5px solid #E0E0E0;
     padding: 12px;
-    box-shadow: 0 14px 36px rgba(28, 26, 23, 0.06);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
     aspect-ratio: 297 / 210;
     display: flex;
     flex-direction: column;
@@ -149,7 +149,7 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 14px;
-    border-bottom: 1px solid #DDD7C7;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .sertifikat-issuer {
@@ -163,8 +163,8 @@
     width: 30px;
     height: 30px;
     border-radius: 5px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -176,13 +176,13 @@
     font-size: 16px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #1C1A17;
+    color: #FFFFFF;
     line-height: 1.2;
   }
 
   .sertifikat-issuer-sub {
     font-size: 11px;
-    color: #6B655C;
+    color: #B3B3B3;
     margin-top: 2px;
   }
 
@@ -203,13 +203,13 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .sertifikat-seal-sub {
     display: block;
     font-size: 10.5px;
-    color: #6B655C;
+    color: #B3B3B3;
     margin-top: 1px;
   }
 
@@ -226,7 +226,7 @@
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6B655C;
+    color: #B3B3B3;
     margin-bottom: 5px;
   }
 
@@ -235,7 +235,7 @@
     font-size: 32px;
     font-weight: 600;
     letter-spacing: -0.01em;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
     line-height: 1.18;
   }
@@ -248,7 +248,7 @@
 
   .sertifikat-intro {
     font-size: 13px;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0 0 6px;
   }
 
@@ -258,17 +258,17 @@
     max-width: 100%;
     padding: 0 24px 7px;
     margin-bottom: 12px;
-    border-bottom: 1.5px solid #2A2723;
+    border-bottom: 1.5px solid #E0E0E0;
     font-family: var(--font-serif);
     font-size: clamp(26px, 3.6vw, 39px);
     font-weight: 600;
     line-height: 1.18;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .sertifikat-desc {
     font-size: 13px;
-    color: #5C5750;
+    color: #B3B3B3;
     max-width: 570px;
     margin: 0 auto 7px;
     line-height: 1.55;
@@ -278,7 +278,7 @@
     font-family: var(--font-judul);
     font-size: 18.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     line-height: 1.35;
     max-width: 680px;
     margin: 0 auto;
@@ -293,7 +293,7 @@
     align-items: end;
     gap: 20px;
     padding-top: 16px;
-    border-top: 1px solid #DDD7C7;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .sertifikat-meta-list {
@@ -305,7 +305,7 @@
 
   .sertifikat-meta-row {
     font-size: 11.5px;
-    color: #6B655C;
+    color: #B3B3B3;
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -313,21 +313,21 @@
 
   .sertifikat-meta-label {
     min-width: 102px;
-    color: #6B655C;
+    color: #B3B3B3;
   }
 
   .nomor-sertifikat {
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .sertifikat-meta-val {
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 500;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* QR Verifikasi Tengah */
@@ -341,20 +341,20 @@
   .sertifikat-qr-link {
     display: inline-flex;
     padding: 4px;
-    background-color: #FFFFFF;
-    border: 1px solid #2A2723;
+    background-color: #181818;
+    border: 1px solid #E0E0E0;
     transition: border-color 140ms ease;
   }
 
   .sertifikat-qr-link:hover {
-    border-color: #1F6F4A;
+    border-color: #1DB954;
   }
 
   .sertifikat-qr-caption {
     font-family: var(--font-mono, monospace);
     font-size: 9px;
     letter-spacing: 0.06em;
-    color: #6B655C;
+    color: #B3B3B3;
     text-transform: uppercase;
   }
 
@@ -370,10 +370,10 @@
     font-family: var(--font-serif);
     font-size: 21px;
     font-style: italic;
-    color: #1C1A17;
+    color: #FFFFFF;
     padding: 0 4px 5px;
     margin-bottom: 5px;
-    border-bottom: 1px solid #2A2723;
+    border-bottom: 1px solid #E0E0E0;
     min-width: 195px;
     text-align: right;
   }
@@ -381,12 +381,12 @@
   .sertifikat-signer-name {
     font-size: 12.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .sertifikat-signer-title {
     font-size: 11px;
-    color: #6B655C;
+    color: #B3B3B3;
     margin-top: 1px;
   }
 
@@ -437,7 +437,7 @@
 
   @media print {
     html, body {
-      background: #FFFFFF !important;
+      background: #181818 !important;
       margin: 0 !important;
       padding: 0 !important;
       width: 297mm;
@@ -472,9 +472,9 @@
       width: 100%;
       height: 100%;
       max-width: 100% !important;
-      background-color: #FCFBF8 !important;
+      background-color: #181818 !important;
       box-shadow: none !important;
-      border: 1.5px solid #2A2723 !important;
+      border: 1.5px solid #E0E0E0 !important;
       page-break-inside: avoid;
       break-inside: avoid;
     }
@@ -528,30 +528,30 @@
         <div class="sertifikat-garis-dalam">
           <!-- Ornamen Siku 4 Sudut (Inline SVG) -->
           <svg class="sertifikat-corner-svg tl" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 34V2H34" stroke="#1F6F4A" stroke-width="1.6"/>
+            <path d="M2 34V2H34" stroke="#1DB954" stroke-width="1.6"/>
             <path d="M7 28V7H28" stroke="#8C7343" stroke-width="0.9"/>
-            <rect x="2" y="2" width="5" height="5" fill="#1F6F4A"/>
+            <rect x="2" y="2" width="5" height="5" fill="#1DB954"/>
           </svg>
           <svg class="sertifikat-corner-svg tr" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 34V2H34" stroke="#1F6F4A" stroke-width="1.6"/>
+            <path d="M2 34V2H34" stroke="#1DB954" stroke-width="1.6"/>
             <path d="M7 28V7H28" stroke="#8C7343" stroke-width="0.9"/>
-            <rect x="2" y="2" width="5" height="5" fill="#1F6F4A"/>
+            <rect x="2" y="2" width="5" height="5" fill="#1DB954"/>
           </svg>
           <svg class="sertifikat-corner-svg bl" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 34V2H34" stroke="#1F6F4A" stroke-width="1.6"/>
+            <path d="M2 34V2H34" stroke="#1DB954" stroke-width="1.6"/>
             <path d="M7 28V7H28" stroke="#8C7343" stroke-width="0.9"/>
-            <rect x="2" y="2" width="5" height="5" fill="#1F6F4A"/>
+            <rect x="2" y="2" width="5" height="5" fill="#1DB954"/>
           </svg>
           <svg class="sertifikat-corner-svg br" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 34V2H34" stroke="#1F6F4A" stroke-width="1.6"/>
+            <path d="M2 34V2H34" stroke="#1DB954" stroke-width="1.6"/>
             <path d="M7 28V7H28" stroke="#8C7343" stroke-width="0.9"/>
-            <rect x="2" y="2" width="5" height="5" fill="#1F6F4A"/>
+            <rect x="2" y="2" width="5" height="5" fill="#1DB954"/>
           </svg>
 
           <!-- Ilustrasi Siluet Latar Belakang (Inline Vector, Ikut Tercetak saat Download PDF) -->
           <svg class="sertifikat-silhouette-svg" viewBox="0 0 1122 794" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Rosette Geometris & Busur Kompas Tengah -->
-            <g opacity="0.055" stroke="#1F6F4A">
+            <g opacity="0.055" stroke="#1DB954">
               <circle cx="561" cy="395" r="215" stroke-width="1.2"/>
               <circle cx="561" cy="395" r="196" stroke-width="0.8" stroke-dasharray="5 5"/>
               <circle cx="561" cy="395" r="154" stroke-width="1"/>
@@ -559,9 +559,9 @@
             </g>
 
             <!-- Siluet Ranting Laurel Kiri & Kanan -->
-            <g opacity="0.065" fill="#1F6F4A">
+            <g opacity="0.065" fill="#1DB954">
               <!-- Ranting Kiri -->
-              <path d="M365 510C332 465 322 405 338 345C341 334 345 324 350 315" stroke="#1F6F4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M365 510C332 465 322 405 338 345C341 334 345 324 350 315" stroke="#1DB954" stroke-width="2" fill="none" stroke-linecap="round"/>
               <path d="M352 485C332 478 320 462 324 445C338 452 348 467 352 485Z"/>
               <path d="M342 452C320 443 310 425 316 408C331 416 340 433 342 452Z"/>
               <path d="M337 416C316 405 309 385 317 369C331 379 338 397 337 416Z"/>
@@ -574,7 +574,7 @@
               <path d="M344 361C364 353 375 336 372 319C358 326 347 342 344 361Z"/>
 
               <!-- Ranting Kanan (Simetris) -->
-              <path d="M757 510C790 465 800 405 784 345C781 334 777 324 772 315" stroke="#1F6F4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M757 510C790 465 800 405 784 345C781 334 777 324 772 315" stroke="#1DB954" stroke-width="2" fill="none" stroke-linecap="round"/>
               <path d="M770 485C790 478 802 462 798 445C784 452 774 467 770 485Z"/>
               <path d="M780 452C802 443 812 425 806 408C791 416 782 433 780 452Z"/>
               <path d="M785 416C806 405 813 385 805 369C791 379 784 397 785 416Z"/>
@@ -605,7 +605,7 @@
               </span>
               <div>
                 <div class="sertifikat-issuer-name">
-                  Skill<span style="color: #1F6F4A;">4</span>Life
+                  Skill<span style="color: #1DB954;">4</span>Life
                 </div>
                 <div class="sertifikat-issuer-sub">
                   Prakarsa Pelatihan Kerja &middot; SDG 1 No Poverty
@@ -621,14 +621,14 @@
               </div>
 
               <svg class="sertifikat-official-seal" width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Segel resmi Skill4Life">
-                <circle cx="32" cy="32" r="29" stroke="#1F6F4A" stroke-width="1.6"/>
+                <circle cx="32" cy="32" r="29" stroke="#1DB954" stroke-width="1.6"/>
                 <circle cx="32" cy="32" r="24.5" stroke="#8C7343" stroke-width="0.9" stroke-dasharray="2.5 2"/>
-                <circle cx="32" cy="32" r="18" fill="#1F6F4A"/>
-                <path d="M24.5 32.5L29.5 37.5L40 26.5" stroke="#FCFBF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="32" cy="8.5" r="1.3" fill="#1F6F4A"/>
-                <circle cx="32" cy="55.5" r="1.3" fill="#1F6F4A"/>
-                <circle cx="8.5" cy="32" r="1.3" fill="#1F6F4A"/>
-                <circle cx="55.5" cy="32" r="1.3" fill="#1F6F4A"/>
+                <circle cx="32" cy="32" r="18" fill="#1DB954"/>
+                <path d="M24.5 32.5L29.5 37.5L40 26.5" stroke="#181818" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="8.5" r="1.3" fill="#1DB954"/>
+                <circle cx="32" cy="55.5" r="1.3" fill="#1DB954"/>
+                <circle cx="8.5" cy="32" r="1.3" fill="#1DB954"/>
+                <circle cx="55.5" cy="32" r="1.3" fill="#1DB954"/>
               </svg>
             </div>
           </div>
@@ -641,7 +641,7 @@
             <div class="sertifikat-ornament-line">
               <svg width="140" height="12" viewBox="0 0 140 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="0" y1="6" x2="56" y2="6" stroke="#8C7343" stroke-width="1"/>
-                <polygon points="70,1 75,6 70,11 65,6" fill="#1F6F4A"/>
+                <polygon points="70,1 75,6 70,11 65,6" fill="#1DB954"/>
                 <line x1="84" y1="6" x2="140" y2="6" stroke="#8C7343" stroke-width="1"/>
               </svg>
             </div>
@@ -669,7 +669,7 @@
               </div>
               <div class="sertifikat-meta-row">
                 <span class="sertifikat-meta-label">Nilai evaluasi</span>
-                <span class="sertifikat-meta-val angka-mono" style="color: #1F6F4A; font-weight: 600;" id="sert-nilai">90 / 100</span>
+                <span class="sertifikat-meta-val angka-mono" style="color: #1DB954; font-weight: 600;" id="sert-nilai">90 / 100</span>
               </div>
             </div>
 

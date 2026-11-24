@@ -8,22 +8,22 @@
   body {
     padding-top: 0 !important;
     margin-top: 0 !important;
-    background-color: #F7F5F0;
+    background-color: #121212;
   }
 
   .blj-layout {
     display: grid;
     grid-template-columns: 288px 1fr;
     min-height: 100vh;
-    background-color: #F7F5F0;
+    background-color: #121212;
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Sidebar Kurikulum Kiri */
   .blj-sidebar {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -34,7 +34,7 @@
 
   .blj-sidebar-top {
     padding: 20px 20px 18px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .blj-nav-back-row {
@@ -51,13 +51,13 @@
     gap: 5px;
     font-size: 12.5px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: color 140ms ease;
   }
 
   .blj-back-link:hover {
-    color: #1C1A17 !important;
+    color: #FFFFFF !important;
   }
 
   .blj-course-title {
@@ -65,14 +65,14 @@
     font-size: 15.5px;
     font-weight: 600;
     line-height: 1.38;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 14px;
   }
 
   /* Kotak Progres Solid */
   .blj-progress-box {
-    background-color: #FAF9F6;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 11px 13px;
   }
@@ -86,7 +86,7 @@
   }
 
   .blj-progress-label {
-    color: #5C5750;
+    color: #B3B3B3;
     font-weight: 500;
   }
 
@@ -94,20 +94,20 @@
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .blj-progress-track {
     width: 100%;
     height: 5px;
-    background-color: #E6E2D8;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
     overflow: hidden;
   }
 
   .blj-progress-fill {
     height: 100%;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     border-radius: 999px;
     transition: width 240ms ease;
   }
@@ -124,7 +124,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #8C857B;
+    color: #727272;
     padding: 0 10px;
     margin-bottom: 8px;
   }
@@ -146,21 +146,21 @@
     border-radius: 8px;
     border: 1px solid transparent;
     text-decoration: none;
-    color: #5C5750;
+    color: #B3B3B3;
     font-size: 13px;
     line-height: 1.35;
     transition: background-color 140ms ease, color 140ms ease;
   }
 
   .blj-module-link:hover {
-    background-color: #F7F5F0;
-    color: #1C1A17 !important;
+    background-color: #121212;
+    color: #FFFFFF !important;
   }
 
   .blj-module-link.aktif {
-    background-color: #F2EFE9;
-    border-color: #E2DDD0;
-    color: #1C1A17 !important;
+    background-color: #181818;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF !important;
     font-weight: 600;
   }
 
@@ -168,13 +168,13 @@
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 500;
-    color: #8C857B;
+    color: #727272;
     min-width: 20px;
     flex-shrink: 0;
   }
 
   .blj-module-link.aktif .blj-mod-num {
-    color: #1F6F4A;
+    color: #1DB954;
     font-weight: 600;
   }
 
@@ -190,8 +190,8 @@
     width: 18px;
     height: 18px;
     border-radius: 999px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -202,15 +202,15 @@
     width: 18px;
     height: 18px;
     border-radius: 999px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
     flex-shrink: 0;
   }
 
   .blj-sidebar-foot {
     padding: 16px 20px 20px;
-    border-top: 1px solid #EFECE4;
-    background-color: #FFFFFF;
+    border-top: 1px solid #242424;
+    background-color: #181818;
   }
 
   /* Tombol Utama & Sekunder (Kebal Override a:hover) */
@@ -222,9 +222,9 @@
     height: 38px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF !important;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF !important; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
@@ -235,7 +235,7 @@
   }
 
   .blj-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -247,9 +247,9 @@
     height: 38px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -260,9 +260,9 @@
   }
 
   .blj-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   .blj-btn-done {
@@ -273,9 +273,9 @@
     height: 38px;
     padding: 0 16px;
     border-radius: 8px;
-    border: 1px solid #1F6F4A;
-    background-color: #F2EFE9;
-    color: #1F6F4A !important;
+    border: 1px solid #1DB954;
+    background-color: #181818;
+    color: #1DB954 !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
@@ -286,8 +286,8 @@
   }
 
   .blj-btn-done:hover {
-    background-color: #E8E3D7;
-    color: #18583B !important;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #1ED760 !important;
   }
 
   .blj-btn-full {
@@ -308,7 +308,7 @@
   .blj-header {
     margin-bottom: 24px;
     padding-bottom: 18px;
-    border-bottom: 1px solid #E6E2D8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .blj-module-kicker {
@@ -317,7 +317,7 @@
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 6px;
   }
 
@@ -327,15 +327,15 @@
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.015em;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
   /* Banner Kesiapan Kuis (Solid Editorial Card, Tanpa Transparan Neon) */
   .blj-quiz-banner {
-    background-color: #FFFFFF;
-    border: 1px solid #D8D3C8;
-    border-left: 4px solid #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #1DB954;
     border-radius: 10px;
     padding: 16px 20px;
     margin-bottom: 24px;
@@ -349,11 +349,11 @@
   .blj-quiz-banner-text {
     font-size: 13.5px;
     line-height: 1.5;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   .blj-quiz-banner-text strong {
-    color: #1C1A17;
+    color: #FFFFFF;
     font-weight: 600;
   }
 
@@ -365,14 +365,14 @@
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 28px;
-    background-color: #141311;
-    border: 1px solid #D8D3C8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* Lembar Baca Materi */
   .blj-article-sheet {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 32px 36px;
   }
@@ -381,14 +381,14 @@
     font-family: var(--font-ui);
     font-size: 15.5px;
     line-height: 1.75;
-    color: #26231F;
+    color: #E0E0E0;
   }
 
   .blj-article-content h2 {
     font-family: var(--font-judul);
     font-size: 20px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 28px 0 12px;
     line-height: 1.35;
   }
@@ -403,7 +403,7 @@
     font-family: var(--font-judul);
     font-size: 16.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 22px 0 8px;
     line-height: 1.4;
   }
@@ -425,25 +425,25 @@
   .blj-article-content blockquote {
     margin: 20px 0;
     padding: 14px 18px;
-    background-color: #FAF9F6;
-    border-left: 3px solid #1F6F4A;
-    color: #3E3A34;
+    background-color: #181818;
+    border-left: 3px solid #1DB954;
+    color: #E0E0E0;
     font-size: 14.5px;
   }
 
   .blj-article-content code {
     font-family: var(--font-mono, monospace);
     font-size: 13.5px;
-    background-color: #F2EFE9;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 1px 5px;
     border-radius: 4px;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .blj-article-content pre {
-    background-color: #1C1A17;
-    color: #F7F5F0;
+    background-color: #181818;
+    color: #121212;
     padding: 16px 18px;
     border-radius: 8px;
     overflow-x: auto;
@@ -463,8 +463,8 @@
   /* Bar Navigasi Bawah */
   .blj-footer-nav {
     margin-top: 24px;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 16px 20px;
     display: flex;
@@ -491,7 +491,7 @@
       position: static;
       height: auto;
       border-right: none;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .blj-module-section {

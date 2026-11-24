@@ -78,7 +78,7 @@
       order: 3 !important;
       flex-basis: 100% !important;
       height: 1px !important;
-      background-color: #EFECE4 !important;
+      background-color: #242424 !important;
       margin: 2px 0 !important;
     }
 
@@ -104,7 +104,7 @@
 
   .adm-modul-page {
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
     padding-bottom: 48px;
     width: 100%;
     max-width: 100%;
@@ -131,7 +131,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 6px;
   }
 
@@ -141,14 +141,14 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.25;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .adm-subtitle {
     font-size: 14px;
     line-height: 1.55;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -161,9 +161,9 @@
     height: 40px;
     padding: 0 16px;
     border-radius: 10px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF !important;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF !important; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
@@ -174,7 +174,7 @@
   }
 
   .adm-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -186,9 +186,9 @@
     height: 40px;
     padding: 0 15px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -199,15 +199,15 @@
   }
 
   .adm-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   /* Kartu Filter Pemilih Kursus */
   .adm-filter-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 16px 20px;
     margin-bottom: 20px;
@@ -233,7 +233,7 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -244,9 +244,9 @@
     height: 40px;
     padding: 0 36px 0 13px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 500;
@@ -261,8 +261,8 @@
 
   .adm-select:focus {
     outline: none;
-    border-color: #1F6F4A;
-    background-color: #FFFFFF;
+    border-color: #1DB954;
+    background-color: #181818;
   }
 
   .adm-count-badge {
@@ -272,19 +272,19 @@
     height: 32px;
     padding: 0 12px;
     border-radius: 9px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
     white-space: nowrap;
   }
 
   /* Kartu Tabel Modul */
   .adm-table-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 20px 22px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -293,7 +293,7 @@
   .adm-table-wrap {
     width: 100%;
     overflow-x: auto;
-    border: 1px solid #EFECE4;
+    border: 1px solid #242424;
     border-radius: 12px;
   }
 
@@ -305,8 +305,8 @@
   }
 
   .adm-table thead {
-    background-color: #FAF9F6;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .adm-table th {
@@ -316,14 +316,14 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #7A746B;
+    color: #B3B3B3;
     white-space: nowrap;
   }
 
   .adm-table td {
     padding: 15px 16px;
-    border-bottom: 1px solid #EFECE4;
-    color: #1C1A17;
+    border-bottom: 1px solid #242424;
+    color: #FFFFFF;
     vertical-align: middle;
   }
 
@@ -332,7 +332,7 @@
   }
 
   .adm-table tbody tr:hover {
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   .adm-order-pill {
@@ -343,19 +343,19 @@
     height: 28px;
     padding: 0 8px;
     border-radius: 8px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   .adm-modul-title {
     font-size: 14px;
     font-weight: 600;
     line-height: 1.45;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .adm-duration-pill {
@@ -364,7 +364,7 @@
     gap: 6px;
     font-family: var(--font-mono, monospace);
     font-size: 12px;
-    color: #5C5750;
+    color: #B3B3B3;
     white-space: nowrap;
   }
 
@@ -375,9 +375,9 @@
     height: 28px;
     padding: 0 10px;
     border-radius: 8px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
-    color: #5C5750;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #B3B3B3;
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 600;
@@ -385,9 +385,9 @@
   }
 
   .adm-media-badge.has-video {
-    background-color: #F2EFE9;
-    border-color: #DFD9CC;
-    color: #1F6F4A;
+    background-color: #181818;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #1DB954;
   }
 
   .adm-row-actions {
@@ -401,9 +401,9 @@
     width: 32px;
     height: 32px;
     border-radius: 9px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #3E3A34;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #E0E0E0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -417,21 +417,21 @@
   }
 
   .adm-icon-btn:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   .adm-icon-btn.is-danger:hover {
     border-color: #D6A8A3;
-    color: #9E3B33;
-    background-color: #FBF4F3;
+    color: #F15E6C;
+    background-color: rgba(241, 94, 108, 0.15);
   }
 
   .adm-empty-cell {
     text-align: center !important;
     padding: 36px 20px !important;
-    color: #7A746B;
+    color: #B3B3B3;
     font-size: 13.5px;
   }
 
@@ -457,8 +457,8 @@
     max-width: 600px;
     max-height: calc(100vh - 32px);
     overflow-y: auto;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     box-shadow: 0 18px 40px rgba(28, 26, 23, 0.14);
   }
@@ -469,20 +469,20 @@
     align-items: flex-start;
     gap: 12px;
     padding: 20px 24px 16px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .adm-modal-title {
     font-family: var(--font-judul, var(--font-ui));
     font-size: 17px;
     font-weight: 700;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 3px;
   }
 
   .adm-modal-sub {
     font-size: 12.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -490,9 +490,9 @@
     width: 32px;
     height: 32px;
     border-radius: 9px;
-    border: 1px solid #E6E2D8;
-    background-color: #FAF9F6;
-    color: #5C5750;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #B3B3B3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -502,8 +502,8 @@
   }
 
   .adm-modal-close:hover {
-    border-color: #1C1A17;
-    color: #1C1A17;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
   }
 
   .adm-modal-body {
@@ -522,16 +522,16 @@
   .adm-label {
     font-size: 12.5px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
   }
 
   .adm-input,
   .adm-textarea {
     width: 100%;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13.5px;
     line-height: 1.5;
@@ -558,8 +558,8 @@
   .adm-input:focus,
   .adm-textarea:focus {
     outline: none;
-    border-color: #1F6F4A;
-    background-color: #FFFFFF;
+    border-color: #1DB954;
+    background-color: #181818;
   }
 
   .adm-order-title-grid {
@@ -580,8 +580,8 @@
     align-items: center;
     gap: 10px;
     padding: 16px 24px 20px;
-    border-top: 1px solid #EFECE4;
-    background-color: #FAF9F6;
+    border-top: 1px solid #242424;
+    background-color: #181818;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
   }
@@ -641,9 +641,9 @@
       flex-direction: column;
       gap: 10px;
       padding: 15px;
-      border: 1px solid #E6E2D8;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      background-color: #FAF9F6;
+      background-color: #181818;
       margin-bottom: 12px;
       position: relative;
     }
@@ -670,7 +670,7 @@
       font-family: var(--font-mono, monospace);
       font-size: 11px;
       font-weight: 600;
-      color: #7A746B;
+      color: #B3B3B3;
       margin-right: 6px;
     }
 
@@ -688,7 +688,7 @@
 
     .adm-table td[data-col="judul"] {
       padding-top: 9px;
-      border-top: 1px solid #E6E2D8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .adm-modul-title {
@@ -696,8 +696,8 @@
     }
 
     .adm-table td[data-col="durasi"] {
-      background-color: #FFFFFF;
-      border: 1px solid #EAE6DC;
+      background-color: #181818;
+      border: 1px solid #242424;
       border-radius: 10px;
       padding: 9px 12px;
     }
@@ -748,7 +748,7 @@
   <div class="adm-filter-card">
     <div class="adm-filter-group">
       <label for="pilih-kursus" class="adm-filter-label">
-        <i data-lucide="book-open" style="width: 15px; height: 15px; color: #1F6F4A;"></i>
+        <i data-lucide="book-open" style="width: 15px; height: 15px; color: #1DB954;"></i>
         <span>Pilih kursus:</span>
       </label>
       <select id="pilih-kursus" class="adm-select">
@@ -935,7 +935,7 @@
         </td>
         <td data-col="durasi">
           <span class="adm-duration-pill">
-            <i data-lucide="clock" style="width: 13px; height: 13px; color: #1F6F4A;"></i>
+            <i data-lucide="clock" style="width: 13px; height: 13px; color: #1DB954;"></i>
             <span>${m.estimasi_menit} menit</span>
           </span>
         </td>

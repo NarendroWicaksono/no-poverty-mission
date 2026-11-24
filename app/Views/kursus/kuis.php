@@ -1,15 +1,15 @@
 <style>
   .kuis-page {
-    background-color: #F7F5F0;
+    background-color: #121212;
     min-height: calc(100vh - 72px);
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   /* Header Halaman Kuis */
   .kuis-hero {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 32px 20px 30px;
   }
 
@@ -33,13 +33,13 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: color 140ms ease;
   }
 
   .kuis-back-link:hover {
-    color: #1C1A17 !important;
+    color: #FFFFFF !important;
   }
 
   .kuis-kicker {
@@ -48,7 +48,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 6px;
   }
 
@@ -58,14 +58,14 @@
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.025em;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 8px;
   }
 
   .kuis-subtitle {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #5C5750;
+    color: #B3B3B3;
     max-width: 680px;
     margin: 0 0 18px;
   }
@@ -84,15 +84,15 @@
     gap: 7px;
     padding: 7px 13px;
     border-radius: 10px;
-    background-color: #F7F5F0;
-    border: 1px solid #E6E2D8;
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 12.5px;
     font-weight: 500;
-    color: #3E3A34;
+    color: #E0E0E0;
   }
 
   .kuis-rule-item i {
-    color: #1F6F4A;
+    color: #1DB954;
     flex-shrink: 0;
   }
 
@@ -110,8 +110,8 @@
 
   /* Kartu Soal Aktif (Border Netral Seragam, Radius Seimbang) */
   .kuis-question-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 30px 32px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -124,7 +124,7 @@
     gap: 12px;
     padding-bottom: 16px;
     margin-bottom: 22px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .kuis-q-badge {
@@ -132,18 +132,18 @@
     align-items: center;
     padding: 5px 11px;
     border-radius: 8px;
-    background-color: #F3F1EC;
-    border: 1px solid #E2DDD0;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .kuis-q-step-text {
     font-family: var(--font-mono, monospace);
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .kuis-q-text {
@@ -151,7 +151,7 @@
     font-size: 16.5px;
     font-weight: 600;
     line-height: 1.65;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin-bottom: 24px;
   }
 
@@ -168,8 +168,8 @@
     gap: 14px;
     padding: 14px 16px;
     border-radius: 12px;
-    border: 1px solid #E2DDD0;
-    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
     cursor: pointer;
     transition: border-color 140ms ease, background-color 140ms ease;
     user-select: none;
@@ -177,12 +177,12 @@
 
   .kuis-option-label:hover {
     border-color: #BDB6A6;
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   .kuis-option-label.is-selected {
-    border-color: #1F6F4A;
-    background-color: #F4F3EE;
+    border-color: #1DB954;
+    background-color: #181818;
   }
 
   .kuis-option-radio {
@@ -195,9 +195,9 @@
     width: 30px;
     height: 30px;
     border-radius: 8px;
-    border: 1px solid #D8D3C8;
-    background-color: #FAF9F6;
-    color: #3E3A34;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #E0E0E0;
     font-family: var(--font-mono, monospace);
     font-size: 12.5px;
     font-weight: 600;
@@ -209,15 +209,15 @@
   }
 
   .kuis-option-label.is-selected .kuis-option-key {
-    background-color: #1F6F4A;
-    border-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    border-color: #1DB954;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
   }
 
   .kuis-option-text {
     font-size: 14.5px;
     line-height: 1.55;
-    color: #1C1A17;
+    color: #FFFFFF;
     padding-top: 4px;
   }
 
@@ -226,8 +226,8 @@
     margin-top: 22px;
     padding: 15px 18px;
     border-radius: 12px;
-    background-color: #FAF9F6;
-    border: 1px solid #DCD6C8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: none;
     justify-content: space-between;
     align-items: center;
@@ -238,7 +238,7 @@
   .kuis-confirm-text {
     font-size: 13px;
     line-height: 1.5;
-    color: #3E3A34;
+    color: #E0E0E0;
   }
 
   .kuis-confirm-actions {
@@ -256,15 +256,15 @@
     flex-wrap: wrap;
     margin-top: 28px;
     padding-top: 18px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
   }
 
   /* Panel Navigasi Nomor Soal (Kanan) */
   .kuis-nav-panel {
     position: sticky;
     top: 88px;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 22px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -281,7 +281,7 @@
     font-family: var(--font-judul, var(--font-ui));
     font-size: 14.5px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
@@ -289,13 +289,13 @@
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .kuis-progress-track {
     width: 100%;
     height: 6px;
-    background-color: #EFECE4;
+    background-color: #242424;
     border-radius: 999px;
     overflow: hidden;
     margin-bottom: 18px;
@@ -303,7 +303,7 @@
 
   .kuis-progress-fill {
     height: 100%;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     border-radius: 999px;
     transition: width 220ms ease;
   }
@@ -318,9 +318,9 @@
   .kuis-nav-btn {
     height: 38px;
     border-radius: 9px;
-    border: 1px solid #DED9CC;
-    background-color: #FFFFFF;
-    color: #3E3A34;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #E0E0E0;
     font-family: var(--font-mono, monospace);
     font-size: 12.5px;
     font-weight: 500;
@@ -329,21 +329,21 @@
   }
 
   .kuis-nav-btn:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
+    border-color: #1DB954;
+    color: #1DB954;
   }
 
   .kuis-nav-btn.terjawab {
-    background-color: #F2EFE9;
-    border-color: #CFC9B8;
-    color: #1F6F4A;
+    background-color: #181818;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #1DB954;
     font-weight: 600;
   }
 
   .kuis-nav-btn.aktif {
-    background-color: #1F6F4A;
-    border-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    border-color: #1DB954;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-weight: 600;
   }
 
@@ -353,9 +353,9 @@
     justify-content: space-between;
     gap: 8px;
     padding-top: 14px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     font-size: 11px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .kuis-legend-item {
@@ -372,17 +372,17 @@
   }
 
   .kuis-dot.aktif {
-    background-color: #1F6F4A;
+    background-color: #1DB954;
   }
 
   .kuis-dot.terjawab {
-    background-color: #F2EFE9;
-    border: 1px solid #CFC9B8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .kuis-dot.kosong {
-    background-color: #FFFFFF;
-    border: 1px solid #DED9CC;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* Tombol Solid dengan Radius Seimbang */
@@ -394,9 +394,9 @@
     height: 42px;
     padding: 0 20px;
     border-radius: 10px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF !important;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF !important; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 600;
@@ -407,7 +407,7 @@
   }
 
   .kuis-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
     color: #FFFFFF !important;
   }
 
@@ -424,9 +424,9 @@
     height: 42px;
     padding: 0 18px;
     border-radius: 10px;
-    border: 1px solid #D8D3C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13.5px;
     font-weight: 500;
@@ -437,9 +437,9 @@
   }
 
   .kuis-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   /* Tampilan Hasil Evaluasi Kuis */
@@ -450,8 +450,8 @@
   }
 
   .kuis-score-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 36px 32px;
     text-align: center;
@@ -465,9 +465,9 @@
     gap: 6px;
     padding: 6px 14px;
     border-radius: 10px;
-    background-color: #F2EFE9;
-    border: 1px solid #DFD9CC;
-    color: #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #1DB954;
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 600;
@@ -477,9 +477,9 @@
   }
 
   .kuis-result-badge.is-failed {
-    background-color: #F7F2F1;
+    background-color: rgba(241, 94, 108, 0.15);
     border-color: #E3D2CE;
-    color: #9E3B33;
+    color: #F15E6C;
   }
 
   .kuis-score-number {
@@ -487,18 +487,18 @@
     font-size: clamp(48px, 6vw, 64px);
     font-weight: 700;
     line-height: 1.05;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 10px;
   }
 
   .kuis-score-card.is-failed .kuis-score-number {
-    color: #9E3B33;
+    color: #F15E6C;
   }
 
   .kuis-score-desc {
     font-size: 14.5px;
     line-height: 1.6;
-    color: #5C5750;
+    color: #B3B3B3;
     max-width: 520px;
     margin: 0 auto 24px;
   }
@@ -515,20 +515,20 @@
   .kuis-stat-cell {
     padding: 14px 12px;
     border-radius: 12px;
-    background-color: #FAF9F6;
-    border: 1px solid #EAE6DC;
+    background-color: #181818;
+    border: 1px solid #242424;
   }
 
   .kuis-stat-val {
     font-family: var(--font-mono, monospace);
     font-size: 17px;
     font-weight: 700;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .kuis-stat-lbl {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin-top: 3px;
   }
 
@@ -542,8 +542,8 @@
 
   /* Pembahasan Jawaban (Tanpa Garis Tebal Hijau/Merah di Pinggir Card) */
   .kuis-review-section {
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -557,14 +557,14 @@
     flex-wrap: wrap;
     padding-bottom: 16px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #EFECE4;
+    border-bottom: 1px solid #242424;
   }
 
   .kuis-review-title {
     font-family: var(--font-judul, var(--font-ui));
     font-size: 17px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0;
   }
 
@@ -575,10 +575,10 @@
   }
 
   .kuis-review-item {
-    border: 1px solid #E6E2D8;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 20px 22px;
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   .kuis-review-meta {
@@ -597,24 +597,24 @@
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
     font-weight: 600;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .kuis-review-item.is-wrong .kuis-review-status {
-    color: #9E3B33;
+    color: #F15E6C;
   }
 
   .kuis-review-key {
     font-family: var(--font-mono, monospace);
     font-size: 11.5px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   .kuis-review-question {
     font-size: 15px;
     font-weight: 600;
     line-height: 1.55;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin-bottom: 12px;
   }
 
@@ -623,18 +623,18 @@
     flex-direction: column;
     gap: 6px;
     font-size: 13.5px;
-    color: #3E3A34;
+    color: #E0E0E0;
     margin-bottom: 14px;
   }
 
   .kuis-review-explanation {
-    background-color: #FFFFFF;
-    border: 1px solid #EAE6DC;
+    background-color: #181818;
+    border: 1px solid #242424;
     border-radius: 10px;
     padding: 12px 15px;
     font-size: 13.5px;
     line-height: 1.6;
-    color: #3E3A34;
+    color: #E0E0E0;
     margin: 0;
   }
 
@@ -778,11 +778,11 @@
 
           <div class="kuis-stats-strip">
             <div class="kuis-stat-cell">
-              <div class="kuis-stat-val" id="stat-benar" style="color: #1F6F4A;">0</div>
+              <div class="kuis-stat-val" id="stat-benar" style="color: #1DB954;">0</div>
               <div class="kuis-stat-lbl">Jawaban benar</div>
             </div>
             <div class="kuis-stat-cell">
-              <div class="kuis-stat-val" id="stat-salah" style="color: #9E3B33;">0</div>
+              <div class="kuis-stat-val" id="stat-salah" style="color: #F15E6C;">0</div>
               <div class="kuis-stat-lbl">Kurang tepat</div>
             </div>
             <div class="kuis-stat-cell">
@@ -986,7 +986,7 @@
           <div class="kuis-review-question">${ev.pertanyaan}</div>
           <div class="kuis-review-answers">
             <div>Jawaban Anda: <strong>${ev.jawaban_peserta ? ev.jawaban_peserta + '. ' : ''}${ev.teks_jawaban_peserta}</strong></div>
-            ${!ev.is_benar ? `<div style="color: #1F6F4A;">Jawaban Benar: <strong>${ev.kunci_benar}. ${ev.teks_kunci_benar}</strong></div>` : ''}
+            ${!ev.is_benar ? `<div style="color: #1DB954;">Jawaban Benar: <strong>${ev.kunci_benar}. ${ev.teks_kunci_benar}</strong></div>` : ''}
           </div>
           <p class="kuis-review-explanation">${ev.pembahasan}</p>
         </article>

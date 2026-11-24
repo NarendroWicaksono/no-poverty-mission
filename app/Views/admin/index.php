@@ -78,7 +78,7 @@
       order: 3 !important;
       flex-basis: 100% !important;
       height: 1px !important;
-      background-color: #EFECE4 !important;
+      background-color: #242424 !important;
       margin: 2px 0 !important;
     }
 
@@ -102,7 +102,7 @@
 
   .adm-dashboard {
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
     padding-bottom: 48px;
     width: 100%;
     max-width: 100%;
@@ -130,7 +130,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
     margin-bottom: 6px;
   }
 
@@ -140,14 +140,14 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.25;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .adm-subtitle {
     font-size: 14px;
     line-height: 1.55;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -167,9 +167,9 @@
     height: 40px;
     padding: 0 16px;
     border-radius: 10px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF !important;
+    border: 1px solid #1DB954;
+    background-color: #1DB954;
+    color: #000000 !important; font-weight: 700;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
@@ -180,7 +180,7 @@
   }
 
   .adm-btn-primary:hover {
-    background-color: #18583B;
+    background-color: #1ED760;
     color: #FFFFFF !important;
   }
 
@@ -192,9 +192,9 @@
     height: 40px;
     padding: 0 15px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #1C1A17 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF !important;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -205,9 +205,9 @@
   }
 
   .adm-btn-secondary:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A !important;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954 !important;
+    background-color: #181818;
   }
 
   /* Grid 3 Kartu Metrik */
@@ -220,8 +220,8 @@
 
   .adm-metric-card {
     min-width: 0;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 20px 22px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -241,16 +241,16 @@
   .adm-metric-label {
     font-size: 13px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   .adm-metric-icon {
     width: 34px;
     height: 34px;
     border-radius: 9px;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
-    color: #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #1DB954;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -263,12 +263,12 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.15;
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .adm-metric-sub {
     font-size: 12px;
-    color: #7A746B;
+    color: #B3B3B3;
   }
 
   /* Grid Grafik & Kursus Unggulan */
@@ -283,8 +283,8 @@
   .adm-card {
     min-width: 0;
     max-width: 100%;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 24px 26px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -303,13 +303,13 @@
     font-family: var(--font-judul, var(--font-ui));
     font-size: 16px;
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 3px;
   }
 
   .adm-card-sub {
     font-size: 12.5px;
-    color: #7A746B;
+    color: #B3B3B3;
     margin: 0;
   }
 
@@ -320,7 +320,7 @@
     gap: 14px;
     flex-wrap: wrap;
     font-size: 12px;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   .adm-legend-item {
@@ -333,14 +333,14 @@
     width: 14px;
     height: 2.5px;
     border-radius: 2px;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     display: inline-block;
   }
 
   .adm-legend-line-dash {
     width: 14px;
     height: 0;
-    border-top: 2px dashed #8A847A;
+    border-top: 2px dashed #727272;
     display: inline-block;
   }
 
@@ -378,7 +378,7 @@
     min-width: 0;
     font-size: 13.5px;
     font-weight: 500;
-    color: #1C1A17;
+    color: #FFFFFF;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -388,9 +388,9 @@
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 600;
-    color: #5C5750;
-    background-color: #F5F3EE;
-    border: 1px solid #E6E2D8;
+    color: #B3B3B3;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 7px;
     padding: 2px 8px;
     flex-shrink: 0;
@@ -399,14 +399,14 @@
   .adm-progress-track {
     width: 100%;
     height: 6px;
-    background-color: #EFECE4;
+    background-color: #242424;
     border-radius: 999px;
     overflow: hidden;
   }
 
   .adm-progress-fill {
     height: 100%;
-    background-color: #1F6F4A;
+    background-color: #1DB954;
     border-radius: 999px;
     transition: width 240ms ease;
   }
@@ -415,8 +415,8 @@
   .adm-table-card {
     min-width: 0;
     max-width: 100%;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 24px 26px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -427,7 +427,7 @@
     min-width: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid #EFECE4;
+    border: 1px solid #242424;
     border-radius: 12px;
   }
 
@@ -439,8 +439,8 @@
   }
 
   .adm-table thead {
-    background-color: #FAF9F6;
-    border-bottom: 1px solid #E6E2D8;
+    background-color: #181818;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .adm-table th {
@@ -450,14 +450,14 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #7A746B;
+    color: #B3B3B3;
     white-space: nowrap;
   }
 
   .adm-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EFECE4;
-    color: #1C1A17;
+    border-bottom: 1px solid #242424;
+    color: #FFFFFF;
     vertical-align: middle;
   }
 
@@ -466,7 +466,7 @@
   }
 
   .adm-table tbody tr:hover {
-    background-color: #FAF9F6;
+    background-color: #181818;
   }
 
   .adm-user-cell {
@@ -480,9 +480,9 @@
     width: 32px;
     height: 32px;
     border-radius: 9px;
-    background-color: #F2EFE9;
-    border: 1px solid #DFD9CC;
-    color: #1C1A17;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
     font-family: var(--font-mono, monospace);
     font-size: 12px;
     font-weight: 600;
@@ -494,14 +494,14 @@
 
   .adm-user-name {
     font-weight: 600;
-    color: #1C1A17;
+    color: #FFFFFF;
     word-break: break-word;
   }
 
   .adm-mono-cell {
     font-family: var(--font-mono, monospace);
     font-size: 12.5px;
-    color: #5C5750;
+    color: #B3B3B3;
   }
 
   /* Lencana Status Solid */
@@ -511,9 +511,9 @@
     gap: 5px;
     padding: 4px 10px;
     border-radius: 8px;
-    background-color: #F2EFE9;
-    border: 1px solid #DFD9CC;
-    color: #1F6F4A;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #1DB954;
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 600;
@@ -603,9 +603,9 @@
       flex-direction: column;
       gap: 9px;
       padding: 14px;
-      border: 1px solid #EFECE4;
+      border: 1px solid #242424;
       border-radius: 12px;
-      background-color: #FAF9F6;
+      background-color: #181818;
       margin-bottom: 10px;
     }
 
@@ -614,7 +614,7 @@
     }
 
     .adm-table tbody tr:hover {
-      background-color: #FAF9F6;
+      background-color: #181818;
     }
 
     .adm-table td {
@@ -630,7 +630,7 @@
 
     .adm-table td[data-col="peserta"] {
       padding-bottom: 10px;
-      border-bottom: 1px solid #E6E2D8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
 
@@ -642,7 +642,7 @@
       content: attr(data-label);
       font-family: var(--font-mono, monospace);
       font-size: 11px;
-      color: #7A746B;
+      color: #B3B3B3;
       text-align: left;
       flex-shrink: 0;
     }
@@ -895,8 +895,8 @@
     const gridLines = [0, step, step * 2, step * 3, maxVal].map(val => {
       const y = getY(val);
       return `
-        <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#EFECE4" stroke-width="1" />
-        <text x="${padL - 8}" y="${y + 4}" text-anchor="end" fill="#8A847A" font-size="${fontAxis}" font-family="var(--font-mono, monospace)">${val}</text>
+        <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#242424" stroke-width="1" />
+        <text x="${padL - 8}" y="${y + 4}" text-anchor="end" fill="#727272" font-size="${fontAxis}" font-family="var(--font-mono, monospace)">${val}</text>
       `;
     }).join('');
 
@@ -904,23 +904,23 @@
     const ptsLulus = lulus.map((v, i) => `${getX(i)},${getY(v)}`).join(' ');
 
     const dotsLulus = lulus.map((v, i) => `
-      <circle cx="${getX(i)}" cy="${getY(v)}" r="3" fill="#FFFFFF" stroke="#8A847A" stroke-width="1.6" />
+      <circle cx="${getX(i)}" cy="${getY(v)}" r="3" fill="#FFFFFF" stroke="#727272" stroke-width="1.6" />
     `).join('');
 
     const dotsPeserta = peserta.map((v, i) => `
-      <circle cx="${getX(i)}" cy="${getY(v)}" r="4" fill="#FFFFFF" stroke="#1F6F4A" stroke-width="2.2" />
-      <text x="${getX(i)}" y="${getY(v) - 9}" text-anchor="middle" fill="#1F6F4A" font-size="${fontVal}" font-weight="600" font-family="var(--font-mono, monospace)">${v}</text>
+      <circle cx="${getX(i)}" cy="${getY(v)}" r="4" fill="#FFFFFF" stroke="#1DB954" stroke-width="2.2" />
+      <text x="${getX(i)}" y="${getY(v) - 9}" text-anchor="middle" fill="#1DB954" font-size="${fontVal}" font-weight="600" font-family="var(--font-mono, monospace)">${v}</text>
     `).join('');
 
     const xLabels = labels.map((lbl, i) => `
-      <text x="${getX(i)}" y="${H - 6}" text-anchor="middle" fill="#7A746B" font-size="${fontLabelX}" font-family="var(--font-ui, sans-serif)">${lbl}</text>
+      <text x="${getX(i)}" y="${H - 6}" text-anchor="middle" fill="#B3B3B3" font-size="${fontLabelX}" font-family="var(--font-ui, sans-serif)">${lbl}</text>
     `).join('');
 
     wadah.innerHTML = `
       <svg viewBox="0 0 ${W} ${H}" style="width: 100%; height: auto; display: block;">
         ${gridLines}
-        <polyline points="${ptsLulus}" fill="none" stroke="#8A847A" stroke-width="1.8" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" />
-        <polyline points="${ptsPeserta}" fill="none" stroke="#1F6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="${ptsLulus}" fill="none" stroke="#727272" stroke-width="1.8" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="${ptsPeserta}" fill="none" stroke="#1DB954" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
         ${dotsLulus}
         ${dotsPeserta}
         ${xLabels}
@@ -982,9 +982,9 @@
             </div>
           </td>
           <td data-col="email" data-label="Email" class="adm-mono-cell">${p.email}</td>
-          <td data-label="Domisili" style="color: #5C5750;">${p.pekerjaan} &middot; ${p.kota}</td>
+          <td data-label="Domisili" style="color: #B3B3B3;">${p.pekerjaan} &middot; ${p.kota}</td>
           <td data-label="Status"><span class="adm-status-badge">${p.status}</span></td>
-          <td data-label="Terdaftar" class="adm-mono-cell" style="color: #7A746B;">${p.tgl_daftar}</td>
+          <td data-label="Terdaftar" class="adm-mono-cell" style="color: #B3B3B3;">${p.tgl_daftar}</td>
         </tr>
       `).join('');
     }

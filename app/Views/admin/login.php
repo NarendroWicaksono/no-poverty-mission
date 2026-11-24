@@ -3,7 +3,7 @@
   body {
     max-width: 100%;
     overflow-x: hidden;
-    background-color: #F7F5F0;
+    background-color: #121212;
   }
 
   footer,
@@ -24,14 +24,14 @@
     justify-content: center;
     padding: 36px 16px 48px;
     font-family: var(--font-ui);
-    color: #1C1A17;
+    color: #FFFFFF;
   }
 
   .adm-login-card {
     width: 100%;
     max-width: 440px;
-    background-color: #FFFFFF;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 32px 30px 26px;
     box-shadow: 0 2px 10px rgba(28, 26, 23, 0.025);
@@ -53,8 +53,8 @@
     width: 28px;
     height: 28px;
     border-radius: 8px;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     font-weight: 700;
@@ -70,7 +70,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   .adm-login-title {
@@ -79,21 +79,21 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.25;
-    color: #1C1A17;
+    color: #FFFFFF;
     margin: 0 0 6px;
   }
 
   .adm-login-subtitle {
     font-size: 13.5px;
     line-height: 1.55;
-    color: #5C5750;
+    color: #B3B3B3;
     margin: 0;
   }
 
   /* Kotak Isi Cepat Akun Demo */
   .adm-demo-box {
-    background-color: #FAF9F6;
-    border: 1px solid #E6E2D8;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 12px;
     margin-bottom: 20px;
@@ -104,9 +104,9 @@
     height: 38px;
     padding: 0 14px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FFFFFF;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
@@ -119,9 +119,9 @@
   }
 
   .adm-demo-btn:hover {
-    border-color: #1F6F4A;
-    color: #1F6F4A;
-    background-color: #FAF9F6;
+    border-color: #1DB954;
+    color: #1DB954;
+    background-color: #181818;
   }
 
   /* Pesan Error Login */
@@ -131,9 +131,9 @@
     gap: 9px;
     padding: 11px 14px;
     border-radius: 10px;
-    background-color: #FBF4F3;
+    background-color: rgba(241, 94, 108, 0.15);
     border: 1px solid #E3C5C1;
-    color: #9E3B33;
+    color: #F15E6C;
     font-size: 13px;
     line-height: 1.45;
     margin-bottom: 18px;
@@ -155,7 +155,7 @@
   .adm-label {
     font-size: 13px;
     font-weight: 600;
-    color: #3E3A34;
+    color: #E0E0E0;
   }
 
   .adm-input-wrap {
@@ -167,7 +167,7 @@
   .adm-input-icon {
     position: absolute;
     left: 13px;
-    color: #7A746B;
+    color: #B3B3B3;
     display: inline-flex;
     align-items: center;
     pointer-events: none;
@@ -178,9 +178,9 @@
     height: 42px;
     padding: 0 14px 0 38px;
     border-radius: 10px;
-    border: 1px solid #DCD6C8;
-    background-color: #FAF9F6;
-    color: #1C1A17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #181818;
+    color: #FFFFFF;
     font-family: var(--font-ui);
     font-size: 14px;
     transition: border-color 140ms ease, background-color 140ms ease;
@@ -192,8 +192,8 @@
 
   .adm-input:focus {
     outline: none;
-    border-color: #1F6F4A;
-    background-color: #FFFFFF;
+    border-color: #1DB954;
+    background-color: #181818;
   }
 
   .adm-pass-toggle {
@@ -204,7 +204,7 @@
     border-radius: 8px;
     border: none;
     background: transparent;
-    color: #7A746B;
+    color: #B3B3B3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -213,8 +213,8 @@
   }
 
   .adm-pass-toggle:hover {
-    color: #1C1A17;
-    background-color: #EFECE4;
+    color: #FFFFFF;
+    background-color: #242424;
   }
 
   /* Tombol Submit */
@@ -224,9 +224,9 @@
     margin-top: 6px;
     padding: 0 18px;
     border-radius: 10px;
-    border: 1px solid #1F6F4A;
-    background-color: #1F6F4A;
-    color: #FFFFFF;
+    border: 1px solid #1DB954;
+    background-color: #0D3820;
+    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
     font-family: var(--font-ui);
     font-size: 14px;
     font-weight: 600;
@@ -239,7 +239,7 @@
   }
 
   .adm-submit-btn:hover {
-    background-color: #18583B;
+    background-color: #154D2E;
   }
 
   .adm-submit-btn:disabled {
@@ -251,7 +251,7 @@
   .adm-login-foot {
     margin-top: 22px;
     padding-top: 16px;
-    border-top: 1px solid #EFECE4;
+    border-top: 1px solid #242424;
     text-align: center;
   }
 
@@ -262,13 +262,13 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: #5C5750;
+    color: #B3B3B3;
     text-decoration: none;
     transition: color 140ms ease;
   }
 
   .adm-back-link:hover {
-    color: #1F6F4A;
+    color: #1DB954;
   }
 
   @media (max-width: 480px) {
@@ -304,7 +304,7 @@
     <!-- Tombol isi cepat akun demo -->
     <div class="adm-demo-box">
       <button type="button" id="btn-demo-admin" class="adm-demo-btn">
-        <i data-lucide="key-round" style="width: 15px; height: 15px; color: #1F6F4A;"></i>
+        <i data-lucide="key-round" style="width: 15px; height: 15px; color: #1DB954;"></i>
         <span>Gunakan akun demo pengelola</span>
       </button>
     </div>

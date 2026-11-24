@@ -3,8 +3,8 @@
 -- Aplikasi Kursus Online Gratis Bertema SDG 1: No Poverty
 -- ========================================================
 
-CREATE DATABASE IF NOT EXISTS `db_skill4life` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `db_skill4life`;
+-- CREATE DATABASE IF NOT EXISTS `db_skill4life` ...
+-- USE `db_skill4life`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `sertifikat`;

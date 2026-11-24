@@ -1,38 +1,54 @@
 /* ========================================================
    Skill4Life - Design Tokens (variabel.css)
-   Aturan Visual: Kontras Editorial Hangat, Tanpa Serif, Tanpa Glow
+   Tema: Spotify Dark Edition (Hitam Dominan dengan Aksen Hijau Spotify)
 ======================================================== */
 
 :root {
-  /* Warna: Satu Ramp Netral Hangat */
-  --latar: #F7F5F0;          /* Kertas alas hangat */
-  --permukaan: #FFFFFF;      /* Kartu bersih */
-  --permukaan-2: #EFEDE7;    /* Area sekunder, latar ilustratif */
-  --permukaan-3: #E6E3DC;    /* Penekan kontras ringan */
+  /* Warna Dasar: Spotify Dark Canvas & Surfaces */
+  --latar: #121212;
+  /* Hitam arang khas Spotify */
+  --permukaan: #181818;
+  /* Kartu dan panel utama Spotify */
+  --permukaan-2: #242424;
+  /* Area sekunder, baris selang-seling, input */
+  --permukaan-3: #2A2A2A;
+  /* Elevasi ketiga / kontras penekan */
 
-  /* Garis Batas Hairline 1px */
-  --garis: rgba(28, 26, 23, 0.10);
-  --garis-tegas: rgba(28, 26, 23, 0.22);
+  /* Garis Batas Hairline Transparan */
+  --garis: rgba(255, 255, 255, 0.09);
+  --garis-tegas: rgba(255, 255, 255, 0.18);
 
-  /* Tiga Peran Teks */
-  --teks: #1C1A17;           /* Utama: kontras tinggi dan blok gelap */
-  --teks-2: #5C5750;         /* Sekunder: deskripsi, paragraf */
-  --teks-3: #8A847A;         /* Redup: metadata, label kecil */
+  /* Tiga Peran Teks Spotify */
+  --teks: #FFFFFF;
+  /* Teks utama: putih bersih */
+  --teks-2: #B3B3B3;
+  /* Teks sekunder: abu-abu muda khas Spotify */
+  --teks-3: #727272;
+  /* Teks redup: metadata, label kecil */
 
-  /* Aksen Tunggal: Hijau Tua */
-  --aksen: #1F6F4A;
-  --aksen-tekan: #175438;
-  --aksen-tipis: #E6F0EA;
+  /* Aksen Hijau: Terang untuk Background, Gelap untuk Tombol */
+  --aksen-terang: #1DB954;
+  /* Hijau terang Spotify untuk background hero & aksen */
+  --aksen-terang-hover: #1ED760;
+  --aksen-gelap: #0D3820;
+  /* Hijau gelap untuk tombol */
+  --aksen-gelap-tekan: #154D2E;
+  /* Hijau gelap saat hover tombol */
+  --aksen: #1DB954;
+  /* Nilai aksen tombol utama */
+  --aksen-tekan: #154D2E;
+  --aksen-tipis: #1DB954;
+  /* Background aksen terang */
 
   /* Warna Makna Fungsional */
-  --sukses: #1F6F4A;
-  --sukses-tipis: #E6F0EA;
-  --galat: #8B2C24;
-  --galat-tipis: #F8EBEA;
-  --peringatan: #8A5B18;
-  --peringatan-tipis: #F8F2E6;
+  --sukses: #1DB954;
+  --sukses-tipis: rgba(29, 185, 84, 0.15);
+  --galat: #F15E6C;
+  --galat-tipis: rgba(241, 94, 108, 0.15);
+  --peringatan: #FFA42B;
+  --peringatan-tipis: rgba(255, 164, 43, 0.15);
 
-  /* Tipografi: Murni Sans-Serif (Tanpa Serif Sama Sekali) */
+  /* Tipografi */
   --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "IBM Plex Mono", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -74,10 +90,11 @@
 
   /* Transisi */
   --transisi-cepat: color 140ms cubic-bezier(0.2, 0, 0, 1),
-                    background-color 140ms cubic-bezier(0.2, 0, 0, 1),
-                    border-color 140ms cubic-bezier(0.2, 0, 0, 1);
+    background-color 140ms cubic-bezier(0.2, 0, 0, 1),
+    border-color 140ms cubic-bezier(0.2, 0, 0, 1),
+    transform 140ms cubic-bezier(0.2, 0, 0, 1);
   --transisi-muncul: opacity 200ms cubic-bezier(0.2, 0, 0, 1),
-                     transform 200ms cubic-bezier(0.2, 0, 0, 1);
+    transform 200ms cubic-bezier(0.2, 0, 0, 1);
 
   /* Lebar Kontainer */
   --lebar-maks-halaman: 1160px;

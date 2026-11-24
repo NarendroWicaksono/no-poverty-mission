@@ -339,9 +339,9 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
     height: 38px;
     padding: 0 15px;
     border-radius: 999px;
-    background-color: #E6F0EA;
-    border: 1px solid #C8DDD0;
-    color: #1F6F4A !important;
+    background-color: rgba(29, 185, 84, 0.15);
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    color: #1DB954 !important;
     font-family: var(--font-judul);
     font-size: 13.5px;
     font-weight: 600;
@@ -352,9 +352,9 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
 
   .nav-profil-pill:hover,
   .nav-profil-pill.aktif {
-    background-color: #D6E7DD;
-    border-color: #1F6F4A;
-    color: #18583B !important;
+    background-color: rgba(29, 185, 84, 0.25);
+    border-color: #1DB954;
+    color: #1ED760 !important;
   }
 
   .tautan-masuk {
@@ -428,8 +428,8 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
     <!-- Logo dengan Emblem Segel Kertas -->
     <a href="<?= $baseUrl ?>/index.php" class="logo-s4l" aria-label="Beranda Skill4Life">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="28" height="28" rx="9" fill="#1F6F4A" stroke="#1C1A17" stroke-width="2"/>
-        <path d="M9.5 16.5L13.8 20.5L22.5 11.5" stroke="#F7F5F0" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="2" y="2" width="28" height="28" rx="9" fill="#1DB954" stroke="#1C1A17" stroke-width="2"/>
+        <path d="M9.5 16.5L13.8 20.5L22.5 11.5" stroke="#121212" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="24.5" cy="7.5" r="2.5" fill="#F3C669"/>
       </svg>
       <span>Skill4Life</span>
@@ -458,28 +458,28 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
                   <div class="mega-daftar-2kolom" id="mega-kategori-list">
                     <a href="<?= $baseUrl ?>/kursus/katalog.php?kategori=aplikasi-perkantoran" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="6" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.6"/><rect x="3" y="3" width="22" height="7" rx="5" fill="#1F6F4A"/><line x1="11" y1="10" x2="11" y2="25" stroke="#1C1A17" stroke-width="1.4"/><line x1="3" y1="17" x2="25" y2="17" stroke="#1C1A17" stroke-width="1.4"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="6" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.6"/><rect x="3" y="3" width="22" height="7" rx="5" fill="#1DB954"/><line x1="11" y1="10" x2="11" y2="25" stroke="#1C1A17" stroke-width="1.4"/><line x1="3" y1="17" x2="25" y2="17" stroke="#1C1A17" stroke-width="1.4"/></svg>
                       </span>
                       <span>Aplikasi Perkantoran</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php?kategori=kesiapan-karir" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="5" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.6"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#1C1A17" stroke-width="1.6"/><circle cx="14" cy="16" r="2.5" fill="#1F6F4A"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="5" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.6"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#1C1A17" stroke-width="1.6"/><circle cx="14" cy="16" r="2.5" fill="#1DB954"/></svg>
                       </span>
                       <span>Kesiapan Karir</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php?kategori=administrasi-dokumen" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="4" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.6"/><line x1="9" y1="9" x2="19" y2="9" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="14" x2="19" y2="14" stroke="#8A847A" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="20" r="3.5" fill="#E8A838" stroke="#1C1A17" stroke-width="1.2"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="4" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.6"/><line x1="9" y1="9" x2="19" y2="9" stroke="#1DB954" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="14" x2="19" y2="14" stroke="#727272" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="20" r="3.5" fill="#E8A838" stroke="#1C1A17" stroke-width="1.2"/></svg>
                       </span>
                       <span>Surat & Dokumen</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php?kategori=keuangan-usaha" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="3" width="20" height="22" rx="5" fill="#EFEDE7" stroke="#1C1A17" stroke-width="1.6"/><rect x="8" y="7" width="12" height="5" rx="1.5" fill="#1F6F4A"/><circle cx="9.5" cy="16" r="1.5" fill="#1C1A17"/><circle cx="14" cy="16" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="16" r="1.5" fill="#E8A838"/><circle cx="9.5" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="14" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="20.5" r="1.5" fill="#1F6F4A"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="3" width="20" height="22" rx="5" fill="#242424" stroke="#1C1A17" stroke-width="1.6"/><rect x="8" y="7" width="12" height="5" rx="1.5" fill="#1DB954"/><circle cx="9.5" cy="16" r="1.5" fill="#1C1A17"/><circle cx="14" cy="16" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="16" r="1.5" fill="#E8A838"/><circle cx="9.5" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="14" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="20.5" r="1.5" fill="#1DB954"/></svg>
                       </span>
                       <span>Keuangan Usaha</span>
                     </a>
@@ -500,42 +500,42 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
                   <div class="mega-daftar-2kolom">
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="4" width="20" height="18" rx="4" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.5"/><path d="M8 17V13M13 17V9M18 17V11" stroke="#1F6F4A" stroke-width="2.2" stroke-linecap="round"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="4" width="20" height="18" rx="4" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.5"/><path d="M8 17V13M13 17V9M18 17V11" stroke="#1DB954" stroke-width="2.2" stroke-linecap="round"/></svg>
                       </span>
                       <span>Operator Excel</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 8C3 6.3 4.3 5 6 5H10.5L12.5 7.5H20C21.7 7.5 23 8.8 23 10.5V18C23 19.7 21.7 21 20 21H6C4.3 21 3 19.7 3 18V8Z" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.5"/><path d="M10 14.5L12.2 16.5L16.5 12" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 8C3 6.3 4.3 5 6 5H10.5L12.5 7.5H20C21.7 7.5 23 8.8 23 10.5V18C23 19.7 21.7 21 20 21H6C4.3 21 3 19.7 3 18V8Z" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.5"/><path d="M10 14.5L12.2 16.5L16.5 12" stroke="#1DB954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                       </span>
                       <span>Staf Administrasi</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.5"/><circle cx="13" cy="10" r="3" fill="#1F6F4A"/><path d="M8 19C8 16.5 10.2 15 13 15C15.8 15 18 16.5 18 19" stroke="#1C1A17" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.5"/><circle cx="13" cy="10" r="3" fill="#1DB954"/><path d="M8 19C8 16.5 10.2 15 13 15C15.8 15 18 16.5 18 19" stroke="#1C1A17" stroke-width="1.6" stroke-linecap="round"/></svg>
                       </span>
                       <span>Pelamar Kerja Baru</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 10L6 5H20L22 10H4Z" fill="#1F6F4A" stroke="#1C1A17" stroke-width="1.5" stroke-linejoin="round"/><rect x="5" y="10" width="16" height="11" rx="2" fill="#F7F5F0" stroke="#1C1A17" stroke-width="1.5"/><rect x="10.5" y="14" width="5" height="7" fill="#E8A838"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 10L6 5H20L22 10H4Z" fill="#1DB954" stroke="#1C1A17" stroke-width="1.5" stroke-linejoin="round"/><rect x="5" y="10" width="16" height="11" rx="2" fill="#121212" stroke="#1C1A17" stroke-width="1.5"/><rect x="10.5" y="14" width="5" height="7" fill="#E8A838"/></svg>
                       </span>
                       <span>Pelaku UMKM</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="14" rx="3.5" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.5"/><path d="M4 8L13 14.5L22 8" stroke="#1F6F4A" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="14" rx="3.5" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.5"/><path d="M4 8L13 14.5L22 8" stroke="#1DB954" stroke-width="1.8" stroke-linecap="round"/></svg>
                       </span>
                       <span>Korespondensi</span>
                     </a>
 
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-link-item">
                       <span class="mega-svg-badge">
-                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9.5" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.5"/><path d="M13 3.5V13H22.5" stroke="#1C1A17" stroke-width="1.5"/><path d="M13 13L19.5 6.5" stroke="#E8A838" stroke-width="2"/></svg>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9.5" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.5"/><path d="M13 3.5V13H22.5" stroke="#1C1A17" stroke-width="1.5"/><path d="M13 13L19.5 6.5" stroke="#E8A838" stroke-width="2"/></svg>
                       </span>
                       <span>Olah Data Laporan</span>
                     </a>
@@ -557,18 +557,18 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
                   <div class="mega-kursus-grup" id="mega-kursus-populer">
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-kursus-kartu">
                       <div>
-                        <div class="mega-kursus-thumb" style="background-color: #E6F0EA;">
+                        <div class="mega-kursus-thumb" style="background-color: rgba(29, 185, 84, 0.15);">
                           <span class="mega-kursus-tag">POPULER</span>
                           <svg viewBox="0 0 200 92" fill="none" style="width: 100%; height: 100%;">
                             <rect x="28" y="18" width="144" height="64" rx="7" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.8"/>
-                            <rect x="28" y="18" width="144" height="16" rx="6" fill="#1F6F4A"/>
+                            <rect x="28" y="18" width="144" height="16" rx="6" fill="#1DB954"/>
                             <text x="38" y="29" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="8" font-weight="600">=SUM(B2:B8)</text>
                             <line x1="76" y1="34" x2="76" y2="82" stroke="#1C1A17" stroke-opacity="0.15"/>
                             <line x1="124" y1="34" x2="124" y2="82" stroke="#1C1A17" stroke-opacity="0.15"/>
                             <line x1="28" y1="50" x2="172" y2="50" stroke="#1C1A17" stroke-opacity="0.15"/>
                             <line x1="28" y1="66" x2="172" y2="66" stroke="#1C1A17" stroke-opacity="0.15"/>
                             <rect x="84" y="39" width="32" height="6" rx="3" fill="#E8A838"/>
-                            <rect x="132" y="55" width="30" height="6" rx="3" fill="#1F6F4A"/>
+                            <rect x="132" y="55" width="30" height="6" rx="3" fill="#1DB954"/>
                           </svg>
                         </div>
                         <div class="mega-kursus-judul">Microsoft Excel Dasar: Olah Data & Rumus</div>
@@ -582,15 +582,15 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
                     <a href="<?= $baseUrl ?>/kursus/katalog.php" class="mega-kursus-kartu">
                       <div>
                         <div class="mega-kursus-thumb" style="background-color: #FBE8C8;">
-                          <span class="mega-kursus-tag" style="background-color: #1F6F4A;">BARU</span>
+                          <span class="mega-kursus-tag" style="background-color: #1DB954;">BARU</span>
                           <svg viewBox="0 0 200 92" fill="none" style="width: 100%; height: 100%;">
                             <rect x="44" y="14" width="112" height="72" rx="7" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.8"/>
-                            <rect x="56" y="24" width="44" height="7" rx="3" fill="#1F6F4A"/>
-                            <rect x="56" y="37" width="88" height="5" rx="2.5" fill="#8A847A" opacity="0.5"/>
-                            <rect x="56" y="46" width="76" height="5" rx="2.5" fill="#8A847A" opacity="0.5"/>
-                            <rect x="56" y="55" width="60" height="5" rx="2.5" fill="#8A847A" opacity="0.5"/>
-                            <circle cx="134" cy="67" r="11" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.5"/>
-                            <path d="M130 67L133 70L139 64" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="56" y="24" width="44" height="7" rx="3" fill="#1DB954"/>
+                            <rect x="56" y="37" width="88" height="5" rx="2.5" fill="#727272" opacity="0.5"/>
+                            <rect x="56" y="46" width="76" height="5" rx="2.5" fill="#727272" opacity="0.5"/>
+                            <rect x="56" y="55" width="60" height="5" rx="2.5" fill="#727272" opacity="0.5"/>
+                            <circle cx="134" cy="67" r="11" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.5"/>
+                            <path d="M130 67L133 70L139 64" stroke="#1DB954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                           </svg>
                         </div>
                         <div class="mega-kursus-judul">Microsoft Word untuk Surat & Dokumen Resmi</div>
@@ -712,42 +712,42 @@ $sedangDiDashboard = strpos($_SERVER['PHP_SELF'], 'dashboard') !== false && !$se
   }
 
   const badgeSvgKategori = [
-    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="6" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.6"/><rect x="3" y="3" width="22" height="7" rx="5" fill="#1F6F4A"/><line x1="11" y1="10" x2="11" y2="25" stroke="#1C1A17" stroke-width="1.4"/><line x1="3" y1="17" x2="25" y2="17" stroke="#1C1A17" stroke-width="1.4"/></svg>`,
-    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="5" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.6"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#1C1A17" stroke-width="1.6"/><circle cx="14" cy="16" r="2.5" fill="#1F6F4A"/></svg>`,
-    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="3" width="20" height="22" rx="5" fill="#EFEDE7" stroke="#1C1A17" stroke-width="1.6"/><rect x="8" y="7" width="12" height="5" rx="1.5" fill="#1F6F4A"/><circle cx="9.5" cy="16" r="1.5" fill="#1C1A17"/><circle cx="14" cy="16" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="16" r="1.5" fill="#E8A838"/><circle cx="9.5" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="14" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="20.5" r="1.5" fill="#1F6F4A"/></svg>`,
-    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="4" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.6"/><line x1="9" y1="9" x2="19" y2="9" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="14" x2="19" y2="14" stroke="#8A847A" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="20" r="3.5" fill="#E8A838" stroke="#1C1A17" stroke-width="1.2"/></svg>`
+    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="6" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.6"/><rect x="3" y="3" width="22" height="7" rx="5" fill="#1DB954"/><line x1="11" y1="10" x2="11" y2="25" stroke="#1C1A17" stroke-width="1.4"/><line x1="3" y1="17" x2="25" y2="17" stroke="#1C1A17" stroke-width="1.4"/></svg>`,
+    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="8" width="22" height="16" rx="5" fill="#FBE8C8" stroke="#1C1A17" stroke-width="1.6"/><path d="M10 8V6C10 4.9 10.9 4 12 4H16C17.1 4 18 4.9 18 6V8" stroke="#1C1A17" stroke-width="1.6"/><circle cx="14" cy="16" r="2.5" fill="#1DB954"/></svg>`,
+    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="3" width="20" height="22" rx="5" fill="#242424" stroke="#1C1A17" stroke-width="1.6"/><rect x="8" y="7" width="12" height="5" rx="1.5" fill="#1DB954"/><circle cx="9.5" cy="16" r="1.5" fill="#1C1A17"/><circle cx="14" cy="16" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="16" r="1.5" fill="#E8A838"/><circle cx="9.5" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="14" cy="20.5" r="1.5" fill="#1C1A17"/><circle cx="18.5" cy="20.5" r="1.5" fill="#1DB954"/></svg>`,
+    `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="4" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.6"/><line x1="9" y1="9" x2="19" y2="9" stroke="#1DB954" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="14" x2="19" y2="14" stroke="#727272" stroke-width="1.6" stroke-linecap="round"/><circle cx="18" cy="20" r="3.5" fill="#E8A838" stroke="#1C1A17" stroke-width="1.2"/></svg>`
   ];
 
   const sampulKursusMini = [
     {
-      bg: '#E6F0EA',
+      bg: 'rgba(29, 185, 84, 0.15)',
       tag: 'POPULER',
       tagBg: '#1C1A17',
       svg: `<svg viewBox="0 0 200 92" fill="none" style="width: 100%; height: 100%;">
         <rect x="28" y="18" width="144" height="64" rx="7" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.8"/>
-        <rect x="28" y="18" width="144" height="16" rx="6" fill="#1F6F4A"/>
+        <rect x="28" y="18" width="144" height="16" rx="6" fill="#1DB954"/>
         <text x="38" y="29" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="8" font-weight="600">=SUM(B2:B8)</text>
         <line x1="76" y1="34" x2="76" y2="82" stroke="#1C1A17" stroke-opacity="0.15"/>
         <line x1="124" y1="34" x2="124" y2="82" stroke="#1C1A17" stroke-opacity="0.15"/>
         <line x1="28" y1="50" x2="172" y2="50" stroke="#1C1A17" stroke-opacity="0.15"/>
         <line x1="28" y1="66" x2="172" y2="66" stroke="#1C1A17" stroke-opacity="0.15"/>
         <rect x="84" y="39" width="32" height="6" rx="3" fill="#E8A838"/>
-        <rect x="132" y="55" width="30" height="6" rx="3" fill="#1F6F4A"/>
+        <rect x="132" y="55" width="30" height="6" rx="3" fill="#1DB954"/>
       </svg>`
     },
     {
       bg: '#FBE8C8',
       tag: 'UNGGULAN',
-      tagBg: '#1F6F4A',
+      tagBg: '#1DB954',
       svg: `<svg viewBox="0 0 200 92" fill="none" style="width: 100%; height: 100%;">
         <rect x="30" y="16" width="140" height="66" rx="7" fill="#FFFFFF" stroke="#1C1A17" stroke-width="1.8"/>
-        <rect x="44" y="54" width="14" height="18" rx="3" fill="#E6F0EA" stroke="#1C1A17" stroke-width="1.4"/>
+        <rect x="44" y="54" width="14" height="18" rx="3" fill="rgba(29, 185, 84, 0.15)" stroke="#1C1A17" stroke-width="1.4"/>
         <rect x="64" y="42" width="14" height="30" rx="3" fill="#E8A838" stroke="#1C1A17" stroke-width="1.4"/>
-        <rect x="84" y="30" width="14" height="42" rx="3" fill="#1F6F4A" stroke="#1C1A17" stroke-width="1.4"/>
-        <rect x="110" y="28" width="46" height="18" rx="5" fill="#E6F0EA"/>
-        <path d="M118 39L126 33L134 37L146 30" stroke="#1F6F4A" stroke-width="2" stroke-linecap="round"/>
+        <rect x="84" y="30" width="14" height="42" rx="3" fill="#1DB954" stroke="#1C1A17" stroke-width="1.4"/>
+        <rect x="110" y="28" width="46" height="18" rx="5" fill="rgba(29, 185, 84, 0.15)"/>
+        <path d="M118 39L126 33L134 37L146 30" stroke="#1DB954" stroke-width="2" stroke-linecap="round"/>
         <rect x="110" y="54" width="46" height="6" rx="3" fill="#1C1A17"/>
-        <rect x="110" y="64" width="32" height="5" rx="2.5" fill="#8A847A"/>
+        <rect x="110" y="64" width="32" height="5" rx="2.5" fill="#727272"/>
       </svg>`
     }
   ];
