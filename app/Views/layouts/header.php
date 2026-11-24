@@ -31,9 +31,9 @@ $judulSitus = isset($judulHalaman) ? htmlspecialchars($judulHalaman) : 'Skill4Li
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/variabel.css">
-  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/global.css">
-  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/komponen.css">
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/variabel.css?v=<?= time() ?>">
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/global.css?v=<?= time() ?>">
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/komponen.css?v=<?= time() ?>">
   <script>
     window.__S4L_USER__ = <?= json_encode($_SESSION['user'] ?? null, JSON_UNESCAPED_UNICODE) ?>;
     window.__S4L_CSRF__ = <?= json_encode($_SESSION['csrf_token'] ?? '', JSON_UNESCAPED_UNICODE) ?>;

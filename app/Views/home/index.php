@@ -8,15 +8,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS Proyek Kamu -->
-  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/variabel.css">
-  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/gaya.css">
+  <!-- CSS Proyek -->
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/variabel.css?v=<?= time() ?>">
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/global.css?v=<?= time() ?>">
+  <link rel="stylesheet" href="<?= $baseUrl ?>/assets/css/komponen.css?v=<?= time() ?>">
 
   <!-- Ikon Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <style>
+  body {
+    background-color: var(--latar, #121212);
+    color: var(--teks, #FFFFFF);
+    margin: 0;
+    font-family: var(--font-ui);
+  }
   /* Tipografi Responsif */
   .s4l-judul-besar {
     font-family: var(--font-judul);
