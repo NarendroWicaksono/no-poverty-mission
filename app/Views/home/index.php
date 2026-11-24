@@ -459,7 +459,7 @@
     <div class="split-grid">
       <div style="display: flex; justify-content: center;">
         <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 400px; height: auto;">
-          <rect x="24" y="24" width="372" height="272" rx="24" fill="rgba(29, 185, 84, 0.15)" />
+          <rect x="24" y="24" width="372" height="272" rx="24" fill="#1DB954" />
           <rect x="74" y="54" width="272" height="196" rx="14" fill="#FFFFFF" stroke="#1C1A17" stroke-width="3" />
           <rect x="102" y="84" width="110" height="12" rx="4" fill="#1DB954" />
           <rect x="102" y="112" width="216" height="16" rx="4" fill="#1C1A17" />
@@ -543,8 +543,8 @@
 
         <div style="display: flex; flex-direction: column; gap: var(--spasi-20);">
           <div style="display: flex; align-items: flex-start; gap: var(--spasi-16);">
-            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: var(--aksen-tipis); color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: #FFFFFF; color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <i data-lucide="check" style="width: 16px; height: 16px; color: var(--aksen-tipis);"></i>
             </div>
             <div>
               <div style="font-family: var(--font-judul); font-size: var(--teks-16); font-weight: 700; color: var(--teks); margin-bottom: 4px;">
@@ -557,8 +557,8 @@
           </div>
 
           <div style="display: flex; align-items: flex-start; gap: var(--spasi-16);">
-            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: var(--aksen-tipis); color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: #FFFFFF; color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <i data-lucide="check" style="width: 16px; height: 16px; color: var(--aksen-tipis);"></i>
             </div>
             <div>
               <div style="font-family: var(--font-judul); font-size: var(--teks-16); font-weight: 700; color: var(--teks); margin-bottom: 4px;">
@@ -571,8 +571,8 @@
           </div>
 
           <div style="display: flex; align-items: flex-start; gap: var(--spasi-16);">
-            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: var(--aksen-tipis); color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            <div style="width: 28px; height: 28px; border-radius: 999px; background-color: #FFFFFF; color: var(--aksen); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <i data-lucide="check" style="width: 16px; height: 16px; color: var(--aksen-tipis);"></i>
             </div>
             <div>
               <div style="font-family: var(--font-judul); font-size: var(--teks-16); font-weight: 700; color: var(--teks); margin-bottom: 4px;">
@@ -588,7 +588,7 @@
 
       <div class="split-media" style="display: flex; justify-content: center;">
         <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 420px; height: auto;">
-          <circle cx="220" cy="160" r="132" fill="rgba(29, 185, 84, 0.15)" />
+          <circle cx="220" cy="160" r="132" fill="#1DB954" />
 
           <rect x="48" y="76" width="168" height="44" rx="10" fill="#FFFFFF" stroke="#1C1A17" stroke-width="2.5" />
           <circle cx="74" cy="98" r="10" fill="#1DB954" />
