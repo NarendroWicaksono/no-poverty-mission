@@ -63,7 +63,7 @@ abstract class Controller {
             $this->redirect($baseUrl . '/auth/login.php?pesan=harap_login');
         }
         if (($user['peran'] ?? '') === 'admin') {
-            $this->redirect($baseUrl . '/admin/index.php');
+            $this->redirect($baseUrl . '/pengelola/index.php');
         }
         return $user;
     }
@@ -74,7 +74,7 @@ abstract class Controller {
     protected function requireAdmin(string $baseUrl = '..'): array {
         $user = $this->currentUser();
         if (!$user || ($user['peran'] ?? '') !== 'admin') {
-            $this->redirect($baseUrl . '/admin/login.php');
+            $this->redirect($baseUrl . '/pengelola/login.php');
         }
         return $user;
     }

@@ -8,7 +8,7 @@ const dapatkanBasisPath = () => {
   if (
     lokasi.includes('/kursus/') ||
     lokasi.includes('/dashboard/') ||
-    lokasi.includes('/admin/') ||
+    lokasi.includes('/pengelola/') ||
     lokasi.includes('/auth/') ||
     lokasi.includes('/sertifikat/')
   ) {

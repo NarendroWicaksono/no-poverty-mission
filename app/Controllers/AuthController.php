@@ -8,7 +8,7 @@ class AuthController extends Controller {
         $user = $this->currentUser();
         if ($user && !isset($_GET['ganti'])) {
             if (($user['peran'] ?? '') === 'admin') {
-                $this->redirect($baseUrl . '/admin/index.php');
+                $this->redirect($baseUrl . '/pengelola/index.php');
             }
             $this->redirect($baseUrl . '/dashboard/index.php');
         }

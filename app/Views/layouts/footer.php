@@ -90,7 +90,7 @@
           <li><a href="<?= $baseUrl ?>/kursus/katalog.php">Katalog kursus</a></li>
           <li><a href="<?= $baseUrl ?>/sertifikat/verifikasi.php">Verifikasi sertifikat</a></li>
           <li><a href="<?= $baseUrl ?>/dashboard/index.php">Dashboard belajar</a></li>
-          <li><a href="<?= $baseUrl ?>/admin/login.php">Panel pengelola</a></li>
+          <li><a href="<?= $baseUrl ?>/pengelola/login.php">Panel pengelola</a></li>
         </ul>
       </div>
 
@@ -176,7 +176,7 @@
     const urlLogout = `${baseUrl}/auth/logout.php`;
 
     if (user && user.nama_lengkap) {
-      const targetDash = user.peran === 'admin' ? `${baseUrl}/admin/index.php` : `${baseUrl}/dashboard/index.php`;
+      const targetDash = user.peran === 'admin' ? `${baseUrl}/pengelola/index.php` : `${baseUrl}/dashboard/index.php`;
       const labelDash = user.peran === 'admin' ? 'Panel admin' : user.nama_lengkap.split(' ')[0];
 
       if (navAksi) {

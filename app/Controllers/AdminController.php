@@ -7,7 +7,7 @@ class AdminController extends Controller {
     public function login(string $baseUrl = '..'): void {
         $user = $this->currentUser();
         if ($user && ($user['peran'] ?? '') === 'admin') {
-            $this->redirect($baseUrl . '/admin/index.php');
+            $this->redirect($baseUrl . '/pengelola/index.php');
         }
 
         $this->view('admin/login', [

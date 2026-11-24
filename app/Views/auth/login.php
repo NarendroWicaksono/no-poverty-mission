@@ -398,7 +398,7 @@
         <div class="masuk-footer-link">
           <div>Belum memiliki akun? <a href="daftar.php" class="tautan-daftar">Daftar gratis</a></div>
           <div class="masuk-footer-admin">
-            Masuk sebagai pengelola? <a href="../admin/login.php">Panel pengelola</a>
+            Masuk sebagai pengelola? <a href="../pengelola/login.php">Panel pengelola</a>
           </div>
         </div>
       </div>
