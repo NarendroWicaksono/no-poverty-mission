@@ -395,9 +395,9 @@
 }
 
 .sidebar-item.aktif {
-  background-color: var(--aksen-tipis);
-  color: var(--aksen);
-  font-weight: 500;
+  background-color: var(--aksen);
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .konten-aplikasi {
