@@ -347,7 +347,7 @@
   display: grid;
   grid-template-columns: var(--lebar-sidebar) 1fr;
   min-height: calc(100vh - 64px);
-  max-width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
 }
@@ -403,6 +403,7 @@
 .konten-aplikasi {
   padding: var(--spasi-32);
   overflow-y: auto;
+  min-width: 0;
 }
 
 /* 10. Sertifikat Fisik Kertas (Momen Paling Kaya) */
@@ -644,17 +645,54 @@
   }
 
   .tata-aplikasi {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
   }
 
   .sidebar-aplikasi {
     border-right: none;
     border-bottom: 1px solid var(--garis);
-    padding: var(--spasi-16);
+    padding: 14px 16px;
+  }
+
+  .sidebar-aplikasi > div:first-child {
+    display: none;
+  }
+
+  .sidebar-aplikasi > div:last-child {
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 6px !important;
+  }
+
+  .sidebar-aplikasi > div:last-child .sidebar-item {
+    width: auto !important;
+  }
+
+  .sidebar-label {
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-left: 0;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .sidebar-item {
+    height: auto;
+    padding: 7px 12px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .konten-aplikasi {
     padding: var(--spasi-16);
+    min-width: 0;
   }
 
   .kaki-grid {
