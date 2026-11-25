@@ -24,10 +24,9 @@
     padding: 24px 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 24px;
     height: 100%;
     box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .cp-brand {
@@ -153,6 +152,7 @@
     gap: 8px;
     padding-top: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: auto;
   }
 
   .cp-btn-katalog-sidebar {
