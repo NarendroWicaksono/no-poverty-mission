@@ -930,3 +930,36 @@ INSERT INTO `hasil_kuis` (`id`, `pengguna_id`, `kursus_id`, `total_soal`, `jawab
 
 INSERT INTO `sertifikat` (`id`, `nomor_sertifikat`, `pengguna_id`, `kursus_id`, `tanggal_terbit`, `nilai_kuis`, `kode_verifikasi`, `penandatangan_nama`, `penandatangan_jabatan`) VALUES
 (1, 'S4L-2026-000123', 2, 5, '2026-11-15', 90.00, 'a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890', 'Dr. Ir. Hendra Gunawan, M.T.', 'Direktur Pembina Skill4Life');
+
+-- 7. Tabel Rating & Bookmark Video Materi
+CREATE TABLE IF NOT EXISTS `rating_modul` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `pengguna_id` INT NOT NULL,
+  `modul_id` INT NOT NULL,
+  `rating` TINYINT NOT NULL DEFAULT 5,
+  `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `diperbarui_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY `unik_pengguna_modul_rating` (`pengguna_id`, `modul_id`),
+  FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`modul_id`) REFERENCES `modul`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `bookmark_modul` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `pengguna_id` INT NOT NULL,
+  `modul_id` INT NOT NULL,
+  `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `unik_pengguna_modul_bookmark` (`pengguna_id`, `modul_id`),
+  FOREIGN KEY (`pengguna_id`) REFERENCES `pengguna`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`modul_id`) REFERENCES `modul`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Contoh data bookmark & rating awal
+INSERT INTO `bookmark_modul` (`pengguna_id`, `modul_id`, `dibuat_pada`) VALUES
+(2, 1, '2026-11-20 10:00:00'),
+(2, 17, '2026-11-22 14:30:00');
+
+INSERT INTO `rating_modul` (`pengguna_id`, `modul_id`, `rating`, `dibuat_pada`) VALUES
+(2, 1, 5, '2026-11-20 10:15:00'),
+(2, 17, 5, '2026-11-22 15:00:00');
+

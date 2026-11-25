@@ -286,6 +286,213 @@ export async function ambilRingkasanKursusPeserta() {
 }
 
 /* ========================================================
+   3B. RATING & BOOKMARK VIDEO MATERI
+   ======================================================== */
+
+const KEY_LOCAL_RATINGS = 's4l_local_ratings';
+const KEY_LOCAL_BOOKMARKS = 's4l_local_bookmarks';
+
+function bacaLocalRatings() {
+  try {
+    return JSON.parse(localStorage.getItem(KEY_LOCAL_RATINGS) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function simpanLocalRatings(data) {
+  try {
+    localStorage.setItem(KEY_LOCAL_RATINGS, JSON.stringify(data));
+  } catch {}
+}
+
+function bacaLocalBookmarks() {
+  try {
+    return JSON.parse(localStorage.getItem(KEY_LOCAL_BOOKMARKS) || '[]');
+  } catch {
+    return [];
+  }
+}
+
+function simpanLocalBookmarks(data) {
+  try {
+    localStorage.setItem(KEY_LOCAL_BOOKMARKS, JSON.stringify(data));
+  } catch {}
+}
+
+export async function ambilRatingModul(idModul) {
+  try {
+    const res = await requestGET('ambil_rating_modul', { id_modul: idModul });
+    if (res.ok && res.data) {
+      const local = bacaLocalRatings();
+      const user = ambilSesiPengguna();
+      const userKey = user ? `${user.id || user.email}_${idModul}` : `guest_${idModul}`;
+      const entry = local[userKey];
+      const ratingUser = (entry && typeof entry === 'object') ? entry.rating : entry;
+      if (ratingUser && !res.data.rating_pengguna) {
+        res.data.rating_pengguna = ratingUser;
+      }
+      return res.data;
+    }
+  } catch (err) {
+    console.warn('[API ambilRatingModul fallback]', err);
+  }
+
+  // Fallback lokal
+  const local = bacaLocalRatings();
+  const user = ambilSesiPengguna();
+  const userKey = user ? `${user.id || user.email}_${idModul}` : `guest_${idModul}`;
+  const entry = local[userKey];
+  const ratingUser = (entry && typeof entry === 'object') ? entry.rating : entry;
+  return {
+    rata_rata: ratingUser ? Number(ratingUser).toFixed(1) : 5.0,
+    total_ulasan: ratingUser ? 1 : 0,
+    rating_pengguna: ratingUser || null
+  };
+}
+
+export async function simpanRatingModul(idModul, rating, metaInfo = {}) {
+  const user = ambilSesiPengguna();
+  const userKey = user ? `${user.id || user.email}_${idModul}` : `guest_${idModul}`;
+  const localRatings = bacaLocalRatings();
+  localRatings[userKey] = {
+    rating: parseInt(rating, 10),
+    modul_id: idModul,
+    judul_modul: metaInfo.judul_modul || 'Video Materi',
+    kursus_judul: metaInfo.kursus_judul || '',
+    kursus_slug: metaInfo.kursus_slug || '',
+    urutan: metaInfo.urutan || 1,
+    diperbarui_pada: new Date().toISOString()
+  };
+  simpanLocalRatings(localRatings);
+
+  try {
+    const res = await requestPOST('simpan_rating', { id_modul: idModul, rating });
+    if (res.ok) return res;
+  } catch (err) {}
+
+  return {
+    ok: true,
+    rating: parseInt(rating, 10),
+    pesan: 'Rating video materi berhasil disimpan.',
+    data: {
+      rata_rata: Number(rating).toFixed(1),
+      total_ulasan: 1,
+      rating_pengguna: parseInt(rating, 10)
+    }
+  };
+}
+
+export async function ambilStatusBookmark(idModul) {
+  const user = ambilSesiPengguna();
+  const userKey = user ? (user.id || user.email) : 'guest';
+  const bookmarks = bacaLocalBookmarks();
+  const adaDiLokal = bookmarks.some(b => b.modul_id === idModul && b.user_id === userKey);
+
+  try {
+    const res = await requestGET('status_bookmark_modul', { id_modul: idModul });
+    if (res && typeof res.dibookmark !== 'undefined') {
+      return res.dibookmark || adaDiLokal;
+    }
+  } catch (err) {}
+
+  return adaDiLokal;
+}
+
+export async function toggleBookmarkModul(idModul, metaInfo = {}) {
+  const user = ambilSesiPengguna();
+  const userKey = user ? (user.id || user.email) : 'guest';
+  let bookmarks = bacaLocalBookmarks();
+  const idx = bookmarks.findIndex(b => b.modul_id === idModul && b.user_id === userKey);
+  let dibookmarkBaru = false;
+
+  if (idx !== -1) {
+    bookmarks.splice(idx, 1);
+    dibookmarkBaru = false;
+  } else {
+    bookmarks.unshift({
+      user_id: userKey,
+      modul_id: idModul,
+      judul_modul: metaInfo.judul_modul || 'Video Materi',
+      kursus_judul: metaInfo.kursus_judul || '',
+      kursus_slug: metaInfo.kursus_slug || '',
+      urutan: metaInfo.urutan || 1,
+      estimasi_menit: metaInfo.estimasi_menit || 15,
+      video_url: metaInfo.video_url || '',
+      dibuat_pada: new Date().toISOString()
+    });
+    dibookmarkBaru = true;
+  }
+  simpanLocalBookmarks(bookmarks);
+
+  try {
+    const res = await requestPOST('toggle_bookmark', { id_modul: idModul });
+    if (res && res.ok) {
+      return res;
+    }
+  } catch (err) {}
+
+  return {
+    ok: true,
+    dibookmark: dibookmarkBaru,
+    pesan: dibookmarkBaru
+      ? 'Video materi berhasil disimpan ke Aktivitas Saya.'
+      : 'Video materi dihapus dari simpanan.'
+  };
+}
+
+export async function ambilAktivitasPengguna() {
+  const user = ambilSesiPengguna();
+  const userKey = user ? (user.id || user.email) : 'guest';
+
+  let localBookmarks = bacaLocalBookmarks().filter(b => b.user_id === userKey);
+  let localRatingsMap = bacaLocalRatings();
+  let localRatings = [];
+  for (const k in localRatingsMap) {
+    if (k.startsWith(`${userKey}_`) || (typeof localRatingsMap[k] === 'object' && localRatingsMap[k] !== null)) {
+      const item = localRatingsMap[k];
+      if (typeof item === 'object') {
+        localRatings.push(item);
+      }
+    }
+  }
+
+  try {
+    const res = await requestGET('aktivitas_pengguna');
+    if (res.ok && res.data) {
+      const dbBookmarks = res.data.bookmark || [];
+      const dbRatings = res.data.rating || [];
+
+      const bookmarkIds = new Set(dbBookmarks.map(b => b.modul_id));
+      for (const lb of localBookmarks) {
+        if (!bookmarkIds.has(lb.modul_id)) {
+          dbBookmarks.push(lb);
+        }
+      }
+
+      const ratingIds = new Set(dbRatings.map(r => r.modul_id));
+      for (const lr of localRatings) {
+        if (!ratingIds.has(lr.modul_id)) {
+          dbRatings.push(lr);
+        }
+      }
+
+      return {
+        bookmark: dbBookmarks,
+        rating: dbRatings
+      };
+    }
+  } catch (err) {
+    console.warn('[API ambilAktivitasPengguna fallback]', err);
+  }
+
+  return {
+    bookmark: localBookmarks,
+    rating: localRatings
+  };
+}
+
+/* ========================================================
    4. KUIS EVALUASI & PENERBITAN SERTIFIKAT
    ======================================================== */
 

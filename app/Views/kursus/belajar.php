@@ -364,9 +364,125 @@
     height: 0;
     overflow: hidden;
     border-radius: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
     background-color: #181818;
     border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Toolbar Video: Rating Bintang & Bookmark */
+  .blj-video-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .blj-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .blj-rating-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .blj-star-btn {
+    background: transparent;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #4A4A4A;
+    transition: transform 120ms ease, color 120ms ease;
+  }
+
+  .blj-star-btn:hover {
+    transform: scale(1.22);
+  }
+
+  .blj-star-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    transition: fill 120ms ease, stroke 120ms ease;
+  }
+
+  .blj-star-btn.aktif,
+  .blj-star-btn.hover {
+    color: #FFB800;
+  }
+
+  .blj-star-btn.aktif svg,
+  .blj-star-btn.hover svg {
+    fill: #FFB800;
+    stroke: #FFB800;
+  }
+
+  .blj-rating-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #B3B3B3;
+  }
+
+  .blj-rating-nilai {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #FFFFFF;
+    font-family: var(--font-angka, var(--font-mono, monospace));
+  }
+
+  .blj-rating-status {
+    font-size: 12.5px;
+    color: #B3B3B3;
+    font-weight: 500;
+  }
+
+  .blj-btn-bookmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #242424;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 8px 18px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    cursor: pointer;
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 120ms ease;
+  }
+
+  .blj-btn-bookmark:hover {
+    border-color: #1DB954;
+    color: #1DB954;
+    transform: translateY(-1px);
+  }
+
+  .blj-btn-bookmark.aktif {
+    background-color: rgba(29, 185, 84, 0.14);
+    border-color: #1DB954;
+    color: #1DB954;
+  }
+
+  .blj-btn-bookmark.aktif svg {
+    fill: #1DB954;
+    stroke: #1DB954;
   }
 
   /* Lembar Baca Materi */
@@ -578,6 +694,31 @@
         <!-- Iframe dimuat dinamis -->
       </div>
 
+      <!-- Toolbar Interaktif Video: Rating & Bookmark -->
+      <div id="toolbar-video-materi" class="blj-video-toolbar">
+        <div class="blj-rating-box">
+          <div class="blj-rating-stars" id="wadah-bintang-rating" title="Beri rating video materi ini (1 - 5 bintang)">
+            <button type="button" class="blj-star-btn" data-star="1" aria-label="1 Bintang"><i data-lucide="star"></i></button>
+            <button type="button" class="blj-star-btn" data-star="2" aria-label="2 Bintang"><i data-lucide="star"></i></button>
+            <button type="button" class="blj-star-btn" data-star="3" aria-label="3 Bintang"><i data-lucide="star"></i></button>
+            <button type="button" class="blj-star-btn" data-star="4" aria-label="4 Bintang"><i data-lucide="star"></i></button>
+            <button type="button" class="blj-star-btn" data-star="5" aria-label="5 Bintang"><i data-lucide="star"></i></button>
+          </div>
+          <div class="blj-rating-meta">
+            <span class="blj-rating-nilai" id="label-rating-rata">5.0</span>
+            <span id="label-rating-total" style="color: #888;">(0 ulasan)</span>
+            <span class="blj-rating-status" id="label-rating-anda">&bull; Beri rating video</span>
+          </div>
+        </div>
+
+        <div class="blj-video-actions">
+          <button type="button" id="btn-bookmark-video" class="blj-btn-bookmark" title="Simpan video ini ke Aktivitas Saya di profil">
+            <i data-lucide="bookmark" id="ikon-bookmark-video" style="width: 15px; height: 15px;"></i>
+            <span id="teks-bookmark-video">Simpan Video</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Teks Materi Nyata -->
       <div class="blj-article-sheet">
         <article class="blj-article-content" id="isi-teks-materi">
@@ -612,7 +753,11 @@
     simpanProgres,
     hapusProgres,
     ambilProgresKursus,
-    normalisasiUrlYoutube
+    normalisasiUrlYoutube,
+    ambilRatingModul,
+    simpanRatingModul,
+    ambilStatusBookmark,
+    toggleBookmarkModul
   } from '../assets/js/api.js';
 
   document.addEventListener('DOMContentLoaded', async () => {
@@ -655,6 +800,136 @@
     }
 
     document.getElementById('isi-teks-materi').innerHTML = modulAktif.konten;
+
+    // ==========================================
+    // Fitur Rating & Bookmark Video Materi
+    // ==========================================
+    const metaModul = {
+      judul_modul: modulAktif.judul_modul,
+      kursus_judul: kursus.judul,
+      kursus_slug: slug,
+      urutan: modulAktif.urutan,
+      estimasi_menit: modulAktif.estimasi_menit,
+      video_url: modulAktif.video_url
+    };
+
+    // 1. Logika Bookmark Video
+    const btnBookmark = document.getElementById('btn-bookmark-video');
+    const ikonBookmark = document.getElementById('ikon-bookmark-video');
+    const teksBookmark = document.getElementById('teks-bookmark-video');
+
+    async function inisialisasiBookmark() {
+      const isBookmarked = await ambilStatusBookmark(modulAktif.id);
+      if (isBookmarked) {
+        btnBookmark.classList.add('aktif');
+        teksBookmark.textContent = 'Tersimpan';
+        ikonBookmark.style.fill = '#1DB954';
+        ikonBookmark.style.stroke = '#1DB954';
+      } else {
+        btnBookmark.classList.remove('aktif');
+        teksBookmark.textContent = 'Simpan Video';
+        ikonBookmark.style.fill = 'none';
+        ikonBookmark.style.stroke = 'currentColor';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+    inisialisasiBookmark();
+
+    btnBookmark.addEventListener('click', async () => {
+      const res = await toggleBookmarkModul(modulAktif.id, metaModul);
+      if (res && res.dibookmark) {
+        btnBookmark.classList.add('aktif');
+        teksBookmark.textContent = 'Tersimpan';
+        ikonBookmark.style.fill = '#1DB954';
+        ikonBookmark.style.stroke = '#1DB954';
+        if (typeof tampilkanToast === 'function') {
+          tampilkanToast('Video materi berhasil disimpan ke Aktivitas Saya di profil.', 'sukses');
+        }
+      } else {
+        btnBookmark.classList.remove('aktif');
+        teksBookmark.textContent = 'Simpan Video';
+        ikonBookmark.style.fill = 'none';
+        ikonBookmark.style.stroke = 'currentColor';
+        if (typeof tampilkanToast === 'function') {
+          tampilkanToast('Video materi dihapus dari simpanan.', 'info');
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+    });
+
+    // 2. Logika Rating Bintang Interaktif
+    const wadahBintang = document.getElementById('wadah-bintang-rating');
+    const starBtns = Array.from(wadahBintang.querySelectorAll('.blj-star-btn'));
+    const labelRata = document.getElementById('label-rating-rata');
+    const labelTotal = document.getElementById('label-rating-total');
+    const labelAnda = document.getElementById('label-rating-anda');
+
+    let ratingTersimpanPengguna = null;
+
+    function renderBintang(nilaiVisual, isHover = false) {
+      starBtns.forEach(btn => {
+        const val = parseInt(btn.dataset.star, 10);
+        if (val <= nilaiVisual) {
+          btn.classList.add(isHover ? 'hover' : 'aktif');
+        } else {
+          btn.classList.remove('hover');
+          if (isHover || !ratingTersimpanPengguna || val > ratingTersimpanPengguna) {
+            btn.classList.remove('aktif');
+          }
+        }
+      });
+    }
+
+    async function inisialisasiRating() {
+      const dataRating = await ambilRatingModul(modulAktif.id);
+      if (dataRating) {
+        labelRata.textContent = dataRating.rata_rata ? Number(dataRating.rata_rata).toFixed(1) : '5.0';
+        labelTotal.textContent = `(${dataRating.total_ulasan || 0} ulasan)`;
+        if (dataRating.rating_pengguna) {
+          ratingTersimpanPengguna = parseInt(dataRating.rating_pengguna, 10);
+          renderBintang(ratingTersimpanPengguna, false);
+          labelAnda.textContent = `\u2022 Rating Anda: ${ratingTersimpanPengguna}/5 \u2B50`;
+          labelAnda.style.color = '#FFB800';
+        } else {
+          labelAnda.textContent = '\u2022 Beri rating video ini';
+          labelAnda.style.color = '#B3B3B3';
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+    inisialisasiRating();
+
+    starBtns.forEach(btn => {
+      const val = parseInt(btn.dataset.star, 10);
+      btn.addEventListener('mouseenter', () => {
+        renderBintang(val, true);
+      });
+
+      btn.addEventListener('click', async () => {
+        ratingTersimpanPengguna = val;
+        renderBintang(val, false);
+        labelAnda.textContent = `\u2022 Rating Anda: ${val}/5 \u2B50`;
+        labelAnda.style.color = '#FFB800';
+
+        const res = await simpanRatingModul(modulAktif.id, val, metaModul);
+        if (res && res.data) {
+          labelRata.textContent = Number(res.data.rata_rata).toFixed(1);
+          labelTotal.textContent = `(${res.data.total_ulasan || 1} ulasan)`;
+        }
+        if (typeof tampilkanToast === 'function') {
+          tampilkanToast(`Terima kasih! Anda memberi rating ${val} bintang untuk video ini.`, 'sukses');
+        }
+      });
+    });
+
+    wadahBintang.addEventListener('mouseleave', () => {
+      starBtns.forEach(b => b.classList.remove('hover'));
+      if (ratingTersimpanPengguna) {
+        renderBintang(ratingTersimpanPengguna, false);
+      } else {
+        renderBintang(0, false);
+      }
+    });
 
     const btnPrev = document.getElementById('btn-modul-sebelumnya');
     const btnNext = document.getElementById('btn-modul-selanjutnya');

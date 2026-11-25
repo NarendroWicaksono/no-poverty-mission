@@ -195,4 +195,189 @@ class ModulModel {
         $stmt = $this->pdo->prepare("DELETE FROM modul WHERE id = ?");
         return $stmt->execute([$idModul]);
     }
+
+    public function simpanRating(int $idPengguna, int $idModul, int $rating): array {
+        if ($idPengguna <= 0 || $idModul <= 0) {
+            return ['ok' => false, 'pesan' => 'Data tidak valid.'];
+        }
+        $rating = max(1, min(5, $rating));
+
+        try {
+            $this->pdo->exec("
+                CREATE TABLE IF NOT EXISTS `rating_modul` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `pengguna_id` INT NOT NULL,
+                    `modul_id` INT NOT NULL,
+                    `rating` TINYINT NOT NULL DEFAULT 5,
+                    `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    `diperbarui_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    UNIQUE KEY `unik_pengguna_modul_rating` (`pengguna_id`, `modul_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            ");
+
+            $stmt = $this->pdo->prepare("
+                INSERT INTO rating_modul (pengguna_id, modul_id, rating)
+                VALUES (?, ?, ?)
+                ON DUPLICATE KEY UPDATE rating = VALUES(rating), diperbarui_pada = CURRENT_TIMESTAMP
+            ");
+            $stmt->execute([$idPengguna, $idModul, $rating]);
+
+            $info = $this->ambilRatingModul($idModul, $idPengguna);
+            return [
+                'ok' => true,
+                'rating' => $rating,
+                'pesan' => 'Rating berhasil disimpan.',
+                'data' => $info['data'] ?? []
+            ];
+        } catch (\PDOException $e) {
+            return ['ok' => false, 'pesan' => 'Gagal menyimpan rating: ' . $e->getMessage()];
+        }
+    }
+
+    public function ambilRatingModul(int $idModul, ?int $idPengguna = null): array {
+        if ($idModul <= 0) {
+            return ['ok' => false, 'pesan' => 'ID modul tidak valid.'];
+        }
+
+        try {
+            $stmt = $this->pdo->prepare("
+                SELECT ROUND(COALESCE(AVG(rating), 5.0), 1) as rata_rata, COUNT(*) as total_ulasan
+                FROM rating_modul
+                WHERE modul_id = ?
+            ");
+            $stmt->execute([$idModul]);
+            $res = $stmt->fetch() ?: ['rata_rata' => 5.0, 'total_ulasan' => 0];
+
+            $ratingPengguna = null;
+            if ($idPengguna && $idPengguna > 0) {
+                $stmtUser = $this->pdo->prepare("SELECT rating FROM rating_modul WHERE modul_id = ? AND pengguna_id = ?");
+                $stmtUser->execute([$idModul, $idPengguna]);
+                $userRow = $stmtUser->fetch();
+                if ($userRow) {
+                    $ratingPengguna = (int)$userRow['rating'];
+                }
+            }
+
+            return [
+                'ok' => true,
+                'data' => [
+                    'rata_rata' => (float)($res['rata_rata'] ?? 5.0),
+                    'total_ulasan' => (int)($res['total_ulasan'] ?? 0),
+                    'rating_pengguna' => $ratingPengguna
+                ]
+            ];
+        } catch (\PDOException $e) {
+            return [
+                'ok' => true,
+                'data' => [
+                    'rata_rata' => 5.0,
+                    'total_ulasan' => 0,
+                    'rating_pengguna' => null
+                ]
+            ];
+        }
+    }
+
+    public function toggleBookmark(int $idPengguna, int $idModul): array {
+        if ($idPengguna <= 0 || $idModul <= 0) {
+            return ['ok' => false, 'pesan' => 'Data tidak valid.'];
+        }
+
+        try {
+            $this->pdo->exec("
+                CREATE TABLE IF NOT EXISTS `bookmark_modul` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `pengguna_id` INT NOT NULL,
+                    `modul_id` INT NOT NULL,
+                    `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE KEY `unik_pengguna_modul_bookmark` (`pengguna_id`, `modul_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            ");
+
+            $stmt = $this->pdo->prepare("SELECT id FROM bookmark_modul WHERE pengguna_id = ? AND modul_id = ?");
+            $stmt->execute([$idPengguna, $idModul]);
+            $ada = $stmt->fetch();
+
+            if ($ada) {
+                $stmtDel = $this->pdo->prepare("DELETE FROM bookmark_modul WHERE pengguna_id = ? AND modul_id = ?");
+                $stmtDel->execute([$idPengguna, $idModul]);
+                return [
+                    'ok' => true,
+                    'dibookmark' => false,
+                    'pesan' => 'Video materi dihapus dari simpanan.'
+                ];
+            } else {
+                $stmtIns = $this->pdo->prepare("INSERT INTO bookmark_modul (pengguna_id, modul_id) VALUES (?, ?)");
+                $stmtIns->execute([$idPengguna, $idModul]);
+                return [
+                    'ok' => true,
+                    'dibookmark' => true,
+                    'pesan' => 'Video materi berhasil disimpan ke Aktivitas Saya.'
+                ];
+            }
+        } catch (\PDOException $e) {
+            return ['ok' => false, 'pesan' => 'Gagal mengubah bookmark: ' . $e->getMessage()];
+        }
+    }
+
+    public function statusBookmark(int $idPengguna, int $idModul): array {
+        if ($idPengguna <= 0 || $idModul <= 0) {
+            return ['ok' => true, 'dibookmark' => false];
+        }
+
+        try {
+            $stmt = $this->pdo->prepare("SELECT id FROM bookmark_modul WHERE pengguna_id = ? AND modul_id = ?");
+            $stmt->execute([$idPengguna, $idModul]);
+            return ['ok' => true, 'dibookmark' => (bool)$stmt->fetch()];
+        } catch (\PDOException $e) {
+            return ['ok' => true, 'dibookmark' => false];
+        }
+    }
+
+    public function ambilAktivitasPengguna(int $idPengguna): array {
+        if ($idPengguna <= 0) {
+            return ['ok' => true, 'data' => ['bookmark' => [], 'rating' => []]];
+        }
+
+        $bookmarks = [];
+        $ratings = [];
+
+        try {
+            $stmtB = $this->pdo->prepare("
+                SELECT b.id as bookmark_id, b.dibuat_pada,
+                       m.id as modul_id, m.judul_modul, m.urutan, m.estimasi_menit, m.video_url,
+                       k.id as kursus_id, k.judul as kursus_judul, k.slug as kursus_slug
+                FROM bookmark_modul b
+                JOIN modul m ON b.modul_id = m.id
+                JOIN kursus k ON m.kursus_id = k.id
+                WHERE b.pengguna_id = ?
+                ORDER BY b.dibuat_pada DESC
+            ");
+            $stmtB->execute([$idPengguna]);
+            $bookmarks = $stmtB->fetchAll();
+
+            $stmtR = $this->pdo->prepare("
+                SELECT r.id as rating_id, r.rating, r.diperbarui_pada,
+                       m.id as modul_id, m.judul_modul, m.urutan, m.estimasi_menit, m.video_url,
+                       k.id as kursus_id, k.judul as kursus_judul, k.slug as kursus_slug
+                FROM rating_modul r
+                JOIN modul m ON r.modul_id = m.id
+                JOIN kursus k ON m.kursus_id = k.id
+                WHERE r.pengguna_id = ?
+                ORDER BY r.diperbarui_pada DESC
+            ");
+            $stmtR->execute([$idPengguna]);
+            $ratings = $stmtR->fetchAll();
+        } catch (\PDOException $e) {
+            // Abaikan jika tabel belum ada
+        }
+
+        return [
+            'ok' => true,
+            'data' => [
+                'bookmark' => $bookmarks,
+                'rating' => $ratings
+            ]
+        ];
+    }
 }

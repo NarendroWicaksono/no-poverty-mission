@@ -690,6 +690,12 @@
             <span>Sertifikat Saya</span>
           </a>
         </li>
+        <li>
+          <a href="profil.php#seksi-aktivitas-saya" class="cp-nav-link">
+            <i data-lucide="bookmark" class="ikon-16"></i>
+            <span>Video Disimpan &amp; Rating</span>
+          </a>
+        </li>
       </ul>
     </div>
 

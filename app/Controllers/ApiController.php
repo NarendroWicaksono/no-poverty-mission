@@ -162,6 +162,43 @@ class ApiController extends Controller {
                     $this->json(['ok' => true, 'data' => $kursusModel->ambilRingkasanPeserta((int)$sesi['id'])]);
                     break;
 
+                /* 3B. RATING & BOOKMARK VIDEO MATERI */
+                case 'simpan_rating':
+                    $sesi = $this->requireUserJson();
+                    $idModul = (int)($in['id_modul'] ?? 0);
+                    $rating = (int)($in['rating'] ?? 5);
+                    $res = $modulModel->simpanRating((int)$sesi['id'], $idModul, $rating);
+                    $this->json($res, $res['ok'] ? 200 : 422);
+                    break;
+
+                case 'ambil_rating_modul':
+                    $sesi = $this->currentUser();
+                    $idModul = (int)($_GET['id_modul'] ?? 0);
+                    $userId = $sesi ? (int)$sesi['id'] : null;
+                    $this->json($modulModel->ambilRatingModul($idModul, $userId));
+                    break;
+
+                case 'toggle_bookmark':
+                    $sesi = $this->requireUserJson();
+                    $idModul = (int)($in['id_modul'] ?? 0);
+                    $res = $modulModel->toggleBookmark((int)$sesi['id'], $idModul);
+                    $this->json($res, $res['ok'] ? 200 : 422);
+                    break;
+
+                case 'status_bookmark_modul':
+                    $sesi = $this->currentUser();
+                    $idModul = (int)($_GET['id_modul'] ?? 0);
+                    if (!$sesi) {
+                        $this->json(['ok' => true, 'dibookmark' => false]);
+                    }
+                    $this->json($modulModel->statusBookmark((int)$sesi['id'], $idModul));
+                    break;
+
+                case 'aktivitas_pengguna':
+                    $sesi = $this->requireUserJson();
+                    $this->json($modulModel->ambilAktivitasPengguna((int)$sesi['id']));
+                    break;
+
                 /* 4. KUIS & SERTIFIKAT */
                 case 'soal_kuis':
                     $slug = trim($_GET['slug'] ?? '');

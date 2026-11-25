@@ -63,6 +63,29 @@ class Database {
                 $pdo->exec("ALTER TABLE `sertifikat` ADD COLUMN `nilai_kuis` DECIMAL(5,2) DEFAULT 90.00 AFTER `tanggal_terbit`");
             }
 
+            // Buat tabel rating & bookmark modul jika belum ada
+            $pdo->exec("
+                CREATE TABLE IF NOT EXISTS `rating_modul` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `pengguna_id` INT NOT NULL,
+                    `modul_id` INT NOT NULL,
+                    `rating` TINYINT NOT NULL DEFAULT 5,
+                    `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    `diperbarui_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    UNIQUE KEY `unik_pengguna_modul_rating` (`pengguna_id`, `modul_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            ");
+
+            $pdo->exec("
+                CREATE TABLE IF NOT EXISTS `bookmark_modul` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `pengguna_id` INT NOT NULL,
+                    `modul_id` INT NOT NULL,
+                    `dibuat_pada` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE KEY `unik_pengguna_modul_bookmark` (`pengguna_id`, `modul_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            ");
+
             // Cek apakah banyak modul masih memakai satu URL placeholder yang sama (2kRF8zyy25U) atau duplikat di Kursus 7
             $jumlahPlaceholder = (int)$pdo->query("SELECT COUNT(*) FROM `modul` WHERE `video_url` LIKE '%2kRF8zyy25U%'")->fetchColumn();
             $duplikatKursus7 = (int)$pdo->query("SELECT COUNT(*) FROM `modul` WHERE `id` IN (26, 27) AND `video_url` LIKE '%n4YoZDQs6VA%'")->fetchColumn();
