@@ -55,8 +55,8 @@
     width: 28px;
     height: 28px;
     border-radius: 7px;
-    background-color: #0D3820;
-    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -76,8 +76,8 @@
     width: 38px;
     height: 38px;
     border-radius: 999px;
-    background-color: #0D3820;
-    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -176,8 +176,8 @@
     width: 100%;
     padding: 10px 14px;
     border-radius: 8px;
-    background-color: #0D3820;
-    color: #FFFFFF; font-weight: 700; border: 1px solid #1DB954;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
     font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
@@ -186,7 +186,7 @@
   }
 
   .cp-btn-katalog-sidebar:hover {
-    background-color: #154D2E;
+    background-color: #1ED760;
     color: #FFFFFF !important;
   }
 

@@ -1,87 +1,95 @@
 <style>
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-    background-color: var(--latar, #121212);
-    color: var(--teks, #FFFFFF);
+  header,
+  nav,
+  footer {
+    display: none !important;
   }
 
-  /* Struktur Tata Letak Dashboard */
+  body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
   .cp-layout {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    min-height: calc(100vh - 64px);
-    background-color: var(--latar, #121212);
-    color: var(--teks, #FFFFFF);
+    grid-template-columns: 248px 1fr;
+    min-height: 100vh;
+    background-color: #121212;
     font-family: var(--font-ui);
+    color: #FFFFFF;
   }
 
   /* Sidebar Kiri */
   .cp-sidebar {
     background-color: #181818;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px 16px;
+    padding: 22px 16px 24px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     overflow-y: auto;
   }
 
   .cp-brand {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
+    gap: 10px;
+    padding: 2px 6px 18px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #242424;
     text-decoration: none;
-    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-family: var(--font-judul);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .cp-brand:hover {
+    color: #1DB954;
   }
 
   .cp-brand-mark {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 7px;
     background-color: #1DB954;
+    color: #000000; font-weight: 700;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    flex-shrink: 0;
   }
 
-  /* Identitas Pengguna Sidebar */
   .cp-user-bar {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px;
-    background-color: #242424;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    margin-bottom: 8px;
+    gap: 11px;
+    padding: 2px 6px 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #242424;
   }
 
   .cp-user-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #0D3820;
-    border: 1px solid #1DB954;
-    color: #FFFFFF;
-    display: flex;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
+    font-family: var(--font-judul);
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    font-family: var(--font-angka, var(--font-mono, monospace));
     flex-shrink: 0;
   }
 
   .cp-user-nama {
-    font-size: 13.5px;
+    font-family: var(--font-judul);
+    font-size: 14px;
     font-weight: 600;
     color: #FFFFFF;
     white-space: nowrap;
@@ -90,31 +98,37 @@
   }
 
   .cp-user-sub {
-    font-size: 11.5px;
+    font-size: 12px;
     color: #B3B3B3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
   }
 
   /* Menu Navigasi */
   .cp-nav-grup {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .cp-nav-judul {
-    font-size: 11px;
+    font-family: var(--font-ui);
+    font-size: 10.5px;
     font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #888888;
-    padding: 0 12px 6px;
+    color: #727272;
+    padding: 0 12px;
+    margin-bottom: 6px;
   }
 
   .cp-nav-list {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
   }
 
   .cp-nav-link {
@@ -123,64 +137,67 @@
     gap: 10px;
     padding: 9px 12px;
     border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 400;
     color: #B3B3B3;
-    font-size: 13px;
-    font-weight: 500;
     text-decoration: none;
-    transition: all 120ms ease;
+    transition: background-color 140ms ease, color 140ms ease;
   }
 
   .cp-nav-link:hover {
+    background-color: #121212;
     color: #FFFFFF;
-    background-color: #242424;
   }
 
   .cp-nav-link.aktif {
-    background-color: #242424;
+    background-color: #181818;
     color: #1DB954;
     font-weight: 600;
   }
 
-  .cp-nav-link.aktif i,
-  .cp-nav-link.aktif svg {
+  .cp-nav-link.aktif svg,
+  .cp-nav-link.aktif i {
     color: #1DB954;
   }
 
   .cp-sidebar-bawah {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #242424;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: auto;
   }
 
   .cp-btn-katalog-sidebar {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    height: 38px;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
     border-radius: 8px;
-    background-color: #0D3820;
-    color: #FFFFFF;
-    border: 1px solid #1DB954;
+    background-color: #1DB954;
+    color: #000000; font-weight: 700;
+    font-family: var(--font-judul);
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 140ms ease;
+    transition: background-color 150ms ease;
   }
 
   .cp-btn-katalog-sidebar:hover {
-    background-color: #134e2c;
+    background-color: #1ED760;
+    color: #FFFFFF !important;
   }
 
   .cp-btn-keluar {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    height: 36px;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background-color: #181818;
