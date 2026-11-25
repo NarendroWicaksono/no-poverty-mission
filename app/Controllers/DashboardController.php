@@ -19,4 +19,12 @@ class DashboardController extends Controller {
             'judulHalaman' => 'Pengaturan Profil - Skill4Life',
         ]);
     }
+
+    public function aktivitas(string $baseUrl = '..'): void {
+        $this->requirePeserta($baseUrl);
+        $this->view('dashboard/aktivitas', [
+            'baseUrl' => $baseUrl,
+            'judulHalaman' => 'Video Disimpan & Rating - Skill4Life',
+        ]);
+    }
 }
